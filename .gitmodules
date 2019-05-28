@@ -1,0 +1,54 @@
+[submodule "metanorma"]
+	path = metanorma
+	url = git@github.com:metanorma/metanorma.git
+[submodule "metanorma-cli"]
+	path = metanorma-cli
+	url = git@github.com:metanorma/metanorma-cli
+[submodule "metanorma-nist"]
+	path = metanorma-nist
+	url = git@github.com:metanorma/metanorma-nist
+[submodule "metanorma-iso"]
+	path = metanorma-iso
+	url = git@github.com:metanorma/metanorma-iso
+[submodule "metanorma-itu"]
+	path = metanorma-itu
+	url = git@github.com:metanorma/metanorma-itu
+[submodule "metanorma-rsd"]
+	path = metanorma-rsd
+	url = git@github.com:metanorma/metanorma-rsd
+[submodule "metanorma-csd"]
+	path = metanorma-csd
+	url = git@github.com:metanorma/metanorma-csd
+[submodule "metanorma-csand"]
+	path = metanorma-csand
+	url = git@github.com:metanorma/metanorma-csand
+[submodule "metanorma-acme"]
+	path = metanorma-acme
+	url = git@github.com:metanorma/metanorma-acme
+[submodule "metanorma-gb"]
+	path = metanorma-gb
+	url = git@github.com:metanorma/metanorma-gb
+[submodule "metanorma-ietf"]
+	path = metanorma-ietf
+	url = git@github.com:metanorma/metanorma-ietf
+[submodule "metanorma-m3d"]
+	path = metanorma-m3d
+	url = git@github.com:metanorma/metanorma-m3d
+[submodule "metanorma-mpfd"]
+	path = metanorma-mpfd
+	url = git@github.com:metanorma/metanorma-mpfd
+[submodule "metanorma-standoc"]
+	path = metanorma-standoc
+	url = git@github.com:metanorma/metanorma-standoc
+[submodule "metanorma-unece"]
+	path = metanorma-unece
+	url = git@github.com:metanorma/metanorma-unece
+[submodule "metanorma-vsd"]
+	path = metanorma-vsd
+	url = git@github.com:metanorma/metanorma-vsd
+[submodule "isodoc"]
+	path = isodoc
+	url = git@github.com:metanorma/isodoc
+[submodule "metanorma-sample"]
+	path = metanorma-sample
+	url = git@github.com:metanorma/metanorma-sample
