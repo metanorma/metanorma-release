@@ -1,3 +1,4 @@
+require "pathname"
 require "rubygems/commands/dependency_command"
 
 module Metanorma
@@ -6,12 +7,13 @@ module Metanorma
       class Error < StandardError; end
 
       def self.gems(path)
-      	gitmodules_path = File.join(path, '.gitmodules')
-      	@gems ||= File.open(File.join(path, '.gitmodules'), 'r:UTF-8').each_line.map { |line|
-      		line.match(/path\s*=\s*([\w_-]+)$/)
-      	}.compact.map { |m| m[1]}
-      rescue Errno::ENOENT => e
-      	raise "#{gitmodules_path} not found make sure that -p/--gems-path correctly specified"
+        if File.exist?(path)
+          @gems ||= Pathname.new(path).children.select { |child|
+            child.directory? && (child + ".git").directory? && !child.glob("*.gemspec").empty?
+          }.map { |e| File.basename(e) }
+        else
+          raise "#{gitmodules_path} not found make sure that -p/--gems-path correctly specified"
+        end
       end
 
       def self.gem_deps(path)
