@@ -52,3 +52,9 @@
 [submodule "metanorma-sample"]
 	path = metanorma-sample
 	url = git@github.com:metanorma/metanorma-sample
+[submodule "html2doc"]
+	path = html2doc
+	url = git@github.com:metanorma/html2doc.git
+[submodule "metanorma-ogc"]
+	path = metanorma-ogc
+	url = git@github.com:metanorma/metanorma-ogc.git
