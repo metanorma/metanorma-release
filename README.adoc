@@ -26,6 +26,16 @@ The typical scenario is:
 
 This is how the Metanorma release flow will look like.
 
+
+=== Commands available
+
+[source,sh]
+----
+$ bundle exec lapidist start
+----
+
+
+
 === Updating code and integrated testing
 
 . Go to this `metanorma-release` repository
