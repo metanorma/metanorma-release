@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/metanorma/lapidist
-  revision: a49d95bf8be9b8784a8217607ff621dafa120774
+  revision: 538d39a0654d57ed3ceaec595abd8425c54aa5c4
   specs:
-    lapidist (0.1.0)
+    lapidist (0.1.1)
       gem-release
 
 GEM
