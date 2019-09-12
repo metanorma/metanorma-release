@@ -1,0 +1,20 @@
+GIT
+  remote: https://github.com/metanorma/lapidist
+  revision: a49d95bf8be9b8784a8217607ff621dafa120774
+  specs:
+    lapidist (0.1.0)
+      gem-release
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    gem-release (2.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  lapidist!
+
+BUNDLED WITH
+   2.0.2

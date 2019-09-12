@@ -4,9 +4,6 @@
 [submodule "metanorma-cli"]
 	path = metanorma-cli
 	url = git@github.com:metanorma/metanorma-cli
-[submodule "metanorma-nist"]
-	path = metanorma-nist
-	url = git@github.com:metanorma/metanorma-nist
 [submodule "metanorma-iso"]
 	path = metanorma-iso
 	url = git@github.com:metanorma/metanorma-iso
@@ -58,3 +55,6 @@
 [submodule "metanorma-ogc"]
 	path = metanorma-ogc
 	url = git@github.com:metanorma/metanorma-ogc.git
+[submodule "metanorma-nist"]
+	path = metanorma-nist
+	url = git@github.com:metanorma/metanorma-nist.git

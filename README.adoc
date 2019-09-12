@@ -4,7 +4,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 Today Metanorma spans over 50 gems. Changes to underlying gems, such as https://github.com/metanorma/metanorma[`metanorma`] can cause many of the downstream gems to need upgrading.
 
-In order to simplify this procedures, a set of build scripts in this repository need to be implemented.
+We use the https://github.com/metanorma/lapidist[`lapidist`] gem to synchronize the releases.
 
 
 == Resources
@@ -13,17 +13,6 @@ This repo https://github.com/metanorma/metanorma-release[`metanorma-release`] is
 
 It submodules *all* metanorma gems for the release process, and also maintains a gem dependency tree within metanorma (should be easy to automate, or worse to worse manual...).
 
-We use this repo for two reasons:
-
-.. integration testing
-** all downstream gems can test against the work-in-progress upstream gems
-** management of `Gemfile` and `gemspec` version control
-
-. release process
-** automatic version bumps for gems
-** synchronized pushes of feature branches across gems
-** creation of PRs across gems
-** synchronized release of gems
 
 == Flow
 
