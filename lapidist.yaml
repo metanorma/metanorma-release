@@ -1,0 +1,167 @@
+---
+syncronized_release:
+  - unicode2latex
+  - omml2mathml
+  - html2doc
+  - metanorma
+  - isodoc
+  - metanorma-standoc
+  - metanorma-iso
+  - metanorma-csd
+  - metanorma-m3d
+  - metanorma-rsd
+  - metanorma-acme
+  - metanorma-sample
+  - metanorma-unece
+  - metanorma-mpfd
+  - metanorma-ogc
+  - metanorma-itu
+  - metanorma-ietf
+  - metanorma-vsd
+  - metanorma-nist
+  - metanorma-iec
+  - metanorma-gb
+  - metanorma-cli
+
+packages:
+
+  # No dependencies: External gems
+  iev:
+    repo: https://github.com/metanorma/iev
+  relaton:
+    repo: https://github.com/metanorma/relaton
+
+  # No dependencies: Mathematical formatting gems
+  unicode2latex:
+    repo: https://github.com/metanorma/unicode2latex
+  omml2mathml:
+    repo: https://github.com/metanorma/omml2mathml
+  mathml2asciimath:
+    repo: https://github.com/metanorma/mathml2asciimath
+
+  # Mathematical formatting dependency
+  reverse_asciidoctor:
+    repo: https://github.com/metanorma/reverse_asciidoctor
+    dependencies:
+      - mathml2asciimath
+
+  # Word formatting
+  html2doc:
+    repo: https://github.com/metanorma/html2doc
+
+  # No dependencies: Metanorma core
+  metanorma:
+    repo: https://github.com/metanorma/metanorma
+
+  # Rendering
+  isodoc:
+    repo: https://github.com/metanorma/isodoc
+    dependencies:
+      - html2doc
+      - metanorma
+
+  # Metanorma base flavour
+  metanorma-standoc:
+    repo: https://github.com/metanorma/metanorma-standoc
+    dependencies:
+      - html2doc
+      - isodoc
+      - iev
+      - relaton
+      - unicode2latex
+
+  # Flavours
+  metanorma-iso:
+    repo: https://github.com/metanorma/metanorma-iso
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-csd:
+    repo: https://github.com/metanorma/metanorma-csd
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-m3d:
+    repo: https://github.com/metanorma/metanorma-m3d
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-rsd:
+    repo: https://github.com/metanorma/metanorma-rsd
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-acme:
+    repo: https://github.com/metanorma/metanorma-acme
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-sample:
+    repo: https://github.com/metanorma/metanorma-sample
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-unece:
+    repo: https://github.com/metanorma/metanorma-unece
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-mpfd:
+    repo: https://github.com/metanorma/metanorma-mpfd
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-ogc:
+    repo: https://github.com/metanorma/metanorma-ogc
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-itu:
+    repo: https://github.com/metanorma/metanorma-itu
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-ietf:
+    repo: https://github.com/metanorma/metanorma-ietf
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-vsd:
+    repo: https://github.com/metanorma/metanorma-vsd
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-nist:
+    repo: https://github.com/metanorma/metanorma-nist
+    dependencies:
+      - isodoc
+      - metanorma-standoc
+  metanorma-iec:
+    repo: https://github.com/metanorma/metanorma-iec
+    dependencies:
+      - isodoc
+      - metanorma-iso
+  metanorma-gb:
+    repo: https://github.com/metanorma/metanorma-gb
+    dependencies:
+      - isodoc
+      - metanorma-iso
+      - gb-agencies
+
+  # CLI
+  metanorma-cli:
+    repo: https://github.com/metanorma/metanorma-cli
+    dependencies:
+       - metanorma-iso
+       - metanorma-ietf
+       - metanorma-gb
+       - metanorma-csd
+       - metanorma-csand
+       - metanorma-m3d
+       - metanorma-acme
+       - metanorma-standoc
+       - metanorma-unece
+       - metanorma-ogc
+       - metanorma-nist
+       - isodoc
+       - metanorma
