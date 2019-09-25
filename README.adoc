@@ -141,6 +141,10 @@ mn-samples-iec::
 image:https://travis-ci.com/metanorma/mn-samples-iec.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-iec"]
 mn-samples-itu::
 image:https://travis-ci.com/metanorma/mn-samples-itu.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-itu"]
+mn-samples-unece::
+image:https://travis-ci.com/metanorma/mn-samples-unece.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-unece"]
+mn-samples-gb::
+image:https://travis-ci.com/metanorma/mn-samples-gb.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-gb"]
 mn-samples-ogc::
 image:https://travis-ci.com/metanorma/mn-samples-ogc.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-ogc"]
 mn-samples-mpf::
@@ -152,16 +156,21 @@ image:https://travis-ci.com/metanorma/mn-samples-cc.svg["Build Status", link="ht
 
 == Metanorma document templates
 
-mn-templates-iec::
-image:https://travis-ci.com/metanorma/mn-templates-iec.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-iec"]
-mn-templates-itu::
-image:https://travis-ci.com/metanorma/mn-templates-itu.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-itu"]
-mn-templates-ogc::
-image:https://travis-ci.com/metanorma/mn-templates-ogc.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-ogc"]
 mn-templates-iso::
 image:https://travis-ci.com/metanorma/mn-templates-iso.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-iso"]
+mn-templates-iec::
+image:https://travis-ci.com/metanorma/mn-templates-iec.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-iec"]
+mn-templates-ogc::
+image:https://travis-ci.com/metanorma/mn-templates-ogc.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-ogc"]
 mn-templates-csd::
 image:https://travis-ci.com/metanorma/mn-templates-csd.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-csd"]
+mn-templates-ietf::
+image:https://travis-ci.com/metanorma/mn-templates-ietf.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-ietf"]
+
+////
+mn-templates-itu::
+image:https://travis-ci.com/metanorma/mn-templates-itu.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-itu"]
+////
 
 
 == Utility / Leaf gems
