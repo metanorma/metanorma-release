@@ -156,8 +156,8 @@ mn-templates-ogc::
 image:https://travis-ci.com/metanorma/mn-templates-ogc.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-ogc"]
 mn-templates-iso::
 image:https://travis-ci.com/metanorma/mn-templates-iso.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-iso"]
-mn-templates-cc::
-image:https://travis-ci.com/metanorma/mn-templates-cc.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-cc"]
+mn-templates-csd::
+image:https://travis-ci.com/metanorma/mn-templates-csd.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-csd"]
 
 
 == Utility / Leaf gems
