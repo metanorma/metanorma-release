@@ -13,115 +13,115 @@ image:https://codeclimate.com/github/metanorma/html2doc/badges/gpa.svg["Code Cli
 isodoc::
 image:https://img.shields.io/gem/v/isodoc.svg["Gem Version", link="https://rubygems.org/gems/isodoc"]
 image:https://travis-ci.org/metanorma/isodoc.svg["Build Status", link="https://travis-ci.org/metanorma/isodoc"]
-image:https://ci.appveyor.com/api/projects/status/5od77sei1e1t5h68?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/isodoc"]
+image:https://ci.appveyor.com/api/projects/status/f93bvu6qfwxij07x?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/isodoc"]
 image:https://codeclimate.com/github/metanorma/isodoc/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/isodoc"]
 
 metanorma-acme::
 image:https://img.shields.io/gem/v/metanorma-acme.svg["Gem Version", link="https://rubygems.org/gems/metanorma-acme"]
 image:https://travis-ci.org/metanorma/metanorma-acme.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-acme"]
-image:https://ci.appveyor.com/api/projects/status/4wcdip5fnx8exrj9?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-acme"]
+image:https://ci.appveyor.com/api/projects/status/hjb4k2251qecfqkf?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-acme"]
 image:https://codeclimate.com/github/metanorma/metanorma-acme/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-acme"]
 
 metanorma-cli::
 image:https://img.shields.io/gem/v/metanorma-cli.svg["Gem Version", link="https://rubygems.org/gems/metanorma-cli"]
 image:https://travis-ci.org/metanorma/metanorma-cli.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-cli"]
-image:https://ci.appveyor.com/api/projects/status/vqo2221uwcaov8kx?svg=true["Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-cli"]
+image:https://ci.appveyor.com/api/projects/status/rclitaq7ofv7a4w2?svg=true["Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-cli"]
 image:https://codeclimate.com/github/metanorma/metanorma-cli/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-cli"]
 
 metanorma-csand::
 image:https://img.shields.io/gem/v/metanorma-csand.svg["Gem Version", link="https://rubygems.org/gems/metanorma-csand"]
 image:https://travis-ci.org/metanorma/metanorma-csand.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-csand"]
-image:https://ci.appveyor.com/api/projects/status/3hulwj0i2c4uc7n4?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-csand"]
+image:https://ci.appveyor.com/api/projects/status/gs07fuoo1xhe1spe?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-csand"]
 image:https://codeclimate.com/github/metanorma/metanorma-csand/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-csand"]
 
 metanorma-csd::
 image:https://img.shields.io/gem/v/metanorma-csd.svg["Gem Version", link="https://rubygems.org/gems/metanorma-csd"]
 image:https://travis-ci.org/metanorma/metanorma-csd.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-csd"]
-image:https://ci.appveyor.com/api/projects/status/t3h1p2ycut673n8j?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-csd"]
+image:https://ci.appveyor.com/api/projects/status/tr8280a62m0lofd3?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-csd"]
 image:https://codeclimate.com/github/metanorma/metanorma-csd/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-csd"]
 
 metanorma-gb::
 image:https://img.shields.io/gem/v/metanorma-gb.svg["Gem Version", link="https://rubygems.org/gems/metanorma-gb"]
 image:https://travis-ci.org/metanorma/metanorma-gb.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-gb"]
-image:https://ci.appveyor.com/api/projects/status/7i4umln73wqv88vh?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-gb"]
+image:https://ci.appveyor.com/api/projects/status/ngoyus5vqalc7v4c?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-gb"]
 image:https://codeclimate.com/github/metanorma/metanorma-gb/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-gb"]
 
 metanorma-iec::
 image:https://img.shields.io/gem/v/metanorma-iec.svg["Gem Version", link="https://rubygems.org/gems/metanorma-iec"]
 image:https://travis-ci.com/metanorma/metanorma-iec.svg["Build Status", link="https://travis-ci.com/metanorma/metanorma-iec"]
-image:https://ci.appveyor.com/api/projects/status/odgc3ltblokvd6e7?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-iec"]
+image:https://ci.appveyor.com/api/projects/status/030ike7d50201e7m?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-iec"]
 image:https://codeclimate.com/github/metanorma/metanorma-iec/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-iec"]
 
 metanorma-ietf::
 image:https://img.shields.io/gem/v/metanorma-ietf.svg["Gem Version", link="https://rubygems.org/gems/metanorma-ietf"]
 image:https://travis-ci.com/metanorma/metanorma-ietf.svg["Build Status", link="https://travis-ci.com/metanorma/metanorma-ietf"]
-image:https://ci.appveyor.com/api/projects/status/efby5jt6x06v6ce5?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-ietf"]
+image:https://ci.appveyor.com/api/projects/status/or6b0wx4b0q3qm0m?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-ietf"]
 image:https://codeclimate.com/github/metanorma/metanorma-ietf/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-ietf"]
 
 metanorma-iso::
 image:https://img.shields.io/gem/v/metanorma-iso.svg["Gem Version", link="https://rubygems.org/gems/metanorma-iso"]
 image:https://travis-ci.org/metanorma/metanorma-iso.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-iso"]
-image:https://ci.appveyor.com/api/projects/status/hnc1wnc8i9nquqqb?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-iso"]
+image:https://ci.appveyor.com/api/projects/status/t874i1cbarhnrwki?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-iso"]
 image:https://codeclimate.com/github/metanorma/metanorma-iso/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-iso"]
 
 metanorma-itu::
 image:https://img.shields.io/gem/v/metanorma-itu.svg["Gem Version", link="https://rubygems.org/gems/metanorma-itu"]
 image:https://travis-ci.com/metanorma/metanorma-itu.svg["Build Status", link="https://travis-ci.com/metanorma/metanorma-itu"]
-image:https://ci.appveyor.com/api/projects/status/lo05dblngrgx2tlq?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-itu"]
+image:https://ci.appveyor.com/api/projects/status/pl6lh4a9224ijbe1?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-itu"]
 image:https://codeclimate.com/github/metanorma/metanorma-itu/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-itu"]
 
 metanorma-m3d::
 image:https://img.shields.io/gem/v/metanorma-m3d.svg["Gem Version", link="https://rubygems.org/gems/metanorma-m3d"]
 image:https://travis-ci.org/metanorma/metanorma-m3d.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-m3d"]
-image:https://ci.appveyor.com/api/projects/status/k09hlrs4njm7o2mv?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-m3d"]
+image:https://ci.appveyor.com/api/projects/status/7yoe4qtfcof9196n?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-m3d"]
 image:https://codeclimate.com/github/metanorma/metanorma-m3d/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-m3d"]
 
 metanorma-mpfd::
 image:https://img.shields.io/gem/v/metanorma-mpfd.svg["Gem Version", link="https://rubygems.org/gems/metanorma-mpfd"]
 image:https://travis-ci.com/metanorma/metanorma-mpfd.svg["Build Status", link="https://travis-ci.com/metanorma/metanorma-mpfd"]
-image:https://ci.appveyor.com/api/projects/status/ee3t67dyxlb5y4db?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-mpfd"]
+image:https://ci.appveyor.com/api/projects/status/oprurhccr4hv0yy8?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-mpfd"]
 image:https://codeclimate.com/github/metanorma/metanorma-mpfd/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-mpfd"]
 
 metanorma-nist::
 image:https://img.shields.io/gem/v/metanorma-nist.svg["Gem Version", link="https://rubygems.org/gems/metanorma-nist"]
 image:https://travis-ci.com/metanorma/metanorma-nist.svg["Build Status", link="https://travis-ci.com/metanorma/metanorma-nist"]
-image:https://ci.appveyor.com/api/projects/status/c5e8e3qtn689a5h0?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-nist"]
+image:https://ci.appveyor.com/api/projects/status/vflfr333319tofbi?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-nist"]
 image:https://codeclimate.com/github/metanorma/metanorma-nist/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-nist"]
 
 metanorma-ogc::
 image:https://img.shields.io/gem/v/metanorma-ogc.svg["Gem Version", link="https://rubygems.org/gems/metanorma-ogc"]
 image:https://travis-ci.com/metanorma/metanorma-ogc.svg["Build Status", link="https://travis-ci.com/metanorma/metanorma-ogc"]
-image:https://ci.appveyor.com/api/projects/status/odgc3ltblokvd6e7?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-ogc"]
+image:https://ci.appveyor.com/api/projects/status/skjvy856hpon74tj?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-ogc"]
 image:https://codeclimate.com/github/metanorma/metanorma-ogc/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-ogc"]
 
 metanorma-rsd::
 image:https://img.shields.io/gem/v/metanorma-rsd.svg["Gem Version", link="https://rubygems.org/gems/metanorma-rsd"]
 image:https://travis-ci.org/metanorma/metanorma-rsd.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-rsd"]
-image:https://ci.appveyor.com/api/projects/status/wyay9a5q5eaj147d?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-rsd"]
+image:https://ci.appveyor.com/api/projects/status/col74y763yt5xaka?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-rsd"]
 image:https://codeclimate.com/github/metanorma/metanorma-rsd/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-rsd"]
 
 metanorma-sample::
 image:https://img.shields.io/gem/v/metanorma-acme.svg["Gem Version", link="https://rubygems.org/gems/metanorma-acme"]
 image:https://travis-ci.org/metanorma/metanorma-sample.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-sample"]
-image:https://ci.appveyor.com/api/projects/status/6ys17sr0buc7p3hi?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-sample"]
+image:https://ci.appveyor.com/api/projects/status/k8092dp6r0g2fojv?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-sample"]
 image:https://codeclimate.com/github/metanorma/metanorma-sample/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-sample"]
 
 metanorma-standoc::
 image:https://img.shields.io/gem/v/metanorma-standoc.svg["Gem Version", link="https://rubygems.org/gems/metanorma-standoc"]
 image:https://travis-ci.org/metanorma/metanorma-standoc.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-standoc"]
-image:https://ci.appveyor.com/api/projects/status/qdadxv7rqfy33p66?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-standoc"]
+image:https://ci.appveyor.com/api/projects/status/dbt5mjpe69whcvpb?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-standoc"]
 image:https://codeclimate.com/github/metanorma/metanorma-standoc/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-standoc"]
 
 metanorma-unece::
 image:https://img.shields.io/gem/v/metanorma-unece.svg["Gem Version", link="https://rubygems.org/gems/metanorma-unece"]
 image:https://travis-ci.org/metanorma/metanorma-unece.svg["Build Status", link="https://travis-ci.org/metanorma/metanorma-unece"]
-image:https://ci.appveyor.com/api/projects/status/lqqkdhc7bswaqpp8?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-unece"]
+image:https://ci.appveyor.com/api/projects/status/hrguu7679xqmwdgy?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-unece"]
 image:https://codeclimate.com/github/metanorma/metanorma-unece/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-unece"]
 
 metanorma-vsd::
 image:https://img.shields.io/gem/v/metanorma-vsd.svg["Gem Version", link="https://rubygems.org/gems/metanorma-vsd"]
 image:https://travis-ci.com/metanorma/metanorma-vsd.svg["Build Status", link="https://travis-ci.com/metanorma/metanorma-vsd"]
-image:https://ci.appveyor.com/api/projects/status/525uihjhrm2e9s4f?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-vsd"]
+image:https://ci.appveyor.com/api/projects/status/8ugivqot7pi03naw?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/metanorma/metanorma-vsd"]
 image:https://codeclimate.com/github/metanorma/metanorma-vsd/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-vsd"]
 
 metanorma::
@@ -131,6 +131,7 @@ image:https://ci.appveyor.com/api/projects/status/ya3ymheq7xq5wn74?svg=true["App
 image:https://codeclimate.com/github/metanorma/metanorma/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma"]
 
 metanorma-docker::
+image:https://travis-ci.com/metanorma/metanorma-docker.svg?branch=master["Build Status", link="https://travis-ci.com/metanorma/metanorma-docker"]
 image:https://ci.appveyor.com/api/projects/status/ghb0adudv6vrqw6o?svg=true["Appveyor Build Status",link="https://ci.appveyor.com/project/Metanorma/metanorma-docker"]
 
 
