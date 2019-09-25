@@ -220,73 +220,73 @@ image:https://codeclimate.com/github/metanorma/unicode2latex/badges/gpa.svg["Cod
 relaton-bib::
 image:https://img.shields.io/gem/v/relaton-bib.svg["Gem Version", link="https://rubygems.org/gems/relaton-bib"]
 image:https://travis-ci.com/relaton/relaton-bib.svg["Build Status", link="https://travis-ci.com/relaton/relaton-bib"]
-image:https://ci.appveyor.com/api/projects/status/12o3el12w96vioi5?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/omml2mathml"] ???
+image:https://ci.appveyor.com/api/projects/status/12o3el12w96vioi5?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-bib"] ???
 image:https://codeclimate.com/github/relaton/relaton-bib["Code Climate", link="https://codeclimate.com/github/relaton/relaton-bib"]
 
 relaton-itu::
 image:https://img.shields.io/gem/v/relaton-itu.svg["Gem Version", link="https://rubygems.org/gems/relaton-itu"]
 image:https://travis-ci.com/relaton/relaton-itu.svg["Build Status", link="https://travis-ci.com/relaton/relaton-itu"]
-image:https://ci.appveyor.com/api/projects/status/do11cv5dpfjarr66?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-bib"] ???
+image:https://ci.appveyor.com/api/projects/status/do11cv5dpfjarr66?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-itu"] ???
 image:https://codeclimate.com/github/relaton/relaton-itu["Code Climate", link="https://codeclimate.com/github/relaton/relaton-itu"]
 
 relaton-gb::
 image:https://img.shields.io/gem/v/relaton-gb.svg["Gem Version", link="https://rubygems.org/gems/relaton-gb"]
 image:https://travis-ci.com/relaton/relaton-gb.svg["Build Status", link="https://travis-ci.com/relaton/relaton-gb"]
-image:https://ci.appveyor.com/api/projects/status/wbmp34egb2wl54u7?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-gb"]
+image:https://ci.appveyor.com/api/projects/status/wbmp34egb2wl54u7?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-gb"]
 image:https://codeclimate.com/github/relaton/relaton-gb/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton-gb"]
 
 relaton-iec::
 image:https://img.shields.io/gem/v/relaton-iec.svg["Gem Version", link="https://rubygems.org/gems/relaton-iec"]
 image:https://travis-ci.com/relaton/relaton_iec.svg["Build Status", link="https://travis-ci.com/relaton/relaton_iec"]
-image:https://ci.appveyor.com/api/projects/status/10m91uw5ve7b03u7?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton_iec"]
+image:https://ci.appveyor.com/api/projects/status/10m91uw5ve7b03u7?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton_iec"]
 image:https://codeclimate.com/github/relaton/relaton_iec/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton_iec"]
 
 relaton-ietf::
 image:https://img.shields.io/gem/v/relaton-ietf.svg["Gem Version", link="https://rubygems.org/gems/relaton-ietf"]
 image:https://travis-ci.com/relaton/relaton-ietf.svg["Build Status", link="https://travis-ci.com/relaton/relaton-ietf"]
-image:https://ci.appveyor.com/api/projects/status/9j317su9xsvfi98g?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-ietf"]
+image:https://ci.appveyor.com/api/projects/status/9j317su9xsvfi98g?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-ietf"]
 image:https://codeclimate.com/github/relaton/relaton-ietf/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton-ietf"]
 
 relaton-iso::
 image:https://img.shields.io/gem/v/relaton-iso.svg["Gem Version", link="https://rubygems.org/gems/relaton-iso"]
 image:https://travis-ci.com/relaton/relaton-iso.svg["Build Status", link="https://travis-ci.com/relaton/relaton-iso"]
-image:https://ci.appveyor.com/api/projects/status/nb2hvqycupqrkqjt?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-iso"]
+image:https://ci.appveyor.com/api/projects/status/nb2hvqycupqrkqjt?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-iso"]
 image:https://codeclimate.com/github/metanorma/relaton-iso/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/relaton-iso"]
 
 relaton-iso_bib::
 image:https://img.shields.io/gem/v/relaton-iso-bib.svg["Gem Version", link="https://rubygems.org/gems/relaton-iso-bib"]
 image:https://travis-ci.com/relaton/relaton-iso-bib.svg["Build Status", link="https://travis-ci.com/relaton/relaton-iso-bib"]
-image:https://ci.appveyor.com/api/projects/status/ixgohp20ruhw67bb?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-iso"]
+image:https://ci.appveyor.com/api/projects/status/ixgohp20ruhw67bb?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-iso"]
 image:https://codeclimate.com/github/relaton/relaton-iso-bib/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton-iso-bib"]
 
 relaton-nist::
 image:https://img.shields.io/gem/v/relaton-nist.svg["Gem Version", link="https://rubygems.org/gems/relaton-nist"]
 image:https://travis-ci.com/relaton/relaton-nist.svg["Build Status", link="https://travis-ci.com/relaton/relaton-nist"]
-image:https://ci.appveyor.com/api/projects/status/w4n8yr1ki2q6ypu6?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-nist"]
+image:https://ci.appveyor.com/api/projects/status/w4n8yr1ki2q6ypu6?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-nist"]
 image:https://codeclimate.com/github/relaton/relaton-nist/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton-nist"]
 
 relaton-ogc::
 image:https://img.shields.io/gem/v/relaton-ogc.svg["Gem Version", link="https://rubygems.org/gems/relaton-ogc"]
 image:https://travis-ci.com/relaton/relaton-ogc.svg["Build Status", link="https://travis-ci.com/relaton/relaton-ogc"]
-image:https://ci.appveyor.com/api/projects/status/cv5759ng5yl5m78q?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-ogc"]
+image:https://ci.appveyor.com/api/projects/status/cv5759ng5yl5m78q?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-ogc"]
 image:https://codeclimate.com/github/relaton/relaton-ogc/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton-ogc"]
 
 relaton-iev::
 image:https://img.shields.io/gem/v/relaton-iev.svg["Gem Version", link="https://rubygems.org/gems/relaton-iev"]
 image:https://travis-ci.com/relaton/relaton-iev.svg["Build Status", link="https://travis-ci.com/relaton/relaton-iev"]
-image:https://ci.appveyor.com/api/projects/status/lruvad2lliksj24i?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-iev"]
+image:https://ci.appveyor.com/api/projects/status/lruvad2lliksj24i?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-iev"]
 image:https://codeclimate.com/github/relaton/relaton-iev/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton-iev"]
 
 relaton-cli::
 image:https://img.shields.io/gem/v/relaton-cli.svg["Gem Version", link="https://rubygems.org/gems/relaton-cli"]
 image:https://travis-ci.com/relaton/relaton-cli.svg["Build Status", link="https://travis-ci.com/relaton/relaton-cli"]
-image:https://ci.appveyor.com/api/projects/status/pgpgjq7hxdpkcsnu?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton-cli"]
+image:https://ci.appveyor.com/api/projects/status/pgpgjq7hxdpkcsnu?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-cli"]
 image:https://codeclimate.com/github/relaton/relaton-cli/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton-cli"]
 
 relaton::
 image:https://img.shields.io/gem/v/relaton.svg["Gem Version", link="https://rubygems.org/gems/relaton"]
 image:https://travis-ci.com/relaton/relaton.svg["Build Status", link="https://travis-ci.com/relaton/relaton"]
-image:https://ci.appveyor.com/api/projects/status/4yhyeif0q19klgme?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/ribose/relaton"]
+image:https://ci.appveyor.com/api/projects/status/4yhyeif0q19klgme?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton"]
 image:https://codeclimate.com/github/relaton/relaton/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton"]
 
 
