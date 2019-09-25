@@ -251,7 +251,7 @@ relaton-iso::
 image:https://img.shields.io/gem/v/relaton-iso.svg["Gem Version", link="https://rubygems.org/gems/relaton-iso"]
 image:https://travis-ci.com/relaton/relaton-iso.svg["Build Status", link="https://travis-ci.com/relaton/relaton-iso"]
 image:https://ci.appveyor.com/api/projects/status/nb2hvqycupqrkqjt?svg=true["Appveyor Build Status", link="https://ci.appveyor.com/project/relaton/relaton-iso"]
-image:https://codeclimate.com/github/metanorma/relaton-iso/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/relaton-iso"]
+image:https://codeclimate.com/github/relaton/relaton-iso/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/relaton-iso"]
 
 relaton-iso-bib::
 image:https://img.shields.io/gem/v/relaton-iso-bib.svg["Gem Version", link="https://rubygems.org/gems/relaton-iso-bib"]
