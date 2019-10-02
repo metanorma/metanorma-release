@@ -269,13 +269,13 @@ image:https://codeclimate.com/github/metanorma/omml2mathml/badges/gpa.svg["Code 
 image:https://img.shields.io/github/issues-pr-raw/metanorma/omml2mathml.svg["Pull Requests", link="https://github.com/metanorma/omml2mathml/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/omml2mathml/latest.svg["Commits since latest",link="https://github.com/metanorma/omml2mathml/releases"]
 
-https://github.com/metanorma/reverse_asciidoctor[reverse_asciidoctor] image:https://img.shields.io/gem/v/reverse_asciidoctor.svg["Gem Version", link="https://rubygems.org/gems/reverse_asciidoctor"]::
-image:https://github.com/metanorma/reverse_asciidoctor/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/reverse_asciidoctor/actions?workflow=macos"]
-image:https://github.com/metanorma/reverse_asciidoctor/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/reverse_asciidoctor/actions?workflow=windows"]
-image:https://github.com/metanorma/reverse_asciidoctor/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/reverse_asciidoctor/actions?workflow=ubuntu"]
-image:https://codeclimate.com/github/metanorma/reverse_asciidoctor/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/reverse_asciidoctor"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/reverse_asciidoctor.svg["Pull Requests", link="https://github.com/metanorma/reverse_asciidoctor/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/reverse_asciidoctor/latest.svg["Commits since latest",link="https://github.com/metanorma/reverse_asciidoctor/releases"]
+https://github.com/metanorma/reverse_adoc[reverse_adoc] image:https://img.shields.io/gem/v/reverse_adoc.svg["Gem Version", link="https://rubygems.org/gems/reverse_adoc"]::
+image:https://github.com/metanorma/reverse_adoc/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/reverse_adoc/actions?workflow=macos"]
+image:https://github.com/metanorma/reverse_adoc/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/reverse_adoc/actions?workflow=windows"]
+image:https://github.com/metanorma/reverse_adoc/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/reverse_adoc/actions?workflow=ubuntu"]
+image:https://codeclimate.com/github/metanorma/reverse_adoc/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/reverse_adoc"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/reverse_adoc.svg["Pull Requests", link="https://github.com/metanorma/reverse_adoc/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/reverse_adoc/latest.svg["Commits since latest",link="https://github.com/metanorma/reverse_adoc/releases"]
 
 https://github.com/metanorma/unicode2latex[unicode2latex] image:https://img.shields.io/gem/v/unicode2latex.svg["Gem Version", link="https://rubygems.org/gems/unicode2latex"]::
 image:https://github.com/metanorma/unicode2latex/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/unicode2latex/actions?workflow=macos"]
