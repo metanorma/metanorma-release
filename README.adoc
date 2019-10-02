@@ -6,8 +6,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 (in dependency order)
 
-https://github.com/metanorma/html2doc[html2doc]::
-image:https://img.shields.io/gem/v/html2doc.svg["Gem Version", link="https://rubygems.org/gems/html2doc"]
+https://github.com/metanorma/html2doc[html2doc] image:https://img.shields.io/gem/v/html2doc.svg["Gem Version", link="https://rubygems.org/gems/html2doc"]::
 image:https://github.com/metanorma/html2doc/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/html2doc/actions?workflow=macos"]
 image:https://github.com/metanorma/html2doc/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/html2doc/actions?workflow=windows"]
 image:https://github.com/metanorma/html2doc/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/html2doc/actions?workflow=ubuntu"]
