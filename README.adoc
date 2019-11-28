@@ -185,39 +185,85 @@ image:https://img.shields.io/github/commits-since/metanorma/metanorma-docker/lat
 == Metanorma document samples
 
 https://github.com/metanorma/mn-samples-iec[mn-samples-iec]::
-image:https://travis-ci.com/metanorma/mn-samples-iec.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-iec"]
+image:https://github.com/metanorma/mn-samples-iec/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-iec/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-iec/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-iec/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-iec/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-iec/actions?workflow=ubuntu"]
+
 https://github.com/metanorma/mn-samples-itu[mn-samples-itu]::
-image:https://travis-ci.com/metanorma/mn-samples-itu.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-itu"]
+image:https://github.com/metanorma/mn-samples-itu/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-itu/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-itu/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-itu/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-itu/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-itu/actions?workflow=ubuntu"]
+
+
 https://github.com/metanorma/mn-samples-unece[mn-samples-unece]::
-image:https://travis-ci.com/metanorma/mn-samples-unece.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-unece"]
+image:https://github.com/metanorma/mn-samples-unece/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-unece/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-unece/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-unece/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-unece/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-unece/actions?workflow=ubuntu"]
+
+
 https://github.com/metanorma/mn-samples-gb[mn-samples-gb]::
-image:https://travis-ci.com/metanorma/mn-samples-gb.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-gb"]
+image:https://github.com/metanorma/mn-samples-gb/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-gb/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-gb/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-gb/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-gb/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-gb/actions?workflow=ubuntu"]
+
+
 https://github.com/metanorma/mn-samples-ogc[mn-samples-ogc]::
-image:https://travis-ci.com/metanorma/mn-samples-ogc.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-ogc"]
+image:https://github.com/metanorma/mn-samples-ogc/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-ogc/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-ogc/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=ubuntu"]
+
+
 https://github.com/metanorma/mn-samples-mpf[mn-samples-mpf]::
-image:https://travis-ci.com/metanorma/mn-samples-mpf.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-mpf"]
+image:https://github.com/metanorma/mn-samples-mpf/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-mpf/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-mpf/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-mpf/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-mpf/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-mpf/actions?workflow=ubuntu"]
+
+
 https://github.com/metanorma/mn-samples-iso[mn-samples-iso]::
-image:https://travis-ci.com/metanorma/mn-samples-iso.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-iso"]
+image:https://github.com/metanorma/mn-samples-iso/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-iso/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-iso/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-iso/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-iso/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-iso/actions?workflow=ubuntu"]
+
+
 https://github.com/metanorma/mn-samples-cc[mn-samples-cc]::
-image:https://travis-ci.com/metanorma/mn-samples-cc.svg["Build Status", link="https://travis-ci.com/metanorma/mn-samples-cc"]
+image:https://github.com/metanorma/mn-samples-cc/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-cc/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-cc/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-cc/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-cc/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-cc/actions?workflow=ubuntu"]
+
+
 
 == Metanorma document templates
 
 https://github.com/metanorma/mn-templates-iso[mn-templates-iso]::
-image:https://travis-ci.com/metanorma/mn-templates-iso.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-iso"]
-https://github.com/metanorma/mn-templates-iec[mn-templates-iec]::
-image:https://travis-ci.com/metanorma/mn-templates-iec.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-iec"]
-https://github.com/metanorma/mn-templates-ogc[mn-templates-ogc]::
-image:https://travis-ci.com/metanorma/mn-templates-ogc.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-ogc"]
-https://github.com/metanorma/mn-templates-csd[mn-templates-csd]::
-image:https://travis-ci.com/metanorma/mn-templates-csd.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-csd"]
-https://github.com/metanorma/mn-templates-ietf[mn-templates-ietf]::
-image:https://travis-ci.com/metanorma/mn-templates-ietf.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-ietf"]
+image:https://github.com/metanorma/mn-templates-iso/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-iso/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-templates-iso/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-iso/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-templates-iso/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-iso/actions?workflow=ubuntu"]
 
-////
+https://github.com/metanorma/mn-templates-iec[mn-templates-iec]::
+image:https://github.com/metanorma/mn-templates-iec/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-iec/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-templates-iec/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-iec/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-templates-iec/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-iec/actions?workflow=ubuntu"]
+
+https://github.com/metanorma/mn-templates-ogc[mn-templates-ogc]::
+image:https://github.com/metanorma/mn-templates-ogc/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-ogc/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-templates-ogc/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-ogc/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-templates-ogc/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-ogc/actions?workflow=ubuntu"]
+
+https://github.com/metanorma/mn-templates-csd[mn-templates-csd]::
+image:https://github.com/metanorma/mn-templates-csd/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-csd/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-templates-csd/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-csd/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-templates-csd/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-csd/actions?workflow=ubuntu"]
+
+https://github.com/metanorma/mn-templates-ietf[mn-templates-ietf]::
+image:https://github.com/metanorma/mn-templates-ietf/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-ietf/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-templates-ietf/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-ietf/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-templates-ietf/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-ietf/actions?workflow=ubuntu"]
+
 mn-templates-itu::
-image:https://travis-ci.com/metanorma/mn-templates-itu.svg["Build Status", link="https://travis-ci.com/metanorma/mn-templates-itu"]
-////
+image:https://github.com/metanorma/mn-templates-itu/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-itu/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-templates-itu/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-itu/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-templates-itu/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-templates-itu/actions?workflow=ubuntu"]
+
 
 
 == Utility / Leaf gems
