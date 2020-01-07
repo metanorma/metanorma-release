@@ -230,6 +230,10 @@ image:https://github.com/metanorma/mn-samples-cc/workflows/macos/badge.svg["Buil
 image:https://github.com/metanorma/mn-samples-cc/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-cc/actions?workflow=windows"]
 image:https://github.com/metanorma/mn-samples-cc/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-cc/actions?workflow=ubuntu"]
 
+https://github.com/metanorma/mn-samples-ietf[mn-samples-ietf]::
+image:https://github.com/metanorma/mn-samples-ietf/workflows/macos/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-ietf/workflows/windows/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-ietf/workflows/ubuntu/badge.svg["Build Status", link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=ubuntu"]
 
 
 == Metanorma document templates
