@@ -1,0 +1,39 @@
+name: Build dashboard
+on: [push]
+
+jobs:
+  readme:
+    name: Build README
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "2.6"
+
+      - name: Install dependencies
+        run: gem install asciidoctor -v "~> 2.0"
+
+      - name: Build release dashboard
+        run: make all
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "open.source@ribose.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Commit release dashboard
+        id: commit
+        run: |
+          mv README.adoc .github/README.adoc
+          git add -f .github/README.adoc
+          git commit -m "Build release dashboard"
+        continue-on-error: true
+
+      - name: Push changes
+        if: success()
+        uses: ad-m/github-push-action@v0.5.0
+        with:
+          branch: ${{ github.ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
