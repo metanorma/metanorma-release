@@ -27,7 +27,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document samples
 
-<% for name in %w[mn-samples-iec mn-samples-itu mn-samples-unece mn-samples-gb mn-samples-ogc mn-samples-mpf mn-samples-iso mn-samples-cc mn-samples-ietf] %>
+<% for name in %w[iec itu unece gb ogc mpf iso cc ietf].map { |n| "mn-samples-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha_macos "metanorma", name %>
 <%= shield_gha_ubuntu "metanorma", name %>
@@ -36,7 +36,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document templates
 
-<% for name in %w[mn-templates-iso mn-templates-iec mn-templates-ogc mn-templates-csd mn-templates-ietf mn-templates-itu] %>
+<% for name in %w[iso iec ogc csd ietf itu].map { |n| "mn-templates-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha_macos "metanorma", name %>
 <%= shield_gha_ubuntu "metanorma", name %>
