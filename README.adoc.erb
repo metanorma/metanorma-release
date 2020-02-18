@@ -7,61 +7,62 @@ WARNING: This repository is for INTERNAL USE ONLY.
 (in dependency order)
 
 <% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-gb metanorma-iec metanorma-acme metanorma-csand metanorma-csd metanorma-ietf metanorma-itu metanorma-m3d metanorma-mpfd metanorma-nist metanorma-ogc metanorma-rsd metanorma-sample metanorma-unece metanorma-vsd metanorma metanorma-cli] %>
-https://github.com/metanorma/<%=name%>[<%=name%>] image:https://img.shields.io/gem/v/<%=name%>.svg["Gem Version", link="https://rubygems.org/gems/<%=name%>"]::
-image:https://github.com/metanorma/<%=name%>/workflows/macos/badge.svg["Build Status (macOS)", link="https://github.com/metanorma/<%=name%>/actions?workflow=macos"]
-image:https://github.com/metanorma/<%=name%>/workflows/windows/badge.svg["Build Status (Windows)", link="https://github.com/metanorma/<%=name%>/actions?workflow=windows"]
-image:https://github.com/metanorma/<%=name%>/workflows/ubuntu/badge.svg["Build Status (Ubuntu)", link="https://github.com/metanorma/<%=name%>/actions?workflow=ubuntu"]
-image:https://codeclimate.com/github/metanorma/<%=name%>/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/<%=name%>"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/<%=name%>.svg["Pull Requests", link="https://github.com/metanorma/<%=name%>/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/<%=name%>/latest.svg["Commits since latest",link="https://github.com/metanorma/<%=name%>/releases"]
+<%= github_link "metanorma", name %> <%= shield_gem name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha_windows "metanorma", name %>
+<%= shield_code_climate "metanorma", name %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
 <% end %>
 
-https://github.com/metanorma/metanorma-docker[metanorma-docker]::
-image:https://travis-ci.com/metanorma/metanorma-docker.svg?branch=master["Build Status", link="https://travis-ci.com/metanorma/metanorma-docker"]
-image:https://ci.appveyor.com/api/projects/status/ghb0adudv6vrqw6o?svg=true["Appveyor Build Status",link="https://ci.appveyor.com/project/Metanorma/metanorma-docker"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-docker.svg["Pull Requests", link="https://github.com/metanorma/metanorma-docker/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-docker/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-docker/releases"]
+<%= github_link "metanorma", "metanorma-docker" %>::
+<%= shield("https://travis-ci.com/metanorma/metanorma-docker.svg?branch=master", link: "https://travis-ci.com/metanorma/metanorma-docker", alt: "Build Status") %>
+<%= shield("https://ci.appveyor.com/api/projects/status/ghb0adudv6vrqw6o?svg=true", link: "https://ci.appveyor.com/project/Metanorma/metanorma-docker", alt: "Appveyor Build Status") %>
+<%= shield_pull_requests "metanorma", "metanorma-docker" %>
+<%= shield_pull_requests "metanorma", "metanorma-docker" %>
+<%= shield_commits_since "metanorma", "metanorma-docker" %>
 
 == Metanorma document samples
 
 <% for name in %w[mn-samples-iec mn-samples-itu mn-samples-unece mn-samples-gb mn-samples-ogc mn-samples-mpf mn-samples-iso mn-samples-cc mn-samples-ietf] %>
-https://github.com/metanorma/<%=name%>[<%=name%>]::
-image:https://github.com/metanorma/<%=name%>/workflows/macos/badge.svg["Build Status (macOS)", link="https://github.com/metanorma/<%=name%>/actions?workflow=macos"]
-image:https://github.com/metanorma/<%=name%>/workflows/windows/badge.svg["Build Status (Windows)", link="https://github.com/metanorma/<%=name%>/actions?workflow=windows"]
-image:https://github.com/metanorma/<%=name%>/workflows/ubuntu/badge.svg["Build Status (Ubuntu)", link="https://github.com/metanorma/<%=name%>/actions?workflow=ubuntu"]
+<%= github_link "metanorma", name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha_windows "metanorma", name %>
 <% end %>
 
 == Metanorma document templates
 
 <% for name in %w[mn-templates-iso mn-templates-iec mn-templates-ogc mn-templates-csd mn-templates-ietf mn-templates-itu] %>
-https://github.com/metanorma/<%=name%>[<%=name%>]::
-image:https://github.com/metanorma/<%=name%>/workflows/macos/badge.svg["Build Status (macOS)", link="https://github.com/metanorma/<%=name%>/actions?workflow=macos"]
-image:https://github.com/metanorma/<%=name%>/workflows/windows/badge.svg["Build Status (Windows)", link="https://github.com/metanorma/<%=name%>/actions?workflow=windows"]
-image:https://github.com/metanorma/<%=name%>/workflows/ubuntu/badge.svg["Build Status (Ubuntu)", link="https://github.com/metanorma/<%=name%>/actions?workflow=ubuntu"]
+<%= github_link "metanorma", name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha_windows "metanorma", name %>
 <% end %>
 
 == Utility / Leaf gems
 
 <% for name in %w[cnccs gb-agencies iev isoics mathml2asciimath omml2mathml reverse_adoc unicode2latex] %>
-https://github.com/metanorma/<%=name%>[<%=name%>] image:https://img.shields.io/gem/v/<%=name%>.svg["Gem Version", link="https://rubygems.org/gems/<%=name%>"]::
-image:https://github.com/metanorma/<%=name%>/workflows/macos/badge.svg["Build Status (macOS)", link="https://github.com/metanorma/<%=name%>/actions?workflow=macos"]
-image:https://github.com/metanorma/<%=name%>/workflows/windows/badge.svg["Build Status (Windows)", link="https://github.com/metanorma/<%=name%>/actions?workflow=windows"]
-image:https://github.com/metanorma/<%=name%>/workflows/ubuntu/badge.svg["Build Status (Ubuntu)", link="https://github.com/metanorma/<%=name%>/actions?workflow=ubuntu"]
-image:https://codeclimate.com/github/metanorma/<%=name%>/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/<%=name%>"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/<%=name%>.svg["Pull Requests", link="https://github.com/metanorma/<%=name%>/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/<%=name%>/latest.svg["Commits since latest",link="https://github.com/metanorma/<%=name%>/releases"]
+<%= github_link "metanorma", name %> <%= shield_gem name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha_windows "metanorma", name %>
+<%= shield_code_climate "metanorma", name %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
 <% end %>
 
 == Relaton gems
 
 <% for name in %w[relaton-bib relaton-itu relaton-gb relaton-iec relaton-ietf relaton-iso relaton-iso-bib relaton-nist relaton-ogc relaton-iev relaton-cli relaton] %>
-https://github.com/relaton/<%=name%>[<%=name%>] image:https://img.shields.io/gem/v/<%=name%>.svg["Gem Version", link="https://rubygems.org/gems/<%=name%>"]::
-image:https://github.com/relaton/<%=name%>/workflows/macos/badge.svg["Build Status (macOS)", link="https://github.com/relaton/<%=name%>/actions?workflow=macos"]
-image:https://github.com/relaton/<%=name%>/workflows/windows/badge.svg["Build Status (Windows)", link="https://github.com/relaton/<%=name%>/actions?workflow=windows"]
-image:https://github.com/relaton/<%=name%>/workflows/ubuntu/badge.svg["Build Status (Ubuntu)", link="https://github.com/relaton/<%=name%>/actions?workflow=ubuntu"]
-image:https://codeclimate.com/github/relaton/<%=name%>/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/<%=name%>"]
-image:https://img.shields.io/github/issues-pr-raw/relaton/<%=name%>.svg["Pull Requests", link="https://github.com/relaton/<%=name%>/pulls"]
-image:https://img.shields.io/github/commits-since/relaton/<%=name%>/latest.svg["Commits since latest",link="https://github.com/relaton/<%=name%>/releases"]
+<%= github_link "relaton", name %> <%= shield_gem name %>::
+<%= shield_gha_macos "relaton", name %>
+<%= shield_gha_ubuntu "relaton", name %>
+<%= shield_gha_windows "relaton", name %>
+<%= shield_code_climate "relaton", name %>
+<%= shield_pull_requests "relaton", name %>
+<%= shield_commits_since "relaton", name %>
 <% end %>
 
 == Purpose
