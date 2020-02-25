@@ -1,0 +1,135 @@
+= Metanorma Release repository
+
+<%= do_not_edit_generated_file %>
+
+WARNING: This repository is for INTERNAL USE ONLY.
+
+== Metanorma gems
+
+(in dependency order)
+
+<% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-gb metanorma-iec metanorma-acme metanorma-csand metanorma-csd metanorma-ietf metanorma-itu metanorma-m3d metanorma-mpfd metanorma-nist metanorma-ogc metanorma-rsd metanorma-sample metanorma-unece metanorma-vsd metanorma metanorma-cli] %>
+<%= github_link "metanorma", name %> <%= shield_gem name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha_windows "metanorma", name %>
+<%= shield_code_climate "metanorma", name %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
+
+<%= github_link "metanorma", "metanorma-docker" %>::
+<%= shield("https://travis-ci.com/metanorma/metanorma-docker.svg?branch=master", link: "https://travis-ci.com/metanorma/metanorma-docker", alt: "Build Status") %>
+<%= shield("https://ci.appveyor.com/api/projects/status/ghb0adudv6vrqw6o?svg=true", link: "https://ci.appveyor.com/project/Metanorma/metanorma-docker", alt: "Appveyor Build Status") %>
+<%= shield_pull_requests "metanorma", "metanorma-docker" %>
+<%= shield_pull_requests "metanorma", "metanorma-docker" %>
+<%= shield_commits_since "metanorma", "metanorma-docker" %>
+
+== Metanorma document samples
+
+<% for name in %w[iec itu unece gb ogc mpf iso cc ietf].map { |n| "mn-samples-#{n}" } %>
+<%= github_link "metanorma", name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha_windows "metanorma", name %>
+<% end %>
+
+== Metanorma document templates
+
+<% for name in %w[iso iec ogc csd ietf itu].map { |n| "mn-templates-#{n}" } %>
+<%= github_link "metanorma", name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha_windows "metanorma", name %>
+<% end %>
+
+== Utility / Leaf gems
+
+<% for name in %w[cnccs gb-agencies iev isoics mathml2asciimath omml2mathml reverse_adoc unicode2latex] %>
+<%= github_link "metanorma", name %> <%= shield_gem name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha_windows "metanorma", name %>
+<%= shield_code_climate "metanorma", name %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
+
+== Relaton gems
+
+<% for name in %w[relaton-bib relaton-itu relaton-gb relaton-iec relaton-ietf relaton-iso relaton-iso-bib relaton-nist relaton-ogc relaton-iev relaton-cli relaton] %>
+<%= github_link "relaton", name %> <%= shield_gem name %>::
+<%= shield_gha_macos "relaton", name %>
+<%= shield_gha_ubuntu "relaton", name %>
+<%= shield_gha_windows "relaton", name %>
+<%= shield_code_climate "relaton", name %>
+<%= shield_pull_requests "relaton", name %>
+<%= shield_commits_since "relaton", name %>
+<% end %>
+
+== Purpose
+
+Today Metanorma spans over 50 gems. Changes to underlying gems, such as https://github.com/metanorma/metanorma[`metanorma`] can cause many of the downstream gems to need upgrading.
+
+We use the https://github.com/metanorma/lapidist[`lapidist`] gem to synchronize the releases.
+
+
+== Resources
+
+This repo https://github.com/metanorma/metanorma-release[`metanorma-release`] is used as the main building environment.
+
+It submodules *all* metanorma gems for the release process, and also maintains a gem dependency tree within metanorma (should be easy to automate, or worse to worse manual...).
+
+
+== Flow
+
+This is really a "`composite-git-flow`" kind of process. Maybe it's called `git gush` or `git cascade`.
+
+The typical scenario is:
+
+. A flavor gem needs enhancing (e.g. ISO)
+. `metanorma-iso` forces change on a basic gem, like `isodoc`
+. An `isodoc` update means the testing on all downstream gems needs to be updated
+
+This is how the Metanorma release flow will look like.
+
+
+=== Commands available
+
+[source,sh]
+----
+$ bundle exec lapidist start
+----
+
+
+
+=== Updating code and integrated testing
+
+. Go to this `metanorma-release` repository
+
+. Run a script to create feature branches in all gems.
+
+. Do the necessary work in the submodule'd (in this repo) `isodoc` and `metanorma-iso`
+
+. Run a script that performs tests on all the gems at once using the newly created feature branches
+
+.. (alt) if you want Travis to test for you, push the `metanorma-release` repository, and Travis will build for you
+
+. When all the gems pass, run a script to make PRs to every repository. If the feature branch for a gem is empty, the script will ignore it.
+
+. Merge PRs by hand or by script (into master or a release branch)
+
+
+=== Releasing
+
+. When a release branch is ready (for all gems), run a script to:
+.. Bump version of those gems (`VERSION` variable in code)
+.. Update the ``Gemfile``s (remove feature branches)
+.. Update ``gemspec``s to lock versions
+
+. Issue PRs for those gems to merge their release branches into `master`.
+
+. Merge the release PRs by hand or by script.
+
+Ideally, we want to update the base gems first, then the immediately dependent gems, and so forth to ensure that the builds always pass.
+
