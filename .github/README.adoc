@@ -144,14 +144,6 @@ image:https://codeclimate.com/github/metanorma/metanorma-rsd/badges/gpa.svg["Cod
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-rsd.svg["Pull Requests",link="https://github.com/metanorma/metanorma-rsd/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-rsd/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-rsd/releases"]
 
-https://github.com/metanorma/metanorma-sample[metanorma-sample] image:https://img.shields.io/gem/v/metanorma-sample.svg["Gem Version",link="https://rubygems.org/gems/metanorma-sample"]::
-image:https://github.com/metanorma/metanorma-sample/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-sample/actions?workflow=macos"]
-image:https://github.com/metanorma/metanorma-sample/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-sample/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/metanorma-sample/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-sample/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/metanorma-sample/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-sample"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-sample.svg["Pull Requests",link="https://github.com/metanorma/metanorma-sample/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-sample/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-sample/releases"]
-
 https://github.com/metanorma/metanorma-unece[metanorma-unece] image:https://img.shields.io/gem/v/metanorma-unece.svg["Gem Version",link="https://rubygems.org/gems/metanorma-unece"]::
 image:https://github.com/metanorma/metanorma-unece/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-unece/actions?workflow=macos"]
 image:https://github.com/metanorma/metanorma-unece/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-unece/actions?workflow=ubuntu"]
