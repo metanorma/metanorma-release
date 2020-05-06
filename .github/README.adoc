@@ -88,6 +88,14 @@ image:https://codeclimate.com/github/metanorma/metanorma-vsd/badges/gpa.svg["Cod
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-vsd.svg["Pull Requests",link="https://github.com/metanorma/metanorma-vsd/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-vsd/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-vsd/releases"]
 
+https://github.com/metanorma/metanorma-iho[metanorma-iho] image:https://img.shields.io/gem/v/metanorma-iho.svg["Gem Version",link="https://rubygems.org/gems/metanorma-iho"]::
+image:https://github.com/metanorma/metanorma-iho/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=macos"]
+image:https://github.com/metanorma/metanorma-iho/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/metanorma-iho/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/metanorma-iho/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-iho"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-iho.svg["Pull Requests",link="https://github.com/metanorma/metanorma-iho/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-iho/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-iho/releases"]
+
 https://github.com/metanorma/metanorma-csa[metanorma-csa] image:https://img.shields.io/gem/v/metanorma-csa.svg["Gem Version",link="https://rubygems.org/gems/metanorma-csa"]::
 image:https://github.com/metanorma/metanorma-csa/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-csa/actions?workflow=macos"]
 image:https://github.com/metanorma/metanorma-csa/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-csa/actions?workflow=ubuntu"]
@@ -111,14 +119,6 @@ image:https://github.com/metanorma/metanorma-ietf/workflows/windows/badge.svg["B
 image:https://codeclimate.com/github/metanorma/metanorma-ietf/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-ietf"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-ietf.svg["Pull Requests",link="https://github.com/metanorma/metanorma-ietf/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-ietf/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-ietf/releases"]
-
-https://github.com/metanorma/metanorma-iho[metanorma-iho] image:https://img.shields.io/gem/v/metanorma-iho.svg["Gem Version",link="https://rubygems.org/gems/metanorma-iho"]::
-image:https://github.com/metanorma/metanorma-iho/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=macos"]
-image:https://github.com/metanorma/metanorma-iho/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/metanorma-iho/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/metanorma-iho/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-iho"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-iho.svg["Pull Requests",link="https://github.com/metanorma/metanorma-iho/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-iho/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-iho/releases"]
 
 https://github.com/metanorma/metanorma-itu[metanorma-itu] image:https://img.shields.io/gem/v/metanorma-itu.svg["Gem Version",link="https://rubygems.org/gems/metanorma-itu"]::
 image:https://github.com/metanorma/metanorma-itu/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-itu/actions?workflow=macos"]
@@ -239,6 +239,11 @@ https://github.com/metanorma/mn-samples-ietf[mn-samples-ietf]::
 image:https://github.com/metanorma/mn-samples-ietf/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=macos"]
 image:https://github.com/metanorma/mn-samples-ietf/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=ubuntu"]
 image:https://github.com/metanorma/mn-samples-ietf/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=windows"]
+
+https://github.com/metanorma/mn-samples-iho[mn-samples-iho]::
+image:https://github.com/metanorma/mn-samples-iho/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-iho/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn-samples-iho/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=windows"]
 
 
 == Metanorma document templates
