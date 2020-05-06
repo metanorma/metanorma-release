@@ -8,7 +8,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 (in dependency order)
 
-<% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-generic metanorma-gb metanorma-iec metanorma-rsd metanorma-vsd metanorma-csa metanorma-csd metanorma-ietf metanorma-iho metanorma-itu metanorma-m3d metanorma-mpfd metanorma-nist metanorma-ogc metanorma-un metanorma metanorma-cli] %>
+<% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-generic metanorma-gb metanorma-iec metanorma-rsd metanorma-vsd metanorma-iho metanorma-csa metanorma-csd metanorma-ietf metanorma-itu metanorma-m3d metanorma-mpfd metanorma-nist metanorma-ogc metanorma-un metanorma metanorma-cli] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_macos "metanorma", name %>
 <%= shield_gha_ubuntu "metanorma", name %>
@@ -27,7 +27,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document samples
 
-<% for name in %w[iec itu unece gb ogc mpf iso cc ietf].map { |n| "mn-samples-#{n}" } %>
+<% for name in %w[iec itu unece gb ogc mpf iso cc ietf iho].map { |n| "mn-samples-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha_macos "metanorma", name %>
 <%= shield_gha_ubuntu "metanorma", name %>
