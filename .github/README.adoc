@@ -112,6 +112,14 @@ image:https://codeclimate.com/github/metanorma/metanorma-ietf/badges/gpa.svg["Co
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-ietf.svg["Pull Requests",link="https://github.com/metanorma/metanorma-ietf/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-ietf/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-ietf/releases"]
 
+https://github.com/metanorma/metanorma-iho[metanorma-iho] image:https://img.shields.io/gem/v/metanorma-iho.svg["Gem Version",link="https://rubygems.org/gems/metanorma-iho"]::
+image:https://github.com/metanorma/metanorma-iho/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=macos"]
+image:https://github.com/metanorma/metanorma-iho/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/metanorma-iho/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/metanorma-iho/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-iho"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-iho.svg["Pull Requests",link="https://github.com/metanorma/metanorma-iho/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-iho/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-iho/releases"]
+
 https://github.com/metanorma/metanorma-itu[metanorma-itu] image:https://img.shields.io/gem/v/metanorma-itu.svg["Gem Version",link="https://rubygems.org/gems/metanorma-itu"]::
 image:https://github.com/metanorma/metanorma-itu/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-itu/actions?workflow=macos"]
 image:https://github.com/metanorma/metanorma-itu/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-itu/actions?workflow=ubuntu"]
