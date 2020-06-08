@@ -347,14 +347,6 @@ image:https://codeclimate.com/github/metanorma/unicode2latex/badges/gpa.svg["Cod
 image:https://img.shields.io/github/issues-pr-raw/metanorma/unicode2latex.svg["Pull Requests",link="https://github.com/metanorma/unicode2latex/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/unicode2latex/latest.svg["Commits since latest",link="https://github.com/metanorma/unicode2latex/releases"]
 
-https://github.com/metanorma/mn2sts[mn2sts] image:https://img.shields.io/gem/v/mn2sts.svg["Gem Version",link="https://rubygems.org/gems/mn2sts"]::
-image:https://github.com/metanorma/mn2sts/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn2sts/actions?workflow=macos"]
-image:https://github.com/metanorma/mn2sts/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn2sts/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn2sts/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn2sts/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/mn2sts/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2sts"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2sts.svg["Pull Requests",link="https://github.com/metanorma/mn2sts/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/mn2sts/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2sts/releases"]
-
 https://github.com/metanorma/mn2sts-ruby[mn2sts-ruby] image:https://img.shields.io/gem/v/mn2sts-ruby.svg["Gem Version",link="https://rubygems.org/gems/mn2sts-ruby"]::
 image:https://github.com/metanorma/mn2sts-ruby/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn2sts-ruby/actions?workflow=macos"]
 image:https://github.com/metanorma/mn2sts-ruby/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn2sts-ruby/actions?workflow=ubuntu"]
@@ -362,14 +354,6 @@ image:https://github.com/metanorma/mn2sts-ruby/workflows/windows/badge.svg["Buil
 image:https://codeclimate.com/github/metanorma/mn2sts-ruby/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2sts-ruby"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2sts-ruby.svg["Pull Requests",link="https://github.com/metanorma/mn2sts-ruby/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mn2sts-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2sts-ruby/releases"]
-
-https://github.com/metanorma/packed-mn[packed-mn] image:https://img.shields.io/gem/v/packed-mn.svg["Gem Version",link="https://rubygems.org/gems/packed-mn"]::
-image:https://github.com/metanorma/packed-mn/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/packed-mn/actions?workflow=macos"]
-image:https://github.com/metanorma/packed-mn/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/packed-mn/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/packed-mn/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/packed-mn/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/packed-mn/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/packed-mn"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/packed-mn.svg["Pull Requests",link="https://github.com/metanorma/packed-mn/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/packed-mn/latest.svg["Commits since latest",link="https://github.com/metanorma/packed-mn/releases"]
 
 https://github.com/metanorma/mn2pdf[mn2pdf] image:https://img.shields.io/gem/v/mn2pdf.svg["Gem Version",link="https://rubygems.org/gems/mn2pdf"]::
 image:https://github.com/metanorma/mn2pdf/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn2pdf/actions?workflow=macos"]
