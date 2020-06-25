@@ -72,21 +72,21 @@ image:https://codeclimate.com/github/metanorma/metanorma-iec/badges/gpa.svg["Cod
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-iec.svg["Pull Requests",link="https://github.com/metanorma/metanorma-iec/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-iec/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-iec/releases"]
 
-https://github.com/metanorma/metanorma-rsd[metanorma-rsd] image:https://img.shields.io/gem/v/metanorma-rsd.svg["Gem Version",link="https://rubygems.org/gems/metanorma-rsd"]::
-image:https://github.com/metanorma/metanorma-rsd/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-rsd/actions?workflow=macos"]
-image:https://github.com/metanorma/metanorma-rsd/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-rsd/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/metanorma-rsd/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-rsd/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/metanorma-rsd/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-rsd"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-rsd.svg["Pull Requests",link="https://github.com/metanorma/metanorma-rsd/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-rsd/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-rsd/releases"]
+https://github.com/metanorma/metanorma-ribose[metanorma-ribose] image:https://img.shields.io/gem/v/metanorma-ribose.svg["Gem Version",link="https://rubygems.org/gems/metanorma-ribose"]::
+image:https://github.com/metanorma/metanorma-ribose/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-ribose/actions?workflow=macos"]
+image:https://github.com/metanorma/metanorma-ribose/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-ribose/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/metanorma-ribose/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-ribose/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/metanorma-ribose/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-ribose"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-ribose.svg["Pull Requests",link="https://github.com/metanorma/metanorma-ribose/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-ribose/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-ribose/releases"]
 
-https://github.com/metanorma/metanorma-vsd[metanorma-vsd] image:https://img.shields.io/gem/v/metanorma-vsd.svg["Gem Version",link="https://rubygems.org/gems/metanorma-vsd"]::
-image:https://github.com/metanorma/metanorma-vsd/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-vsd/actions?workflow=macos"]
-image:https://github.com/metanorma/metanorma-vsd/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-vsd/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/metanorma-vsd/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-vsd/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/metanorma-vsd/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-vsd"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-vsd.svg["Pull Requests",link="https://github.com/metanorma/metanorma-vsd/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-vsd/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-vsd/releases"]
+https://github.com/metanorma/metanorma-vg[metanorma-vg] image:https://img.shields.io/gem/v/metanorma-vg.svg["Gem Version",link="https://rubygems.org/gems/metanorma-vg"]::
+image:https://github.com/metanorma/metanorma-vg/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-vg/actions?workflow=macos"]
+image:https://github.com/metanorma/metanorma-vg/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-vg/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/metanorma-vg/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-vg/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/metanorma-vg/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-vg"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-vg.svg["Pull Requests",link="https://github.com/metanorma/metanorma-vg/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-vg/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-vg/releases"]
 
 https://github.com/metanorma/metanorma-iho[metanorma-iho] image:https://img.shields.io/gem/v/metanorma-iho.svg["Gem Version",link="https://rubygems.org/gems/metanorma-iho"]::
 image:https://github.com/metanorma/metanorma-iho/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=macos"]
@@ -104,13 +104,13 @@ image:https://codeclimate.com/github/metanorma/metanorma-csa/badges/gpa.svg["Cod
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-csa.svg["Pull Requests",link="https://github.com/metanorma/metanorma-csa/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-csa/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-csa/releases"]
 
-https://github.com/metanorma/metanorma-csd[metanorma-csd] image:https://img.shields.io/gem/v/metanorma-csd.svg["Gem Version",link="https://rubygems.org/gems/metanorma-csd"]::
-image:https://github.com/metanorma/metanorma-csd/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-csd/actions?workflow=macos"]
-image:https://github.com/metanorma/metanorma-csd/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-csd/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/metanorma-csd/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-csd/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/metanorma-csd/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-csd"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-csd.svg["Pull Requests",link="https://github.com/metanorma/metanorma-csd/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-csd/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-csd/releases"]
+https://github.com/metanorma/metanorma-cc[metanorma-cc] image:https://img.shields.io/gem/v/metanorma-cc.svg["Gem Version",link="https://rubygems.org/gems/metanorma-cc"]::
+image:https://github.com/metanorma/metanorma-cc/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-cc/actions?workflow=macos"]
+image:https://github.com/metanorma/metanorma-cc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-cc/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/metanorma-cc/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-cc/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/metanorma-cc/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-cc"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-cc.svg["Pull Requests",link="https://github.com/metanorma/metanorma-cc/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-cc/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-cc/releases"]
 
 https://github.com/metanorma/metanorma-ietf[metanorma-ietf] image:https://img.shields.io/gem/v/metanorma-ietf.svg["Gem Version",link="https://rubygems.org/gems/metanorma-ietf"]::
 image:https://github.com/metanorma/metanorma-ietf/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-ietf/actions?workflow=macos"]
@@ -128,21 +128,21 @@ image:https://codeclimate.com/github/metanorma/metanorma-itu/badges/gpa.svg["Cod
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-itu.svg["Pull Requests",link="https://github.com/metanorma/metanorma-itu/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-itu/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-itu/releases"]
 
-https://github.com/metanorma/metanorma-m3d[metanorma-m3d] image:https://img.shields.io/gem/v/metanorma-m3d.svg["Gem Version",link="https://rubygems.org/gems/metanorma-m3d"]::
-image:https://github.com/metanorma/metanorma-m3d/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-m3d/actions?workflow=macos"]
-image:https://github.com/metanorma/metanorma-m3d/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-m3d/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/metanorma-m3d/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-m3d/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/metanorma-m3d/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-m3d"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-m3d.svg["Pull Requests",link="https://github.com/metanorma/metanorma-m3d/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-m3d/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-m3d/releases"]
+https://github.com/metanorma/metanorma-m3aawg[metanorma-m3aawg] image:https://img.shields.io/gem/v/metanorma-m3aawg.svg["Gem Version",link="https://rubygems.org/gems/metanorma-m3aawg"]::
+image:https://github.com/metanorma/metanorma-m3aawg/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-m3aawg/actions?workflow=macos"]
+image:https://github.com/metanorma/metanorma-m3aawg/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-m3aawg/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/metanorma-m3aawg/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-m3aawg/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/metanorma-m3aawg/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-m3aawg"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-m3aawg.svg["Pull Requests",link="https://github.com/metanorma/metanorma-m3aawg/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-m3aawg/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-m3aawg/releases"]
 
-https://github.com/metanorma/metanorma-mpfd[metanorma-mpfd] image:https://img.shields.io/gem/v/metanorma-mpfd.svg["Gem Version",link="https://rubygems.org/gems/metanorma-mpfd"]::
-image:https://github.com/metanorma/metanorma-mpfd/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-mpfd/actions?workflow=macos"]
-image:https://github.com/metanorma/metanorma-mpfd/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-mpfd/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/metanorma-mpfd/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-mpfd/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/metanorma-mpfd/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-mpfd"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-mpfd.svg["Pull Requests",link="https://github.com/metanorma/metanorma-mpfd/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-mpfd/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-mpfd/releases"]
+https://github.com/metanorma/metanorma-mpfa[metanorma-mpfa] image:https://img.shields.io/gem/v/metanorma-mpfa.svg["Gem Version",link="https://rubygems.org/gems/metanorma-mpfa"]::
+image:https://github.com/metanorma/metanorma-mpfa/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-mpfa/actions?workflow=macos"]
+image:https://github.com/metanorma/metanorma-mpfa/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-mpfa/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/metanorma-mpfa/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/metanorma-mpfa/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/metanorma-mpfa/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-mpfa"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-mpfa.svg["Pull Requests",link="https://github.com/metanorma/metanorma-mpfa/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-mpfa/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-mpfa/releases"]
 
 https://github.com/metanorma/metanorma-nist[metanorma-nist] image:https://img.shields.io/gem/v/metanorma-nist.svg["Gem Version",link="https://rubygems.org/gems/metanorma-nist"]::
 image:https://github.com/metanorma/metanorma-nist/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-nist/actions?workflow=macos"]
@@ -220,10 +220,10 @@ image:https://github.com/metanorma/mn-samples-ogc/workflows/macos/badge.svg["Bui
 image:https://github.com/metanorma/mn-samples-ogc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=ubuntu"]
 image:https://github.com/metanorma/mn-samples-ogc/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=windows"]
 
-https://github.com/metanorma/mn-samples-mpf[mn-samples-mpf]::
-image:https://github.com/metanorma/mn-samples-mpf/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-mpf/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-mpf/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-mpf/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-mpf/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-mpf/actions?workflow=windows"]
+https://github.com/metanorma/mn-samples-mpfa[mn-samples-mpfa]::
+image:https://github.com/metanorma/mn-samples-mpfa/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-mpfa/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-mpfa/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-mpfa/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn-samples-mpfa/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-mpfa/actions?workflow=windows"]
 
 https://github.com/metanorma/mn-samples-iso[mn-samples-iso]::
 image:https://github.com/metanorma/mn-samples-iso/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-iso/actions?workflow=macos"]
@@ -264,10 +264,10 @@ image:https://github.com/metanorma/mn-templates-ogc/workflows/macos/badge.svg["B
 image:https://github.com/metanorma/mn-templates-ogc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-templates-ogc/actions?workflow=ubuntu"]
 image:https://github.com/metanorma/mn-templates-ogc/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-templates-ogc/actions?workflow=windows"]
 
-https://github.com/metanorma/mn-templates-csd[mn-templates-csd]::
-image:https://github.com/metanorma/mn-templates-csd/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-templates-csd/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-templates-csd/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-templates-csd/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-templates-csd/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-templates-csd/actions?workflow=windows"]
+https://github.com/metanorma/mn-templates-cc[mn-templates-cc]::
+image:https://github.com/metanorma/mn-templates-cc/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-templates-cc/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-templates-cc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-templates-cc/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn-templates-cc/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-templates-cc/actions?workflow=windows"]
 
 https://github.com/metanorma/mn-templates-ietf[mn-templates-ietf]::
 image:https://github.com/metanorma/mn-templates-ietf/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-templates-ietf/actions?workflow=macos"]
