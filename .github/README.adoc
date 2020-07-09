@@ -245,6 +245,21 @@ image:https://github.com/metanorma/mn-samples-iho/workflows/macos/badge.svg["Bui
 image:https://github.com/metanorma/mn-samples-iho/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=ubuntu"]
 image:https://github.com/metanorma/mn-samples-iho/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=windows"]
 
+https://github.com/metanorma/mn-samples-nist[mn-samples-nist]::
+image:https://github.com/metanorma/mn-samples-nist/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-nist/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn-samples-nist/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=windows"]
+
+https://github.com/metanorma/mn-samples-csa[mn-samples-csa]::
+image:https://github.com/metanorma/mn-samples-csa/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-csa/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn-samples-csa/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=windows"]
+
+https://github.com/metanorma/mn-samples-m3aawg[mn-samples-m3aawg]::
+image:https://github.com/metanorma/mn-samples-m3aawg/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-m3aawg/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn-samples-m3aawg/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=windows"]
+
 
 == Metanorma document templates
 
