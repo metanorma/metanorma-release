@@ -346,6 +346,14 @@ image:https://codeclimate.com/github/metanorma/omml2mathml/badges/gpa.svg["Code 
 image:https://img.shields.io/github/issues-pr-raw/metanorma/omml2mathml.svg["Pull Requests",link="https://github.com/metanorma/omml2mathml/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/omml2mathml/latest.svg["Commits since latest",link="https://github.com/metanorma/omml2mathml/releases"]
 
+https://github.com/metanorma/latexmath[latexmath] image:https://img.shields.io/gem/v/latexmath.svg["Gem Version",link="https://rubygems.org/gems/latexmath"]::
+image:https://github.com/metanorma/latexmath/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/latexmath/actions?workflow=macos"]
+image:https://github.com/metanorma/latexmath/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/latexmath/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/latexmath/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/latexmath/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/latexmath/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/latexmath"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/latexmath.svg["Pull Requests",link="https://github.com/metanorma/latexmath/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/latexmath/latest.svg["Commits since latest",link="https://github.com/metanorma/latexmath/releases"]
+
 https://github.com/metanorma/reverse_adoc[reverse_adoc] image:https://img.shields.io/gem/v/reverse_adoc.svg["Gem Version",link="https://rubygems.org/gems/reverse_adoc"]::
 image:https://github.com/metanorma/reverse_adoc/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/reverse_adoc/actions?workflow=macos"]
 image:https://github.com/metanorma/reverse_adoc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/reverse_adoc/actions?workflow=ubuntu"]
