@@ -400,6 +400,26 @@ image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf.svg["Pull Req
 image:https://img.shields.io/github/commits-since/metanorma/mn2pdf/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf/releases"]
 
 
+== Plurimath gems
+
+
+https://github.com/plurimath/latexmath[latexmath] image:https://img.shields.io/gem/v/latexmath.svg["Gem Version",link="https://rubygems.org/gems/latexmath"]::
+image:https://github.com/plurimath/latexmath/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/plurimath/latexmath/actions?workflow=macos"]
+image:https://github.com/plurimath/latexmath/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/plurimath/latexmath/actions?workflow=ubuntu"]
+image:https://github.com/plurimath/latexmath/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/plurimath/latexmath/actions?workflow=windows"]
+image:https://codeclimate.com/github/plurimath/latexmath/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/latexmath"]
+image:https://img.shields.io/github/issues-pr-raw/plurimath/latexmath.svg["Pull Requests",link="https://github.com/plurimath/latexmath/pulls"]
+image:https://img.shields.io/github/commits-since/plurimath/latexmath/latest.svg["Commits since latest",link="https://github.com/plurimath/latexmath/releases"]
+
+https://github.com/plurimath/plane1converter[plane1converter] image:https://img.shields.io/gem/v/plane1converter.svg["Gem Version",link="https://rubygems.org/gems/plane1converter"]::
+image:https://github.com/plurimath/plane1converter/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/plurimath/plane1converter/actions?workflow=macos"]
+image:https://github.com/plurimath/plane1converter/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/plurimath/plane1converter/actions?workflow=ubuntu"]
+image:https://github.com/plurimath/plane1converter/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/plurimath/plane1converter/actions?workflow=windows"]
+image:https://codeclimate.com/github/plurimath/plane1converter/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/plane1converter"]
+image:https://img.shields.io/github/issues-pr-raw/plurimath/plane1converter.svg["Pull Requests",link="https://github.com/plurimath/plane1converter/pulls"]
+image:https://img.shields.io/github/commits-since/plurimath/plane1converter/latest.svg["Commits since latest",link="https://github.com/plurimath/plane1converter/releases"]
+
+
 == Relaton gems
 
 
