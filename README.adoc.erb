@@ -55,6 +55,18 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "metanorma", name %>
 <% end %>
 
+== Plurimath gems
+
+<% for name in %w[latexmath plane1converter] %>
+<%= github_link "plurimath", name %> <%= shield_gem name %>::
+<%= shield_gha_macos "plurimath", name %>
+<%= shield_gha_ubuntu "plurimath", name %>
+<%= shield_gha_windows "plurimath", name %>
+<%= shield_code_climate "plurimath", name %>
+<%= shield_pull_requests "plurimath", name %>
+<%= shield_commits_since "plurimath", name %>
+<% end %>
+
 == Relaton gems
 
 <% for name in %w[relaton-bib relaton-itu relaton-gb relaton-iec relaton-ietf relaton-iso relaton-iso-bib relaton-nist relaton-ogc relaton-iev relaton-cli relaton] %>
