@@ -351,14 +351,6 @@ image:https://codeclimate.com/github/metanorma/reverse_adoc/badges/gpa.svg["Code
 image:https://img.shields.io/github/issues-pr-raw/metanorma/reverse_adoc.svg["Pull Requests",link="https://github.com/metanorma/reverse_adoc/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/reverse_adoc/latest.svg["Commits since latest",link="https://github.com/metanorma/reverse_adoc/releases"]
 
-https://github.com/metanorma/unicode2latex[unicode2latex] image:https://img.shields.io/gem/v/unicode2latex.svg["Gem Version",link="https://rubygems.org/gems/unicode2latex"]::
-image:https://github.com/metanorma/unicode2latex/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/unicode2latex/actions?workflow=macos"]
-image:https://github.com/metanorma/unicode2latex/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/unicode2latex/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/unicode2latex/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/unicode2latex/actions?workflow=windows"]
-image:https://codeclimate.com/github/metanorma/unicode2latex/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/unicode2latex"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/unicode2latex.svg["Pull Requests",link="https://github.com/metanorma/unicode2latex/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/unicode2latex/latest.svg["Commits since latest",link="https://github.com/metanorma/unicode2latex/releases"]
-
 https://github.com/metanorma/mn2sts-ruby[mn2sts-ruby] image:https://img.shields.io/gem/v/mn2sts-ruby.svg["Gem Version",link="https://rubygems.org/gems/mn2sts-ruby"]::
 image:https://github.com/metanorma/mn2sts-ruby/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn2sts-ruby/actions?workflow=macos"]
 image:https://github.com/metanorma/mn2sts-ruby/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn2sts-ruby/actions?workflow=ubuntu"]
@@ -418,6 +410,14 @@ image:https://github.com/plurimath/omml2mathml/workflows/windows/badge.svg["Buil
 image:https://codeclimate.com/github/plurimath/omml2mathml/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/omml2mathml"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/omml2mathml.svg["Pull Requests",link="https://github.com/plurimath/omml2mathml/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/omml2mathml/latest.svg["Commits since latest",link="https://github.com/plurimath/omml2mathml/releases"]
+
+https://github.com/plurimath/unicode2latex[unicode2latex] image:https://img.shields.io/gem/v/unicode2latex.svg["Gem Version",link="https://rubygems.org/gems/unicode2latex"]::
+image:https://github.com/plurimath/unicode2latex/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/plurimath/unicode2latex/actions?workflow=macos"]
+image:https://github.com/plurimath/unicode2latex/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/plurimath/unicode2latex/actions?workflow=ubuntu"]
+image:https://github.com/plurimath/unicode2latex/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/plurimath/unicode2latex/actions?workflow=windows"]
+image:https://codeclimate.com/github/plurimath/unicode2latex/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/unicode2latex"]
+image:https://img.shields.io/github/issues-pr-raw/plurimath/unicode2latex.svg["Pull Requests",link="https://github.com/plurimath/unicode2latex/pulls"]
+image:https://img.shields.io/github/commits-since/plurimath/unicode2latex/latest.svg["Commits since latest",link="https://github.com/plurimath/unicode2latex/releases"]
 
 
 == Relaton gems
