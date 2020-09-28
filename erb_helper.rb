@@ -66,6 +66,30 @@ def shield_gha_windows(org, repo)
   shield(shield_url, alt: shield_alt_text, link: shield_link)
 end
 
+def shield_gha_docker(org, repo)
+  shield_url = "https://github.com/#{org}/#{repo}/workflows/docker/badge.svg"
+  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=docker"
+  shield_alt_text = "Build Status (Docker)"
+
+  shield(shield_url, alt: shield_alt_text, link: shield_link)
+end
+
+def shield_gha_test(org, repo)
+  shield_url = "https://github.com/#{org}/#{repo}/workflows/test/badge.svg"
+  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=test"
+  shield_alt_text = "Build Status"
+
+  shield(shield_url, alt: shield_alt_text, link: shield_link)
+end
+
+def shield_gha(org, repo, workflow)
+  url = "https://github.com/#{org}/#{repo}/workflows/#{workflow}/badge.svg"
+  link = "https://github.com/#{org}/#{repo}/actions?workflow=#{workflow}"
+  alt_text = "Build Status (#{workflow})"
+
+  shield(url, alt: alt_text, link: link)
+end
+
 def shield_pull_requests(org, repo)
   shield_url = "https://img.shields.io/github/issues-pr-raw/#{org}/#{repo}.svg"
   shield_link = "https://github.com/#{org}/#{repo}/pulls"
