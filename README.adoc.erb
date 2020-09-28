@@ -45,7 +45,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Utility / Leaf gems
 
-<% for name in %w[cnccs gb-agencies iev isoics reverse_adoc unicode2latex mn2sts-ruby mn2sts mn2pdf] %>
+<% for name in %w[cnccs gb-agencies iev isoics reverse_adoc mn2sts-ruby mn2sts mn2pdf] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_macos "metanorma", name %>
 <%= shield_gha_ubuntu "metanorma", name %>
@@ -57,7 +57,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Plurimath gems
 
-<% for name in %w[latexmath plane1converter mathml2asciimath omml2mathml] %>
+<% for name in %w[latexmath plane1converter mathml2asciimath omml2mathml unicode2latex] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_macos "plurimath", name %>
 <%= shield_gha_ubuntu "plurimath", name %>
