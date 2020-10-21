@@ -213,8 +213,6 @@ image:https://img.shields.io/github/commits-since/metanorma/packed-mn/latest.svg
 
 https://github.com/metanorma/metanorma-snap[metanorma-snap]::
 image:https://github.com/metanorma/metanorma-snap/workflows/main/badge.svg["Build Status (main)",link="https://github.com/metanorma/metanorma-snap/actions?workflow=main"]
-image:https://github.com/metanorma/metanorma-snap/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-snap/actions?workflow=macos"]
-image:https://github.com/metanorma/metanorma-snap/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-snap/actions?workflow=ubuntu"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-snap.svg["Pull Requests",link="https://github.com/metanorma/metanorma-snap/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-snap/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-snap/releases"]
 
