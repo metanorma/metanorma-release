@@ -59,15 +59,15 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_gha_macos "metanorma", name %>
 <%= shield_gha_ubuntu "metanorma", name %>
 <%= shield_gha_windows "metanorma", name %>
+<%= shield_gha_docker "metanorma", name %>
 <% end %>
 
 == Metanorma document templates
 
 <% for name in %w[iso iec ogc cc ietf itu].map { |n| "mn-templates-#{n}" } %>
 <%= github_link "metanorma", name %>::
-<%= shield_gha_macos "metanorma", name %>
-<%= shield_gha_ubuntu "metanorma", name %>
-<%= shield_gha_windows "metanorma", name %>
+<%= shield_gha_test "metanorma", name %>
+<%= shield_gha_docker "metanorma", name %>
 <% end %>
 
 == Utility / Leaf gems
@@ -84,7 +84,15 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Plurimath gems
 
-<% for name in %w[latexmath plane1converter mathml2asciimath omml2mathml unicode2latex] %>
+<% for name in %w[ latexmath plurimath] %>
+<%= github_link "plurimath", name %> <%= shield_gem name %>::
+<%= shield_gha_test "plurimath", name %>
+<%= shield_code_climate "plurimath", name %>
+<%= shield_pull_requests "plurimath", name %>
+<%= shield_commits_since "plurimath", name %>
+<% end %>
+
+<% for name in %w[mathml2asciimath omml2mathml unicode2latex] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_macos "plurimath", name %>
 <%= shield_gha_ubuntu "plurimath", name %>
@@ -93,6 +101,8 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_pull_requests "plurimath", name %>
 <%= shield_commits_since "plurimath", name %>
 <% end %>
+
+
 
 == Relaton gems
 
