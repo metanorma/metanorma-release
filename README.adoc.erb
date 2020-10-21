@@ -18,12 +18,39 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "metanorma", name %>
 <% end %>
 
-<%= github_link "metanorma", "metanorma-docker" %>::
-<%= shield("https://travis-ci.com/metanorma/metanorma-docker.svg?branch=master", link: "https://travis-ci.com/metanorma/metanorma-docker", alt: "Build Status") %>
-<%= shield("https://ci.appveyor.com/api/projects/status/ghb0adudv6vrqw6o?svg=true", link: "https://ci.appveyor.com/project/Metanorma/metanorma-docker", alt: "Appveyor Build Status") %>
-<%= shield_pull_requests "metanorma", "metanorma-docker" %>
-<%= shield_pull_requests "metanorma", "metanorma-docker" %>
-<%= shield_commits_since "metanorma", "metanorma-docker" %>
+== Metanorma environments
+
+<% for name in %w[metanorma-docker] %>
+<%= github_link "metanorma", name %>::
+<%= shield_gha "metanorma", name, "docker-mn" %>
+<%= shield_gha "metanorma", name, "docker-metanorma" %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
+
+<% for name in %w[packed-mn] %>
+<%= github_link "metanorma", name %>::
+<%= shield_gha "metanorma", name, "compile" %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
+
+<% for name in %w[metanorma-snap] %>
+<%= github_link "metanorma", name %>::
+<%= shield_gha "metanorma", name, "main" %>
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
+
+<% for name in %w[homebrew-metanorma] %>
+<%= github_link "metanorma", name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
 
 == Metanorma document samples
 
