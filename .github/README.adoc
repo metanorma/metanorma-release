@@ -193,12 +193,39 @@ image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-cli.svg["P
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-cli/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-cli/releases"]
 
 
+== Metanorma environments
+
+
 https://github.com/metanorma/metanorma-docker[metanorma-docker]::
 image:https://github.com/metanorma/metanorma-docker/workflows/docker-mn/badge.svg["Build Status (docker-mn)",link="https://github.com/metanorma/metanorma-docker/actions?workflow=docker-mn"]
 image:https://github.com/metanorma/metanorma-docker/workflows/docker-metanorma/badge.svg["Build Status (docker-metanorma)",link="https://github.com/metanorma/metanorma-docker/actions?workflow=docker-metanorma"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-docker.svg["Pull Requests",link="https://github.com/metanorma/metanorma-docker/pulls"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-docker.svg["Pull Requests",link="https://github.com/metanorma/metanorma-docker/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-docker/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-docker/releases"]
+
+
+
+https://github.com/metanorma/packed-mn[packed-mn]::
+image:https://github.com/metanorma/packed-mn/workflows/compile/badge.svg["Build Status (compile)",link="https://github.com/metanorma/packed-mn/actions?workflow=compile"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/packed-mn.svg["Pull Requests",link="https://github.com/metanorma/packed-mn/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/packed-mn/latest.svg["Commits since latest",link="https://github.com/metanorma/packed-mn/releases"]
+
+
+
+https://github.com/metanorma/metanorma-snap[metanorma-snap]::
+image:https://github.com/metanorma/metanorma-snap/workflows/main/badge.svg["Build Status (main)",link="https://github.com/metanorma/metanorma-snap/actions?workflow=main"]
+image:https://github.com/metanorma/metanorma-snap/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/metanorma-snap/actions?workflow=macos"]
+image:https://github.com/metanorma/metanorma-snap/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/metanorma-snap/actions?workflow=ubuntu"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-snap.svg["Pull Requests",link="https://github.com/metanorma/metanorma-snap/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-snap/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-snap/releases"]
+
+
+
+https://github.com/metanorma/homebrew-metanorma[homebrew-metanorma]::
+image:https://github.com/metanorma/homebrew-metanorma/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/homebrew-metanorma/actions?workflow=macos"]
+image:https://github.com/metanorma/homebrew-metanorma/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/homebrew-metanorma/actions?workflow=ubuntu"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/homebrew-metanorma.svg["Pull Requests",link="https://github.com/metanorma/homebrew-metanorma/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/homebrew-metanorma/latest.svg["Commits since latest",link="https://github.com/metanorma/homebrew-metanorma/releases"]
+
 
 == Metanorma document samples
 
