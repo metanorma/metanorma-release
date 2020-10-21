@@ -50,6 +50,13 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "metanorma", name %>
 <% end %>
 
+<% for name in %w[chocolatey-metanorma] %>
+<%= github_link "metanorma", name %>::
+<%= shield_gha "metanorma", name, "main" %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
+
 == Metanorma document samples
 
 <% for name in %w[iec itu unece gb ogc mpfa iso cc ietf iho nist csa m3aawg ribose].map { |n| "mn-samples-#{n}" } %>
