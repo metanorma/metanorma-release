@@ -219,8 +219,8 @@ image:https://img.shields.io/github/commits-since/metanorma/metanorma-snap/lates
 
 
 https://github.com/metanorma/homebrew-metanorma[homebrew-metanorma]::
-image:https://github.com/metanorma/homebrew-metanorma/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/homebrew-metanorma/actions?workflow=macos"]
-image:https://github.com/metanorma/homebrew-metanorma/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/homebrew-metanorma/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/homebrew-metanorma/workflows/macos/badge.svg["Build Status (macos)",link="https://github.com/metanorma/homebrew-metanorma/actions?workflow=macos"]
+image:https://github.com/metanorma/homebrew-metanorma/workflows/linux/badge.svg["Build Status (linux)",link="https://github.com/metanorma/homebrew-metanorma/actions?workflow=linux"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/homebrew-metanorma.svg["Pull Requests",link="https://github.com/metanorma/homebrew-metanorma/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/homebrew-metanorma/latest.svg["Commits since latest",link="https://github.com/metanorma/homebrew-metanorma/releases"]
 
