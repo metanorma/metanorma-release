@@ -225,6 +225,13 @@ image:https://img.shields.io/github/issues-pr-raw/metanorma/homebrew-metanorma.s
 image:https://img.shields.io/github/commits-since/metanorma/homebrew-metanorma/latest.svg["Commits since latest",link="https://github.com/metanorma/homebrew-metanorma/releases"]
 
 
+
+https://github.com/metanorma/chocolatey-metanorma[chocolatey-metanorma]::
+image:https://github.com/metanorma/chocolatey-metanorma/workflows/main/badge.svg["Build Status (main)",link="https://github.com/metanorma/chocolatey-metanorma/actions?workflow=main"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/chocolatey-metanorma.svg["Pull Requests",link="https://github.com/metanorma/chocolatey-metanorma/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/chocolatey-metanorma/latest.svg["Commits since latest",link="https://github.com/metanorma/chocolatey-metanorma/releases"]
+
+
 == Metanorma document samples
 
 
