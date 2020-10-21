@@ -44,8 +44,8 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 <% for name in %w[homebrew-metanorma] %>
 <%= github_link "metanorma", name %>::
-<%= shield_gha_macos "metanorma", name %>
-<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha "metanorma", name, "macos" %>
+<%= shield_gha "metanorma", name, "linux" %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
