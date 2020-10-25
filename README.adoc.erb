@@ -10,9 +10,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 <% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-generic metanorma-csa metanorma-cc metanorma-ietf metanorma-itu metanorma-m3aawg metanorma-mpfa metanorma-nist metanorma-ogc metanorma-un metanorma-gb metanorma-iec metanorma-bipm metanorma-ribose metanorma-vg metanorma-iho metanorma metanorma-cli] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
-<%= shield_gha_macos "metanorma", name %>
-<%= shield_gha_ubuntu "metanorma", name %>
-<%= shield_gha_windows "metanorma", name %>
+<%= shield_gha_rake "metanorma", name %>
 <%= shield_code_climate "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
