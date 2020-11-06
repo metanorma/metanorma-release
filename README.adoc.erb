@@ -8,7 +8,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 (in dependency order)
 
-<% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-generic metanorma-csa metanorma-cc metanorma-ietf metanorma-itu metanorma-mpfa metanorma-nist metanorma-ogc metanorma-un metanorma-gb metanorma-iec metanorma-bipm metanorma-ribose metanorma-m3aawg metanorma-iho metanorma metanorma-cli] %>
+<% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-generic metanorma-csa metanorma-cc metanorma-ietf metanorma-itu metanorma-mpfa metanorma-nist metanorma-ogc metanorma-un metanorma-iec metanorma-bipm metanorma-ribose metanorma-m3aawg metanorma-iho metanorma metanorma-cli] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_code_climate "metanorma", name %>
@@ -57,7 +57,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document samples
 
-<% for name in %w[iec itu unece gb ogc mpfa iso cc ietf iho nist csa m3aawg ribose].map { |n| "mn-samples-#{n}" } %>
+<% for name in %w[iec itu unece ogc mpfa iso cc ietf iho nist csa m3aawg ribose].map { |n| "mn-samples-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha_macos "metanorma", name %>
 <%= shield_gha_ubuntu "metanorma", name %>
@@ -75,7 +75,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Utility / Leaf gems
 
-<% for name in %w[cnccs gb-agencies iev isoics reverse_adoc mn2sts-ruby mn2sts mn2pdf] %>
+<% for name in %w[isoics reverse_adoc mn2sts-ruby mn2sts mn2pdf] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_code_climate "metanorma", name %>
@@ -85,7 +85,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Plurimath gems
 
-<% for name in %w[ latexmath plurimath] %>
+<% for name in %w[latexmath] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_test "plurimath", name %>
 <%= shield_code_climate "plurimath", name %>
