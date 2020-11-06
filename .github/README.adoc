@@ -94,12 +94,6 @@ image:https://codeclimate.com/github/metanorma/metanorma-un/badges/gpa.svg["Code
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-un.svg["Pull Requests",link="https://github.com/metanorma/metanorma-un/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-un/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-un/releases"]
 
-https://github.com/metanorma/metanorma-gb[metanorma-gb] image:https://img.shields.io/gem/v/metanorma-gb.svg["Gem Version",link="https://rubygems.org/gems/metanorma-gb"]::
-image:https://github.com/metanorma/metanorma-gb/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-gb/actions?workflow=rake"]
-image:https://codeclimate.com/github/metanorma/metanorma-gb/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-gb"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-gb.svg["Pull Requests",link="https://github.com/metanorma/metanorma-gb/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-gb/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-gb/releases"]
-
 https://github.com/metanorma/metanorma-iec[metanorma-iec] image:https://img.shields.io/gem/v/metanorma-iec.svg["Gem Version",link="https://rubygems.org/gems/metanorma-iec"]::
 image:https://github.com/metanorma/metanorma-iec/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-iec/actions?workflow=rake"]
 image:https://codeclimate.com/github/metanorma/metanorma-iec/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-iec"]
@@ -203,12 +197,6 @@ image:https://github.com/metanorma/mn-samples-unece/workflows/ubuntu/badge.svg["
 image:https://github.com/metanorma/mn-samples-unece/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-unece/actions?workflow=windows"]
 image:https://github.com/metanorma/mn-samples-unece/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-unece/actions?workflow=docker"]
 
-https://github.com/metanorma/mn-samples-gb[mn-samples-gb]::
-image:https://github.com/metanorma/mn-samples-gb/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-gb/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-gb/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-gb/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-gb/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-gb/actions?workflow=windows"]
-image:https://github.com/metanorma/mn-samples-gb/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-gb/actions?workflow=docker"]
-
 https://github.com/metanorma/mn-samples-ogc[mn-samples-ogc]::
 image:https://github.com/metanorma/mn-samples-ogc/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=macos"]
 image:https://github.com/metanorma/mn-samples-ogc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=ubuntu"]
@@ -301,24 +289,6 @@ image:https://github.com/metanorma/mn-templates-itu/workflows/docker/badge.svg["
 == Utility / Leaf gems
 
 
-https://github.com/metanorma/cnccs[cnccs] image:https://img.shields.io/gem/v/cnccs.svg["Gem Version",link="https://rubygems.org/gems/cnccs"]::
-image:https://github.com/metanorma/cnccs/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/cnccs/actions?workflow=rake"]
-image:https://codeclimate.com/github/metanorma/cnccs/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/cnccs"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/cnccs.svg["Pull Requests",link="https://github.com/metanorma/cnccs/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/cnccs/latest.svg["Commits since latest",link="https://github.com/metanorma/cnccs/releases"]
-
-https://github.com/metanorma/gb-agencies[gb-agencies] image:https://img.shields.io/gem/v/gb-agencies.svg["Gem Version",link="https://rubygems.org/gems/gb-agencies"]::
-image:https://github.com/metanorma/gb-agencies/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/gb-agencies/actions?workflow=rake"]
-image:https://codeclimate.com/github/metanorma/gb-agencies/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/gb-agencies"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/gb-agencies.svg["Pull Requests",link="https://github.com/metanorma/gb-agencies/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/gb-agencies/latest.svg["Commits since latest",link="https://github.com/metanorma/gb-agencies/releases"]
-
-https://github.com/metanorma/iev[iev] image:https://img.shields.io/gem/v/iev.svg["Gem Version",link="https://rubygems.org/gems/iev"]::
-image:https://github.com/metanorma/iev/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/iev/actions?workflow=rake"]
-image:https://codeclimate.com/github/metanorma/iev/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/iev"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/iev.svg["Pull Requests",link="https://github.com/metanorma/iev/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/iev/latest.svg["Commits since latest",link="https://github.com/metanorma/iev/releases"]
-
 https://github.com/metanorma/isoics[isoics] image:https://img.shields.io/gem/v/isoics.svg["Gem Version",link="https://rubygems.org/gems/isoics"]::
 image:https://github.com/metanorma/isoics/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/isoics/actions?workflow=rake"]
 image:https://codeclimate.com/github/metanorma/isoics/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/isoics"]
@@ -358,12 +328,6 @@ image:https://github.com/plurimath/latexmath/workflows/test/badge.svg["Build Sta
 image:https://codeclimate.com/github/plurimath/latexmath/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/latexmath"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/latexmath.svg["Pull Requests",link="https://github.com/plurimath/latexmath/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/latexmath/latest.svg["Commits since latest",link="https://github.com/plurimath/latexmath/releases"]
-
-https://github.com/plurimath/plurimath[plurimath] image:https://img.shields.io/gem/v/plurimath.svg["Gem Version",link="https://rubygems.org/gems/plurimath"]::
-image:https://github.com/plurimath/plurimath/workflows/test/badge.svg["Build Status",link="https://github.com/plurimath/plurimath/actions?workflow=test"]
-image:https://codeclimate.com/github/plurimath/plurimath/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/plurimath"]
-image:https://img.shields.io/github/issues-pr-raw/plurimath/plurimath.svg["Pull Requests",link="https://github.com/plurimath/plurimath/pulls"]
-image:https://img.shields.io/github/commits-since/plurimath/plurimath/latest.svg["Commits since latest",link="https://github.com/plurimath/plurimath/releases"]
 
 
 
