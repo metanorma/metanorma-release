@@ -75,7 +75,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Utility / Leaf gems
 
-<% for name in %w[isoics reverse_adoc mn2sts-ruby mn2sts mn2pdf] %>
+<% for name in %w[cnccs gb-agencies iev isoics reverse_adoc mn2sts-ruby mn2sts mn2pdf-ruby mn2pdf] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_code_climate "metanorma", name %>
@@ -107,7 +107,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Relaton gems
 
-<% for name in %w[relaton-bib relaton-itu relaton-gb relaton-iec relaton-ietf relaton-iso relaton-iso-bib relaton-nist relaton-ogc relaton-iev relaton-cli relaton] %>
+<% for name in %w[relaton-bipm relaton-ieee relaton-iho relaton-bib relaton-omg relaton-un relaton-w3c relaton-itu relaton-gb relaton-iec relaton-ietf relaton-iso relaton-iso-bib relaton-nist relaton-ogc relaton-iev relaton-cli relaton] %>
 <%= github_link "relaton", name %> <%= shield_gem name %>::
 <%= shield_gha_macos "relaton", name %>
 <%= shield_gha_ubuntu "relaton", name %>

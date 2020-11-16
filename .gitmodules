@@ -58,3 +58,7 @@
 [submodule "metanorma-nist"]
 	path = metanorma-nist
 	url = git@github.com:metanorma/metanorma-nist.git
+[submodule "mn2pdf-ruby"]
+	path = mn2pdf-ruby
+	url = git@github.com:metanorma/mn2pdf-ruby.git
+	branch = master
