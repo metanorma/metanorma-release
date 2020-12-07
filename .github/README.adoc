@@ -257,6 +257,12 @@ image:https://github.com/metanorma/mn-samples-ribose/workflows/ubuntu/badge.svg[
 image:https://github.com/metanorma/mn-samples-ribose/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-ribose/actions?workflow=windows"]
 image:https://github.com/metanorma/mn-samples-ribose/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ribose/actions?workflow=docker"]
 
+https://github.com/metanorma/mn-samples-bipm[mn-samples-bipm]::
+image:https://github.com/metanorma/mn-samples-bipm/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-bipm/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn-samples-bipm/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-bipm/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=docker"]
+
 
 == Metanorma document templates
 
