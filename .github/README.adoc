@@ -149,7 +149,9 @@ image:https://img.shields.io/github/commits-since/metanorma/metanorma-docker/lat
 
 
 https://github.com/metanorma/packed-mn[packed-mn]::
-image:https://github.com/metanorma/packed-mn/workflows/compile/badge.svg["Build Status (compile)",link="https://github.com/metanorma/packed-mn/actions?workflow=compile"]
+image:https://github.com/metanorma/packed-mn/workflows/macos/badge.svg["Build Status (macos)",link="https://github.com/metanorma/packed-mn/actions?workflow=macos"]
+image:https://github.com/metanorma/packed-mn/workflows/linux/badge.svg["Build Status (linux)",link="https://github.com/metanorma/packed-mn/actions?workflow=linux"]
+image:https://github.com/metanorma/packed-mn/workflows/windows/badge.svg["Build Status (windows)",link="https://github.com/metanorma/packed-mn/actions?workflow=windows"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/packed-mn.svg["Pull Requests",link="https://github.com/metanorma/packed-mn/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/packed-mn/latest.svg["Commits since latest",link="https://github.com/metanorma/packed-mn/releases"]
 
