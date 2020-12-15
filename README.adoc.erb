@@ -28,7 +28,9 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 <% for name in %w[packed-mn] %>
 <%= github_link "metanorma", name %>::
-<%= shield_gha "metanorma", name, "compile" %>
+<%= shield_gha "metanorma", name, "macos" %>
+<%= shield_gha "metanorma", name, "linux" %>
+<%= shield_gha "metanorma", name, "windows" %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
