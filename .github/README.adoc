@@ -351,6 +351,12 @@ image:https://codeclimate.com/github/metanorma/mn2pdf/badges/gpa.svg["Code Clima
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf.svg["Pull Requests",link="https://github.com/metanorma/mn2pdf/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mn2pdf/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf/releases"]
 
+https://github.com/metanorma/metanorma-plugin-lutaml[metanorma-plugin-lutaml] image:https://img.shields.io/gem/v/metanorma-plugin-lutaml.svg["Gem Version",link="https://rubygems.org/gems/metanorma-plugin-lutaml"]::
+image:https://github.com/metanorma/metanorma-plugin-lutaml/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-lutaml/actions?workflow=rake"]
+image:https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-plugin-lutaml.svg["Pull Requests",link="https://github.com/metanorma/metanorma-plugin-lutaml/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-lutaml/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-plugin-lutaml/releases"]
+
 
 == Plurimath gems
 
