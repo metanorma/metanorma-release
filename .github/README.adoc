@@ -265,6 +265,12 @@ image:https://github.com/metanorma/mn-samples-bipm/workflows/ubuntu/badge.svg["B
 image:https://github.com/metanorma/mn-samples-bipm/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=windows"]
 image:https://github.com/metanorma/mn-samples-bipm/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=docker"]
 
+https://github.com/metanorma/mn-samples-jcgm[mn-samples-jcgm]::
+image:https://github.com/metanorma/mn-samples-jcgm/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=macos"]
+image:https://github.com/metanorma/mn-samples-jcgm/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn-samples-jcgm/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-jcgm/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=docker"]
+
 
 == Metanorma document templates
 
