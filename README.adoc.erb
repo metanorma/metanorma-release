@@ -77,13 +77,24 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Utility / Leaf gems
 
-<% for name in %w[metanorma-utils iev isoics reverse_adoc mn2sts-ruby mn2sts mn2pdf-ruby mn2pdf metanorma-plugin-lutaml] %>
+<% for name in %w[metanorma-utils iev isoics reverse_adoc mn2sts-ruby mn2pdf-ruby metanorma-plugin-lutaml] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_code_climate "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
+
+<% for name in %w[mn2sts mn2pdf] %>
+<%= github_link "metanorma", name %> <%= shield_gem name %>::
+<%= shield_gha_macos "metanorma", name %>
+<%= shield_gha_ubuntu "metanorma", name %>
+<%= shield_gha_windows "metanorma", name %>
+<%= shield_code_climate "metanorma", name %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
+
 
 == Plurimath gems
 
@@ -95,7 +106,15 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "plurimath", name %>
 <% end %>
 
-<% for name in %w[mathml2asciimath omml2mathml unicode2latex asciimath2unitsml] %>
+<% for name in %w[asciimath2unitsml] %>
+<%= github_link "plurimath", name %> <%= shield_gem name %>::
+<%= shield_gha_rake "plurimath", name %>
+<%= shield_code_climate "plurimath", name %>
+<%= shield_pull_requests "plurimath", name %>
+<%= shield_commits_since "plurimath", name %>
+<% end %>
+
+<% for name in %w[mathml2asciimath omml2mathml unicode2latex] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_macos "plurimath", name %>
 <%= shield_gha_ubuntu "plurimath", name %>
