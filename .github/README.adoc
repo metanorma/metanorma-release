@@ -333,29 +333,36 @@ image:https://codeclimate.com/github/metanorma/mn2sts-ruby/badges/gpa.svg["Code 
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2sts-ruby.svg["Pull Requests",link="https://github.com/metanorma/mn2sts-ruby/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mn2sts-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2sts-ruby/releases"]
 
-https://github.com/metanorma/mn2sts[mn2sts] image:https://img.shields.io/gem/v/mn2sts.svg["Gem Version",link="https://rubygems.org/gems/mn2sts"]::
-image:https://github.com/metanorma/mn2sts/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mn2sts/actions?workflow=rake"]
-image:https://codeclimate.com/github/metanorma/mn2sts/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2sts"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2sts.svg["Pull Requests",link="https://github.com/metanorma/mn2sts/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/mn2sts/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2sts/releases"]
-
 https://github.com/metanorma/mn2pdf-ruby[mn2pdf-ruby] image:https://img.shields.io/gem/v/mn2pdf-ruby.svg["Gem Version",link="https://rubygems.org/gems/mn2pdf-ruby"]::
 image:https://github.com/metanorma/mn2pdf-ruby/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mn2pdf-ruby/actions?workflow=rake"]
 image:https://codeclimate.com/github/metanorma/mn2pdf-ruby/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2pdf-ruby"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf-ruby.svg["Pull Requests",link="https://github.com/metanorma/mn2pdf-ruby/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mn2pdf-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf-ruby/releases"]
 
-https://github.com/metanorma/mn2pdf[mn2pdf] image:https://img.shields.io/gem/v/mn2pdf.svg["Gem Version",link="https://rubygems.org/gems/mn2pdf"]::
-image:https://github.com/metanorma/mn2pdf/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mn2pdf/actions?workflow=rake"]
-image:https://codeclimate.com/github/metanorma/mn2pdf/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2pdf"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf.svg["Pull Requests",link="https://github.com/metanorma/mn2pdf/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/mn2pdf/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf/releases"]
-
 https://github.com/metanorma/metanorma-plugin-lutaml[metanorma-plugin-lutaml] image:https://img.shields.io/gem/v/metanorma-plugin-lutaml.svg["Gem Version",link="https://rubygems.org/gems/metanorma-plugin-lutaml"]::
 image:https://github.com/metanorma/metanorma-plugin-lutaml/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-lutaml/actions?workflow=rake"]
 image:https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-plugin-lutaml.svg["Pull Requests",link="https://github.com/metanorma/metanorma-plugin-lutaml/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-lutaml/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-plugin-lutaml/releases"]
+
+
+
+https://github.com/metanorma/mn2sts[mn2sts] image:https://img.shields.io/gem/v/mn2sts.svg["Gem Version",link="https://rubygems.org/gems/mn2sts"]::
+image:https://github.com/metanorma/mn2sts/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn2sts/actions?workflow=macos"]
+image:https://github.com/metanorma/mn2sts/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn2sts/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn2sts/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn2sts/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/mn2sts/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2sts"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2sts.svg["Pull Requests",link="https://github.com/metanorma/mn2sts/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/mn2sts/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2sts/releases"]
+
+https://github.com/metanorma/mn2pdf[mn2pdf] image:https://img.shields.io/gem/v/mn2pdf.svg["Gem Version",link="https://rubygems.org/gems/mn2pdf"]::
+image:https://github.com/metanorma/mn2pdf/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn2pdf/actions?workflow=macos"]
+image:https://github.com/metanorma/mn2pdf/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn2pdf/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mn2pdf/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn2pdf/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/mn2pdf/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2pdf"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf.svg["Pull Requests",link="https://github.com/metanorma/mn2pdf/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/mn2pdf/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf/releases"]
+
 
 
 == Plurimath gems
@@ -366,6 +373,14 @@ image:https://github.com/plurimath/latexmath/workflows/test/badge.svg["Build Sta
 image:https://codeclimate.com/github/plurimath/latexmath/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/latexmath"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/latexmath.svg["Pull Requests",link="https://github.com/plurimath/latexmath/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/latexmath/latest.svg["Commits since latest",link="https://github.com/plurimath/latexmath/releases"]
+
+
+
+https://github.com/plurimath/asciimath2unitsml[asciimath2unitsml] image:https://img.shields.io/gem/v/asciimath2unitsml.svg["Gem Version",link="https://rubygems.org/gems/asciimath2unitsml"]::
+image:https://github.com/plurimath/asciimath2unitsml/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/asciimath2unitsml/actions?workflow=rake"]
+image:https://codeclimate.com/github/plurimath/asciimath2unitsml/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/asciimath2unitsml"]
+image:https://img.shields.io/github/issues-pr-raw/plurimath/asciimath2unitsml.svg["Pull Requests",link="https://github.com/plurimath/asciimath2unitsml/pulls"]
+image:https://img.shields.io/github/commits-since/plurimath/asciimath2unitsml/latest.svg["Commits since latest",link="https://github.com/plurimath/asciimath2unitsml/releases"]
 
 
 
@@ -392,14 +407,6 @@ image:https://github.com/plurimath/unicode2latex/workflows/windows/badge.svg["Bu
 image:https://codeclimate.com/github/plurimath/unicode2latex/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/unicode2latex"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/unicode2latex.svg["Pull Requests",link="https://github.com/plurimath/unicode2latex/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/unicode2latex/latest.svg["Commits since latest",link="https://github.com/plurimath/unicode2latex/releases"]
-
-https://github.com/plurimath/asciimath2unitsml[asciimath2unitsml] image:https://img.shields.io/gem/v/asciimath2unitsml.svg["Gem Version",link="https://rubygems.org/gems/asciimath2unitsml"]::
-image:https://github.com/plurimath/asciimath2unitsml/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/plurimath/asciimath2unitsml/actions?workflow=macos"]
-image:https://github.com/plurimath/asciimath2unitsml/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/plurimath/asciimath2unitsml/actions?workflow=ubuntu"]
-image:https://github.com/plurimath/asciimath2unitsml/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/plurimath/asciimath2unitsml/actions?workflow=windows"]
-image:https://codeclimate.com/github/plurimath/asciimath2unitsml/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/asciimath2unitsml"]
-image:https://img.shields.io/github/issues-pr-raw/plurimath/asciimath2unitsml.svg["Pull Requests",link="https://github.com/plurimath/asciimath2unitsml/pulls"]
-image:https://img.shields.io/github/commits-since/plurimath/asciimath2unitsml/latest.svg["Commits since latest",link="https://github.com/plurimath/asciimath2unitsml/releases"]
 
 
 
