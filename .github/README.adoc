@@ -415,145 +415,109 @@ image:https://img.shields.io/github/commits-since/plurimath/unicode2latex/latest
 
 
 https://github.com/relaton/relaton-bipm[relaton-bipm] image:https://img.shields.io/gem/v/relaton-bipm.svg["Gem Version",link="https://rubygems.org/gems/relaton-bipm"]::
-image:https://github.com/relaton/relaton-bipm/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-bipm/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-bipm/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-bipm/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-bipm/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-bipm/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-bipm/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-bipm/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-bipm/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-bipm"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-bipm.svg["Pull Requests",link="https://github.com/relaton/relaton-bipm/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-bipm/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-bipm/releases"]
 
 https://github.com/relaton/relaton-ieee[relaton-ieee] image:https://img.shields.io/gem/v/relaton-ieee.svg["Gem Version",link="https://rubygems.org/gems/relaton-ieee"]::
-image:https://github.com/relaton/relaton-ieee/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-ieee/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-ieee/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-ieee/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-ieee/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-ieee/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-ieee/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ieee/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-ieee/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-ieee"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-ieee.svg["Pull Requests",link="https://github.com/relaton/relaton-ieee/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-ieee/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-ieee/releases"]
 
 https://github.com/relaton/relaton-iho[relaton-iho] image:https://img.shields.io/gem/v/relaton-iho.svg["Gem Version",link="https://rubygems.org/gems/relaton-iho"]::
-image:https://github.com/relaton/relaton-iho/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-iho/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-iho/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-iho/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-iho/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-iho/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-iho/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iho/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-iho/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iho"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iho.svg["Pull Requests",link="https://github.com/relaton/relaton-iho/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iho/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iho/releases"]
 
 https://github.com/relaton/relaton-bib[relaton-bib] image:https://img.shields.io/gem/v/relaton-bib.svg["Gem Version",link="https://rubygems.org/gems/relaton-bib"]::
-image:https://github.com/relaton/relaton-bib/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-bib/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-bib/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-bib/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-bib/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-bib/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-bib/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-bib/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-bib/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-bib"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-bib.svg["Pull Requests",link="https://github.com/relaton/relaton-bib/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-bib/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-bib/releases"]
 
 https://github.com/relaton/relaton-omg[relaton-omg] image:https://img.shields.io/gem/v/relaton-omg.svg["Gem Version",link="https://rubygems.org/gems/relaton-omg"]::
-image:https://github.com/relaton/relaton-omg/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-omg/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-omg/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-omg/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-omg/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-omg/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-omg/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-omg/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-omg/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-omg"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-omg.svg["Pull Requests",link="https://github.com/relaton/relaton-omg/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-omg/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-omg/releases"]
 
 https://github.com/relaton/relaton-un[relaton-un] image:https://img.shields.io/gem/v/relaton-un.svg["Gem Version",link="https://rubygems.org/gems/relaton-un"]::
-image:https://github.com/relaton/relaton-un/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-un/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-un/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-un/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-un/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-un/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-un/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-un/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-un/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-un"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-un.svg["Pull Requests",link="https://github.com/relaton/relaton-un/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-un/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-un/releases"]
 
 https://github.com/relaton/relaton-w3c[relaton-w3c] image:https://img.shields.io/gem/v/relaton-w3c.svg["Gem Version",link="https://rubygems.org/gems/relaton-w3c"]::
-image:https://github.com/relaton/relaton-w3c/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-w3c/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-w3c/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-w3c/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-w3c/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-w3c/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-w3c/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-w3c/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-w3c/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-w3c"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-w3c.svg["Pull Requests",link="https://github.com/relaton/relaton-w3c/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-w3c/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-w3c/releases"]
 
 https://github.com/relaton/relaton-itu[relaton-itu] image:https://img.shields.io/gem/v/relaton-itu.svg["Gem Version",link="https://rubygems.org/gems/relaton-itu"]::
-image:https://github.com/relaton/relaton-itu/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-itu/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-itu/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-itu/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-itu/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-itu/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-itu/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-itu/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-itu/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-itu"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-itu.svg["Pull Requests",link="https://github.com/relaton/relaton-itu/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-itu/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-itu/releases"]
 
 https://github.com/relaton/relaton-gb[relaton-gb] image:https://img.shields.io/gem/v/relaton-gb.svg["Gem Version",link="https://rubygems.org/gems/relaton-gb"]::
-image:https://github.com/relaton/relaton-gb/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-gb/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-gb/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-gb/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-gb/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-gb/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-gb/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-gb/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-gb/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-gb"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-gb.svg["Pull Requests",link="https://github.com/relaton/relaton-gb/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-gb/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-gb/releases"]
 
 https://github.com/relaton/relaton-iec[relaton-iec] image:https://img.shields.io/gem/v/relaton-iec.svg["Gem Version",link="https://rubygems.org/gems/relaton-iec"]::
-image:https://github.com/relaton/relaton-iec/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-iec/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-iec/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-iec/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-iec/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-iec/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-iec/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iec/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-iec/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iec"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iec.svg["Pull Requests",link="https://github.com/relaton/relaton-iec/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iec/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iec/releases"]
 
 https://github.com/relaton/relaton-ietf[relaton-ietf] image:https://img.shields.io/gem/v/relaton-ietf.svg["Gem Version",link="https://rubygems.org/gems/relaton-ietf"]::
-image:https://github.com/relaton/relaton-ietf/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-ietf/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-ietf/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-ietf/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-ietf/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-ietf/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-ietf/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ietf/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-ietf/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-ietf"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-ietf.svg["Pull Requests",link="https://github.com/relaton/relaton-ietf/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-ietf/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-ietf/releases"]
 
 https://github.com/relaton/relaton-iso[relaton-iso] image:https://img.shields.io/gem/v/relaton-iso.svg["Gem Version",link="https://rubygems.org/gems/relaton-iso"]::
-image:https://github.com/relaton/relaton-iso/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-iso/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-iso/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-iso/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-iso/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-iso/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-iso/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iso/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-iso/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iso"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iso.svg["Pull Requests",link="https://github.com/relaton/relaton-iso/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iso/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iso/releases"]
 
 https://github.com/relaton/relaton-iso-bib[relaton-iso-bib] image:https://img.shields.io/gem/v/relaton-iso-bib.svg["Gem Version",link="https://rubygems.org/gems/relaton-iso-bib"]::
-image:https://github.com/relaton/relaton-iso-bib/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-iso-bib/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-iso-bib/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-iso-bib/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-iso-bib/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-iso-bib/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-iso-bib/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iso-bib/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-iso-bib/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iso-bib"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iso-bib.svg["Pull Requests",link="https://github.com/relaton/relaton-iso-bib/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iso-bib/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iso-bib/releases"]
 
 https://github.com/relaton/relaton-nist[relaton-nist] image:https://img.shields.io/gem/v/relaton-nist.svg["Gem Version",link="https://rubygems.org/gems/relaton-nist"]::
-image:https://github.com/relaton/relaton-nist/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-nist/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-nist/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-nist/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-nist/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-nist/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-nist/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-nist/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-nist/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-nist"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-nist.svg["Pull Requests",link="https://github.com/relaton/relaton-nist/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-nist/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-nist/releases"]
 
 https://github.com/relaton/relaton-ogc[relaton-ogc] image:https://img.shields.io/gem/v/relaton-ogc.svg["Gem Version",link="https://rubygems.org/gems/relaton-ogc"]::
-image:https://github.com/relaton/relaton-ogc/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-ogc/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-ogc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-ogc/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-ogc/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-ogc/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-ogc/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ogc/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-ogc/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-ogc"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-ogc.svg["Pull Requests",link="https://github.com/relaton/relaton-ogc/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-ogc/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-ogc/releases"]
 
 https://github.com/relaton/relaton-iev[relaton-iev] image:https://img.shields.io/gem/v/relaton-iev.svg["Gem Version",link="https://rubygems.org/gems/relaton-iev"]::
-image:https://github.com/relaton/relaton-iev/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-iev/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-iev/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-iev/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-iev/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-iev/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-iev/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iev/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-iev/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iev"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iev.svg["Pull Requests",link="https://github.com/relaton/relaton-iev/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iev/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iev/releases"]
 
 https://github.com/relaton/relaton-cli[relaton-cli] image:https://img.shields.io/gem/v/relaton-cli.svg["Gem Version",link="https://rubygems.org/gems/relaton-cli"]::
-image:https://github.com/relaton/relaton-cli/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton-cli/actions?workflow=macos"]
-image:https://github.com/relaton/relaton-cli/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton-cli/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton-cli/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton-cli/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-cli/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-cli/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-cli/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-cli"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-cli.svg["Pull Requests",link="https://github.com/relaton/relaton-cli/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-cli/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-cli/releases"]
 
 https://github.com/relaton/relaton[relaton] image:https://img.shields.io/gem/v/relaton.svg["Gem Version",link="https://rubygems.org/gems/relaton"]::
-image:https://github.com/relaton/relaton/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/relaton/relaton/actions?workflow=macos"]
-image:https://github.com/relaton/relaton/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/relaton/relaton/actions?workflow=ubuntu"]
-image:https://github.com/relaton/relaton/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/relaton/relaton/actions?workflow=windows"]
+image:https://github.com/relaton/relaton/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton.svg["Pull Requests",link="https://github.com/relaton/relaton/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton/latest.svg["Commits since latest",link="https://github.com/relaton/relaton/releases"]
