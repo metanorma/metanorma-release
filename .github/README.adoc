@@ -510,6 +510,12 @@ image:https://codeclimate.com/github/relaton/relaton-iev/badges/gpa.svg["Code Cl
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iev.svg["Pull Requests",link="https://github.com/relaton/relaton-iev/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iev/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iev/releases"]
 
+https://github.com/relaton/relaton-calconnect[relaton-calconnect] image:https://img.shields.io/gem/v/relaton-calconnect.svg["Gem Version",link="https://rubygems.org/gems/relaton-calconnect"]::
+image:https://github.com/relaton/relaton-calconnect/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-calconnect/actions?workflow=rake"]
+image:https://codeclimate.com/github/relaton/relaton-calconnect/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-calconnect"]
+image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-calconnect.svg["Pull Requests",link="https://github.com/relaton/relaton-calconnect/pulls"]
+image:https://img.shields.io/github/commits-since/relaton/relaton-calconnect/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-calconnect/releases"]
+
 https://github.com/relaton/relaton-cli[relaton-cli] image:https://img.shields.io/gem/v/relaton-cli.svg["Gem Version",link="https://rubygems.org/gems/relaton-cli"]::
 image:https://github.com/relaton/relaton-cli/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-cli/actions?workflow=rake"]
 image:https://codeclimate.com/github/relaton/relaton-cli/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-cli"]
