@@ -182,93 +182,63 @@ image:https://img.shields.io/github/commits-since/metanorma/chocolatey-metanorma
 
 
 https://github.com/metanorma/mn-samples-iec[mn-samples-iec]::
-image:https://github.com/metanorma/mn-samples-iec/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-iec/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-iec/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-iec/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-iec/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-iec/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-iec/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-iec/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-iec/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-iec/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-itu[mn-samples-itu]::
-image:https://github.com/metanorma/mn-samples-itu/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-itu/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-itu/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-itu/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-itu/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-itu/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-itu/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-itu/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-itu/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-itu/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-unece[mn-samples-unece]::
-image:https://github.com/metanorma/mn-samples-unece/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-unece/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-unece/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-unece/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-unece/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-unece/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-unece/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-unece/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-unece/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-unece/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-ogc[mn-samples-ogc]::
-image:https://github.com/metanorma/mn-samples-ogc/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-ogc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-ogc/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-ogc/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-ogc/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-mpfa[mn-samples-mpfa]::
-image:https://github.com/metanorma/mn-samples-mpfa/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-mpfa/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-mpfa/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-mpfa/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-mpfa/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-mpfa/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-mpfa/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-mpfa/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-mpfa/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-mpfa/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-iso[mn-samples-iso]::
-image:https://github.com/metanorma/mn-samples-iso/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-iso/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-iso/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-iso/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-iso/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-iso/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-iso/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-iso/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-iso/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-iso/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-cc[mn-samples-cc]::
-image:https://github.com/metanorma/mn-samples-cc/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-cc/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-cc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-cc/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-cc/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-cc/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-cc/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-cc/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-cc/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-cc/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-ietf[mn-samples-ietf]::
-image:https://github.com/metanorma/mn-samples-ietf/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-ietf/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-ietf/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-ietf/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-ietf/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-iho[mn-samples-iho]::
-image:https://github.com/metanorma/mn-samples-iho/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-iho/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-iho/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-iho/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-iho/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-nist[mn-samples-nist]::
-image:https://github.com/metanorma/mn-samples-nist/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-nist/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-nist/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-nist/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-nist/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-csa[mn-samples-csa]::
-image:https://github.com/metanorma/mn-samples-csa/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-csa/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-csa/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-csa/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-csa/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-m3aawg[mn-samples-m3aawg]::
-image:https://github.com/metanorma/mn-samples-m3aawg/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-m3aawg/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-m3aawg/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-m3aawg/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-m3aawg/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-ribose[mn-samples-ribose]::
-image:https://github.com/metanorma/mn-samples-ribose/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-ribose/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-ribose/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-ribose/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-ribose/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-ribose/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-ribose/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-ribose/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-ribose/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ribose/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-bipm[mn-samples-bipm]::
-image:https://github.com/metanorma/mn-samples-bipm/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-bipm/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-bipm/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-bipm/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-bipm/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=docker"]
 
 https://github.com/metanorma/mn-samples-jcgm[mn-samples-jcgm]::
-image:https://github.com/metanorma/mn-samples-jcgm/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=macos"]
-image:https://github.com/metanorma/mn-samples-jcgm/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=ubuntu"]
-image:https://github.com/metanorma/mn-samples-jcgm/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=windows"]
+image:https://github.com/metanorma/mn-samples-jcgm/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-jcgm/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=docker"]
 
 
@@ -385,25 +355,19 @@ image:https://img.shields.io/github/commits-since/plurimath/asciimath2unitsml/la
 
 
 https://github.com/plurimath/mathml2asciimath[mathml2asciimath] image:https://img.shields.io/gem/v/mathml2asciimath.svg["Gem Version",link="https://rubygems.org/gems/mathml2asciimath"]::
-image:https://github.com/plurimath/mathml2asciimath/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/plurimath/mathml2asciimath/actions?workflow=macos"]
-image:https://github.com/plurimath/mathml2asciimath/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/plurimath/mathml2asciimath/actions?workflow=ubuntu"]
-image:https://github.com/plurimath/mathml2asciimath/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/plurimath/mathml2asciimath/actions?workflow=windows"]
+image:https://github.com/plurimath/mathml2asciimath/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/mathml2asciimath/actions?workflow=rake"]
 image:https://codeclimate.com/github/plurimath/mathml2asciimath/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/mathml2asciimath"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/mathml2asciimath.svg["Pull Requests",link="https://github.com/plurimath/mathml2asciimath/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/mathml2asciimath/latest.svg["Commits since latest",link="https://github.com/plurimath/mathml2asciimath/releases"]
 
 https://github.com/plurimath/omml2mathml[omml2mathml] image:https://img.shields.io/gem/v/omml2mathml.svg["Gem Version",link="https://rubygems.org/gems/omml2mathml"]::
-image:https://github.com/plurimath/omml2mathml/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/plurimath/omml2mathml/actions?workflow=macos"]
-image:https://github.com/plurimath/omml2mathml/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/plurimath/omml2mathml/actions?workflow=ubuntu"]
-image:https://github.com/plurimath/omml2mathml/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/plurimath/omml2mathml/actions?workflow=windows"]
+image:https://github.com/plurimath/omml2mathml/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/omml2mathml/actions?workflow=rake"]
 image:https://codeclimate.com/github/plurimath/omml2mathml/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/omml2mathml"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/omml2mathml.svg["Pull Requests",link="https://github.com/plurimath/omml2mathml/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/omml2mathml/latest.svg["Commits since latest",link="https://github.com/plurimath/omml2mathml/releases"]
 
 https://github.com/plurimath/unicode2latex[unicode2latex] image:https://img.shields.io/gem/v/unicode2latex.svg["Gem Version",link="https://rubygems.org/gems/unicode2latex"]::
-image:https://github.com/plurimath/unicode2latex/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/plurimath/unicode2latex/actions?workflow=macos"]
-image:https://github.com/plurimath/unicode2latex/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/plurimath/unicode2latex/actions?workflow=ubuntu"]
-image:https://github.com/plurimath/unicode2latex/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/plurimath/unicode2latex/actions?workflow=windows"]
+image:https://github.com/plurimath/unicode2latex/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/unicode2latex/actions?workflow=rake"]
 image:https://codeclimate.com/github/plurimath/unicode2latex/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/unicode2latex"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/unicode2latex.svg["Pull Requests",link="https://github.com/plurimath/unicode2latex/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/unicode2latex/latest.svg["Commits since latest",link="https://github.com/plurimath/unicode2latex/releases"]
