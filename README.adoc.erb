@@ -61,9 +61,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 <% for name in %w[iec itu unece ogc mpfa iso cc ietf iho nist csa m3aawg ribose bipm jcgm].map { |n| "mn-samples-#{n}" } %>
 <%= github_link "metanorma", name %>::
-<%= shield_gha_macos "metanorma", name %>
-<%= shield_gha_ubuntu "metanorma", name %>
-<%= shield_gha_windows "metanorma", name %>
+<%= shield_gha_generate "metanorma", name %>
 <%= shield_gha_docker "metanorma", name %>
 <% end %>
 
@@ -116,9 +114,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 <% for name in %w[mathml2asciimath omml2mathml unicode2latex] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
-<%= shield_gha_macos "plurimath", name %>
-<%= shield_gha_ubuntu "plurimath", name %>
-<%= shield_gha_windows "plurimath", name %>
+<%= shield_gha_rake "plurimath", name %>
 <%= shield_code_climate "plurimath", name %>
 <%= shield_pull_requests "plurimath", name %>
 <%= shield_commits_since "plurimath", name %>
