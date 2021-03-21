@@ -74,6 +74,14 @@ def shield_gha_windows(org, repo)
   shield(shield_url, alt: shield_alt_text, link: shield_link)
 end
 
+def shield_gha_generate(org, repo)
+  shield_url = "https://github.com/#{org}/#{repo}/workflows/generate/badge.svg"
+  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=generate"
+  shield_alt_text = "Build Status"
+
+  shield(shield_url, alt: shield_alt_text, link: shield_link)
+end
+
 def shield_gha_docker(org, repo)
   shield_url = "https://github.com/#{org}/#{repo}/workflows/docker/badge.svg"
   shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=docker"
