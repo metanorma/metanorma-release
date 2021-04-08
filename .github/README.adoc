@@ -88,6 +88,12 @@ image:https://codeclimate.com/github/metanorma/metanorma-iec/badges/gpa.svg["Cod
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-iec.svg["Pull Requests",link="https://github.com/metanorma/metanorma-iec/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-iec/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-iec/releases"]
 
+https://github.com/metanorma/metanorma-bsi[metanorma-bsi] image:https://img.shields.io/gem/v/metanorma-bsi.svg["Gem Version",link="https://rubygems.org/gems/metanorma-bsi"]::
+image:https://github.com/metanorma/metanorma-bsi/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-bsi/actions?workflow=rake"]
+image:https://codeclimate.com/github/metanorma/metanorma-bsi/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-bsi"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-bsi.svg["Pull Requests",link="https://github.com/metanorma/metanorma-bsi/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/metanorma-bsi/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-bsi/releases"]
+
 https://github.com/metanorma/metanorma-bipm[metanorma-bipm] image:https://img.shields.io/gem/v/metanorma-bipm.svg["Gem Version",link="https://rubygems.org/gems/metanorma-bipm"]::
 image:https://github.com/metanorma/metanorma-bipm/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-bipm/actions?workflow=rake"]
 image:https://codeclimate.com/github/metanorma/metanorma-bipm/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-bipm"]
