@@ -8,7 +8,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 (in dependency order)
 
-<% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-generic metanorma-ietf metanorma-itu metanorma-mpfa metanorma-nist metanorma-ogc metanorma-un metanorma-iec metanorma-bipm metanorma-csa metanorma-cc metanorma-iho metanorma-m3aawg metanorma-ribose metanorma metanorma-cli] %>
+<% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-generic metanorma-ietf metanorma-itu metanorma-mpfa metanorma-nist metanorma-ogc metanorma-un metanorma-iec metanorma-bsi metanorma-bipm metanorma-csa metanorma-cc metanorma-iho metanorma-m3aawg metanorma-ribose metanorma metanorma-cli] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_code_climate "metanorma", name %>
