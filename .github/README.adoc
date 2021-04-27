@@ -247,6 +247,10 @@ https://github.com/metanorma/mn-samples-jcgm[mn-samples-jcgm]::
 image:https://github.com/metanorma/mn-samples-jcgm/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=generate"]
 image:https://github.com/metanorma/mn-samples-jcgm/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=docker"]
 
+https://github.com/metanorma/mn-samples-bsi[mn-samples-bsi]::
+image:https://github.com/metanorma/mn-samples-bsi/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-bsi/actions?workflow=generate"]
+image:https://github.com/metanorma/mn-samples-bsi/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-bsi/actions?workflow=docker"]
+
 
 == Metanorma document templates
 
@@ -303,23 +307,25 @@ image:https://codeclimate.com/github/metanorma/reverse_adoc/badges/gpa.svg["Code
 image:https://img.shields.io/github/issues-pr-raw/metanorma/reverse_adoc.svg["Pull Requests",link="https://github.com/metanorma/reverse_adoc/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/reverse_adoc/latest.svg["Commits since latest",link="https://github.com/metanorma/reverse_adoc/releases"]
 
-https://github.com/metanorma/mn2sts-ruby[mn2sts-ruby] image:https://img.shields.io/gem/v/mn2sts-ruby.svg["Gem Version",link="https://rubygems.org/gems/mn2sts-ruby"]::
-image:https://github.com/metanorma/mn2sts-ruby/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mn2sts-ruby/actions?workflow=rake"]
-image:https://codeclimate.com/github/metanorma/mn2sts-ruby/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2sts-ruby"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2sts-ruby.svg["Pull Requests",link="https://github.com/metanorma/mn2sts-ruby/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/mn2sts-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2sts-ruby/releases"]
-
-https://github.com/metanorma/mn2pdf-ruby[mn2pdf-ruby] image:https://img.shields.io/gem/v/mn2pdf-ruby.svg["Gem Version",link="https://rubygems.org/gems/mn2pdf-ruby"]::
-image:https://github.com/metanorma/mn2pdf-ruby/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mn2pdf-ruby/actions?workflow=rake"]
-image:https://codeclimate.com/github/metanorma/mn2pdf-ruby/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2pdf-ruby"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf-ruby.svg["Pull Requests",link="https://github.com/metanorma/mn2pdf-ruby/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/mn2pdf-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf-ruby/releases"]
-
 https://github.com/metanorma/metanorma-plugin-lutaml[metanorma-plugin-lutaml] image:https://img.shields.io/gem/v/metanorma-plugin-lutaml.svg["Gem Version",link="https://rubygems.org/gems/metanorma-plugin-lutaml"]::
 image:https://github.com/metanorma/metanorma-plugin-lutaml/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-lutaml/actions?workflow=rake"]
 image:https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-plugin-lutaml.svg["Pull Requests",link="https://github.com/metanorma/metanorma-plugin-lutaml/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-lutaml/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-plugin-lutaml/releases"]
+
+
+
+https://github.com/metanorma/mn2sts-ruby[mn2sts-ruby]::
+image:https://github.com/metanorma/mn2sts-ruby/workflows/mn2sts/badge.svg["Build Status (mn2sts)",link="https://github.com/metanorma/mn2sts-ruby/actions?workflow=mn2sts"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2sts-ruby.svg["Pull Requests",link="https://github.com/metanorma/mn2sts-ruby/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/mn2sts-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2sts-ruby/releases"]
+
+
+
+https://github.com/metanorma/mn2pdf-ruby[mn2pdf-ruby]::
+image:https://github.com/metanorma/mn2pdf-ruby/workflows/mn2pdf/badge.svg["Build Status (mn2pdf)",link="https://github.com/metanorma/mn2pdf-ruby/actions?workflow=mn2pdf"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf-ruby.svg["Pull Requests",link="https://github.com/metanorma/mn2pdf-ruby/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/mn2pdf-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf-ruby/releases"]
 
 
 
