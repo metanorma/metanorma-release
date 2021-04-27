@@ -59,7 +59,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document samples
 
-<% for name in %w[iec itu unece ogc mpfa iso cc ietf iho nist csa m3aawg ribose bipm jcgm].map { |n| "mn-samples-#{n}" } %>
+<% for name in %w[iec itu unece ogc mpfa iso cc ietf iho nist csa m3aawg ribose bipm jcgm bsi].map { |n| "mn-samples-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha_generate "metanorma", name %>
 <%= shield_gha_docker "metanorma", name %>
@@ -75,10 +75,24 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Utility / Leaf gems
 
-<% for name in %w[metanorma-utils iev isoics reverse_adoc mn2sts-ruby mn2pdf-ruby metanorma-plugin-lutaml] %>
+<% for name in %w[metanorma-utils iev isoics reverse_adoc metanorma-plugin-lutaml] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_code_climate "metanorma", name %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
+
+<% for name in %w[mn2sts-ruby] %>
+<%= github_link "metanorma", name %>::
+<%= shield_gha "metanorma", name, "mn2sts" %>
+<%= shield_pull_requests "metanorma", name %>
+<%= shield_commits_since "metanorma", name %>
+<% end %>
+
+<% for name in %w[mn2pdf-ruby] %>
+<%= github_link "metanorma", name %>::
+<%= shield_gha "metanorma", name, "mn2pdf" %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
