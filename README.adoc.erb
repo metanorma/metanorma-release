@@ -83,9 +83,9 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "metanorma", name %>
 <% end %>
 
-<% for name in %w[mn2sts-ruby] %>
+<% for name in %w[mnconvert-ruby] %>
 <%= github_link "metanorma", name %>::
-<%= shield_gha "metanorma", name, "mn2sts" %>
+<%= shield_gha "metanorma", name, "mnconvert" %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
@@ -97,7 +97,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "metanorma", name %>
 <% end %>
 
-<% for name in %w[mn2sts mn2pdf] %>
+<% for name in %w[mn2sts mn2pdf mnconvert] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_macos "metanorma", name %>
 <%= shield_gha_ubuntu "metanorma", name %>
