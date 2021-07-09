@@ -315,10 +315,10 @@ image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-lut
 
 
 
-https://github.com/metanorma/mn2sts-ruby[mn2sts-ruby]::
-image:https://github.com/metanorma/mn2sts-ruby/workflows/mn2sts/badge.svg["Build Status (mn2sts)",link="https://github.com/metanorma/mn2sts-ruby/actions?workflow=mn2sts"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2sts-ruby.svg["Pull Requests",link="https://github.com/metanorma/mn2sts-ruby/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/mn2sts-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2sts-ruby/releases"]
+https://github.com/metanorma/mnconvert-ruby[mnconvert-ruby]::
+image:https://github.com/metanorma/mnconvert-ruby/workflows/mnconvert/badge.svg["Build Status (mnconvert)",link="https://github.com/metanorma/mnconvert-ruby/actions?workflow=mnconvert"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/mnconvert-ruby.svg["Pull Requests",link="https://github.com/metanorma/mnconvert-ruby/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/mnconvert-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mnconvert-ruby/releases"]
 
 
 
@@ -344,6 +344,14 @@ image:https://github.com/metanorma/mn2pdf/workflows/windows/badge.svg["Build Sta
 image:https://codeclimate.com/github/metanorma/mn2pdf/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn2pdf"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf.svg["Pull Requests",link="https://github.com/metanorma/mn2pdf/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mn2pdf/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf/releases"]
+
+https://github.com/metanorma/mnconvert[mnconvert] image:https://img.shields.io/gem/v/mnconvert.svg["Gem Version",link="https://rubygems.org/gems/mnconvert"]::
+image:https://github.com/metanorma/mnconvert/workflows/macos/badge.svg["Build Status (macOS)",link="https://github.com/metanorma/mnconvert/actions?workflow=macos"]
+image:https://github.com/metanorma/mnconvert/workflows/ubuntu/badge.svg["Build Status (Ubuntu)",link="https://github.com/metanorma/mnconvert/actions?workflow=ubuntu"]
+image:https://github.com/metanorma/mnconvert/workflows/windows/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/mnconvert/actions?workflow=windows"]
+image:https://codeclimate.com/github/metanorma/mnconvert/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mnconvert"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/mnconvert.svg["Pull Requests",link="https://github.com/metanorma/mnconvert/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/mnconvert/latest.svg["Commits since latest",link="https://github.com/metanorma/mnconvert/releases"]
 
 
 
