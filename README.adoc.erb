@@ -97,7 +97,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "metanorma", name %>
 <% end %>
 
-<% for name in %w[mn2sts mn2pdf mnconvert] %>
+<% for name in %w[mn2pdf mnconvert] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_macos "metanorma", name %>
 <%= shield_gha_ubuntu "metanorma", name %>
