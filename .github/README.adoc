@@ -313,6 +313,12 @@ image:https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml/badges/gp
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-plugin-lutaml.svg["Pull Requests",link="https://github.com/metanorma/metanorma-plugin-lutaml/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-lutaml/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-plugin-lutaml/releases"]
 
+https://github.com/metanorma/emf2svg-ruby[emf2svg-ruby] image:https://img.shields.io/gem/v/emf2svg-ruby.svg["Gem Version",link="https://rubygems.org/gems/emf2svg-ruby"]::
+image:https://github.com/metanorma/emf2svg-ruby/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/emf2svg-ruby/actions?workflow=rake"]
+image:https://codeclimate.com/github/metanorma/emf2svg-ruby/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/emf2svg-ruby"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/emf2svg-ruby.svg["Pull Requests",link="https://github.com/metanorma/emf2svg-ruby/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/emf2svg-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/emf2svg-ruby/releases"]
+
 
 
 https://github.com/metanorma/mnconvert-ruby[mnconvert-ruby]::
