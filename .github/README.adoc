@@ -289,6 +289,12 @@ image:https://codeclimate.com/github/metanorma/metanorma-utils/badges/gpa.svg["C
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-utils.svg["Pull Requests",link="https://github.com/metanorma/metanorma-utils/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-utils/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-utils/releases"]
 
+https://github.com/metanorma/isodoc-i18n[isodoc-i18n] image:https://img.shields.io/gem/v/isodoc-i18n.svg["Gem Version",link="https://rubygems.org/gems/isodoc-i18n"]::
+image:https://github.com/metanorma/isodoc-i18n/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/isodoc-i18n/actions?workflow=rake"]
+image:https://codeclimate.com/github/metanorma/isodoc-i18n/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/isodoc-i18n"]
+image:https://img.shields.io/github/issues-pr-raw/metanorma/isodoc-i18n.svg["Pull Requests",link="https://github.com/metanorma/isodoc-i18n/pulls"]
+image:https://img.shields.io/github/commits-since/metanorma/isodoc-i18n/latest.svg["Commits since latest",link="https://github.com/metanorma/isodoc-i18n/releases"]
+
 https://github.com/metanorma/iev[iev] image:https://img.shields.io/gem/v/iev.svg["Gem Version",link="https://rubygems.org/gems/iev"]::
 image:https://github.com/metanorma/iev/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/iev/actions?workflow=rake"]
 image:https://codeclimate.com/github/metanorma/iev/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/iev"]
