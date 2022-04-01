@@ -516,6 +516,12 @@ image:https://codeclimate.com/github/relaton/relaton/badges/gpa.svg["Code Climat
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton.svg["Pull Requests",link="https://github.com/relaton/relaton/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton/latest.svg["Commits since latest",link="https://github.com/relaton/relaton/releases"]
 
+https://github.com/relaton/relaton-render[relaton-render] image:https://img.shields.io/gem/v/relaton-render.svg["Gem Version",link="https://rubygems.org/gems/relaton-render"]::
+image:https://github.com/relaton/relaton-render/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-render/actions?workflow=rake"]
+image:https://codeclimate.com/github/relaton/relaton-render/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-render"]
+image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-render.svg["Pull Requests",link="https://github.com/relaton/relaton-render/pulls"]
+image:https://img.shields.io/github/commits-since/relaton/relaton-render/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-render/releases"]
+
 
 == Purpose
 
