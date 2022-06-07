@@ -114,6 +114,20 @@ def shield_pull_requests(org, repo)
   shield(shield_url, alt: shield_alt_text, link: shield_link)
 end
 
+require 'net/http'
+require 'json'
+
+def shield_gha_latest_release(org, repo, workflow = "rake")
+  release_url = "https://api.github.com/repos/#{org}/#{repo}/releases/latest"
+  tag_name = JSON.parse(Net::HTTP.get(URI(release_url)))["tag_name"]
+
+  shield_url = "https://github.com/#{org}/#{repo}/actions/workflows/#{workflow}.yml/badge.svg?branch=#{tag_name}"
+  shield_link = "https://github.com/#{org}/#{repo}/actions/workflows/#{workflow}.yml?query=branch%3A#{tag_name}"
+  shield_alt_text = "Latest release"
+
+  shield(shield_url, alt: shield_alt_text, link: shield_link)
+end
+
 def shield(img, link:, alt:)
   %Q(image:#{img}["#{alt}",link="#{link}"])
 end

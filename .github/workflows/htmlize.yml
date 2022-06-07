@@ -1,5 +1,11 @@
 name: Build dashboard
-on: [push]
+
+on:
+  push:
+    branches: [ master, main ]
+    tags: [ v* ]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   readme:
