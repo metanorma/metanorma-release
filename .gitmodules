@@ -61,4 +61,4 @@
 [submodule "mn2pdf-ruby"]
 	path = mn2pdf-ruby
 	url = git@github.com:metanorma/mn2pdf-ruby.git
-	branch = master
+	branch = main

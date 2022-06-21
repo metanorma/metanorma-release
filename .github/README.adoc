@@ -573,7 +573,7 @@ $ bundle exec lapidist start
 
 . When all the gems pass, run a script to make PRs to every repository. If the feature branch for a gem is empty, the script will ignore it.
 
-. Merge PRs by hand or by script (into master or a release branch)
+. Merge PRs by hand or by script (into main or a release branch)
 
 
 === Releasing
@@ -583,7 +583,7 @@ $ bundle exec lapidist start
 .. Update the ``Gemfile``s (remove feature branches)
 .. Update ``gemspec``s to lock versions
 
-. Issue PRs for those gems to merge their release branches into `master`.
+. Issue PRs for those gems to merge their release branches into `main`.
 
 . Merge the release PRs by hand or by script.
 

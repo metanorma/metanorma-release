@@ -2,7 +2,7 @@ name: Build dashboard
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [ main ]
     tags: [ v* ]
   pull_request:
   workflow_dispatch:
@@ -16,10 +16,10 @@ jobs:
 
       - uses: actions/setup-ruby@v1
         with:
-          ruby-version: "2.6"
+          ruby-version: "3.1"
 
       - name: Install dependencies
-        run: gem install asciidoctor -v "~> 2.0"
+        run: gem install asciidoctor
 
       - name: Build release dashboard
         run: make all
@@ -40,8 +40,7 @@ jobs:
 
       - name: Push changes
         if: success() && github.event_name != 'pull_request'
-        uses: ad-m/github-push-action@v0.5.0
+        uses: ad-m/github-push-action@master
         with:
           branch: ${{ github.ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
