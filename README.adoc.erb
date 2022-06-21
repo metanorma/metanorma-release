@@ -11,6 +11,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <% for name in %w[html2doc isodoc metanorma-standoc metanorma-iso metanorma-generic metanorma-ietf metanorma-ieee metanorma-itu metanorma-nist metanorma-ogc metanorma-un metanorma-iec metanorma-bsi metanorma-bipm metanorma-csa metanorma-cc metanorma-iho metanorma-m3aawg metanorma-ribose metanorma metanorma-cli] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
+<%= shield_gha_latest_release "metanorma", name %>
 <%= shield_code_climate "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
@@ -20,8 +21,8 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 <% for name in %w[metanorma-docker] %>
 <%= github_link "metanorma", name %>::
-<%= shield_gha "metanorma", name, "docker-mn" %>
-<%= shield_gha "metanorma", name, "docker-metanorma" %>
+<%= shield_gha "metanorma", name, "build-push" %>
+<%= shield_gha_latest_release "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
@@ -31,6 +32,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_gha "metanorma", name, "macos" %>
 <%= shield_gha "metanorma", name, "linux" %>
 <%= shield_gha "metanorma", name, "windows" %>
+<%= shield_gha_latest_release "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
@@ -38,6 +40,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <% for name in %w[metanorma-snap] %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha "metanorma", name, "main" %>
+<%= shield_gha_latest_release "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
@@ -46,6 +49,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= github_link "metanorma", name %>::
 <%= shield_gha "metanorma", name, "macos" %>
 <%= shield_gha "metanorma", name, "linux" %>
+<%= shield_gha_latest_release "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
@@ -53,6 +57,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <% for name in %w[chocolatey-metanorma] %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha "metanorma", name, "main" %>
+<%= shield_gha_latest_release "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
@@ -78,31 +83,24 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <% for name in %w[metanorma-utils isodoc-i18n iev isoics reverse_adoc metanorma-plugin-lutaml emf2svg-ruby] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
+<%= shield_gha_latest_release "metanorma", name %>
 <%= shield_code_climate "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
 
-<% for name in %w[mnconvert-ruby] %>
+<% for name in %w[mnconvert-ruby mn2pdf-ruby] %>
 <%= github_link "metanorma", name %>::
-<%= shield_gha "metanorma", name, "mnconvert" %>
-<%= shield_pull_requests "metanorma", name %>
-<%= shield_commits_since "metanorma", name %>
-<% end %>
-
-<% for name in %w[mn2pdf-ruby] %>
-<%= github_link "metanorma", name %>::
-<%= shield_gha "metanorma", name, "mn2pdf" %>
+<%= shield_gha_rake "metanorma", name %>
+<%= shield_gha_latest_release "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
 
 <% for name in %w[mn2pdf mnconvert] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
-<%= shield_gha_macos "metanorma", name %>
-<%= shield_gha_ubuntu "metanorma", name %>
-<%= shield_gha_windows "metanorma", name %>
-<%= shield_code_climate "metanorma", name %>
+<%= shield_gha "metanorma", name, "test" %>
+<%= shield_gha_latest_release "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
@@ -113,6 +111,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <% for name in %w[latexmath] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_test "plurimath", name %>
+<%= shield_gha_latest_release "plurimath", name %>
 <%= shield_code_climate "plurimath", name %>
 <%= shield_pull_requests "plurimath", name %>
 <%= shield_commits_since "plurimath", name %>
@@ -121,6 +120,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <% for name in %w[asciimath2unitsml] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "plurimath", name %>
+<%= shield_gha_latest_release "plurimath", name %>
 <%= shield_code_climate "plurimath", name %>
 <%= shield_pull_requests "plurimath", name %>
 <%= shield_commits_since "plurimath", name %>
@@ -129,6 +129,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <% for name in %w[mathml2asciimath omml2mathml unicode2latex] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "plurimath", name %>
+<%= shield_gha_latest_release "plurimath", name %>
 <%= shield_code_climate "plurimath", name %>
 <%= shield_pull_requests "plurimath", name %>
 <%= shield_commits_since "plurimath", name %>

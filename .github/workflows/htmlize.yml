@@ -1,5 +1,11 @@
 name: Build dashboard
-on: [push]
+
+on:
+  push:
+    branches: [ master, main ]
+    tags: [ v* ]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   readme:
@@ -18,22 +24,24 @@ jobs:
       - name: Build release dashboard
         run: make all
 
-      - name: Configure Git
+      - name: Print README.adoc
+        run: cat README.adoc
+
+      - name: Commit release dashboard
+        if: github.event_name != 'pull_request'
+        id: commit
         run: |
           git config --local user.email "open.source@ribose.com"
           git config --local user.name "GitHub Action"
-
-      - name: Commit release dashboard
-        id: commit
-        run: |
           mv README.adoc .github/README.adoc
           git add -f .github/README.adoc
           git commit -m "Build release dashboard"
         continue-on-error: true
 
       - name: Push changes
-        if: success()
+        if: success() && github.event_name != 'pull_request'
         uses: ad-m/github-push-action@v0.5.0
         with:
           branch: ${{ github.ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
