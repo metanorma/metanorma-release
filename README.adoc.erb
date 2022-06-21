@@ -59,7 +59,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document samples
 
-<% for name in %w[iec itu unece ogc mpfa iso cc ietf iho nist csa m3aawg ribose bipm jcgm bsi].map { |n| "mn-samples-#{n}" } %>
+<% for name in %w[iec itu unece ogc ieee iso cc ietf iho nist csa m3aawg ribose bipm jcgm bsi].map { |n| "mn-samples-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha_generate "metanorma", name %>
 <%= shield_gha_docker "metanorma", name %>
