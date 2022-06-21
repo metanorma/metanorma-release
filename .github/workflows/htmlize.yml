@@ -35,12 +35,6 @@ jobs:
           git config --local user.name "GitHub Action"
           mv README.adoc .github/README.adoc
           git add -f .github/README.adoc
-          git commit -m "Build release dashboard"
+          git commit -m "Update release dashboard"
+          git push origin HEAD:${GITHUB_REF}
         continue-on-error: true
-
-      - name: Push changes
-        if: success() && github.event_name != 'pull_request'
-        uses: ad-m/github-push-action@master
-        with:
-          branch: ${{ github.ref }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
