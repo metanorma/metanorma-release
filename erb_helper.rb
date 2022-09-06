@@ -50,6 +50,14 @@ def shield_gha_rake(org, repo)
   shield(shield_url, alt: shield_alt_text, link: shield_link)
 end
 
+def shield_gha_release(org, repo)
+  shield_url = "https://github.com/#{org}/#{repo}/workflows/release/badge.svg"
+  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=release"
+  shield_alt_text = "Build Status (Release)"
+
+  shield(shield_url, alt: shield_alt_text, link: shield_link)
+end
+
 def shield_gha_macos(org, repo)
   shield_url = "https://github.com/#{org}/#{repo}/workflows/macos/badge.svg"
   shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=macos"
