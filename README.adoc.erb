@@ -8,7 +8,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 (in dependency order)
 
-<% for name in %w[metanorma-utils isodoc-i18n mn-requirements html2doc isodoc metanorma metanorma-standoc metanorma-iso metanorma-generic metanorma-ietf metanorma-ieee metanorma-itu metanorma-nist metanorma-ogc metanorma-un metanorma-iec metanorma-jis metanorma-bsi metanorma-bipm metanorma-csa metanorma-cc metanorma-iho metanorma-ribose metanorma-cli] %>
+<% for name in %w[metanorma-utils isodoc-i18n mn-requirements html2doc isodoc metanorma metanorma-standoc metanorma-iso metanorma-generic metanorma-ietf metanorma-ieee metanorma-itu metanorma-nist metanorma-ogc metanorma-un metanorma-iec metanorma-bsi metanorma-jis metanorma-bipm metanorma-csa metanorma-cc metanorma-iho metanorma-ribose metanorma-cli] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_gha_latest_release "metanorma", name %>
@@ -112,16 +112,6 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Plurimath gems
 
-<% for name in %w[latexmath] %>
-<%= github_link "plurimath", name %> <%= shield_gem name %>::
-<%= shield_gha_test "plurimath", name %>
-<%= shield_gha_latest_release "plurimath", name %>
-<%= shield_gha_release "plurimath", name %>
-<%= shield_code_climate "plurimath", name %>
-<%= shield_pull_requests "plurimath", name %>
-<%= shield_commits_since "plurimath", name %>
-<% end %>
-
 <% for name in %w[asciimath2unitsml] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "plurimath", name %>
@@ -132,7 +122,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "plurimath", name %>
 <% end %>
 
-<% for name in %w[mathml2asciimath omml2mathml unicode2latex plurimath] %>
+<% for name in %w[omml2mathml unicode2latex plurimath] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "plurimath", name %>
 <%= shield_gha_latest_release "plurimath", name %>
