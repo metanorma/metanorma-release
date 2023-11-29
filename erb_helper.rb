@@ -43,73 +43,29 @@ def shield_gem(name)
 end
 
 def shield_gha_rake(org, repo)
-  shield_url = "https://github.com/#{org}/#{repo}/workflows/rake/badge.svg"
-  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=rake"
-  shield_alt_text = "Build Status (Rake)"
-
-  shield(shield_url, alt: shield_alt_text, link: shield_link)
+  shield_gha(org, repo, "rake")
 end
 
 def shield_gha_release(org, repo)
-  shield_url = "https://github.com/#{org}/#{repo}/workflows/release/badge.svg"
-  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=release"
-  shield_alt_text = "Build Status (Release)"
-
-  shield(shield_url, alt: shield_alt_text, link: shield_link)
-end
-
-def shield_gha_macos(org, repo)
-  shield_url = "https://github.com/#{org}/#{repo}/workflows/macos/badge.svg"
-  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=macos"
-  shield_alt_text = "Build Status (macOS)"
-
-  shield(shield_url, alt: shield_alt_text, link: shield_link)
-end
-
-def shield_gha_ubuntu(org, repo)
-  shield_url = "https://github.com/#{org}/#{repo}/workflows/ubuntu/badge.svg"
-  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=ubuntu"
-  shield_alt_text = "Build Status (Ubuntu)"
-
-  shield(shield_url, alt: shield_alt_text, link: shield_link)
-end
-
-def shield_gha_windows(org, repo)
-  shield_url = "https://github.com/#{org}/#{repo}/workflows/windows/badge.svg"
-  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=windows"
-  shield_alt_text = "Build Status (Windows)"
-
-  shield(shield_url, alt: shield_alt_text, link: shield_link)
+  shield_gha(org, repo, "release")
 end
 
 def shield_gha_generate(org, repo)
-  shield_url = "https://github.com/#{org}/#{repo}/workflows/generate/badge.svg"
-  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=generate"
-  shield_alt_text = "Build Status"
-
-  shield(shield_url, alt: shield_alt_text, link: shield_link)
+  shield_gha(org, repo, "generate")
 end
 
 def shield_gha_docker(org, repo)
-  shield_url = "https://github.com/#{org}/#{repo}/workflows/docker/badge.svg"
-  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=docker"
-  shield_alt_text = "Build Status (Docker)"
-
-  shield(shield_url, alt: shield_alt_text, link: shield_link)
+  shield_gha(org, repo, "docker")
 end
 
 def shield_gha_test(org, repo)
-  shield_url = "https://github.com/#{org}/#{repo}/workflows/test/badge.svg"
-  shield_link = "https://github.com/#{org}/#{repo}/actions?workflow=test"
-  shield_alt_text = "Build Status"
-
-  shield(shield_url, alt: shield_alt_text, link: shield_link)
+  shield_gha(org, repo, "test")
 end
 
 def shield_gha(org, repo, workflow)
-  url = "https://github.com/#{org}/#{repo}/workflows/#{workflow}/badge.svg"
-  link = "https://github.com/#{org}/#{repo}/actions?workflow=#{workflow}"
-  alt_text = "Build Status (#{workflow})"
+  url = "https://github.com/#{org}/#{repo}/actions/workflows/#{workflow}.yml/badge.svg"
+  link = "https://github.com/#{org}/#{repo}/actions/workflows/#{workflow}.yml"
+  alt_text = "Build Status (#{workflow.capitalize})"
 
   shield(url, alt: alt_text, link: link)
 end
