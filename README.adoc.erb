@@ -13,61 +13,64 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_gha_latest_release "metanorma", name %>
 <%= shield_gha_release "metanorma", name %>
+<% unless is_private name %>
 <%= shield_code_climate "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
+<% end %>
 
 == Metanorma environments
 
-<% for name in %w[metanorma-docker] %>
+<% for name in %w[metanorma-docker metanorma-docker-private] %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha "metanorma", name, "build-push" %>
-<%= shield_gha_latest_release "metanorma", name %>
+<%= shield_gha_latest_release "metanorma", name, "build-push" %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
 <% end %>
 
-<% for name in %w[packed-mn] %>
-<%= github_link "metanorma", name %>::
-<%= shield_gha "metanorma", name, "macos" %>
-<%= shield_gha "metanorma", name, "linux" %>
-<%= shield_gha "metanorma", name, "windows" %>
-<%= shield_gha_latest_release "metanorma", name %>
-<%= shield_pull_requests "metanorma", name %>
-<%= shield_commits_since "metanorma", name %>
-<% end %>
+<%= github_link "metanorma", "packed-mn" %>::
+<%= shield_gha "metanorma", "packed-mn", "macos" %>
+<%= shield_gha "metanorma", "packed-mn", "alpine" %>
+<%= shield_gha "metanorma", "packed-mn", "ubuntu" %>
+<%= shield_gha "metanorma", "packed-mn", "windows" %>
+<%= shield_gha_latest_release "metanorma", "packed-mn", "ubuntu" %>
+<%= shield_pull_requests "metanorma", "packed-mn" %>
+<%= shield_commits_since "metanorma", "packed-mn" %>
 
-<% for name in %w[metanorma-snap aibika] %>
-<%= github_link "metanorma", name %>::
-<%= shield_gha "metanorma", name, "main" %>
-<%= shield_gha_latest_release "metanorma", name %>
-<%= shield_pull_requests "metanorma", name %>
-<%= shield_commits_since "metanorma", name %>
-<% end %>
+<%= github_link "metanorma", "metanorma-snap" %>::
+<%= shield_gha "metanorma", "metanorma-snap", "main" %>
+<%= shield_gha_latest_release "metanorma", "metanorma-snap", "main" %>
+<%= shield_pull_requests "metanorma", "metanorma-snap" %>
+<%= shield_commits_since "metanorma", "metanorma-snap" %>
 
-<% for name in %w[homebrew-metanorma] %>
-<%= github_link "metanorma", name %>::
-<%= shield_gha "metanorma", name, "macos" %>
-<%= shield_gha "metanorma", name, "linux" %>
-<%= shield_gha_latest_release "metanorma", name %>
-<%= shield_pull_requests "metanorma", name %>
-<%= shield_commits_since "metanorma", name %>
-<% end %>
+<%= github_link "tamatebako", "aibika" %>::
+<%= shield_gha "tamatebako", "aibika", "main" %>
+<%= shield_gha_latest_release "tamatebako", "aibika", "build-and-test" %>
+<%= shield_pull_requests "tamatebako", "aibika" %>
+<%= shield_commits_since "tamatebako", "aibika" %>
 
-<% for name in %w[chocolatey-metanorma] %>
-<%= github_link "metanorma", name %>::
-<%= shield_gha "metanorma", name, "main" %>
-<%= shield_gha_latest_release "metanorma", name %>
-<%= shield_pull_requests "metanorma", name %>
-<%= shield_commits_since "metanorma", name %>
-<% end %>
+<%= github_link "metanorma", "homebrew-metanorma" %>::
+<%= shield_gha "metanorma", "homebrew-metanorma", "macos" %>
+<%= shield_gha "metanorma", "homebrew-metanorma", "linux" %>
+<%= shield_gha_latest_release "metanorma", "homebrew-metanorma", "macos" %>
+<%= shield_pull_requests "metanorma", "homebrew-metanorma" %>
+<%= shield_commits_since "metanorma", "homebrew-metanorma" %>
+
+<%= github_link "metanorma", "chocolatey-metanorma" %>::
+<%= shield_gha "metanorma", "chocolatey-metanorma", "main" %>
+<%= shield_gha_latest_release "metanorma", "chocolatey-metanorma", "main" %>
+<%= shield_pull_requests "metanorma", "chocolatey-metanorma" %>
+<%= shield_commits_since "metanorma", "chocolatey-metanorma" %>
 
 == Metanorma document samples
 
 <% for name in %w[iec itu unece ogc ieee iso cc ietf iho nist csa m3aawg ribose bipm jcgm bsi].map { |n| "mn-samples-#{n}" } %>
 <%= github_link "metanorma", name %>::
+<% unless is_private name %>
 <%= shield_gha_generate "metanorma", name %>
+<% end %>
 <%= shield_gha_docker "metanorma", name %>
 <% end %>
 
@@ -103,7 +106,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <% for name in %w[mn2pdf mnconvert] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha "metanorma", name, "test" %>
-<%= shield_gha_latest_release "metanorma", name %>
+<%= shield_gha_latest_release "metanorma", name, "test" %>
 <%= shield_gha_release "metanorma", name %>
 <%= shield_pull_requests "metanorma", name %>
 <%= shield_commits_since "metanorma", name %>
