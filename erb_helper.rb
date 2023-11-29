@@ -35,9 +35,25 @@ def shield_commits_since(org, repo)
 end
 
 def shield_gem(name)
+  if is_private name
+    shield_github_gem("metanorma", name)
+  else
+    shield_rubygems_gem(name)
+  end
+end
+
+def shield_rubygems_gem(name)
   shield_url = "https://img.shields.io/gem/v/#{name}.svg"
   shield_link = "https://rubygems.org/gems/#{name}"
   shield_alt_text = "Gem Version"
+
+  shield(shield_url, alt: shield_alt_text, link: shield_link)
+end
+
+def shield_github_gem(org, name)
+  shield_url = "https://img.shields.io/badge/gem-click_to_check-brighthgreen.svg"
+  shield_link = "https://github.com/#{org}/#{name}/pkgs/rubygems/#{name}"
+  shield_alt_text = "GitHub Packages"
 
   shield(shield_url, alt: shield_alt_text, link: shield_link)
 end
@@ -96,4 +112,8 @@ end
 
 def shield(img, link:, alt:)
   %Q(image:#{img}["#{alt}",link="#{link}"])
+end
+
+def is_private(gem_name)
+  gem_name in %w[metanorma-nist metanorma-bsi mn-samples-nist mn-samples-bsi]
 end
