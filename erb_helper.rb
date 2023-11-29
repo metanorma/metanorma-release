@@ -115,5 +115,5 @@ def shield(img, link:, alt:)
 end
 
 def is_private(gem_name)
-  gem_name in %w[metanorma-nist metanorma-bsi mn-samples-nist mn-samples-bsi]
+  %w[metanorma-nist metanorma-bsi mn-samples-nist mn-samples-bsi].include? gem_name
 end
