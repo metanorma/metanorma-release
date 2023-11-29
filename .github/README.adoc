@@ -17,193 +17,193 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 
 https://github.com/metanorma/metanorma-utils[metanorma-utils] image:https://img.shields.io/gem/v/metanorma-utils.svg["Gem Version",link="https://rubygems.org/gems/metanorma-utils"]::
-image:https://github.com/metanorma/metanorma-utils/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-utils/actions?workflow=rake"]
+image:https://github.com/metanorma/metanorma-utils/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-utils/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/metanorma-utils/actions/workflows/rake.yml/badge.svg?branch=v1.6.4["Latest release",link="https://github.com/metanorma/metanorma-utils/actions/workflows/rake.yml?query=branch%3Av1.6.4"]
-image:https://github.com/metanorma/metanorma-utils/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-utils/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-utils/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-utils/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-utils/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-utils"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-utils.svg["Pull Requests",link="https://github.com/metanorma/metanorma-utils/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-utils/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-utils/releases"]
 
 https://github.com/metanorma/isodoc-i18n[isodoc-i18n] image:https://img.shields.io/gem/v/isodoc-i18n.svg["Gem Version",link="https://rubygems.org/gems/isodoc-i18n"]::
-image:https://github.com/metanorma/isodoc-i18n/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/isodoc-i18n/actions?workflow=rake"]
+image:https://github.com/metanorma/isodoc-i18n/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/isodoc-i18n/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/isodoc-i18n/actions/workflows/rake.yml/badge.svg?branch=v1.2.0["Latest release",link="https://github.com/metanorma/isodoc-i18n/actions/workflows/rake.yml?query=branch%3Av1.2.0"]
-image:https://github.com/metanorma/isodoc-i18n/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/isodoc-i18n/actions?workflow=release"]
+image:https://github.com/metanorma/isodoc-i18n/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/isodoc-i18n/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/isodoc-i18n/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/isodoc-i18n"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/isodoc-i18n.svg["Pull Requests",link="https://github.com/metanorma/isodoc-i18n/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/isodoc-i18n/latest.svg["Commits since latest",link="https://github.com/metanorma/isodoc-i18n/releases"]
 
 https://github.com/metanorma/mn-requirements[mn-requirements] image:https://img.shields.io/gem/v/mn-requirements.svg["Gem Version",link="https://rubygems.org/gems/mn-requirements"]::
-image:https://github.com/metanorma/mn-requirements/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mn-requirements/actions?workflow=rake"]
+image:https://github.com/metanorma/mn-requirements/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mn-requirements/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/mn-requirements/actions/workflows/rake.yml/badge.svg?branch=v0.3.5["Latest release",link="https://github.com/metanorma/mn-requirements/actions/workflows/rake.yml?query=branch%3Av0.3.5"]
-image:https://github.com/metanorma/mn-requirements/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mn-requirements/actions?workflow=release"]
+image:https://github.com/metanorma/mn-requirements/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mn-requirements/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/mn-requirements/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/mn-requirements"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mn-requirements.svg["Pull Requests",link="https://github.com/metanorma/mn-requirements/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mn-requirements/latest.svg["Commits since latest",link="https://github.com/metanorma/mn-requirements/releases"]
 
 https://github.com/metanorma/html2doc[html2doc] image:https://img.shields.io/gem/v/html2doc.svg["Gem Version",link="https://rubygems.org/gems/html2doc"]::
-image:https://github.com/metanorma/html2doc/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/html2doc/actions?workflow=rake"]
-image:https://github.com/metanorma/html2doc/actions/workflows/rake.yml/badge.svg?branch=v1.7.0["Latest release",link="https://github.com/metanorma/html2doc/actions/workflows/rake.yml?query=branch%3Av1.7.0"]
-image:https://github.com/metanorma/html2doc/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/html2doc/actions?workflow=release"]
+image:https://github.com/metanorma/html2doc/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/html2doc/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/html2doc/actions/workflows/rake.yml/badge.svg?branch=v1.7.1["Latest release",link="https://github.com/metanorma/html2doc/actions/workflows/rake.yml?query=branch%3Av1.7.1"]
+image:https://github.com/metanorma/html2doc/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/html2doc/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/html2doc/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/html2doc"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/html2doc.svg["Pull Requests",link="https://github.com/metanorma/html2doc/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/html2doc/latest.svg["Commits since latest",link="https://github.com/metanorma/html2doc/releases"]
 
 https://github.com/metanorma/isodoc[isodoc] image:https://img.shields.io/gem/v/isodoc.svg["Gem Version",link="https://rubygems.org/gems/isodoc"]::
-image:https://github.com/metanorma/isodoc/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/isodoc/actions?workflow=rake"]
-image:https://github.com/metanorma/isodoc/actions/workflows/rake.yml/badge.svg?branch=v2.7.0["Latest release",link="https://github.com/metanorma/isodoc/actions/workflows/rake.yml?query=branch%3Av2.7.0"]
-image:https://github.com/metanorma/isodoc/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/isodoc/actions?workflow=release"]
+image:https://github.com/metanorma/isodoc/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/isodoc/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/isodoc/actions/workflows/rake.yml/badge.svg?branch=v2.7.1["Latest release",link="https://github.com/metanorma/isodoc/actions/workflows/rake.yml?query=branch%3Av2.7.1"]
+image:https://github.com/metanorma/isodoc/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/isodoc/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/isodoc/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/isodoc"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/isodoc.svg["Pull Requests",link="https://github.com/metanorma/isodoc/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/isodoc/latest.svg["Commits since latest",link="https://github.com/metanorma/isodoc/releases"]
 
 https://github.com/metanorma/metanorma[metanorma] image:https://img.shields.io/gem/v/metanorma.svg["Gem Version",link="https://rubygems.org/gems/metanorma"]::
-image:https://github.com/metanorma/metanorma/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma/actions?workflow=rake"]
+image:https://github.com/metanorma/metanorma/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/metanorma/actions/workflows/rake.yml/badge.svg?branch=v1.6.7["Latest release",link="https://github.com/metanorma/metanorma/actions/workflows/rake.yml?query=branch%3Av1.6.7"]
-image:https://github.com/metanorma/metanorma/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma.svg["Pull Requests",link="https://github.com/metanorma/metanorma/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma/releases"]
 
 https://github.com/metanorma/metanorma-standoc[metanorma-standoc] image:https://img.shields.io/gem/v/metanorma-standoc.svg["Gem Version",link="https://rubygems.org/gems/metanorma-standoc"]::
-image:https://github.com/metanorma/metanorma-standoc/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-standoc/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-standoc/actions/workflows/rake.yml/badge.svg?branch=v2.6.3["Latest release",link="https://github.com/metanorma/metanorma-standoc/actions/workflows/rake.yml?query=branch%3Av2.6.3"]
-image:https://github.com/metanorma/metanorma-standoc/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-standoc/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-standoc/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-standoc/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-standoc/actions/workflows/rake.yml/badge.svg?branch=v2.7.1["Latest release",link="https://github.com/metanorma/metanorma-standoc/actions/workflows/rake.yml?query=branch%3Av2.7.1"]
+image:https://github.com/metanorma/metanorma-standoc/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-standoc/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-standoc/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-standoc"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-standoc.svg["Pull Requests",link="https://github.com/metanorma/metanorma-standoc/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-standoc/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-standoc/releases"]
 
 https://github.com/metanorma/metanorma-iso[metanorma-iso] image:https://img.shields.io/gem/v/metanorma-iso.svg["Gem Version",link="https://rubygems.org/gems/metanorma-iso"]::
-image:https://github.com/metanorma/metanorma-iso/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-iso/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-iso/actions/workflows/rake.yml/badge.svg?branch=v2.5.4["Latest release",link="https://github.com/metanorma/metanorma-iso/actions/workflows/rake.yml?query=branch%3Av2.5.4"]
-image:https://github.com/metanorma/metanorma-iso/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-iso/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-iso/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-iso/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-iso/actions/workflows/rake.yml/badge.svg?branch=v2.6.0["Latest release",link="https://github.com/metanorma/metanorma-iso/actions/workflows/rake.yml?query=branch%3Av2.6.0"]
+image:https://github.com/metanorma/metanorma-iso/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-iso/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-iso/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-iso"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-iso.svg["Pull Requests",link="https://github.com/metanorma/metanorma-iso/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-iso/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-iso/releases"]
 
 https://github.com/metanorma/metanorma-generic[metanorma-generic] image:https://img.shields.io/gem/v/metanorma-generic.svg["Gem Version",link="https://rubygems.org/gems/metanorma-generic"]::
-image:https://github.com/metanorma/metanorma-generic/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-generic/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-generic/actions/workflows/rake.yml/badge.svg?branch=v2.5.3["Latest release",link="https://github.com/metanorma/metanorma-generic/actions/workflows/rake.yml?query=branch%3Av2.5.3"]
-image:https://github.com/metanorma/metanorma-generic/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-generic/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-generic/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-generic/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-generic/actions/workflows/rake.yml/badge.svg?branch=v2.5.4["Latest release",link="https://github.com/metanorma/metanorma-generic/actions/workflows/rake.yml?query=branch%3Av2.5.4"]
+image:https://github.com/metanorma/metanorma-generic/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-generic/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-generic/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-generic"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-generic.svg["Pull Requests",link="https://github.com/metanorma/metanorma-generic/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-generic/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-generic/releases"]
 
 https://github.com/metanorma/metanorma-ietf[metanorma-ietf] image:https://img.shields.io/gem/v/metanorma-ietf.svg["Gem Version",link="https://rubygems.org/gems/metanorma-ietf"]::
-image:https://github.com/metanorma/metanorma-ietf/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-ietf/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-ietf/actions/workflows/rake.yml/badge.svg?branch=v3.2.4["Latest release",link="https://github.com/metanorma/metanorma-ietf/actions/workflows/rake.yml?query=branch%3Av3.2.4"]
-image:https://github.com/metanorma/metanorma-ietf/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-ietf/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-ietf/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-ietf/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-ietf/actions/workflows/rake.yml/badge.svg?branch=v3.2.5["Latest release",link="https://github.com/metanorma/metanorma-ietf/actions/workflows/rake.yml?query=branch%3Av3.2.5"]
+image:https://github.com/metanorma/metanorma-ietf/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-ietf/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-ietf/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-ietf"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-ietf.svg["Pull Requests",link="https://github.com/metanorma/metanorma-ietf/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-ietf/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-ietf/releases"]
 
 https://github.com/metanorma/metanorma-ieee[metanorma-ieee] image:https://img.shields.io/gem/v/metanorma-ieee.svg["Gem Version",link="https://rubygems.org/gems/metanorma-ieee"]::
-image:https://github.com/metanorma/metanorma-ieee/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-ieee/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-ieee/actions/workflows/rake.yml/badge.svg?branch=v1.1.6["Latest release",link="https://github.com/metanorma/metanorma-ieee/actions/workflows/rake.yml?query=branch%3Av1.1.6"]
-image:https://github.com/metanorma/metanorma-ieee/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-ieee/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-ieee/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-ieee/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-ieee/actions/workflows/rake.yml/badge.svg?branch=v1.1.7["Latest release",link="https://github.com/metanorma/metanorma-ieee/actions/workflows/rake.yml?query=branch%3Av1.1.7"]
+image:https://github.com/metanorma/metanorma-ieee/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-ieee/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-ieee/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-ieee"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-ieee.svg["Pull Requests",link="https://github.com/metanorma/metanorma-ieee/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-ieee/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-ieee/releases"]
 
 https://github.com/metanorma/metanorma-itu[metanorma-itu] image:https://img.shields.io/gem/v/metanorma-itu.svg["Gem Version",link="https://rubygems.org/gems/metanorma-itu"]::
-image:https://github.com/metanorma/metanorma-itu/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-itu/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-itu/actions/workflows/rake.yml/badge.svg?branch=v2.3.4["Latest release",link="https://github.com/metanorma/metanorma-itu/actions/workflows/rake.yml?query=branch%3Av2.3.4"]
-image:https://github.com/metanorma/metanorma-itu/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-itu/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-itu/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-itu/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-itu/actions/workflows/rake.yml/badge.svg?branch=v2.3.5["Latest release",link="https://github.com/metanorma/metanorma-itu/actions/workflows/rake.yml?query=branch%3Av2.3.5"]
+image:https://github.com/metanorma/metanorma-itu/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-itu/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-itu/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-itu"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-itu.svg["Pull Requests",link="https://github.com/metanorma/metanorma-itu/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-itu/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-itu/releases"]
 
 https://github.com/metanorma/metanorma-nist[metanorma-nist] image:https://img.shields.io/gem/v/metanorma-nist.svg["Gem Version",link="https://rubygems.org/gems/metanorma-nist"]::
-image:https://github.com/metanorma/metanorma-nist/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-nist/actions?workflow=rake"]
+image:https://github.com/metanorma/metanorma-nist/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-nist/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/metanorma-nist/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/metanorma/metanorma-nist/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/metanorma/metanorma-nist/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-nist/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-nist/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-nist/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-nist/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-nist"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-nist.svg["Pull Requests",link="https://github.com/metanorma/metanorma-nist/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-nist/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-nist/releases"]
 
 https://github.com/metanorma/metanorma-ogc[metanorma-ogc] image:https://img.shields.io/gem/v/metanorma-ogc.svg["Gem Version",link="https://rubygems.org/gems/metanorma-ogc"]::
-image:https://github.com/metanorma/metanorma-ogc/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-ogc/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-ogc/actions/workflows/rake.yml/badge.svg?branch=v2.4.5["Latest release",link="https://github.com/metanorma/metanorma-ogc/actions/workflows/rake.yml?query=branch%3Av2.4.5"]
-image:https://github.com/metanorma/metanorma-ogc/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-ogc/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-ogc/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-ogc/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-ogc/actions/workflows/rake.yml/badge.svg?branch=v2.4.6["Latest release",link="https://github.com/metanorma/metanorma-ogc/actions/workflows/rake.yml?query=branch%3Av2.4.6"]
+image:https://github.com/metanorma/metanorma-ogc/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-ogc/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-ogc/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-ogc"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-ogc.svg["Pull Requests",link="https://github.com/metanorma/metanorma-ogc/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-ogc/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-ogc/releases"]
 
 https://github.com/metanorma/metanorma-un[metanorma-un] image:https://img.shields.io/gem/v/metanorma-un.svg["Gem Version",link="https://rubygems.org/gems/metanorma-un"]::
-image:https://github.com/metanorma/metanorma-un/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-un/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-un/actions/workflows/rake.yml/badge.svg?branch=v0.11.4["Latest release",link="https://github.com/metanorma/metanorma-un/actions/workflows/rake.yml?query=branch%3Av0.11.4"]
-image:https://github.com/metanorma/metanorma-un/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-un/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-un/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-un/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-un/actions/workflows/rake.yml/badge.svg?branch=v0.11.5["Latest release",link="https://github.com/metanorma/metanorma-un/actions/workflows/rake.yml?query=branch%3Av0.11.5"]
+image:https://github.com/metanorma/metanorma-un/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-un/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-un/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-un"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-un.svg["Pull Requests",link="https://github.com/metanorma/metanorma-un/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-un/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-un/releases"]
 
 https://github.com/metanorma/metanorma-iec[metanorma-iec] image:https://img.shields.io/gem/v/metanorma-iec.svg["Gem Version",link="https://rubygems.org/gems/metanorma-iec"]::
-image:https://github.com/metanorma/metanorma-iec/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-iec/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-iec/actions/workflows/rake.yml/badge.svg?branch=v2.3.4["Latest release",link="https://github.com/metanorma/metanorma-iec/actions/workflows/rake.yml?query=branch%3Av2.3.4"]
-image:https://github.com/metanorma/metanorma-iec/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-iec/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-iec/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-iec/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-iec/actions/workflows/rake.yml/badge.svg?branch=v2.3.5["Latest release",link="https://github.com/metanorma/metanorma-iec/actions/workflows/rake.yml?query=branch%3Av2.3.5"]
+image:https://github.com/metanorma/metanorma-iec/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-iec/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-iec/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-iec"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-iec.svg["Pull Requests",link="https://github.com/metanorma/metanorma-iec/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-iec/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-iec/releases"]
 
 https://github.com/metanorma/metanorma-bsi[metanorma-bsi] image:https://img.shields.io/gem/v/metanorma-bsi.svg["Gem Version",link="https://rubygems.org/gems/metanorma-bsi"]::
-image:https://github.com/metanorma/metanorma-bsi/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-bsi/actions?workflow=rake"]
+image:https://github.com/metanorma/metanorma-bsi/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-bsi/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/metanorma-bsi/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/metanorma/metanorma-bsi/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/metanorma/metanorma-bsi/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-bsi/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-bsi/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-bsi/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-bsi/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-bsi"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-bsi.svg["Pull Requests",link="https://github.com/metanorma/metanorma-bsi/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-bsi/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-bsi/releases"]
 
 https://github.com/metanorma/metanorma-jis[metanorma-jis] image:https://img.shields.io/gem/v/metanorma-jis.svg["Gem Version",link="https://rubygems.org/gems/metanorma-jis"]::
-image:https://github.com/metanorma/metanorma-jis/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-jis/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-jis/actions/workflows/rake.yml/badge.svg?branch=v0.1.3["Latest release",link="https://github.com/metanorma/metanorma-jis/actions/workflows/rake.yml?query=branch%3Av0.1.3"]
-image:https://github.com/metanorma/metanorma-jis/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-jis/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-jis/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-jis/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-jis/actions/workflows/rake.yml/badge.svg?branch=v0.1.4["Latest release",link="https://github.com/metanorma/metanorma-jis/actions/workflows/rake.yml?query=branch%3Av0.1.4"]
+image:https://github.com/metanorma/metanorma-jis/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-jis/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-jis/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-jis"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-jis.svg["Pull Requests",link="https://github.com/metanorma/metanorma-jis/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-jis/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-jis/releases"]
 
 https://github.com/metanorma/metanorma-bipm[metanorma-bipm] image:https://img.shields.io/gem/v/metanorma-bipm.svg["Gem Version",link="https://rubygems.org/gems/metanorma-bipm"]::
-image:https://github.com/metanorma/metanorma-bipm/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-bipm/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-bipm/actions/workflows/rake.yml/badge.svg?branch=v2.3.3["Latest release",link="https://github.com/metanorma/metanorma-bipm/actions/workflows/rake.yml?query=branch%3Av2.3.3"]
-image:https://github.com/metanorma/metanorma-bipm/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-bipm/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-bipm/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-bipm/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-bipm/actions/workflows/rake.yml/badge.svg?branch=v2.3.4["Latest release",link="https://github.com/metanorma/metanorma-bipm/actions/workflows/rake.yml?query=branch%3Av2.3.4"]
+image:https://github.com/metanorma/metanorma-bipm/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-bipm/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-bipm/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-bipm"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-bipm.svg["Pull Requests",link="https://github.com/metanorma/metanorma-bipm/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-bipm/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-bipm/releases"]
 
 https://github.com/metanorma/metanorma-csa[metanorma-csa] image:https://img.shields.io/gem/v/metanorma-csa.svg["Gem Version",link="https://rubygems.org/gems/metanorma-csa"]::
-image:https://github.com/metanorma/metanorma-csa/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-csa/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-csa/actions/workflows/rake.yml/badge.svg?branch=v2.3.2["Latest release",link="https://github.com/metanorma/metanorma-csa/actions/workflows/rake.yml?query=branch%3Av2.3.2"]
-image:https://github.com/metanorma/metanorma-csa/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-csa/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-csa/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-csa/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-csa/actions/workflows/rake.yml/badge.svg?branch=v2.3.4["Latest release",link="https://github.com/metanorma/metanorma-csa/actions/workflows/rake.yml?query=branch%3Av2.3.4"]
+image:https://github.com/metanorma/metanorma-csa/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-csa/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-csa/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-csa"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-csa.svg["Pull Requests",link="https://github.com/metanorma/metanorma-csa/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-csa/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-csa/releases"]
 
 https://github.com/metanorma/metanorma-cc[metanorma-cc] image:https://img.shields.io/gem/v/metanorma-cc.svg["Gem Version",link="https://rubygems.org/gems/metanorma-cc"]::
-image:https://github.com/metanorma/metanorma-cc/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-cc/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-cc/actions/workflows/rake.yml/badge.svg?branch=v2.3.3["Latest release",link="https://github.com/metanorma/metanorma-cc/actions/workflows/rake.yml?query=branch%3Av2.3.3"]
-image:https://github.com/metanorma/metanorma-cc/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-cc/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-cc/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-cc/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-cc/actions/workflows/rake.yml/badge.svg?branch=v2.3.4["Latest release",link="https://github.com/metanorma/metanorma-cc/actions/workflows/rake.yml?query=branch%3Av2.3.4"]
+image:https://github.com/metanorma/metanorma-cc/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-cc/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-cc/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-cc"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-cc.svg["Pull Requests",link="https://github.com/metanorma/metanorma-cc/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-cc/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-cc/releases"]
 
 https://github.com/metanorma/metanorma-iho[metanorma-iho] image:https://img.shields.io/gem/v/metanorma-iho.svg["Gem Version",link="https://rubygems.org/gems/metanorma-iho"]::
-image:https://github.com/metanorma/metanorma-iho/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-iho/actions/workflows/rake.yml/badge.svg?branch=v0.8.4["Latest release",link="https://github.com/metanorma/metanorma-iho/actions/workflows/rake.yml?query=branch%3Av0.8.4"]
-image:https://github.com/metanorma/metanorma-iho/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-iho/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-iho/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-iho/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-iho/actions/workflows/rake.yml/badge.svg?branch=v0.8.5["Latest release",link="https://github.com/metanorma/metanorma-iho/actions/workflows/rake.yml?query=branch%3Av0.8.5"]
+image:https://github.com/metanorma/metanorma-iho/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-iho/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-iho/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-iho"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-iho.svg["Pull Requests",link="https://github.com/metanorma/metanorma-iho/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-iho/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-iho/releases"]
 
 https://github.com/metanorma/metanorma-ribose[metanorma-ribose] image:https://img.shields.io/gem/v/metanorma-ribose.svg["Gem Version",link="https://rubygems.org/gems/metanorma-ribose"]::
-image:https://github.com/metanorma/metanorma-ribose/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-ribose/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-ribose/actions/workflows/rake.yml/badge.svg?branch=v2.3.3["Latest release",link="https://github.com/metanorma/metanorma-ribose/actions/workflows/rake.yml?query=branch%3Av2.3.3"]
-image:https://github.com/metanorma/metanorma-ribose/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-ribose/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-ribose/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-ribose/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-ribose/actions/workflows/rake.yml/badge.svg?branch=v2.3.4["Latest release",link="https://github.com/metanorma/metanorma-ribose/actions/workflows/rake.yml?query=branch%3Av2.3.4"]
+image:https://github.com/metanorma/metanorma-ribose/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-ribose/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-ribose/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-ribose"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-ribose.svg["Pull Requests",link="https://github.com/metanorma/metanorma-ribose/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-ribose/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-ribose/releases"]
 
 https://github.com/metanorma/metanorma-cli[metanorma-cli] image:https://img.shields.io/gem/v/metanorma-cli.svg["Gem Version",link="https://rubygems.org/gems/metanorma-cli"]::
-image:https://github.com/metanorma/metanorma-cli/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-cli/actions?workflow=rake"]
-image:https://github.com/metanorma/metanorma-cli/actions/workflows/rake.yml/badge.svg?branch=v1.8.7["Latest release",link="https://github.com/metanorma/metanorma-cli/actions/workflows/rake.yml?query=branch%3Av1.8.7"]
-image:https://github.com/metanorma/metanorma-cli/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-cli/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-cli/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-cli/actions/workflows/rake.yml"]
+image:https://github.com/metanorma/metanorma-cli/actions/workflows/rake.yml/badge.svg?branch=v1.8.9["Latest release",link="https://github.com/metanorma/metanorma-cli/actions/workflows/rake.yml?query=branch%3Av1.8.9"]
+image:https://github.com/metanorma/metanorma-cli/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-cli/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-cli/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-cli"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-cli.svg["Pull Requests",link="https://github.com/metanorma/metanorma-cli/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-cli/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-cli/releases"]
@@ -213,7 +213,7 @@ image:https://img.shields.io/github/commits-since/metanorma/metanorma-cli/latest
 
 
 https://github.com/metanorma/metanorma-docker[metanorma-docker]::
-image:https://github.com/metanorma/metanorma-docker/workflows/build-push/badge.svg["Build Status (build-push)",link="https://github.com/metanorma/metanorma-docker/actions?workflow=build-push"]
+image:https://github.com/metanorma/metanorma-docker/actions/workflows/build-push.yml/badge.svg["Build Status (Build-push)",link="https://github.com/metanorma/metanorma-docker/actions/workflows/build-push.yml"]
 image:https://github.com/metanorma/metanorma-docker/actions/workflows/rake.yml/badge.svg?branch=v1.5.1["Latest release",link="https://github.com/metanorma/metanorma-docker/actions/workflows/rake.yml?query=branch%3Av1.5.1"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-docker.svg["Pull Requests",link="https://github.com/metanorma/metanorma-docker/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-docker/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-docker/releases"]
@@ -221,23 +221,23 @@ image:https://img.shields.io/github/commits-since/metanorma/metanorma-docker/lat
 
 
 https://github.com/metanorma/packed-mn[packed-mn]::
-image:https://github.com/metanorma/packed-mn/workflows/macos/badge.svg["Build Status (macos)",link="https://github.com/metanorma/packed-mn/actions?workflow=macos"]
-image:https://github.com/metanorma/packed-mn/workflows/linux/badge.svg["Build Status (linux)",link="https://github.com/metanorma/packed-mn/actions?workflow=linux"]
-image:https://github.com/metanorma/packed-mn/workflows/windows/badge.svg["Build Status (windows)",link="https://github.com/metanorma/packed-mn/actions?workflow=windows"]
-image:https://github.com/metanorma/packed-mn/actions/workflows/rake.yml/badge.svg?branch=v1.8.8["Latest release",link="https://github.com/metanorma/packed-mn/actions/workflows/rake.yml?query=branch%3Av1.8.8"]
+image:https://github.com/metanorma/packed-mn/actions/workflows/macos.yml/badge.svg["Build Status (Macos)",link="https://github.com/metanorma/packed-mn/actions/workflows/macos.yml"]
+image:https://github.com/metanorma/packed-mn/actions/workflows/linux.yml/badge.svg["Build Status (Linux)",link="https://github.com/metanorma/packed-mn/actions/workflows/linux.yml"]
+image:https://github.com/metanorma/packed-mn/actions/workflows/windows.yml/badge.svg["Build Status (Windows)",link="https://github.com/metanorma/packed-mn/actions/workflows/windows.yml"]
+image:https://github.com/metanorma/packed-mn/actions/workflows/rake.yml/badge.svg?branch=v1.8.9["Latest release",link="https://github.com/metanorma/packed-mn/actions/workflows/rake.yml?query=branch%3Av1.8.9"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/packed-mn.svg["Pull Requests",link="https://github.com/metanorma/packed-mn/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/packed-mn/latest.svg["Commits since latest",link="https://github.com/metanorma/packed-mn/releases"]
 
 
 
 https://github.com/metanorma/metanorma-snap[metanorma-snap]::
-image:https://github.com/metanorma/metanorma-snap/workflows/main/badge.svg["Build Status (main)",link="https://github.com/metanorma/metanorma-snap/actions?workflow=main"]
+image:https://github.com/metanorma/metanorma-snap/actions/workflows/main.yml/badge.svg["Build Status (Main)",link="https://github.com/metanorma/metanorma-snap/actions/workflows/main.yml"]
 image:https://github.com/metanorma/metanorma-snap/actions/workflows/rake.yml/badge.svg?branch=v1.6.11["Latest release",link="https://github.com/metanorma/metanorma-snap/actions/workflows/rake.yml?query=branch%3Av1.6.11"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-snap.svg["Pull Requests",link="https://github.com/metanorma/metanorma-snap/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-snap/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-snap/releases"]
 
 https://github.com/metanorma/aibika[aibika]::
-image:https://github.com/metanorma/aibika/workflows/main/badge.svg["Build Status (main)",link="https://github.com/metanorma/aibika/actions?workflow=main"]
+image:https://github.com/metanorma/aibika/actions/workflows/main.yml/badge.svg["Build Status (Main)",link="https://github.com/metanorma/aibika/actions/workflows/main.yml"]
 image:https://github.com/metanorma/aibika/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/metanorma/aibika/actions/workflows/rake.yml?query=branch%3A"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/aibika.svg["Pull Requests",link="https://github.com/metanorma/aibika/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/aibika/latest.svg["Commits since latest",link="https://github.com/metanorma/aibika/releases"]
@@ -245,8 +245,8 @@ image:https://img.shields.io/github/commits-since/metanorma/aibika/latest.svg["C
 
 
 https://github.com/metanorma/homebrew-metanorma[homebrew-metanorma]::
-image:https://github.com/metanorma/homebrew-metanorma/workflows/macos/badge.svg["Build Status (macos)",link="https://github.com/metanorma/homebrew-metanorma/actions?workflow=macos"]
-image:https://github.com/metanorma/homebrew-metanorma/workflows/linux/badge.svg["Build Status (linux)",link="https://github.com/metanorma/homebrew-metanorma/actions?workflow=linux"]
+image:https://github.com/metanorma/homebrew-metanorma/actions/workflows/macos.yml/badge.svg["Build Status (Macos)",link="https://github.com/metanorma/homebrew-metanorma/actions/workflows/macos.yml"]
+image:https://github.com/metanorma/homebrew-metanorma/actions/workflows/linux.yml/badge.svg["Build Status (Linux)",link="https://github.com/metanorma/homebrew-metanorma/actions/workflows/linux.yml"]
 image:https://github.com/metanorma/homebrew-metanorma/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/metanorma/homebrew-metanorma/actions/workflows/rake.yml?query=branch%3A"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/homebrew-metanorma.svg["Pull Requests",link="https://github.com/metanorma/homebrew-metanorma/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/homebrew-metanorma/latest.svg["Commits since latest",link="https://github.com/metanorma/homebrew-metanorma/releases"]
@@ -254,7 +254,7 @@ image:https://img.shields.io/github/commits-since/metanorma/homebrew-metanorma/l
 
 
 https://github.com/metanorma/chocolatey-metanorma[chocolatey-metanorma]::
-image:https://github.com/metanorma/chocolatey-metanorma/workflows/main/badge.svg["Build Status (main)",link="https://github.com/metanorma/chocolatey-metanorma/actions?workflow=main"]
+image:https://github.com/metanorma/chocolatey-metanorma/actions/workflows/main.yml/badge.svg["Build Status (Main)",link="https://github.com/metanorma/chocolatey-metanorma/actions/workflows/main.yml"]
 image:https://github.com/metanorma/chocolatey-metanorma/actions/workflows/rake.yml/badge.svg?branch=v1.4.7.1["Latest release",link="https://github.com/metanorma/chocolatey-metanorma/actions/workflows/rake.yml?query=branch%3Av1.4.7.1"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/chocolatey-metanorma.svg["Pull Requests",link="https://github.com/metanorma/chocolatey-metanorma/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/chocolatey-metanorma/latest.svg["Commits since latest",link="https://github.com/metanorma/chocolatey-metanorma/releases"]
@@ -264,153 +264,153 @@ image:https://img.shields.io/github/commits-since/metanorma/chocolatey-metanorma
 
 
 https://github.com/metanorma/mn-samples-iec[mn-samples-iec]::
-image:https://github.com/metanorma/mn-samples-iec/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-iec/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-iec/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-iec/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-iec/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-iec/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-iec/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-iec/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-itu[mn-samples-itu]::
-image:https://github.com/metanorma/mn-samples-itu/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-itu/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-itu/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-itu/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-itu/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-itu/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-itu/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-itu/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-unece[mn-samples-unece]::
-image:https://github.com/metanorma/mn-samples-unece/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-unece/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-unece/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-unece/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-unece/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-unece/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-unece/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-unece/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-ogc[mn-samples-ogc]::
-image:https://github.com/metanorma/mn-samples-ogc/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-ogc/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ogc/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-ogc/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-ogc/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-ogc/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ogc/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-ieee[mn-samples-ieee]::
-image:https://github.com/metanorma/mn-samples-ieee/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-ieee/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-ieee/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ieee/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-ieee/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-ieee/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-ieee/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ieee/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-iso[mn-samples-iso]::
-image:https://github.com/metanorma/mn-samples-iso/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-iso/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-iso/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-iso/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-iso/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-iso/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-iso/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-iso/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-cc[mn-samples-cc]::
-image:https://github.com/metanorma/mn-samples-cc/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-cc/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-cc/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-cc/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-cc/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-cc/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-cc/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-cc/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-ietf[mn-samples-ietf]::
-image:https://github.com/metanorma/mn-samples-ietf/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-ietf/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ietf/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-ietf/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-ietf/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-ietf/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ietf/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-iho[mn-samples-iho]::
-image:https://github.com/metanorma/mn-samples-iho/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-iho/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-iho/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-iho/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-iho/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-iho/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-iho/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-nist[mn-samples-nist]::
-image:https://github.com/metanorma/mn-samples-nist/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-nist/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-nist/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-nist/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-nist/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-nist/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-nist/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-csa[mn-samples-csa]::
-image:https://github.com/metanorma/mn-samples-csa/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-csa/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-csa/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-csa/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-csa/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-csa/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-csa/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-m3aawg[mn-samples-m3aawg]::
-image:https://github.com/metanorma/mn-samples-m3aawg/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-m3aawg/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-m3aawg/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-m3aawg/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-m3aawg/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-m3aawg/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-m3aawg/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-ribose[mn-samples-ribose]::
-image:https://github.com/metanorma/mn-samples-ribose/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-ribose/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-ribose/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ribose/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-ribose/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-ribose/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-ribose/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-ribose/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-bipm[mn-samples-bipm]::
-image:https://github.com/metanorma/mn-samples-bipm/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-bipm/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-bipm/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-bipm/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-bipm/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-bipm/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-bipm/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-jcgm[mn-samples-jcgm]::
-image:https://github.com/metanorma/mn-samples-jcgm/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-jcgm/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-jcgm/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-jcgm/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-jcgm/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-jcgm/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-jcgm/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-samples-bsi[mn-samples-bsi]::
-image:https://github.com/metanorma/mn-samples-bsi/workflows/generate/badge.svg["Build Status",link="https://github.com/metanorma/mn-samples-bsi/actions?workflow=generate"]
-image:https://github.com/metanorma/mn-samples-bsi/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-bsi/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-samples-bsi/actions/workflows/generate.yml/badge.svg["Build Status (Generate)",link="https://github.com/metanorma/mn-samples-bsi/actions/workflows/generate.yml"]
+image:https://github.com/metanorma/mn-samples-bsi/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-samples-bsi/actions/workflows/docker.yml"]
 
 
 == Metanorma document templates
 
 
 https://github.com/metanorma/mn-templates-iso[mn-templates-iso]::
-image:https://github.com/metanorma/mn-templates-iso/workflows/test/badge.svg["Build Status",link="https://github.com/metanorma/mn-templates-iso/actions?workflow=test"]
-image:https://github.com/metanorma/mn-templates-iso/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-iso/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-templates-iso/actions/workflows/test.yml/badge.svg["Build Status (Test)",link="https://github.com/metanorma/mn-templates-iso/actions/workflows/test.yml"]
+image:https://github.com/metanorma/mn-templates-iso/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-iso/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-templates-iec[mn-templates-iec]::
-image:https://github.com/metanorma/mn-templates-iec/workflows/test/badge.svg["Build Status",link="https://github.com/metanorma/mn-templates-iec/actions?workflow=test"]
-image:https://github.com/metanorma/mn-templates-iec/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-iec/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-templates-iec/actions/workflows/test.yml/badge.svg["Build Status (Test)",link="https://github.com/metanorma/mn-templates-iec/actions/workflows/test.yml"]
+image:https://github.com/metanorma/mn-templates-iec/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-iec/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-templates-ogc[mn-templates-ogc]::
-image:https://github.com/metanorma/mn-templates-ogc/workflows/test/badge.svg["Build Status",link="https://github.com/metanorma/mn-templates-ogc/actions?workflow=test"]
-image:https://github.com/metanorma/mn-templates-ogc/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-ogc/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-templates-ogc/actions/workflows/test.yml/badge.svg["Build Status (Test)",link="https://github.com/metanorma/mn-templates-ogc/actions/workflows/test.yml"]
+image:https://github.com/metanorma/mn-templates-ogc/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-ogc/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-templates-cc[mn-templates-cc]::
-image:https://github.com/metanorma/mn-templates-cc/workflows/test/badge.svg["Build Status",link="https://github.com/metanorma/mn-templates-cc/actions?workflow=test"]
-image:https://github.com/metanorma/mn-templates-cc/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-cc/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-templates-cc/actions/workflows/test.yml/badge.svg["Build Status (Test)",link="https://github.com/metanorma/mn-templates-cc/actions/workflows/test.yml"]
+image:https://github.com/metanorma/mn-templates-cc/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-cc/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-templates-ietf[mn-templates-ietf]::
-image:https://github.com/metanorma/mn-templates-ietf/workflows/test/badge.svg["Build Status",link="https://github.com/metanorma/mn-templates-ietf/actions?workflow=test"]
-image:https://github.com/metanorma/mn-templates-ietf/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-ietf/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-templates-ietf/actions/workflows/test.yml/badge.svg["Build Status (Test)",link="https://github.com/metanorma/mn-templates-ietf/actions/workflows/test.yml"]
+image:https://github.com/metanorma/mn-templates-ietf/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-ietf/actions/workflows/docker.yml"]
 
 https://github.com/metanorma/mn-templates-itu[mn-templates-itu]::
-image:https://github.com/metanorma/mn-templates-itu/workflows/test/badge.svg["Build Status",link="https://github.com/metanorma/mn-templates-itu/actions?workflow=test"]
-image:https://github.com/metanorma/mn-templates-itu/workflows/docker/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-itu/actions?workflow=docker"]
+image:https://github.com/metanorma/mn-templates-itu/actions/workflows/test.yml/badge.svg["Build Status (Test)",link="https://github.com/metanorma/mn-templates-itu/actions/workflows/test.yml"]
+image:https://github.com/metanorma/mn-templates-itu/actions/workflows/docker.yml/badge.svg["Build Status (Docker)",link="https://github.com/metanorma/mn-templates-itu/actions/workflows/docker.yml"]
 
 
 == Utility / Leaf gems
 
 
 https://github.com/metanorma/iev[iev] image:https://img.shields.io/gem/v/iev.svg["Gem Version",link="https://rubygems.org/gems/iev"]::
-image:https://github.com/metanorma/iev/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/iev/actions?workflow=rake"]
+image:https://github.com/metanorma/iev/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/iev/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/iev/actions/workflows/rake.yml/badge.svg?branch=v0.3.1["Latest release",link="https://github.com/metanorma/iev/actions/workflows/rake.yml?query=branch%3Av0.3.1"]
-image:https://github.com/metanorma/iev/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/iev/actions?workflow=release"]
+image:https://github.com/metanorma/iev/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/iev/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/iev/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/iev"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/iev.svg["Pull Requests",link="https://github.com/metanorma/iev/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/iev/latest.svg["Commits since latest",link="https://github.com/metanorma/iev/releases"]
 
 https://github.com/metanorma/isoics[isoics] image:https://img.shields.io/gem/v/isoics.svg["Gem Version",link="https://rubygems.org/gems/isoics"]::
-image:https://github.com/metanorma/isoics/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/isoics/actions?workflow=rake"]
+image:https://github.com/metanorma/isoics/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/isoics/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/isoics/actions/workflows/rake.yml/badge.svg?branch=v0.1.13["Latest release",link="https://github.com/metanorma/isoics/actions/workflows/rake.yml?query=branch%3Av0.1.13"]
-image:https://github.com/metanorma/isoics/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/isoics/actions?workflow=release"]
+image:https://github.com/metanorma/isoics/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/isoics/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/isoics/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/isoics"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/isoics.svg["Pull Requests",link="https://github.com/metanorma/isoics/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/isoics/latest.svg["Commits since latest",link="https://github.com/metanorma/isoics/releases"]
 
 https://github.com/metanorma/reverse_adoc[reverse_adoc] image:https://img.shields.io/gem/v/reverse_adoc.svg["Gem Version",link="https://rubygems.org/gems/reverse_adoc"]::
-image:https://github.com/metanorma/reverse_adoc/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/reverse_adoc/actions?workflow=rake"]
+image:https://github.com/metanorma/reverse_adoc/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/reverse_adoc/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/reverse_adoc/actions/workflows/rake.yml/badge.svg?branch=v0.3.7["Latest release",link="https://github.com/metanorma/reverse_adoc/actions/workflows/rake.yml?query=branch%3Av0.3.7"]
-image:https://github.com/metanorma/reverse_adoc/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/reverse_adoc/actions?workflow=release"]
+image:https://github.com/metanorma/reverse_adoc/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/reverse_adoc/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/reverse_adoc/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/reverse_adoc"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/reverse_adoc.svg["Pull Requests",link="https://github.com/metanorma/reverse_adoc/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/reverse_adoc/latest.svg["Commits since latest",link="https://github.com/metanorma/reverse_adoc/releases"]
 
 https://github.com/metanorma/metanorma-plugin-lutaml[metanorma-plugin-lutaml] image:https://img.shields.io/gem/v/metanorma-plugin-lutaml.svg["Gem Version",link="https://rubygems.org/gems/metanorma-plugin-lutaml"]::
-image:https://github.com/metanorma/metanorma-plugin-lutaml/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-lutaml/actions?workflow=rake"]
+image:https://github.com/metanorma/metanorma-plugin-lutaml/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-lutaml/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/metanorma-plugin-lutaml/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/metanorma/metanorma-plugin-lutaml/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/metanorma/metanorma-plugin-lutaml/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-plugin-lutaml/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-plugin-lutaml/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-plugin-lutaml/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-plugin-lutaml.svg["Pull Requests",link="https://github.com/metanorma/metanorma-plugin-lutaml/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-lutaml/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-plugin-lutaml/releases"]
 
 https://github.com/metanorma/metanorma-plugin-datastruct[metanorma-plugin-datastruct] image:https://img.shields.io/gem/v/metanorma-plugin-datastruct.svg["Gem Version",link="https://rubygems.org/gems/metanorma-plugin-datastruct"]::
-image:https://github.com/metanorma/metanorma-plugin-datastruct/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-datastruct/actions?workflow=rake"]
+image:https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/rake.yml/badge.svg?branch=v0.2.2["Latest release",link="https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/rake.yml?query=branch%3Av0.2.2"]
-image:https://github.com/metanorma/metanorma-plugin-datastruct/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-plugin-datastruct/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-plugin-datastruct/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-plugin-datastruct"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-plugin-datastruct.svg["Pull Requests",link="https://github.com/metanorma/metanorma-plugin-datastruct/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-datastruct/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-plugin-datastruct/releases"]
 
 https://github.com/metanorma/metanorma-plugin-glossarist[metanorma-plugin-glossarist] image:https://img.shields.io/gem/v/metanorma-plugin-glossarist.svg["Gem Version",link="https://rubygems.org/gems/metanorma-plugin-glossarist"]::
-image:https://github.com/metanorma/metanorma-plugin-glossarist/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-glossarist/actions?workflow=rake"]
+image:https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/metanorma/metanorma-plugin-glossarist/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-plugin-glossarist/actions?workflow=release"]
+image:https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/metanorma-plugin-glossarist/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-plugin-glossarist"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-plugin-glossarist.svg["Pull Requests",link="https://github.com/metanorma/metanorma-plugin-glossarist/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-glossarist/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-plugin-glossarist/releases"]
 
 https://github.com/metanorma/emf2svg-ruby[emf2svg-ruby] image:https://img.shields.io/gem/v/emf2svg-ruby.svg["Gem Version",link="https://rubygems.org/gems/emf2svg-ruby"]::
-image:https://github.com/metanorma/emf2svg-ruby/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/emf2svg-ruby/actions?workflow=rake"]
+image:https://github.com/metanorma/emf2svg-ruby/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/emf2svg-ruby/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/emf2svg-ruby/actions/workflows/rake.yml/badge.svg?branch=v1.4.3["Latest release",link="https://github.com/metanorma/emf2svg-ruby/actions/workflows/rake.yml?query=branch%3Av1.4.3"]
-image:https://github.com/metanorma/emf2svg-ruby/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/emf2svg-ruby/actions?workflow=release"]
+image:https://github.com/metanorma/emf2svg-ruby/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/emf2svg-ruby/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/metanorma/emf2svg-ruby/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/emf2svg-ruby"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/emf2svg-ruby.svg["Pull Requests",link="https://github.com/metanorma/emf2svg-ruby/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/emf2svg-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/emf2svg-ruby/releases"]
@@ -418,32 +418,32 @@ image:https://img.shields.io/github/commits-since/metanorma/emf2svg-ruby/latest.
 
 
 https://github.com/metanorma/mnconvert-ruby[mnconvert-ruby]::
-image:https://github.com/metanorma/mnconvert-ruby/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mnconvert-ruby/actions?workflow=rake"]
+image:https://github.com/metanorma/mnconvert-ruby/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mnconvert-ruby/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/mnconvert-ruby/actions/workflows/rake.yml/badge.svg?branch=v1.10.0["Latest release",link="https://github.com/metanorma/mnconvert-ruby/actions/workflows/rake.yml?query=branch%3Av1.10.0"]
-image:https://github.com/metanorma/mnconvert-ruby/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mnconvert-ruby/actions?workflow=release"]
+image:https://github.com/metanorma/mnconvert-ruby/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mnconvert-ruby/actions/workflows/release.yml"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mnconvert-ruby.svg["Pull Requests",link="https://github.com/metanorma/mnconvert-ruby/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mnconvert-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mnconvert-ruby/releases"]
 
 https://github.com/metanorma/mn2pdf-ruby[mn2pdf-ruby]::
-image:https://github.com/metanorma/mn2pdf-ruby/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mn2pdf-ruby/actions?workflow=rake"]
+image:https://github.com/metanorma/mn2pdf-ruby/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/mn2pdf-ruby/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/mn2pdf-ruby/actions/workflows/rake.yml/badge.svg?branch=v1.38.1["Latest release",link="https://github.com/metanorma/mn2pdf-ruby/actions/workflows/rake.yml?query=branch%3Av1.38.1"]
-image:https://github.com/metanorma/mn2pdf-ruby/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mn2pdf-ruby/actions?workflow=release"]
+image:https://github.com/metanorma/mn2pdf-ruby/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mn2pdf-ruby/actions/workflows/release.yml"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf-ruby.svg["Pull Requests",link="https://github.com/metanorma/mn2pdf-ruby/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mn2pdf-ruby/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf-ruby/releases"]
 
 
 
 https://github.com/metanorma/mn2pdf[mn2pdf] image:https://img.shields.io/gem/v/mn2pdf.svg["Gem Version",link="https://rubygems.org/gems/mn2pdf"]::
-image:https://github.com/metanorma/mn2pdf/workflows/test/badge.svg["Build Status (test)",link="https://github.com/metanorma/mn2pdf/actions?workflow=test"]
+image:https://github.com/metanorma/mn2pdf/actions/workflows/test.yml/badge.svg["Build Status (Test)",link="https://github.com/metanorma/mn2pdf/actions/workflows/test.yml"]
 image:https://github.com/metanorma/mn2pdf/actions/workflows/rake.yml/badge.svg?branch=v1.79["Latest release",link="https://github.com/metanorma/mn2pdf/actions/workflows/rake.yml?query=branch%3Av1.79"]
-image:https://github.com/metanorma/mn2pdf/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mn2pdf/actions?workflow=release"]
+image:https://github.com/metanorma/mn2pdf/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mn2pdf/actions/workflows/release.yml"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mn2pdf.svg["Pull Requests",link="https://github.com/metanorma/mn2pdf/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mn2pdf/latest.svg["Commits since latest",link="https://github.com/metanorma/mn2pdf/releases"]
 
 https://github.com/metanorma/mnconvert[mnconvert] image:https://img.shields.io/gem/v/mnconvert.svg["Gem Version",link="https://rubygems.org/gems/mnconvert"]::
-image:https://github.com/metanorma/mnconvert/workflows/test/badge.svg["Build Status (test)",link="https://github.com/metanorma/mnconvert/actions?workflow=test"]
+image:https://github.com/metanorma/mnconvert/actions/workflows/test.yml/badge.svg["Build Status (Test)",link="https://github.com/metanorma/mnconvert/actions/workflows/test.yml"]
 image:https://github.com/metanorma/mnconvert/actions/workflows/rake.yml/badge.svg?branch=v1.57.0["Latest release",link="https://github.com/metanorma/mnconvert/actions/workflows/rake.yml?query=branch%3Av1.57.0"]
-image:https://github.com/metanorma/mnconvert/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mnconvert/actions?workflow=release"]
+image:https://github.com/metanorma/mnconvert/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/mnconvert/actions/workflows/release.yml"]
 image:https://img.shields.io/github/issues-pr-raw/metanorma/mnconvert.svg["Pull Requests",link="https://github.com/metanorma/mnconvert/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/mnconvert/latest.svg["Commits since latest",link="https://github.com/metanorma/mnconvert/releases"]
 
@@ -453,9 +453,9 @@ image:https://img.shields.io/github/commits-since/metanorma/mnconvert/latest.svg
 
 
 https://github.com/plurimath/asciimath2unitsml[asciimath2unitsml] image:https://img.shields.io/gem/v/asciimath2unitsml.svg["Gem Version",link="https://rubygems.org/gems/asciimath2unitsml"]::
-image:https://github.com/plurimath/asciimath2unitsml/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/asciimath2unitsml/actions?workflow=rake"]
+image:https://github.com/plurimath/asciimath2unitsml/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/asciimath2unitsml/actions/workflows/rake.yml"]
 image:https://github.com/plurimath/asciimath2unitsml/actions/workflows/rake.yml/badge.svg?branch=v0.4.3["Latest release",link="https://github.com/plurimath/asciimath2unitsml/actions/workflows/rake.yml?query=branch%3Av0.4.3"]
-image:https://github.com/plurimath/asciimath2unitsml/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/plurimath/asciimath2unitsml/actions?workflow=release"]
+image:https://github.com/plurimath/asciimath2unitsml/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/plurimath/asciimath2unitsml/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/plurimath/asciimath2unitsml/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/asciimath2unitsml"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/asciimath2unitsml.svg["Pull Requests",link="https://github.com/plurimath/asciimath2unitsml/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/asciimath2unitsml/latest.svg["Commits since latest",link="https://github.com/plurimath/asciimath2unitsml/releases"]
@@ -463,17 +463,17 @@ image:https://img.shields.io/github/commits-since/plurimath/asciimath2unitsml/la
 
 
 https://github.com/plurimath/unicode2latex[unicode2latex] image:https://img.shields.io/gem/v/unicode2latex.svg["Gem Version",link="https://rubygems.org/gems/unicode2latex"]::
-image:https://github.com/plurimath/unicode2latex/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/unicode2latex/actions?workflow=rake"]
+image:https://github.com/plurimath/unicode2latex/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/unicode2latex/actions/workflows/rake.yml"]
 image:https://github.com/plurimath/unicode2latex/actions/workflows/rake.yml/badge.svg?branch=v0.0.6["Latest release",link="https://github.com/plurimath/unicode2latex/actions/workflows/rake.yml?query=branch%3Av0.0.6"]
-image:https://github.com/plurimath/unicode2latex/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/plurimath/unicode2latex/actions?workflow=release"]
+image:https://github.com/plurimath/unicode2latex/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/plurimath/unicode2latex/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/plurimath/unicode2latex/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/unicode2latex"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/unicode2latex.svg["Pull Requests",link="https://github.com/plurimath/unicode2latex/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/unicode2latex/latest.svg["Commits since latest",link="https://github.com/plurimath/unicode2latex/releases"]
 
 https://github.com/plurimath/plurimath[plurimath] image:https://img.shields.io/gem/v/plurimath.svg["Gem Version",link="https://rubygems.org/gems/plurimath"]::
-image:https://github.com/plurimath/plurimath/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/plurimath/actions?workflow=rake"]
+image:https://github.com/plurimath/plurimath/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/plurimath/plurimath/actions/workflows/rake.yml"]
 image:https://github.com/plurimath/plurimath/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/plurimath/plurimath/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/plurimath/plurimath/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/plurimath/plurimath/actions?workflow=release"]
+image:https://github.com/plurimath/plurimath/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/plurimath/plurimath/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/plurimath/plurimath/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/plurimath/plurimath"]
 image:https://img.shields.io/github/issues-pr-raw/plurimath/plurimath.svg["Pull Requests",link="https://github.com/plurimath/plurimath/pulls"]
 image:https://img.shields.io/github/commits-since/plurimath/plurimath/latest.svg["Commits since latest",link="https://github.com/plurimath/plurimath/releases"]
@@ -485,161 +485,161 @@ image:https://img.shields.io/github/commits-since/plurimath/plurimath/latest.svg
 
 
 https://github.com/relaton/relaton-bipm[relaton-bipm] image:https://img.shields.io/gem/v/relaton-bipm.svg["Gem Version",link="https://rubygems.org/gems/relaton-bipm"]::
-image:https://github.com/relaton/relaton-bipm/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-bipm/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-bipm/actions/workflows/rake.yml/badge.svg?branch=v1.16.6["Latest release",link="https://github.com/relaton/relaton-bipm/actions/workflows/rake.yml?query=branch%3Av1.16.6"]
-image:https://github.com/relaton/relaton-bipm/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-bipm/actions?workflow=release"]
+image:https://github.com/relaton/relaton-bipm/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-bipm/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-bipm/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-bipm/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-bipm/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-bipm/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-bipm/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-bipm"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-bipm.svg["Pull Requests",link="https://github.com/relaton/relaton-bipm/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-bipm/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-bipm/releases"]
 
 https://github.com/relaton/relaton-ieee[relaton-ieee] image:https://img.shields.io/gem/v/relaton-ieee.svg["Gem Version",link="https://rubygems.org/gems/relaton-ieee"]::
-image:https://github.com/relaton/relaton-ieee/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ieee/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-ieee/actions/workflows/rake.yml/badge.svg?branch=v1.16.3["Latest release",link="https://github.com/relaton/relaton-ieee/actions/workflows/rake.yml?query=branch%3Av1.16.3"]
-image:https://github.com/relaton/relaton-ieee/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-ieee/actions?workflow=release"]
+image:https://github.com/relaton/relaton-ieee/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ieee/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-ieee/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-ieee/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-ieee/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-ieee/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-ieee/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-ieee"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-ieee.svg["Pull Requests",link="https://github.com/relaton/relaton-ieee/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-ieee/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-ieee/releases"]
 
 https://github.com/relaton/relaton-iho[relaton-iho] image:https://img.shields.io/gem/v/relaton-iho.svg["Gem Version",link="https://rubygems.org/gems/relaton-iho"]::
-image:https://github.com/relaton/relaton-iho/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iho/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-iho/actions/workflows/rake.yml/badge.svg?branch=v1.16.2["Latest release",link="https://github.com/relaton/relaton-iho/actions/workflows/rake.yml?query=branch%3Av1.16.2"]
-image:https://github.com/relaton/relaton-iho/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iho/actions?workflow=release"]
+image:https://github.com/relaton/relaton-iho/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iho/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-iho/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-iho/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-iho/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iho/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-iho/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iho"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iho.svg["Pull Requests",link="https://github.com/relaton/relaton-iho/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iho/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iho/releases"]
 
 https://github.com/relaton/relaton-bib[relaton-bib] image:https://img.shields.io/gem/v/relaton-bib.svg["Gem Version",link="https://rubygems.org/gems/relaton-bib"]::
-image:https://github.com/relaton/relaton-bib/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-bib/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-bib/actions/workflows/rake.yml/badge.svg?branch=v1.16.5["Latest release",link="https://github.com/relaton/relaton-bib/actions/workflows/rake.yml?query=branch%3Av1.16.5"]
-image:https://github.com/relaton/relaton-bib/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-bib/actions?workflow=release"]
+image:https://github.com/relaton/relaton-bib/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-bib/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-bib/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-bib/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-bib/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-bib/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-bib/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-bib"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-bib.svg["Pull Requests",link="https://github.com/relaton/relaton-bib/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-bib/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-bib/releases"]
 
 https://github.com/relaton/relaton-omg[relaton-omg] image:https://img.shields.io/gem/v/relaton-omg.svg["Gem Version",link="https://rubygems.org/gems/relaton-omg"]::
-image:https://github.com/relaton/relaton-omg/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-omg/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-omg/actions/workflows/rake.yml/badge.svg?branch=v1.16.2["Latest release",link="https://github.com/relaton/relaton-omg/actions/workflows/rake.yml?query=branch%3Av1.16.2"]
-image:https://github.com/relaton/relaton-omg/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-omg/actions?workflow=release"]
+image:https://github.com/relaton/relaton-omg/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-omg/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-omg/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-omg/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-omg/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-omg/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-omg/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-omg"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-omg.svg["Pull Requests",link="https://github.com/relaton/relaton-omg/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-omg/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-omg/releases"]
 
 https://github.com/relaton/relaton-un[relaton-un] image:https://img.shields.io/gem/v/relaton-un.svg["Gem Version",link="https://rubygems.org/gems/relaton-un"]::
-image:https://github.com/relaton/relaton-un/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-un/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-un/actions/workflows/rake.yml/badge.svg?branch=v1.16.2["Latest release",link="https://github.com/relaton/relaton-un/actions/workflows/rake.yml?query=branch%3Av1.16.2"]
-image:https://github.com/relaton/relaton-un/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-un/actions?workflow=release"]
+image:https://github.com/relaton/relaton-un/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-un/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-un/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-un/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-un/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-un/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-un/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-un"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-un.svg["Pull Requests",link="https://github.com/relaton/relaton-un/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-un/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-un/releases"]
 
 https://github.com/relaton/relaton-w3c[relaton-w3c] image:https://img.shields.io/gem/v/relaton-w3c.svg["Gem Version",link="https://rubygems.org/gems/relaton-w3c"]::
-image:https://github.com/relaton/relaton-w3c/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-w3c/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-w3c/actions/workflows/rake.yml/badge.svg?branch=v1.16.1["Latest release",link="https://github.com/relaton/relaton-w3c/actions/workflows/rake.yml?query=branch%3Av1.16.1"]
-image:https://github.com/relaton/relaton-w3c/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-w3c/actions?workflow=release"]
+image:https://github.com/relaton/relaton-w3c/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-w3c/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-w3c/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-w3c/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-w3c/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-w3c/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-w3c/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-w3c"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-w3c.svg["Pull Requests",link="https://github.com/relaton/relaton-w3c/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-w3c/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-w3c/releases"]
 
 https://github.com/relaton/relaton-itu[relaton-itu] image:https://img.shields.io/gem/v/relaton-itu.svg["Gem Version",link="https://rubygems.org/gems/relaton-itu"]::
-image:https://github.com/relaton/relaton-itu/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-itu/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-itu/actions/workflows/rake.yml/badge.svg?branch=v1.16.2["Latest release",link="https://github.com/relaton/relaton-itu/actions/workflows/rake.yml?query=branch%3Av1.16.2"]
-image:https://github.com/relaton/relaton-itu/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-itu/actions?workflow=release"]
+image:https://github.com/relaton/relaton-itu/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-itu/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-itu/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-itu/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-itu/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-itu/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-itu/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-itu"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-itu.svg["Pull Requests",link="https://github.com/relaton/relaton-itu/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-itu/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-itu/releases"]
 
 https://github.com/relaton/relaton-gb[relaton-gb] image:https://img.shields.io/gem/v/relaton-gb.svg["Gem Version",link="https://rubygems.org/gems/relaton-gb"]::
-image:https://github.com/relaton/relaton-gb/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-gb/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-gb/actions/workflows/rake.yml/badge.svg?branch=v1.16.3["Latest release",link="https://github.com/relaton/relaton-gb/actions/workflows/rake.yml?query=branch%3Av1.16.3"]
-image:https://github.com/relaton/relaton-gb/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-gb/actions?workflow=release"]
+image:https://github.com/relaton/relaton-gb/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-gb/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-gb/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-gb/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-gb/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-gb/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-gb/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-gb"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-gb.svg["Pull Requests",link="https://github.com/relaton/relaton-gb/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-gb/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-gb/releases"]
 
 https://github.com/relaton/relaton-iec[relaton-iec] image:https://img.shields.io/gem/v/relaton-iec.svg["Gem Version",link="https://rubygems.org/gems/relaton-iec"]::
-image:https://github.com/relaton/relaton-iec/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iec/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-iec/actions/workflows/rake.yml/badge.svg?branch=v1.16.4["Latest release",link="https://github.com/relaton/relaton-iec/actions/workflows/rake.yml?query=branch%3Av1.16.4"]
-image:https://github.com/relaton/relaton-iec/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iec/actions?workflow=release"]
+image:https://github.com/relaton/relaton-iec/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iec/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-iec/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-iec/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-iec/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iec/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-iec/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iec"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iec.svg["Pull Requests",link="https://github.com/relaton/relaton-iec/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iec/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iec/releases"]
 
 https://github.com/relaton/relaton-ietf[relaton-ietf] image:https://img.shields.io/gem/v/relaton-ietf.svg["Gem Version",link="https://rubygems.org/gems/relaton-ietf"]::
-image:https://github.com/relaton/relaton-ietf/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ietf/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml/badge.svg?branch=v1.16.2["Latest release",link="https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml?query=branch%3Av1.16.2"]
-image:https://github.com/relaton/relaton-ietf/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-ietf/actions?workflow=release"]
+image:https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-ietf/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-ietf/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-ietf/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-ietf"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-ietf.svg["Pull Requests",link="https://github.com/relaton/relaton-ietf/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-ietf/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-ietf/releases"]
 
 https://github.com/relaton/relaton-iso[relaton-iso] image:https://img.shields.io/gem/v/relaton-iso.svg["Gem Version",link="https://rubygems.org/gems/relaton-iso"]::
-image:https://github.com/relaton/relaton-iso/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iso/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-iso/actions/workflows/rake.yml/badge.svg?branch=v1.16.4["Latest release",link="https://github.com/relaton/relaton-iso/actions/workflows/rake.yml?query=branch%3Av1.16.4"]
-image:https://github.com/relaton/relaton-iso/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iso/actions?workflow=release"]
+image:https://github.com/relaton/relaton-iso/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iso/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-iso/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-iso/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-iso/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iso/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-iso/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iso"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iso.svg["Pull Requests",link="https://github.com/relaton/relaton-iso/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iso/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iso/releases"]
 
 https://github.com/relaton/relaton-iso-bib[relaton-iso-bib] image:https://img.shields.io/gem/v/relaton-iso-bib.svg["Gem Version",link="https://rubygems.org/gems/relaton-iso-bib"]::
-image:https://github.com/relaton/relaton-iso-bib/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iso-bib/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-iso-bib/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/relaton/relaton-iso-bib/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/relaton/relaton-iso-bib/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iso-bib/actions?workflow=release"]
+image:https://github.com/relaton/relaton-iso-bib/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iso-bib/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-iso-bib/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-iso-bib/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-iso-bib/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iso-bib/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-iso-bib/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iso-bib"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iso-bib.svg["Pull Requests",link="https://github.com/relaton/relaton-iso-bib/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iso-bib/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iso-bib/releases"]
 
 https://github.com/relaton/relaton-nist[relaton-nist] image:https://img.shields.io/gem/v/relaton-nist.svg["Gem Version",link="https://rubygems.org/gems/relaton-nist"]::
-image:https://github.com/relaton/relaton-nist/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-nist/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-nist/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/relaton/relaton-nist/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/relaton/relaton-nist/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-nist/actions?workflow=release"]
+image:https://github.com/relaton/relaton-nist/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-nist/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-nist/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-nist/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-nist/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-nist/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-nist/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-nist"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-nist.svg["Pull Requests",link="https://github.com/relaton/relaton-nist/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-nist/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-nist/releases"]
 
 https://github.com/relaton/relaton-ogc[relaton-ogc] image:https://img.shields.io/gem/v/relaton-ogc.svg["Gem Version",link="https://rubygems.org/gems/relaton-ogc"]::
-image:https://github.com/relaton/relaton-ogc/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ogc/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-ogc/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/relaton/relaton-ogc/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/relaton/relaton-ogc/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-ogc/actions?workflow=release"]
+image:https://github.com/relaton/relaton-ogc/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ogc/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-ogc/actions/workflows/rake.yml/badge.svg?branch=v1.17.0["Latest release",link="https://github.com/relaton/relaton-ogc/actions/workflows/rake.yml?query=branch%3Av1.17.0"]
+image:https://github.com/relaton/relaton-ogc/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-ogc/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-ogc/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-ogc"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-ogc.svg["Pull Requests",link="https://github.com/relaton/relaton-ogc/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-ogc/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-ogc/releases"]
 
 https://github.com/relaton/relaton-iev[relaton-iev] image:https://img.shields.io/gem/v/relaton-iev.svg["Gem Version",link="https://rubygems.org/gems/relaton-iev"]::
-image:https://github.com/relaton/relaton-iev/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iev/actions?workflow=rake"]
-image:https://github.com/relaton/relaton-iev/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/relaton/relaton-iev/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/relaton/relaton-iev/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iev/actions?workflow=release"]
+image:https://github.com/relaton/relaton-iev/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-iev/actions/workflows/rake.yml"]
+image:https://github.com/relaton/relaton-iev/actions/workflows/rake.yml/badge.svg?branch=v1.1.6["Latest release",link="https://github.com/relaton/relaton-iev/actions/workflows/rake.yml?query=branch%3Av1.1.6"]
+image:https://github.com/relaton/relaton-iev/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-iev/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-iev/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-iev"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-iev.svg["Pull Requests",link="https://github.com/relaton/relaton-iev/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-iev/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-iev/releases"]
 
 https://github.com/relaton/relaton-calconnect[relaton-calconnect] image:https://img.shields.io/gem/v/relaton-calconnect.svg["Gem Version",link="https://rubygems.org/gems/relaton-calconnect"]::
-image:https://github.com/relaton/relaton-calconnect/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-calconnect/actions?workflow=rake"]
+image:https://github.com/relaton/relaton-calconnect/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-calconnect/actions/workflows/rake.yml"]
 image:https://github.com/relaton/relaton-calconnect/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/relaton/relaton-calconnect/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/relaton/relaton-calconnect/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-calconnect/actions?workflow=release"]
+image:https://github.com/relaton/relaton-calconnect/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-calconnect/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-calconnect/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-calconnect"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-calconnect.svg["Pull Requests",link="https://github.com/relaton/relaton-calconnect/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-calconnect/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-calconnect/releases"]
 
 https://github.com/relaton/relaton-cli[relaton-cli] image:https://img.shields.io/gem/v/relaton-cli.svg["Gem Version",link="https://rubygems.org/gems/relaton-cli"]::
-image:https://github.com/relaton/relaton-cli/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-cli/actions?workflow=rake"]
+image:https://github.com/relaton/relaton-cli/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-cli/actions/workflows/rake.yml"]
 image:https://github.com/relaton/relaton-cli/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/relaton/relaton-cli/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/relaton/relaton-cli/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-cli/actions?workflow=release"]
+image:https://github.com/relaton/relaton-cli/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-cli/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-cli/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-cli"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-cli.svg["Pull Requests",link="https://github.com/relaton/relaton-cli/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-cli/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-cli/releases"]
 
 https://github.com/relaton/relaton[relaton] image:https://img.shields.io/gem/v/relaton.svg["Gem Version",link="https://rubygems.org/gems/relaton"]::
-image:https://github.com/relaton/relaton/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton/actions?workflow=rake"]
+image:https://github.com/relaton/relaton/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton/actions/workflows/rake.yml"]
 image:https://github.com/relaton/relaton/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/relaton/relaton/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/relaton/relaton/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton/actions?workflow=release"]
+image:https://github.com/relaton/relaton/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton.svg["Pull Requests",link="https://github.com/relaton/relaton/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton/latest.svg["Commits since latest",link="https://github.com/relaton/relaton/releases"]
 
 https://github.com/relaton/relaton-render[relaton-render] image:https://img.shields.io/gem/v/relaton-render.svg["Gem Version",link="https://rubygems.org/gems/relaton-render"]::
-image:https://github.com/relaton/relaton-render/workflows/rake/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-render/actions?workflow=rake"]
+image:https://github.com/relaton/relaton-render/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-render/actions/workflows/rake.yml"]
 image:https://github.com/relaton/relaton-render/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/relaton/relaton-render/actions/workflows/rake.yml?query=branch%3A"]
-image:https://github.com/relaton/relaton-render/workflows/release/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-render/actions?workflow=release"]
+image:https://github.com/relaton/relaton-render/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-render/actions/workflows/release.yml"]
 image:https://codeclimate.com/github/relaton/relaton-render/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/relaton/relaton-render"]
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-render.svg["Pull Requests",link="https://github.com/relaton/relaton-render/pulls"]
 image:https://img.shields.io/github/commits-since/relaton/relaton-render/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-render/releases"]
