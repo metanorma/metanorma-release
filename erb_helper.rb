@@ -63,8 +63,9 @@ def shield_gha_test(org, repo)
 end
 
 def shield_gha(org, repo, workflow)
-  url = "https://github.com/#{org}/#{repo}/actions/workflows/#{workflow}.yml/badge.svg"
-  link = "https://github.com/#{org}/#{repo}/actions/workflows/#{workflow}.yml"
+  base_url = "https://github.com/#{org}/#{repo}/actions/workflows"
+  url = "#{base_url}/#{workflow}.yml/badge.svg"
+  link = "#{base_url}/#{workflow}.yml"
   alt_text = "Build Status (#{workflow.capitalize})"
 
   shield(url, alt: alt_text, link: link)
