@@ -8,6 +8,16 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 (in dependency order)
 
+<% for name in %w[relaton-render] %>
+<%= github_link "relaton", name %> <%= shield_gem name %>::
+<%= shield_gha_rake "relaton", name %>
+<%= shield_gha_latest_release "relaton", name %>
+<%= shield_gha_release "relaton", name %>
+<%= shield_code_climate "relaton", name %>
+<%= shield_pull_requests "relaton", name %>
+<%= shield_commits_since "relaton", name %>
+<% end %>
+
 <% for name in %w[metanorma-utils isodoc-i18n mn-requirements html2doc isodoc metanorma metanorma-standoc metanorma-iso metanorma-generic metanorma-ietf metanorma-ieee metanorma-itu metanorma-nist metanorma-ogc metanorma-un metanorma-csa metanorma-cc metanorma-iho metanorma-ribose metanorma-jis metanorma-iec metanorma-bsi metanorma-bipm metanorma-plateau metanorma-cli] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
@@ -138,7 +148,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Relaton gems
 
-<% for name in %w[relaton-bipm relaton-ieee relaton-iho relaton-bib relaton-omg relaton-un relaton-w3c relaton-itu relaton-gb relaton-iec relaton-ietf relaton-iso relaton-iso-bib relaton-nist relaton-ogc relaton-iev relaton-calconnect relaton-cli relaton relaton-render] %>
+<% for name in %w[relaton-bipm relaton-ieee relaton-iho relaton-bib relaton-omg relaton-un relaton-w3c relaton-itu relaton-gb relaton-iec relaton-ietf relaton-iso relaton-iso-bib relaton-nist relaton-ogc relaton-iev relaton-calconnect relaton-cli relaton] %>
 <%= github_link "relaton", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "relaton", name %>
 <%= shield_gha_latest_release "relaton", name %>
