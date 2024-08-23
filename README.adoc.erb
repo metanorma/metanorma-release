@@ -76,7 +76,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document samples
 
-<% for name in %w[iec itu unece ogc ieee iso cc ietf iho nist csa m3aawg ribose bipm jcgm bsi jis].map { |n| "mn-samples-#{n}" } %>
+<% for name in %w[bipm bsi cc csa gb generic iec iec-private ieee ieee-private ietf iho iso itu jcgm jis m3aawg mbxif mpf nist ogc plateau ribose unece].map { |n| "mn-samples-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <% unless is_private name %>
 <%= shield_gha_generate "metanorma", name %>
@@ -86,7 +86,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document templates
 
-<% for name in %w[iso iec ogc cc ietf itu].map { |n| "mn-templates-#{n}" } %>
+<% for name in %w[cc csd iec ietf iho iso itu nist ogc un].map { |n| "mn-templates-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha_test "metanorma", name %>
 <%= shield_gha_docker "metanorma", name %>
@@ -94,7 +94,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Utility / Leaf gems
 
-<% for name in %w[iev isoics reverse_adoc metanorma-plugin-lutaml metanorma-plugin-datastruct metanorma-plugin-glossarist emf2svg-ruby vectory] %>
+<% for name in %w[iev isoics reverse_adoc coradoc metanorma-plugin-lutaml metanorma-plugin-datastruct metanorma-plugin-glossarist emf2svg-ruby vectory] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_gha_latest_release "metanorma", name %>
@@ -144,11 +144,22 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "plurimath", name %>
 <% end %>
 
+== Lutaml gems
+
+<% for name in %w[lutaml-model lutaml expressir] %>
+<%= github_link "lutaml", name %> <%= shield_gem name %>::
+<%= shield_gha_rake "lutaml", name %>
+<%= shield_gha_latest_release "lutaml", name %>
+<%= shield_gha_release "lutaml", name %>
+<%= shield_code_climate "lutaml", name %>
+<%= shield_pull_requests "lutaml", name %>
+<%= shield_commits_since "lutaml", name %>
+<% end %>
 
 
 == Relaton gems
 
-<% for name in %w[relaton-bipm relaton-ieee relaton-iho relaton-bib relaton-omg relaton-un relaton-w3c relaton-itu relaton-gb relaton-iec relaton-ietf relaton-iso relaton-iso-bib relaton-nist relaton-ogc relaton-iev relaton-calconnect relaton-cli relaton] %>
+<% for name in %w[relaton-bipm relaton-ieee relaton-iho relaton-bib relaton-omg relaton-un relaton-w3c relaton-itu relaton-gb relaton-iec relaton-ietf relaton-iso relaton-iso-bib relaton-nist relaton-ogc relaton-iev relaton-calconnect relaton-plateau relaton-ccsds relaton-logger relaton-oasis relaton-ecma relaton-cie relaton-jis relaton-3gpp relaton-etsi relaton-cen relaton-iana relaton-doi relaton-isbn relaton-index relaton-cli relaton] %>
 <%= github_link "relaton", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "relaton", name %>
 <%= shield_gha_latest_release "relaton", name %>
