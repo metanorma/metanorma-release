@@ -18,7 +18,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 <%= shield_commits_since "relaton", name %>
 <% end %>
 
-<% for name in %w[metanorma-utils isodoc-i18n mn-requirements html2doc isodoc metanorma metanorma-standoc metanorma-iso metanorma-generic metanorma-ietf metanorma-ieee metanorma-itu metanorma-nist metanorma-ogc metanorma-un metanorma-csa metanorma-cc metanorma-iho metanorma-ribose metanorma-jis metanorma-iec metanorma-bsi metanorma-bipm metanorma-plateau metanorma-cli] %>
+<% for name in %w[metanorma-utils isodoc-i18n mn-requirements html2doc isodoc metanorma metanorma-standoc metanorma-iso metanorma-generic metanorma-ietf metanorma-ieee metanorma-itu metanorma-nist metanorma-ogc metanorma-csa metanorma-cc metanorma-iho metanorma-ribose metanorma-jis metanorma-iec metanorma-bsi metanorma-bipm metanorma-plateau metanorma-cli] %>
 <%= github_link "metanorma", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "metanorma", name %>
 <%= shield_gha_latest_release "metanorma", name %>
@@ -76,7 +76,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document samples
 
-<% for name in %w[bipm bsi cc csa gb generic iec iec-private ieee ieee-private ietf iho iso itu jcgm jis m3aawg mbxif mpf nist ogc plateau ribose unece].map { |n| "mn-samples-#{n}" } %>
+<% for name in %w[bipm bsi cc csa gb generic iec iec-private ieee ieee-private ietf iho iso itu jcgm jis m3aawg mbxif mpf nist ogc plateau ribose].map { |n| "mn-samples-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <% unless is_private name %>
 <%= shield_gha_generate "metanorma", name %>
@@ -86,7 +86,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Metanorma document templates
 
-<% for name in %w[cc csd iec ietf iho iso itu nist ogc un].map { |n| "mn-templates-#{n}" } %>
+<% for name in %w[cc csd iec ietf iho iso itu nist ogc].map { |n| "mn-templates-#{n}" } %>
 <%= github_link "metanorma", name %>::
 <%= shield_gha_test "metanorma", name %>
 <%= shield_gha_docker "metanorma", name %>
