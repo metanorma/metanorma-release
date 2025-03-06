@@ -124,17 +124,7 @@ WARNING: This repository is for INTERNAL USE ONLY.
 
 == Plurimath gems
 
-<% for name in %w[asciimath2unitsml] %>
-<%= github_link "plurimath", name %> <%= shield_gem name %>::
-<%= shield_gha_rake "plurimath", name %>
-<%= shield_gha_latest_release "plurimath", name %>
-<%= shield_gha_release "plurimath", name %>
-<%= shield_code_climate "plurimath", name %>
-<%= shield_pull_requests "plurimath", name %>
-<%= shield_commits_since "plurimath", name %>
-<% end %>
-
-<% for name in %w[unicode2latex plurimath] %>
+<% for name in %w[plurimath] %>
 <%= github_link "plurimath", name %> <%= shield_gem name %>::
 <%= shield_gha_rake "plurimath", name %>
 <%= shield_gha_latest_release "plurimath", name %>
