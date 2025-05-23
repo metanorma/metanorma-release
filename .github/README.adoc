@@ -530,14 +530,6 @@ image:https://codeclimate.com/github/metanorma/metanorma-plugin-lutaml/badges/gp
 image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-plugin-lutaml.svg["Pull Requests",link="https://github.com/metanorma/metanorma-plugin-lutaml/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-lutaml/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-plugin-lutaml/releases"]
 
-https://github.com/metanorma/metanorma-plugin-datastruct[metanorma-plugin-datastruct] image:https://img.shields.io/gem/v/metanorma-plugin-datastruct.svg["Gem Version",link="https://rubygems.org/gems/metanorma-plugin-datastruct"]::
-image:https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/rake.yml"]
-image:https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/rake.yml/badge.svg?branch=v0.3.0["Latest release",link="https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/rake.yml?query=branch%3Av0.3.0"]
-image:https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/metanorma-plugin-datastruct/actions/workflows/release.yml"]
-image:https://codeclimate.com/github/metanorma/metanorma-plugin-datastruct/badges/gpa.svg["Code Climate",link="https://codeclimate.com/github/metanorma/metanorma-plugin-datastruct"]
-image:https://img.shields.io/github/issues-pr-raw/metanorma/metanorma-plugin-datastruct.svg["Pull Requests",link="https://github.com/metanorma/metanorma-plugin-datastruct/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/metanorma-plugin-datastruct/latest.svg["Commits since latest",link="https://github.com/metanorma/metanorma-plugin-datastruct/releases"]
-
 https://github.com/metanorma/metanorma-plugin-glossarist[metanorma-plugin-glossarist] image:https://img.shields.io/gem/v/metanorma-plugin-glossarist.svg["Gem Version",link="https://rubygems.org/gems/metanorma-plugin-glossarist"]::
 image:https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/rake.yml/badge.svg?branch=v0.2.1["Latest release",link="https://github.com/metanorma/metanorma-plugin-glossarist/actions/workflows/rake.yml?query=branch%3Av0.2.1"]
