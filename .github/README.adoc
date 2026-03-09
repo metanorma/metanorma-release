@@ -510,14 +510,6 @@ image:https://github.com/metanorma/isoics/actions/workflows/release.yml/badge.sv
 image:https://img.shields.io/github/issues-pr-raw/metanorma/isoics.svg["Pull Requests",link="https://github.com/metanorma/isoics/pulls"]
 image:https://img.shields.io/github/commits-since/metanorma/isoics/latest.svg["Commits since latest",link="https://github.com/metanorma/isoics/releases"]
 
-https://github.com/metanorma/reverse_adoc[reverse_adoc] image:https://img.shields.io/gem/v/reverse_adoc.svg["Gem Version",link="https://rubygems.org/gems/reverse_adoc"]::
-image:https://github.com/metanorma/reverse_adoc/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/reverse_adoc/actions/workflows/rake.yml"]
-image:https://github.com/metanorma/reverse_adoc/actions/workflows/rake.yml/badge.svg?branch=v2.0.0["Latest release",link="https://github.com/metanorma/reverse_adoc/actions/workflows/rake.yml?query=branch%3Av2.0.0"]
-image:https://github.com/metanorma/reverse_adoc/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/metanorma/reverse_adoc/actions/workflows/release.yml"]
-
-image:https://img.shields.io/github/issues-pr-raw/metanorma/reverse_adoc.svg["Pull Requests",link="https://github.com/metanorma/reverse_adoc/pulls"]
-image:https://img.shields.io/github/commits-since/metanorma/reverse_adoc/latest.svg["Commits since latest",link="https://github.com/metanorma/reverse_adoc/releases"]
-
 https://github.com/metanorma/coradoc[coradoc] image:https://img.shields.io/gem/v/coradoc.svg["Gem Version",link="https://rubygems.org/gems/coradoc"]::
 image:https://github.com/metanorma/coradoc/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/metanorma/coradoc/actions/workflows/rake.yml"]
 image:https://github.com/metanorma/coradoc/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/metanorma/coradoc/actions/workflows/rake.yml?query=branch%3A"]
@@ -717,7 +709,7 @@ image:https://img.shields.io/github/commits-since/relaton/relaton-iec/latest.svg
 
 https://github.com/relaton/relaton-ietf[relaton-ietf] image:https://img.shields.io/gem/v/relaton-ietf.svg["Gem Version",link="https://rubygems.org/gems/relaton-ietf"]::
 image:https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml/badge.svg["Build Status (Rake)",link="https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml"]
-image:https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml/badge.svg?branch=["Latest release",link="https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml?query=branch%3A"]
+image:https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml/badge.svg?branch=v1.20.0["Latest release",link="https://github.com/relaton/relaton-ietf/actions/workflows/rake.yml?query=branch%3Av1.20.0"]
 image:https://github.com/relaton/relaton-ietf/actions/workflows/release.yml/badge.svg["Build Status (Release)",link="https://github.com/relaton/relaton-ietf/actions/workflows/release.yml"]
 
 image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-ietf.svg["Pull Requests",link="https://github.com/relaton/relaton-ietf/pulls"]
