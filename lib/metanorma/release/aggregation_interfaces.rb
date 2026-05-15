@@ -20,12 +20,6 @@ module Metanorma
       end
     end
 
-    module IndexGenerator
-      def generate(documents, output_dir, format:, parameters:)
-        raise NotImplementedError, "#{self.class} must implement #generate"
-      end
-    end
-
     FetchResult = Struct.new(:releases, :etag, :unchanged?, keyword_init: true)
     RepoReport  = Struct.new(:releases, :included, :skipped, :reason, :errors, keyword_init: true)
     RepoError   = Struct.new(:tag, :message, keyword_init: true)
