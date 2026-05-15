@@ -2,7 +2,7 @@
 
 module Metanorma
   module Release
-    VERSION = '0.2.0'
+    require_relative 'release/version'
 
     # Domain value objects
     autoload :ChannelAudience, 'metanorma/release/channel_audience'
