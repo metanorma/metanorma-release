@@ -1,0 +1,4 @@
+defaults:
+  visibility: public
+  channels:
+    - public/standards

@@ -1,0 +1,13 @@
+defaults:
+  visibility: public
+  channels:
+    - public/standards
+
+documents:
+  - pattern: "cc-*"
+    channels:
+      - public/standards
+
+  - source: sources/cc-18011.adoc
+    channels:
+      - public/reports

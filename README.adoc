@@ -1,0 +1,311 @@
+= metanorma-release
+:toc: macro
+:toclevels: 3
+
+Release lifecycle management for Metanorma documents.
+
+toc::[]
+
+== Overview
+
+`metanorma-release` manages the full release lifecycle of Metanorma documents:
+
+**Release** (producer side)::
+Discover compiled documents → extract metadata from RXL → detect changes → package as zip → publish to a platform (GitHub Releases, GitLab, local filesystem).
+
+**Aggregate** (consumer side)::
+Discover repositories → fetch published releases → filter by channel and stage → extract zip assets → generate `index.json` with a file tree for any site generator.
+
+The output is platform-agnostic: a directory containing `index.json` and a tree of document files. Any site generator (Jekyll, Hugo, Vite) consumes that output independently.
+
+[IMPORTANT]
+====
+The gem has **zero runtime dependencies**. Platform-specific libraries (`octokit`, `rubyzip`) are optional and loaded only when needed.
+====
+
+== Installation
+
+Add to your Gemfile:
+
+[source,ruby]
+----
+gem "metanorma-release"
+----
+
+Or install directly:
+
+[source,sh]
+----
+gem install metanorma-release
+----
+
+Requires Ruby >= 3.2.
+
+== Quick start
+
+=== CLI
+
+The gem ships three commands:
+
+[source,sh]
+----
+# Package compiled documents as zip archives
+mn-release package --output-dir _site --manifest metanorma.release.yml
+
+# Package and publish to a platform
+mn-release publish --platform github --output-dir _site --token $GITHUB_TOKEN
+
+# Aggregate published releases into a file tree + index.json
+mn-release aggregate --source github --organizations my-org --output-dir _site/cc
+----
+
+=== Rake tasks
+
+Register tasks in your `Rakefile`:
+
+[source,ruby]
+----
+require "metanorma/release/rake_tasks"
+
+Metanorma::Release::RakeTasks.install do |config|
+  config.output_dir = "_site"
+  config.manifest = "metanorma.release.yml"
+  config.platform = "github"
+end
+----
+
+This provides:
+
+* `rake mn:package` -- package compiled documents
+* `rake mn:publish` -- package and publish documents
+* `rake mn:aggregate` -- aggregate published releases
+
+=== Ruby API
+
+Use the pipelines directly for fine-grained control:
+
+[source,ruby]
+----
+deps = Metanorma::Release::ReleasePipeline::Dependencies.new(
+  extractor: Metanorma::Release::RxlExtractor.new,
+  filters: [],
+  change_detector: Metanorma::Release::ContentHashChangeDetector.new(previous_releases: {}),
+  packager: Metanorma::Release::ZipPackager.new,
+  publisher: Metanorma::Release::PlatformFactory.build_publisher("null", {}),
+  naming_registry: Metanorma::Release::NamingRegistry.default_registry,
+  manifest: nil,
+  channel_override: nil
+)
+
+config = Metanorma::Release::ReleasePipeline::Config.new(
+  output_dir: "_site",
+  manifest_path: nil,
+  force: false,
+  force_replace_patterns: nil,
+  concurrency: 4,
+  default_visibility: "public"
+)
+
+result = Metanorma::Release::ReleasePipeline.new(deps).run(config)
+result.released  # => [#<DocumentMetadata ...>]
+result.skipped   # => [#<DocumentMetadata ...>]
+result.failed    # => [{ document: ..., error: "..." }]
+----
+
+== CLI reference
+
+=== `mn-release package`
+
+Package compiled documents into zip archives without publishing.
+
+[source,sh]
+----
+mn-release package [options]
+----
+
+[cols="1m,3",options="header"]
+|===
+|Option |Description
+|`--output-dir DIR` |Directory containing compiled documents (default: `_site`)
+|`--dest DIR` |Destination for zip packages (default: `dist`)
+|`--manifest FILE` |Release manifest file (default: `metanorma.release.yml`)
+|===
+
+=== `mn-release publish`
+
+Package and publish documents to a platform.
+
+[source,sh]
+----
+mn-release publish [options]
+----
+
+[cols="1m,3",options="header"]
+|===
+|Option |Description
+|`--platform NAME` |Target platform: `github`, `gitlab`, `local` (default: `github`)
+|`--output-dir DIR` |Compiled docs directory (default: `_site`)
+|`--manifest FILE` |Release manifest file (default: `metanorma.release.yml`)
+|`--force` |Force release even if unchanged
+|`--force-replace PAT` |Glob pattern for forced replacement (repeatable)
+|`--channels CHANS` |Override channels (comma-separated)
+|`--concurrency N` |Parallel workers (default: 4)
+|`--token TOKEN` |Platform auth token
+|===
+
+=== `mn-release aggregate`
+
+Aggregate published releases from multiple repositories into a unified file tree.
+
+[source,sh]
+----
+mn-release aggregate [options]
+----
+
+[cols="1m,3",options="header"]
+|===
+|Option |Description
+|`--source SOURCE` |Discovery source: `github`, `local:PATH` (default: `github`)
+|`--organizations ORGS` |Comma-separated organization list
+|`--topic TOPIC` |Repository topic filter (default: `metanorma-release`)
+|`--repos REPOS` |Explicit repo list (comma-separated)
+|`--channels CHANS` |Filter channels (comma-separated)
+|`--stages STAGES` |Filter stages (comma-separated)
+|`--output-dir DIR` |Output directory (default: `_site/cc`)
+|`--file-routing MODE` |File layout: `by-document`, `flat`, `by-format` (default: `by-document`)
+|`--cache-dir DIR` |Cache directory for delta state
+|`--[no-]include-drafts` |Include draft releases
+|`--concurrency N` |Parallel repos (default: 4)
+|`--min-documents N` |Fail if fewer documents found (default: 0)
+|`--token TOKEN` |Platform auth token
+|===
+
+== Concepts
+
+=== Channels
+
+A channel is an `audience/category` pair that controls who can access a document:
+
+[source,ruby]
+----
+channel = Metanorma::Release::Channel.parse("public/standards")
+channel.public?   # => true
+channel.audience  # => "public"
+channel.category  # => "standards"
+----
+
+Audiences: `public`, `members`, `internal`. When omitted, audience defaults to `public`.
+
+=== Naming strategies
+
+Tag and file naming varies by document type. Strategies are resolved via a registry:
+
+[cols="1m,1,2",options="header"]
+|===
+|Document type |Strategy |Tag format
+|standard (default) |`EditionNaming` |`cc-18011/1.0`
+|IETF draft |`InternetDraftNaming` |`id-ietf-foo/1`
+|IETF RFC |`RfcNaming` |`rfc-1234/ed1`
+|IEEE |`DraftSuffixNaming` |`ieee-8021/d1`
+|IHO, OGC |`VersionNaming` |`iho-s44/v1`
+|===
+
+Register custom strategies:
+
+[source,ruby]
+----
+registry = Metanorma::Release::NamingRegistry.default_registry
+registry.register("my-type", MyCustomNaming.new)
+----
+
+=== File routing
+
+The aggregation pipeline supports three file layout modes:
+
+[cols="1m,3",options="header"]
+|===
+|Mode |Example path
+|`by-document` (default) |`cc-18011/cc-18011.html`
+|`flat` |`cc-18011.html`
+|`by-format` |`html/cc-18011.html`
+|===
+
+=== Release manifest
+
+A `metanorma.release.yml` file controls which documents are published and to which channels:
+
+[source,yaml]
+----
+documents:
+  - source: sources/cc-18011.adoc
+    channels:
+      - public/standards
+  - source: sources/cc-19060.adoc
+    channels:
+      - members/early-access
+----
+
+Documents not listed in the manifest are treated as **private** (not released).
+
+=== Value objects
+
+All domain types are immutable, frozen, and use value-based equality:
+
+* `DocumentId` -- normalized document identifier (`CC 18011` → `cc-18011`)
+* `DocumentVersion` -- edition + stage + pre-release flag
+* `DocumentStage` -- published, draft, working-draft, committee-draft, etc.
+* `Channel` -- audience/category pair
+* `ReleaseTag` -- tag string with pre-release flag
+* `ContentHash` -- SHA-256 content fingerprint
+* `RepoRef` -- owner/repo reference
+
+== Architecture
+
+=== Dependency flow
+
+Unidirectional, no cycles:
+
+----
+domain/  →  release/  →  platform/
+         →  aggregation/ →  platform/
+                          →  cli/
+----
+
+* `domain/` has zero knowledge of pipelines, platforms, or CLI
+* Pipelines depend on domain + interfaces, not platform implementations
+* Platform adapters depend on interfaces + domain, not pipelines
+* CLI depends on pipelines + platform factory, wiring them together
+
+=== Patterns
+
+Value Objects:: Immutable, frozen, value-based equality via `eql?`/`hash`.
+
+Strategy Pattern:: Pluggable algorithms resolved via registry. Adding a new document type or platform requires zero changes to existing code.
+
+Pipeline with DI:: Pipelines receive all dependencies through constructors. No global state, no service locators.
+
+Null Object:: Disabled features inject null implementations (`NullDeltaState`, `NullPublisher`, `NullCacheStore`) instead of adding conditional checks.
+
+Result Types:: Pipelines return frozen Structs. Errors are collected, not raised. The caller decides whether to abort.
+
+=== Extending
+
+|To add... |Do this
+|A new platform |Create a directory under `platform/` with `Publisher`, `Discoverer`, `Fetcher`, `ManifestReader` classes; register in `PlatformFactory`
+|A new naming strategy |Create a class that includes `NamingStrategy`; register via `NamingRegistry#register`
+|A new file routing mode |Create a class with `#compute_path(file_name, metadata)`; register in `FileRoutingFactory`
+|A new filter |Create a class that includes `Filter`; pass to the pipeline's `filters` array
+
+== Development
+
+[source,sh]
+----
+bundle install
+bundle exec rspec
+----
+
+The test suite has 325 examples covering domain objects, pipelines, platform adapters, and integration scenarios.
+
+== License
+
+BSD-2-Clause. See `LICENSE` for details.

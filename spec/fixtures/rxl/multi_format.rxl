@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bibdata type="standard">
+  <docidentifier>CC 19060:2019</docidentifier>
+  <title>Test document with multiple formats</title>
+  <edition>2</edition>
+  <status>
+    <stage>30</stage>
+  </status>
+  <date type="published">
+    <on>2019-01-15</on>
+  </date>
+  <ext>
+    <doctype>report</doctype>
+  </ext>
+</bibdata>

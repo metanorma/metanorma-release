@@ -1,0 +1,32 @@
+# frozen_string_literal: true
+
+require "yaml"
+
+module Metanorma
+  module Release
+    module Platform
+      module GitHub
+        class ManifestReader
+          include Metanorma::Release::ManifestReader
+
+          def initialize(client:)
+            @client = client
+          end
+
+          def read(repo)
+            content = @client.contents(repo.to_s, path: "metanorma.release.yml")
+            return nil unless content
+
+            yaml = content["content"].unpack("m0").first
+            parsed = YAML.safe_load(yaml, permitted_classes: [Symbol])
+            return nil unless parsed.is_a?(Hash)
+
+            (parsed["channels"] || []).map(&:to_s)
+          rescue StandardError
+            nil
+          end
+        end
+      end
+    end
+  end
+end

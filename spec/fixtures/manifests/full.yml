@@ -1,0 +1,16 @@
+defaults:
+  visibility: public
+  channels:
+    - public/standards
+
+documents:
+  - source: sources/cc-19060.adoc
+    channels:
+      - public/standards
+      - public/public-review
+
+  - source: sources/cc-19060-draft.adoc
+    visibility: members
+    channels:
+      - members/drafts
+    stages: [working-draft, committee-draft]

@@ -1,0 +1,7 @@
+defaults:
+  visibility: public
+
+documents:
+  - source: "../../etc/passwd"
+    channels:
+      - public/standards
