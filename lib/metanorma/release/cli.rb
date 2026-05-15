@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "optparse"
+require 'optparse'
 
 module Metanorma
   module Release
@@ -10,26 +10,26 @@ module Metanorma
       def run(argv)
         command = argv.shift
         case command
-        when "package"   then run_package(argv)
-        when "publish"   then run_publish(argv)
-        when "aggregate" then run_aggregate(argv)
+        when 'package'   then run_package(argv)
+        when 'publish'   then run_publish(argv)
+        when 'aggregate' then run_aggregate(argv)
         when nil
-          $stderr.puts "Usage: mn-release <package|publish|aggregate> [options]"
+          warn 'Usage: mn-release <package|publish|aggregate> [options]'
           exit 2
         else
-          $stderr.puts "Unknown command: #{command}"
+          warn "Unknown command: #{command}"
           exit 2
         end
       end
 
       def run_package(argv)
-        options = { output_dir: "_site", dest: "dist", manifest: "metanorma.release.yml", config: nil }
+        options = { output_dir: '_site', dest: 'dist', manifest: 'metanorma.release.yml', config: nil }
         parser = OptionParser.new do |opts|
-          opts.banner = "Usage: mn-release package [options]"
-          opts.on("--output-dir DIR", "Compiled docs directory") { |v| options[:output_dir] = v }
-          opts.on("--dest DIR", "Destination for packages") { |v| options[:dest] = v }
-          opts.on("--manifest FILE", "Release manifest file") { |v| options[:manifest] = v }
-          opts.on("--config SOURCE", "Channel config (file path or platform ref)") { |v| options[:config] = v }
+          opts.banner = 'Usage: mn-release package [options]'
+          opts.on('--output-dir DIR', 'Compiled docs directory') { |v| options[:output_dir] = v }
+          opts.on('--dest DIR', 'Destination for packages') { |v| options[:dest] = v }
+          opts.on('--manifest FILE', 'Release manifest file') { |v| options[:manifest] = v }
+          opts.on('--config SOURCE', 'Channel config (file path or platform ref)') { |v| options[:config] = v }
         end
         parser.parse!(argv)
 
@@ -38,7 +38,7 @@ module Metanorma
         extractor = RxlExtractor.new
         change_detector = ContentHashChangeDetector.new(previous_releases: {})
         packager = ZipPackager.new
-        publisher = PlatformFactory.build_publisher("null", options)
+        publisher = PlatformFactory.build_publisher('null', options)
         naming = NamingRegistry.default_registry
 
         deps = ReleasePipeline::Dependencies.new(
@@ -48,7 +48,7 @@ module Metanorma
         )
         config = ReleasePipeline::Config.new(
           output_dir: options[:output_dir], manifest_path: options[:manifest],
-          force: false, force_replace_patterns: nil, concurrency: 4, default_visibility: "public"
+          force: false, force_replace_patterns: nil, concurrency: 4, default_visibility: 'public'
         )
 
         pipeline = ReleasePipeline.new(deps)
@@ -59,20 +59,20 @@ module Metanorma
       end
 
       def run_publish(argv)
-        options = { output_dir: "_site", platform: "github", manifest: "metanorma.release.yml",
+        options = { output_dir: '_site', platform: 'github', manifest: 'metanorma.release.yml',
                     force: false, force_replace: [], channels: nil, concurrency: 4, token: nil,
                     config: nil }
         parser = OptionParser.new do |opts|
-          opts.banner = "Usage: mn-release publish [options]"
-          opts.on("--platform NAME", "github|gitlab|local") { |v| options[:platform] = v }
-          opts.on("--output-dir DIR", "Compiled docs directory") { |v| options[:output_dir] = v }
-          opts.on("--manifest FILE", "Release manifest file") { |v| options[:manifest] = v }
-          opts.on("--force", "Force release even if unchanged") { |v| options[:force] = v }
-          opts.on("--force-replace PAT", "Glob patterns for force-replace") { |v| options[:force_replace] << v }
-          opts.on("--channels CHANS", "Override channels (comma-separated)") { |v| options[:channels] = v.split(",") }
-          opts.on("--concurrency N", Integer) { |v| options[:concurrency] = v }
-          opts.on("--token TOKEN", "Platform auth token") { |v| options[:token] = v }
-          opts.on("--config SOURCE", "Channel config (file path or platform ref)") { |v| options[:config] = v }
+          opts.banner = 'Usage: mn-release publish [options]'
+          opts.on('--platform NAME', 'github|gitlab|local') { |v| options[:platform] = v }
+          opts.on('--output-dir DIR', 'Compiled docs directory') { |v| options[:output_dir] = v }
+          opts.on('--manifest FILE', 'Release manifest file') { |v| options[:manifest] = v }
+          opts.on('--force', 'Force release even if unchanged') { |v| options[:force] = v }
+          opts.on('--force-replace PAT', 'Glob patterns for force-replace') { |v| options[:force_replace] << v }
+          opts.on('--channels CHANS', 'Override channels (comma-separated)') { |v| options[:channels] = v.split(',') }
+          opts.on('--concurrency N', Integer) { |v| options[:concurrency] = v }
+          opts.on('--token TOKEN', 'Platform auth token') { |v| options[:token] = v }
+          opts.on('--config SOURCE', 'Channel config (file path or platform ref)') { |v| options[:config] = v }
         end
         parser.parse!(argv)
 
@@ -93,7 +93,7 @@ module Metanorma
         config = ReleasePipeline::Config.new(
           output_dir: options[:output_dir], manifest_path: options[:manifest],
           force: options[:force], force_replace_patterns: options[:force_replace].empty? ? nil : options[:force_replace],
-          concurrency: options[:concurrency], default_visibility: "public"
+          concurrency: options[:concurrency], default_visibility: 'public'
         )
 
         pipeline = ReleasePipeline.new(deps)
@@ -104,25 +104,25 @@ module Metanorma
       end
 
       def run_aggregate(argv)
-        options = { source: "github", organizations: [], topic: "metanorma-release",
-                    repos: nil, channels: [], stages: [], output_dir: "_site/cc",
-                    file_routing: "by-document", cache_dir: nil,
+        options = { source: 'github', organizations: [], topic: 'metanorma-release',
+                    repos: nil, channels: [], stages: [], output_dir: '_site/cc',
+                    file_routing: 'by-document', cache_dir: nil,
                     include_drafts: false, concurrency: 4, min_documents: 0, token: nil }
         parser = OptionParser.new do |opts|
-          opts.banner = "Usage: mn-release aggregate [options]"
-          opts.on("--source SOURCE", "github|local:PATH") { |v| options[:source] = v }
-          opts.on("--organizations ORGS", "Comma-separated org list") { |v| options[:organizations] = v.split(",") }
-          opts.on("--topic TOPIC", "Repository topic") { |v| options[:topic] = v }
-          opts.on("--repos REPOS", "Explicit repo list (comma-separated)") { |v| options[:repos] = v.split(",") }
-          opts.on("--channels CHANS", "Filter channels (comma-separated)") { |v| options[:channels] = v.split(",") }
-          opts.on("--stages STAGES", "Filter stages (comma-separated)") { |v| options[:stages] = v.split(",") }
-          opts.on("--output-dir DIR", "Output directory") { |v| options[:output_dir] = v }
-          opts.on("--file-routing MODE", "by-document|flat|by-format") { |v| options[:file_routing] = v }
-          opts.on("--cache-dir DIR", "Cache directory") { |v| options[:cache_dir] = v }
-          opts.on("--[no-]include-drafts", "Include draft releases") { |v| options[:include_drafts] = v }
-          opts.on("--concurrency N", Integer) { |v| options[:concurrency] = v }
-          opts.on("--min-documents N", Integer) { |v| options[:min_documents] = v }
-          opts.on("--token TOKEN", "Platform auth token") { |v| options[:token] = v }
+          opts.banner = 'Usage: mn-release aggregate [options]'
+          opts.on('--source SOURCE', 'github|local:PATH') { |v| options[:source] = v }
+          opts.on('--organizations ORGS', 'Comma-separated org list') { |v| options[:organizations] = v.split(',') }
+          opts.on('--topic TOPIC', 'Repository topic') { |v| options[:topic] = v }
+          opts.on('--repos REPOS', 'Explicit repo list (comma-separated)') { |v| options[:repos] = v.split(',') }
+          opts.on('--channels CHANS', 'Filter channels (comma-separated)') { |v| options[:channels] = v.split(',') }
+          opts.on('--stages STAGES', 'Filter stages (comma-separated)') { |v| options[:stages] = v.split(',') }
+          opts.on('--output-dir DIR', 'Output directory') { |v| options[:output_dir] = v }
+          opts.on('--file-routing MODE', 'by-document|flat|by-format') { |v| options[:file_routing] = v }
+          opts.on('--cache-dir DIR', 'Cache directory') { |v| options[:cache_dir] = v }
+          opts.on('--[no-]include-drafts', 'Include draft releases') { |v| options[:include_drafts] = v }
+          opts.on('--concurrency N', Integer) { |v| options[:concurrency] = v }
+          opts.on('--min-documents N', Integer) { |v| options[:min_documents] = v }
+          opts.on('--token TOKEN', 'Platform auth token') { |v| options[:token] = v }
         end
         parser.parse!(argv)
 
@@ -132,7 +132,8 @@ module Metanorma
         routing = FileRoutingFactory.from_name(options[:file_routing])
         asset_processor = AssetProcessor.new(output_dir: options[:output_dir], routing: routing, canonicalize: true)
         delta_state = if options[:cache_dir]
-                        DeltaState.new(cache_store: FileCacheStore.new(options[:cache_dir]), output_dir: options[:output_dir])
+                        DeltaState.new(cache_store: FileCacheStore.new(options[:cache_dir]),
+                                       output_dir: options[:output_dir])
                       else
                         NullDeltaState.new
                       end
@@ -153,8 +154,8 @@ module Metanorma
         result = pipeline.run(config, options[:output_dir])
 
         print_aggregate_result(result)
-        if options[:min_documents] > 0 && result.documents.length < options[:min_documents]
-          $stderr.puts "Error: Found #{result.documents.length} documents, minimum is #{options[:min_documents]}"
+        if options[:min_documents].positive? && result.documents.length < options[:min_documents]
+          warn "Error: Found #{result.documents.length} documents, minimum is #{options[:min_documents]}"
           exit 1
         end
         exit(result.failed_repos.empty? ? 0 : 1)
@@ -165,6 +166,7 @@ module Metanorma
 
         def load_manifest(path)
           return nil unless File.exist?(path)
+
           ChannelManifest.from_file(path)
         end
 
@@ -177,9 +179,7 @@ module Metanorma
           return fetch_config(cli_source) if cli_source
 
           # 2. config: key in manifest
-          if manifest&.config_source
-            return fetch_config(manifest.config_source)
-          end
+          return fetch_config(manifest.config_source) if manifest&.config_source
 
           # 3. Directory walk
           found = ConfigLocator.find
@@ -190,12 +190,12 @@ module Metanorma
         end
 
         def fetch_config(source)
-          if source.start_with?("local:")
+          if source.start_with?('local:')
             Platform::Local::ConfigFetcher.new.fetch(source)
-          elsif source.include?("/")
+          elsif source.include?('/')
             Platform::Local::ConfigFetcher.new.fetch("local:#{source}")
           else
-            require "octokit"
+            require 'octokit'
             client = PlatformFactory.build_github_client(nil)
             Platform::GitHub::ConfigFetcher.new(client: client).fetch(source)
           end

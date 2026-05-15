@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 begin
-  require "zip"
+  require 'zip'
 rescue LoadError
   raise LoadError, "The rubyzip gem is required for AssetProcessor. Add `gem 'rubyzip'` to your Gemfile."
 end
@@ -23,7 +23,7 @@ module Metanorma
         files = []
 
         Dir.mktmpdir do |tmp_dir|
-          zip_path = File.join(tmp_dir, "archive.zip")
+          zip_path = File.join(tmp_dir, 'archive.zip')
           File.binwrite(zip_path, zip_data)
 
           Zip::File.open(zip_path) do |zip_file|
@@ -43,15 +43,15 @@ module Metanorma
           end
         end
 
-        ProcessResult.new(files: files, channels: metadata["channels"])
+        ProcessResult.new(files: files, channels: metadata['channels'])
       end
 
       private
 
       def canonicalize_name(name)
         # Strip edition suffix: -ed1. → ., -ed1-wd. → -wd.
-        name.sub(/-ed\d+(\.\d+)?-(?=[a-z0-9])/, "-")
-            .sub(/-ed\d+(\.\d+)?\./, ".")
+        name.sub(/-ed\d+(\.\d+)?-(?=[a-z0-9])/, '-')
+            .sub(/-ed\d+(\.\d+)?\./, '.')
       end
     end
   end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative "../lib/metanorma/release"
-require_relative "support/factories"
+require_relative '../lib/metanorma/release'
+require_relative 'support/factories'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

@@ -6,29 +6,29 @@ module Metanorma
       PUBLISHED_NAMES = %w[published in-force approved standard].freeze
 
       STAGE_ABBREVS = {
-        "working-draft" => "wd",
-        "committee-draft" => "cd",
-        "draft-standard" => "ds",
-        "final-draft" => "fd",
-        "proposal" => "proposal",
-        "informational" => "info",
-        "withdrawn" => "withdrawn",
-        "cancelled" => "cancelled"
+        'working-draft' => 'wd',
+        'committee-draft' => 'cd',
+        'draft-standard' => 'ds',
+        'final-draft' => 'fd',
+        'proposal' => 'proposal',
+        'informational' => 'info',
+        'withdrawn' => 'withdrawn',
+        'cancelled' => 'cancelled'
       }.freeze
 
       ISO_STAGE_MAP = {
-        20 => "working-draft",
-        30 => "committee-draft",
-        40 => "draft-standard",
-        50 => "final-draft",
-        60 => "published",
-        95 => "withdrawn"
+        20 => 'working-draft',
+        30 => 'committee-draft',
+        40 => 'draft-standard',
+        50 => 'final-draft',
+        60 => 'published',
+        95 => 'withdrawn'
       }.freeze
 
       def self.from_status(status_string)
-        raise ArgumentError, "Stage cannot be empty" if status_string.nil? || status_string.strip.empty?
+        raise ArgumentError, 'Stage cannot be empty' if status_string.nil? || status_string.strip.empty?
 
-        normalized = status_string.to_s.downcase.strip.gsub(/\s+/, "-")
+        normalized = status_string.to_s.downcase.strip.gsub(/\s+/, '-')
         new(normalized)
       end
 
@@ -38,11 +38,11 @@ module Metanorma
       end
 
       def self.published
-        new("published")
+        new('published')
       end
 
       def self.working_draft
-        new("working-draft")
+        new('working-draft')
       end
 
       def initialize(name)
@@ -59,15 +59,15 @@ module Metanorma
       end
 
       def draft?
-        !published? && @name != "withdrawn" && @name != "cancelled"
+        !published? && @name != 'withdrawn' && @name != 'cancelled'
       end
 
       def withdrawn?
-        @name == "withdrawn"
+        @name == 'withdrawn'
       end
 
       def cancelled?
-        @name == "cancelled"
+        @name == 'cancelled'
       end
 
       def tag_suffix

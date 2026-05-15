@@ -4,13 +4,13 @@ module Metanorma
   module Release
     module PlatformFactory
       PUBLISHER_REGISTRY = {
-        "null" => ->(_opts) { Platform::Null::Publisher.new },
-        "local" => ->(opts) { Platform::Local::Publisher.new(output_dir: opts[:output_dir]) }
+        'null' => ->(_opts) { Platform::Null::Publisher.new },
+        'local' => ->(opts) { Platform::Local::Publisher.new(output_dir: opts[:output_dir]) }
       }.freeze
 
       AGGREGATION_REGISTRY = {
-        "local" => ->(opts, _token) {
-          path = opts[:source].sub("local:", "")
+        'local' => lambda { |opts, _token|
+          path = opts[:source].sub('local:', '')
           {
             discoverer: Platform::Local::DirectoryDiscoverer.new(base_path: path),
             fetcher: Platform::Local::Fetcher.new(base_path: path)
@@ -20,21 +20,20 @@ module Metanorma
 
       def self.build_publisher(platform, options)
         factory = PUBLISHER_REGISTRY[platform]
-        unless factory
-          raise ArgumentError, "Unknown platform: #{platform}. Available: #{PUBLISHER_REGISTRY.keys.join(', ')}"
-        end
+        raise ArgumentError, "Unknown platform: #{platform}. Available: #{PUBLISHER_REGISTRY.keys.join(', ')}" unless factory
+
         factory.call(options)
       end
 
       def self.build_aggregation_adapters(options)
         source = options[:source]
-        if source.start_with?("local:")
-          adapters = AGGREGATION_REGISTRY["local"].call(options, options[:token])
+        if source.start_with?('local:')
+          adapters = AGGREGATION_REGISTRY['local'].call(options, options[:token])
           adapters[:manifest_reader] = NullManifestReader.new
           return adapters
         end
 
-        require "octokit"
+        require 'octokit'
         client = build_github_client(options[:token])
 
         discoverer = if options[:repos]
@@ -54,7 +53,7 @@ module Metanorma
       end
 
       def self.build_github_client(token)
-        require "octokit"
+        require 'octokit'
         token ? Octokit::Client.new(access_token: token) : Octokit::Client.new
       end
 

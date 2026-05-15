@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require "yaml"
+require 'yaml'
 
 module Metanorma
   module Release
     class ChannelConfig
       def self.from_yaml(yaml_string)
         data = YAML.safe_load(yaml_string, permitted_classes: [Symbol])
-        raise ArgumentError, "Invalid channel config YAML" unless data.is_a?(Hash)
+        raise ArgumentError, 'Invalid channel config YAML' unless data.is_a?(Hash)
 
         registry = ChannelRegistry.from_yaml(yaml_string)
-        defaults = data["defaults"] || {}
-        default_visibility = defaults["visibility"] || "public"
-        default_channels = parse_channels(defaults["channels"])
+        defaults = data['defaults'] || {}
+        default_visibility = defaults['visibility'] || 'public'
+        default_channels = parse_channels(defaults['channels'])
 
         new(registry: registry, default_visibility: default_visibility,
             default_channels: default_channels)
@@ -20,7 +20,7 @@ module Metanorma
 
       def self.from_file(path)
         if File.directory?(path)
-          channels_yml = File.join(path, "channels.yml")
+          channels_yml = File.join(path, 'channels.yml')
           raise ArgumentError, "Channel config file not found: #{path}" unless File.exist?(channels_yml)
 
           return from_file(channels_yml)
@@ -33,7 +33,7 @@ module Metanorma
 
       def self.empty
         new(registry: ChannelRegistry.all_allowed,
-            default_visibility: "public", default_channels: [])
+            default_visibility: 'public', default_channels: [])
       end
 
       def initialize(registry:, default_visibility:, default_channels:)
@@ -44,8 +44,6 @@ module Metanorma
       end
 
       attr_reader :registry, :default_visibility, :default_channels
-
-      private
 
       def self.parse_channels(list)
         return [] unless list

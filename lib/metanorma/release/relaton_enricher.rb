@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require "relaton/bib"
-require "json"
-require "yaml"
-require "fileutils"
+require 'relaton/bib'
+require 'json'
+require 'yaml'
+require 'fileutils'
 
 module Metanorma
   module Release
@@ -20,30 +20,64 @@ module Metanorma
           @flavor_registry[name.to_s] = loader
         end
 
-        def flavor_registry
-          @flavor_registry
-        end
+        attr_reader :flavor_registry
       end
 
-      register_flavor("calconnect") { require "relaton/calconnect"; Relaton::Calconnect::Item }
-      register_flavor("cc")         { require "relaton/calconnect"; Relaton::Calconnect::Item }
-      register_flavor("iso")        { require "relaton/iso"; Relaton::Iso::Item }
-      register_flavor("iec")        { require "relaton/iec"; Relaton::Iec::BibliographicItem }
-      register_flavor("ogc")        { require "relaton/ogc"; Relaton::Ogc::BibliographicItem }
-      register_flavor("ietf")       { require "relaton/ietf"; Relaton::Ietf::BibliographicItem }
-      register_flavor("bipm")       { require "relaton/bipm"; Relaton::Bipm::BibliographicItem }
-      register_flavor("itu")        { require "relaton/itu"; Relaton::Itu::BibliographicItem }
-      register_flavor("nist")       { require "relaton/nist"; Relaton::Nist::BibliographicItem }
-      register_flavor("un")         { require "relaton/un"; Relaton::Un::BibliographicItem }
-      register_flavor("bsi")        { require "relaton/bsi"; Relaton::Bsi::BibliographicItem }
-      register_flavor("ribose")     { require "relaton/ribose"; Relaton::Ribose::Item }
+      register_flavor('calconnect') do
+        require 'relaton/calconnect'
+        Relaton::Calconnect::Item
+      end
+      register_flavor('cc') do
+        require 'relaton/calconnect'
+        Relaton::Calconnect::Item
+      end
+      register_flavor('iso') do
+        require 'relaton/iso'
+        Relaton::Iso::Item
+      end
+      register_flavor('iec') do
+        require 'relaton/iec'
+        Relaton::Iec::BibliographicItem
+      end
+      register_flavor('ogc') do
+        require 'relaton/ogc'
+        Relaton::Ogc::BibliographicItem
+      end
+      register_flavor('ietf') do
+        require 'relaton/ietf'
+        Relaton::Ietf::BibliographicItem
+      end
+      register_flavor('bipm') do
+        require 'relaton/bipm'
+        Relaton::Bipm::BibliographicItem
+      end
+      register_flavor('itu') do
+        require 'relaton/itu'
+        Relaton::Itu::BibliographicItem
+      end
+      register_flavor('nist') do
+        require 'relaton/nist'
+        Relaton::Nist::BibliographicItem
+      end
+      register_flavor('un') do
+        require 'relaton/un'
+        Relaton::Un::BibliographicItem
+      end
+      register_flavor('bsi') do
+        require 'relaton/bsi'
+        Relaton::Bsi::BibliographicItem
+      end
+      register_flavor('ribose') do
+        require 'relaton/ribose'
+        Relaton::Ribose::Item
+      end
 
-      def initialize(flavor: nil, registry_name: "Document Registry")
+      def initialize(flavor: nil, registry_name: 'Document Registry')
         @flavor = flavor
         @registry_name = registry_name
       end
 
-      def enrich(document_index, output_dir, bib_dir: "relaton")
+      def enrich(document_index, output_dir, bib_dir: 'relaton')
         return nil if document_index.empty?
 
         flavor = resolve_flavor(document_index)
@@ -57,7 +91,7 @@ module Metanorma
         EnrichResult.new(item_count: documents.length, output_dir: dest,
                          documents: documents)
       rescue LoadError
-        warn "  (relaton gem not available — bibliography skipped)"
+        warn '  (relaton gem not available — bibliography skipped)'
         nil
       end
 
@@ -79,15 +113,13 @@ module Metanorma
 
       def enrich_documents(document_index, output_dir, klass)
         document_index.documents.map do |doc|
-          rxl = doc.files.find { |f| f.extension == "rxl" }
+          rxl = doc.files.find { |f| f.extension == 'rxl' }
           path = rxl && File.join(output_dir, rxl.path)
 
-          bib = if path && File.exist?(path)
-                  klass.from_xml(File.read(path))
-                end
+          bib = (klass.from_xml(File.read(path)) if path && File.exist?(path))
 
           enriched = doc.to_h
-          enriched["bibliographic"] = bib.to_h if bib
+          enriched['bibliographic'] = bib.to_h if bib
           enriched
         rescue StandardError => e
           warn "  Skip #{File.basename(path)}: #{e.message}"
@@ -97,9 +129,9 @@ module Metanorma
 
       def write_index(documents, dest)
         FileUtils.mkdir_p(dest)
-        index = { "root" => { "title" => @registry_name, "items" => documents } }
-        File.write(File.join(dest, "index.json"), JSON.pretty_generate(index))
-        File.write(File.join(dest, "index.yaml"), YAML.dump(index))
+        index = { 'root' => { 'title' => @registry_name, 'items' => documents } }
+        File.write(File.join(dest, 'index.json'), JSON.pretty_generate(index))
+        File.write(File.join(dest, 'index.yaml'), YAML.dump(index))
       end
     end
   end

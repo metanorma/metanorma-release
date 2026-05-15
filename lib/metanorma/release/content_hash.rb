@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "digest"
+require 'digest'
 
 module Metanorma
   module Release
@@ -25,8 +25,8 @@ module Metanorma
       end
 
       def self.of_directory(directory, base: nil)
-        pattern = base ? File.join(directory, "#{base}.*") : File.join(directory, "**", "*")
-        files = Dir.glob(pattern).reject { |f| File.directory?(f) || f.end_with?(".zip") }
+        pattern = base ? File.join(directory, "#{base}.*") : File.join(directory, '**', '*')
+        files = Dir.glob(pattern).reject { |f| File.directory?(f) || f.end_with?('.zip') }
         of_files(files)
       end
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "json"
+require 'json'
 
 module Metanorma
   module Release
@@ -23,7 +23,7 @@ module Metanorma
             dir = File.join(@base_path, repo.repo)
             return FetchResult.new(releases: [], etag: nil, unchanged?: false) unless Dir.exist?(dir)
 
-            releases = Dir.glob(File.join(dir, "*.meta.json")).filter_map do |meta_path|
+            releases = Dir.glob(File.join(dir, '*.meta.json')).filter_map do |meta_path|
               build_release(dir, meta_path)
             end
 
@@ -34,7 +34,7 @@ module Metanorma
 
           def build_release(dir, meta_path)
             data = JSON.parse(File.read(meta_path))
-            base = File.basename(meta_path, ".meta.json")
+            base = File.basename(meta_path, '.meta.json')
             zip_path = File.join(dir, "#{base}.zip")
 
             unless File.exist?(zip_path)
@@ -66,7 +66,7 @@ module Metanorma
           end
 
           def prerelease?(data)
-            stage = data["stage"].to_s
+            stage = data['stage'].to_s
             %w[working-draft committee-draft draft-standard final-draft].include?(stage)
           end
         end

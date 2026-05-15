@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require "json"
-require "fileutils"
+require 'json'
+require 'fileutils'
 
 module Metanorma
   module Release
@@ -34,7 +34,7 @@ module Metanorma
           private
 
           def meta_file_name(asset_name)
-            base = asset_name.sub(/\.zip$/, "")
+            base = asset_name.sub(/\.zip$/, '')
             "#{base}.meta.json"
           end
         end

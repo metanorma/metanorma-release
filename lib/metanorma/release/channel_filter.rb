@@ -11,7 +11,7 @@ module Metanorma
       def matches?(release_metadata)
         return true if @all
 
-        release_channels = (release_metadata["channels"] || []).map { |c| Channel.parse(c) }
+        release_channels = (release_metadata['channels'] || []).map { |c| Channel.parse(c) }
         release_channels.any? { |rc| @channels.any? { |fc| fc.eql?(rc) } }
       end
 

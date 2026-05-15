@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 begin
-  require "zip"
+  require 'zip'
 rescue LoadError
   raise LoadError, "The rubyzip gem is required for ZipPackager. Add `gem 'rubyzip'` to your Gemfile."
 end

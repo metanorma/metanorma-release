@@ -16,7 +16,7 @@ module Metanorma
 
             Dir.children(@base_path).filter_map do |entry|
               full = File.join(@base_path, entry)
-              RepoRef.new(owner: "local", repo: entry) if File.directory?(full)
+              RepoRef.new(owner: 'local', repo: entry) if File.directory?(full)
             end
           end
         end

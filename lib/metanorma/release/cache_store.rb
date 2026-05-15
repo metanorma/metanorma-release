@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "json"
+require 'json'
 
 module Metanorma
   module Release
@@ -36,6 +36,7 @@ module Metanorma
       def get(key)
         path = file_path(key)
         return nil unless File.exist?(path)
+
         File.read(path)
       end
 
@@ -52,21 +53,22 @@ module Metanorma
       def clear
         return unless Dir.exist?(@directory)
 
-        Dir.glob(File.join(@directory, "*")).each do |f|
+        Dir.glob(File.join(@directory, '*')).each do |f|
           File.delete(f) if File.file?(f)
         end
       end
 
       def keys
         return [] unless Dir.exist?(@directory)
-        Dir.glob(File.join(@directory, "*")).select { |f| File.file?(f) }
-          .map { |f| File.basename(f) }
+
+        Dir.glob(File.join(@directory, '*')).select { |f| File.file?(f) }
+                                            .map { |f| File.basename(f) }
       end
 
       private
 
       def file_path(key)
-        sanitized = key.gsub(/[^a-zA-Z0-9._-]/, "_")
+        sanitized = key.gsub(/[^a-zA-Z0-9._-]/, '_')
         File.join(@directory, sanitized)
       end
     end

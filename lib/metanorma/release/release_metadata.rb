@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "json"
+require 'json'
 
 module Metanorma
   module Release
@@ -9,25 +9,25 @@ module Metanorma
 
       def self.from_document(metadata, channels:)
         data = {
-          "version" => SCHEMA_VERSION,
-          "id" => metadata.id.to_s,
-          "title" => metadata.title,
-          "edition" => metadata.version.edition,
-          "stage" => metadata.version.stage.to_s,
-          "doctype" => metadata.doctype.to_s,
-          "revdate" => metadata.revdate,
-          "formats" => metadata.formats,
-          "channels" => channels.map(&:to_s),
-          "flavor" => metadata.flavor,
-          "sourcePath" => metadata.source_path
+          'version' => SCHEMA_VERSION,
+          'id' => metadata.id.to_s,
+          'title' => metadata.title,
+          'edition' => metadata.version.edition,
+          'stage' => metadata.version.stage.to_s,
+          'doctype' => metadata.doctype.to_s,
+          'revdate' => metadata.revdate,
+          'formats' => metadata.formats,
+          'channels' => channels.map(&:to_s),
+          'flavor' => metadata.flavor,
+          'sourcePath' => metadata.source_path
         }
         new(data)
       end
 
       def self.from_json(json_string)
         data = JSON.parse(json_string)
-        raise ArgumentError, "Missing required field: id" unless data["id"]
-        raise ArgumentError, "Missing required field: title" unless data["title"]
+        raise ArgumentError, 'Missing required field: id' unless data['id']
+        raise ArgumentError, 'Missing required field: title' unless data['title']
 
         new(data)
       end
@@ -64,16 +64,16 @@ module Metanorma
         @data.dup
       end
 
-      def id         = @data["id"]
-      def title      = @data["title"]
-      def edition    = @data["edition"]
-      def stage      = @data["stage"]
-      def doctype    = @data["doctype"]
-      def revdate    = @data["revdate"]
-      def formats    = @data["formats"] || []
-      def channels   = @data["channels"] || []
-      def flavor     = @data["flavor"]
-      def source_path = @data["sourcePath"]
+      def id         = @data['id']
+      def title      = @data['title']
+      def edition    = @data['edition']
+      def stage      = @data['stage']
+      def doctype    = @data['doctype']
+      def revdate    = @data['revdate']
+      def formats    = @data['formats'] || []
+      def channels   = @data['channels'] || []
+      def flavor     = @data['flavor']
+      def source_path = @data['sourcePath']
     end
   end
 end

@@ -11,10 +11,10 @@ RSpec.describe Metanorma::Release::Platform::Local::ConfigFetcher do
     YAML
   end
 
-  describe "#fetch" do
-    it "reads config from local path" do
+  describe '#fetch' do
+    it 'reads config from local path' do
       Dir.mktmpdir do |dir|
-        path = File.join(dir, "config.yml")
+        path = File.join(dir, 'config.yml')
         File.write(path, channel_config_yaml)
         source = "local:#{path}"
         config = fetcher.fetch(source)
@@ -23,8 +23,8 @@ RSpec.describe Metanorma::Release::Platform::Local::ConfigFetcher do
       end
     end
 
-    it "returns nil when file does not exist" do
-      config = fetcher.fetch("local:/nonexistent/path.yml")
+    it 'returns nil when file does not exist' do
+      config = fetcher.fetch('local:/nonexistent/path.yml')
       expect(config).to be_nil
     end
   end

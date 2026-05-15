@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require "json"
+require 'json'
 
 module Metanorma
   module Release
     DocumentFile = Struct.new(:name, :path, keyword_init: true) do
       def extension
-        File.extname(name).delete_prefix(".")
+        File.extname(name).delete_prefix('.')
       end
     end
 
@@ -31,20 +31,20 @@ module Metanorma
 
     class AggregatedDocument
       def self.from_h(hash)
-        files = (hash["files"] || []).map do |f|
-          DocumentFile.new(name: f["name"], path: f["path"])
+        files = (hash['files'] || []).map do |f|
+          DocumentFile.new(name: f['name'], path: f['path'])
         end
-        source_data = hash["source"] || {}
+        source_data = hash['source'] || {}
         source = DocumentSource.new(
-          owner: source_data["owner"], repo: source_data["repo"],
-          tag: source_data["tag"], release_url: source_data["releaseUrl"],
-          release_date: source_data["releaseDate"]
+          owner: source_data['owner'], repo: source_data['repo'],
+          tag: source_data['tag'], release_url: source_data['releaseUrl'],
+          release_date: source_data['releaseDate']
         )
         new(
-          id: hash["id"], title: hash["title"], edition: hash["edition"],
-          stage: hash["stage"], doctype: hash.fetch("doctype", ""),
-          channels: hash["channels"] || [], formats: hash["formats"] || [],
-          flavor: hash["flavor"], content_hash: hash["contentHash"],
+          id: hash['id'], title: hash['title'], edition: hash['edition'],
+          stage: hash['stage'], doctype: hash.fetch('doctype', ''),
+          channels: hash['channels'] || [], formats: hash['formats'] || [],
+          flavor: hash['flavor'], content_hash: hash['contentHash'],
           source: source, files: files
         )
       end
@@ -70,16 +70,16 @@ module Metanorma
 
       def to_h
         {
-          "id" => id, "title" => title, "edition" => edition,
-          "stage" => stage, "doctype" => doctype,
-          "channels" => channels, "formats" => formats,
-          "flavor" => flavor, "contentHash" => content_hash,
-          "source" => {
-            "owner" => source.owner, "repo" => source.repo,
-            "tag" => source.tag, "releaseUrl" => source.release_url,
-            "releaseDate" => source.release_date
+          'id' => id, 'title' => title, 'edition' => edition,
+          'stage' => stage, 'doctype' => doctype,
+          'channels' => channels, 'formats' => formats,
+          'flavor' => flavor, 'contentHash' => content_hash,
+          'source' => {
+            'owner' => source.owner, 'repo' => source.repo,
+            'tag' => source.tag, 'releaseUrl' => source.release_url,
+            'releaseDate' => source.release_date
           },
-          "files" => files.map { |f| { "name" => f.name, "path" => f.path } }
+          'files' => files.map { |f| { 'name' => f.name, 'path' => f.path } }
         }
       end
     end
@@ -93,14 +93,14 @@ module Metanorma
         data = JSON.parse(json_string)
         validate!(data)
         new(
-          documents: (data["documents"] || []).map { |d| AggregatedDocument.from_h(d) },
+          documents: (data['documents'] || []).map { |d| AggregatedDocument.from_h(d) },
           parameters: IndexParameters.new(
-            organizations: data.dig("parameters", "organizations") || [],
-            channels: data.dig("parameters", "channels") || [],
-            topic: data.dig("parameters", "topic"),
-            repo_count: data.dig("parameters", "repoCount") || 0
+            organizations: data.dig('parameters', 'organizations') || [],
+            channels: data.dig('parameters', 'channels') || [],
+            topic: data.dig('parameters', 'topic'),
+            repo_count: data.dig('parameters', 'repoCount') || 0
           ),
-          generated_at: data["generatedAt"]
+          generated_at: data['generatedAt']
         )
       end
 
@@ -115,13 +115,7 @@ module Metanorma
         freeze
       end
 
-      def documents
-        @documents
-      end
-
-      def parameters
-        @parameters
-      end
+      attr_reader :documents, :parameters
 
       def summary
         IndexSummary.new(
@@ -145,20 +139,20 @@ module Metanorma
 
       def to_h
         {
-          "version" => SCHEMA_VERSION,
-          "generatedAt" => @generated_at,
-          "parameters" => {
-            "organizations" => @parameters.organizations,
-            "channels" => @parameters.channels,
-            "topic" => @parameters.topic,
-            "repoCount" => @parameters.repo_count
+          'version' => SCHEMA_VERSION,
+          'generatedAt' => @generated_at,
+          'parameters' => {
+            'organizations' => @parameters.organizations,
+            'channels' => @parameters.channels,
+            'topic' => @parameters.topic,
+            'repoCount' => @parameters.repo_count
           },
-          "summary" => {
-            "repoCount" => summary.repo_count,
-            "documentCount" => summary.document_count,
-            "channelsFound" => summary.channels_found
+          'summary' => {
+            'repoCount' => summary.repo_count,
+            'documentCount' => summary.document_count,
+            'channelsFound' => summary.channels_found
           },
-          "documents" => @documents.map(&:to_h)
+          'documents' => @documents.map(&:to_h)
         }
       end
 
@@ -171,16 +165,17 @@ module Metanorma
         File.write(path, to_json)
       end
 
-      private
-
       def self.validate!(data)
-        raise SchemaError, "Missing 'version' field" unless data.key?("version")
-        raise SchemaError, "Unsupported schema version: #{data['version']}. Expected #{SCHEMA_VERSION}" unless data["version"] == SCHEMA_VERSION
-        raise SchemaError, "Missing 'documents' field" unless data.key?("documents")
+        raise SchemaError, "Missing 'version' field" unless data.key?('version')
+        unless data['version'] == SCHEMA_VERSION
+          raise SchemaError,
+                "Unsupported schema version: #{data['version']}. Expected #{SCHEMA_VERSION}"
+        end
+        raise SchemaError, "Missing 'documents' field" unless data.key?('documents')
 
-        data["documents"].each do |doc|
-          raise SchemaError, "Document missing required field 'id'" unless doc.key?("id")
-          raise SchemaError, "Document missing required field 'title'" unless doc.key?("title")
+        data['documents'].each do |doc|
+          raise SchemaError, "Document missing required field 'id'" unless doc.key?('id')
+          raise SchemaError, "Document missing required field 'title'" unless doc.key?('title')
         end
       end
     end
