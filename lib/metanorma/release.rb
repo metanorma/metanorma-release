@@ -94,6 +94,9 @@ module Metanorma
     # Platform factory
     autoload :PlatformFactory, "metanorma/release/platform_factory"
 
+    # Relaton enrichment
+    autoload :RelatonEnricher, "metanorma/release/relaton_enricher"
+
     # CLI & Rake
     autoload :CLI, "metanorma/release/cli"
     autoload :RakeTasks, "metanorma/release/rake_tasks"
