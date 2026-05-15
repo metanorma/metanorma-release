@@ -36,8 +36,7 @@ module Metanorma
       end
 
       def include?(channel_or_string)
-        channel = channel_or_string.is_a?(Channel) ? channel_or_string : Channel.parse(channel_or_string.to_s)
-        valid?(channel)
+        valid?(Channel.parse(channel_or_string.to_s))
       end
 
       attr_reader :channels

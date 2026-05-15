@@ -16,14 +16,13 @@ RSpec.describe Metanorma::Release::CLI do
   end
 
   describe '.run_package' do
-    it 'constructs pipeline with NullPublisher' do
-      allow(Metanorma::Release::ReleasePipeline).to receive(:new).and_wrap_original do |m, *args|
-        pipeline = m.call(*args)
-        allow(pipeline).to receive(:run).and_return(
-          Metanorma::Release::ReleaseResult.new(released: [], skipped: [], failed: [], released_artifacts: [])
-        )
-        pipeline
-      end
+    it 'delegates to PackageCommand and exits 0 on success' do
+      result = Metanorma::Release::ReleaseResult.new(
+        released: [], skipped: [], failed: [], released_artifacts: []
+      )
+      cmd = instance_double(Metanorma::Release::PackageCommand)
+      allow(Metanorma::Release::PackageCommand).to receive(:new).and_return(cmd)
+      allow(cmd).to receive(:call).and_return(result)
 
       expect { described_class.run_package(['--output-dir', '/tmp']) }.to raise_error(SystemExit) do |e|
         expect(e.status).to eq(0)
@@ -32,14 +31,13 @@ RSpec.describe Metanorma::Release::CLI do
   end
 
   describe '.run_publish' do
-    it 'constructs pipeline with platform publisher' do
-      allow(Metanorma::Release::ReleasePipeline).to receive(:new).and_wrap_original do |m, *args|
-        pipeline = m.call(*args)
-        allow(pipeline).to receive(:run).and_return(
-          Metanorma::Release::ReleaseResult.new(released: [], skipped: [], failed: [], released_artifacts: [])
-        )
-        pipeline
-      end
+    it 'delegates to PublishCommand and exits 0 on success' do
+      result = Metanorma::Release::ReleaseResult.new(
+        released: [], skipped: [], failed: [], released_artifacts: []
+      )
+      cmd = instance_double(Metanorma::Release::PublishCommand)
+      allow(Metanorma::Release::PublishCommand).to receive(:new).and_return(cmd)
+      allow(cmd).to receive(:call).and_return(result)
 
       expect do
         described_class.run_publish(['--platform', 'local', '--output-dir', '/tmp'])
@@ -51,17 +49,14 @@ RSpec.describe Metanorma::Release::CLI do
 
   describe 'exit codes' do
     it 'exits 1 on pipeline failure' do
-      allow(Metanorma::Release::ReleasePipeline).to receive(:new).and_wrap_original do |m, *args|
-        pipeline = m.call(*args)
-        allow(pipeline).to receive(:run).and_return(
-          Metanorma::Release::ReleaseResult.new(
-            released: [], skipped: [],
-            failed: [{ document: double(id: 'test'), error: 'boom' }],
-            released_artifacts: []
-          )
-        )
-        pipeline
-      end
+      result = Metanorma::Release::ReleaseResult.new(
+        released: [], skipped: [],
+        failed: [{ document: double(id: 'test'), error: 'boom' }],
+        released_artifacts: []
+      )
+      cmd = instance_double(Metanorma::Release::PackageCommand)
+      allow(Metanorma::Release::PackageCommand).to receive(:new).and_return(cmd)
+      allow(cmd).to receive(:call).and_return(result)
 
       expect { described_class.run_package(['--output-dir', '/tmp']) }.to raise_error(SystemExit) do |e|
         expect(e.status).to eq(1)
