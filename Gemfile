@@ -7,5 +7,5 @@ gemspec
 group :development do
   gem "nokogiri", "~> 1.18"
   gem "octokit", "~> 9.0"
-  gem "rubyzip", "~> 2.4"
+  gem "rubyzip", "~> 2.3"
 end

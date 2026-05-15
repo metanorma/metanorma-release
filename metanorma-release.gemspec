@@ -36,6 +36,8 @@ Gem::Specification.new do |spec|
   spec.metadata["changelog_uri"]       = "#{spec.homepage}/blob/main/CHANGELOG.md"
   spec.metadata["rubygems_mfa_required"] = "true"
 
+  spec.add_runtime_dependency "relaton", "~> 2.0"
+
   spec.add_development_dependency "rspec", "~> 3.13"
   spec.add_development_dependency "rake", "~> 13.2"
 end
