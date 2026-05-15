@@ -29,5 +29,11 @@ module Metanorma
     FetchResult = Struct.new(:releases, :etag, :unchanged?, keyword_init: true)
     RepoReport  = Struct.new(:releases, :included, :skipped, :reason, :errors, keyword_init: true)
     RepoError   = Struct.new(:tag, :message, keyword_init: true)
+
+    ReleaseData = Struct.new(:tag_name, :body, :prerelease, :draft,
+                             :html_url, :published_at, :created_at,
+                             :assets, keyword_init: true)
+    AssetData = Struct.new(:name, :browser_download_url, :size, :data,
+                           keyword_init: true)
   end
 end

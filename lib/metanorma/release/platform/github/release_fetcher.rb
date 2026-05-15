@@ -4,12 +4,6 @@ module Metanorma
   module Release
     module Platform
       module GitHub
-        GitHubRelease = Struct.new(:tag_name, :body, :prerelease, :draft,
-                                   :html_url, :published_at, :created_at,
-                                   :assets, keyword_init: true)
-        GitHubAsset = Struct.new(:name, :browser_download_url, :size, :data,
-                                 keyword_init: true)
-
         class ReleaseFetcher
           include Metanorma::Release::ReleaseFetcher
 
@@ -27,14 +21,14 @@ module Metanorma
 
           def parse_release(r)
             assets = (r[:assets] || []).map do |a|
-              GitHubAsset.new(
+              AssetData.new(
                 name: a[:name],
                 browser_download_url: a[:browser_download_url],
                 size: a[:size],
                 data: nil
               )
             end
-            GitHubRelease.new(
+            ReleaseData.new(
               tag_name: r[:tag_name],
               body: r[:body],
               prerelease: r[:prerelease],

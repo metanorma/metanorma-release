@@ -1,19 +1,15 @@
 # frozen_string_literal: true
 
-require "json"
+require 'json'
 
 module Metanorma
   module Release
     module Platform
       module Local
-        LocalRelease = Struct.new(:tag_name, :body, :prerelease, :draft,
-                                  :html_url, :published_at, :created_at,
-                                  :assets, keyword_init: true)
-        LocalAsset = Struct.new(:name, :browser_download_url, :size, :data,
-                                keyword_init: true)
-
         class Fetcher
           include Metanorma::Release::ReleaseFetcher
+
+          DRAFT_STAGES = %w[working-draft committee-draft draft-standard final-draft].freeze
 
           def initialize(base_path:)
             @base_path = base_path
@@ -23,7 +19,7 @@ module Metanorma
             dir = File.join(@base_path, repo.repo)
             return FetchResult.new(releases: [], etag: nil, unchanged?: false) unless Dir.exist?(dir)
 
-            releases = Dir.glob(File.join(dir, "*.meta.json")).filter_map do |meta_path|
+            releases = Dir.glob(File.join(dir, '*.meta.json')).filter_map do |meta_path|
               build_release(dir, meta_path)
             end
 
@@ -34,7 +30,7 @@ module Metanorma
 
           def build_release(dir, meta_path)
             data = JSON.parse(File.read(meta_path))
-            base = File.basename(meta_path, ".meta.json")
+            base = File.basename(meta_path, '.meta.json')
             zip_path = File.join(dir, "#{base}.zip")
 
             unless File.exist?(zip_path)
@@ -43,21 +39,22 @@ module Metanorma
             end
 
             metadata = ReleaseMetadata.new(data)
-            asset = LocalAsset.new(
+            asset = AssetData.new(
               name: "#{base}.zip",
               browser_download_url: "file://#{File.expand_path(zip_path)}",
               size: File.size(zip_path),
               data: File.binread(zip_path)
             )
 
-            LocalRelease.new(
+            mtime = File.mtime(zip_path).iso8601
+            ReleaseData.new(
               tag_name: "#{data['id']}/#{data.fetch('edition', '1')}",
               body: metadata.to_release_body,
               prerelease: prerelease?(data),
               draft: false,
               html_url: "file://#{File.expand_path(dir)}",
-              published_at: File.mtime(zip_path).iso8601,
-              created_at: File.mtime(zip_path).iso8601,
+              published_at: mtime,
+              created_at: mtime,
               assets: [asset]
             )
           rescue JSON::ParserError
@@ -66,8 +63,7 @@ module Metanorma
           end
 
           def prerelease?(data)
-            stage = data["stage"].to_s
-            %w[working-draft committee-draft draft-standard final-draft].include?(stage)
+            DRAFT_STAGES.include?(data['stage'].to_s)
           end
         end
       end
