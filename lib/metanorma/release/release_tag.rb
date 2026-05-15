@@ -11,13 +11,13 @@ module Metanorma
       end
 
       def self.create(tag, pre_release:)
-        raise ArgumentError, "Tag must contain a slash separator" unless tag.include?("/")
+        raise ArgumentError, 'Tag must contain a slash separator' unless tag.include?('/')
 
         new(tag: tag, pre_release: pre_release)
       end
 
       def self.parse(tag)
-        raise ArgumentError, "Tag must contain a slash separator" unless tag.include?("/")
+        raise ArgumentError, 'Tag must contain a slash separator' unless tag.include?('/')
 
         pre = PRE_RELEASE_SUFFIXES.any? { |s| tag.include?(s) }
         new(tag: tag, pre_release: pre)
@@ -38,11 +38,11 @@ module Metanorma
       end
 
       def eql?(other)
-        other.is_a?(self.class) && @tag == other.to_s
+        other.is_a?(self.class) && @tag == other.to_s && @pre_release == other.pre_release?
       end
 
       def hash
-        @tag.hash
+        [@tag, @pre_release].hash
       end
     end
   end
