@@ -86,7 +86,6 @@ module Metanorma
     autoload :RepoDiscoverer,    'metanorma/release/aggregation_interfaces'
     autoload :ReleaseFetcher,    'metanorma/release/aggregation_interfaces'
     autoload :ManifestReader,    'metanorma/release/aggregation_interfaces'
-    autoload :IndexGenerator,    'metanorma/release/aggregation_interfaces'
     autoload :FetchResult,       'metanorma/release/aggregation_interfaces'
     autoload :RepoReport,        'metanorma/release/aggregation_interfaces'
     autoload :RepoError,         'metanorma/release/aggregation_interfaces'

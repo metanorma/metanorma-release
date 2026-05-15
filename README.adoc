@@ -45,13 +45,13 @@ The gem ships three commands:
 [source,sh]
 ----
 # Package compiled documents as zip archives
-mn-release package --output-dir _site --manifest metanorma.release.yml
+metanorma-release package --output-dir _site --manifest metanorma.release.yml
 
 # Package and publish to a platform
-mn-release publish --platform github --output-dir _site --token $GITHUB_TOKEN
+metanorma-release publish --platform github --output-dir _site --token $GITHUB_TOKEN
 
 # Aggregate published releases into a file tree + index.json
-mn-release aggregate --source github --organizations my-org --output-dir _site/cc
+metanorma-release aggregate --source github --organizations my-org --output-dir _site/cc
 ----
 
 === Rake tasks
@@ -110,13 +110,13 @@ result.failed    # => [{ document: ..., error: "..." }]
 
 == CLI reference
 
-=== `mn-release package`
+=== `metanorma-release package`
 
 Package compiled documents into zip archives without publishing.
 
 [source,sh]
 ----
-mn-release package [options]
+metanorma-release package [options]
 ----
 
 [cols="1m,3",options="header"]
@@ -128,13 +128,13 @@ mn-release package [options]
 |`--config SOURCE` |Channel config file or platform ref
 |===
 
-=== `mn-release publish`
+=== `metanorma-release publish`
 
 Package and publish documents to a platform.
 
 [source,sh]
 ----
-mn-release publish [options]
+metanorma-release publish [options]
 ----
 
 [cols="1m,3",options="header"]
@@ -151,13 +151,13 @@ mn-release publish [options]
 |`--config SOURCE` |Channel config file or platform ref
 |===
 
-=== `mn-release aggregate`
+=== `metanorma-release aggregate`
 
 Aggregate published releases from multiple repositories into a unified file tree.
 
 [source,sh]
 ----
-mn-release aggregate [options]
+metanorma-release aggregate [options]
 ----
 
 [cols="1m,3",options="header"]

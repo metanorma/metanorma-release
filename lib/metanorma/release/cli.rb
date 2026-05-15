@@ -14,7 +14,7 @@ module Metanorma
         when 'publish'   then run_publish(argv)
         when 'aggregate' then run_aggregate(argv)
         when nil
-          warn 'Usage: mn-release <package|publish|aggregate> [options]'
+          warn 'Usage: metanorma-release <package|publish|aggregate> [options]'
           exit 2
         else
           warn "Unknown command: #{command}"
@@ -54,7 +54,7 @@ module Metanorma
           options = { output_dir: '_site', dest: 'dist', manifest: 'metanorma.release.yml',
                       config_source: nil }
           OptionParser.new do |opts|
-            opts.banner = 'Usage: mn-release package [options]'
+            opts.banner = 'Usage: metanorma-release package [options]'
             opts.on('--output-dir DIR', 'Compiled docs directory') { |v| options[:output_dir] = v }
             opts.on('--dest DIR', 'Destination for packages') { |v| options[:dest] = v }
             opts.on('--manifest FILE', 'Release manifest file') { |v| options[:manifest] = v }
@@ -68,7 +68,7 @@ module Metanorma
                       force: false, force_replace: [], channels: nil, concurrency: 4, token: nil,
                       config_source: nil }
           OptionParser.new do |opts|
-            opts.banner = 'Usage: mn-release publish [options]'
+            opts.banner = 'Usage: metanorma-release publish [options]'
             opts.on('--platform NAME', 'github|local') { |v| options[:platform] = v }
             opts.on('--output-dir DIR', 'Compiled docs directory') { |v| options[:output_dir] = v }
             opts.on('--manifest FILE', 'Release manifest file') { |v| options[:manifest] = v }
@@ -88,7 +88,7 @@ module Metanorma
                       file_routing: 'by-document', cache_dir: nil,
                       include_drafts: false, concurrency: 4, min_documents: 0, token: nil }
           OptionParser.new do |opts|
-            opts.banner = 'Usage: mn-release aggregate [options]'
+            opts.banner = 'Usage: metanorma-release aggregate [options]'
             opts.on('--source SOURCE', 'github|local:PATH') { |v| options[:source] = v }
             opts.on('--organizations ORGS', 'Comma-separated org list') { |v| options[:organizations] = v.split(',') }
             opts.on('--topic TOPIC', 'Repository topic') { |v| options[:topic] = v }
