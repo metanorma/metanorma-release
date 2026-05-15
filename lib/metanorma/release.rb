@@ -104,5 +104,13 @@ module Metanorma
     # CLI & Rake
     autoload :CLI, 'metanorma/release/cli'
     autoload :RakeTasks, 'metanorma/release/rake_tasks'
+
+    # Commands
+    autoload :PackageCommand, 'metanorma/release/commands/package'
+    autoload :PublishCommand, 'metanorma/release/commands/publish'
+    autoload :AggregateCommand, 'metanorma/release/commands/aggregate'
+
+    # Config resolution
+    autoload :ConfigResolver, 'metanorma/release/config_resolver'
   end
 end

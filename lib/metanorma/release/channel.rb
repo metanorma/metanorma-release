@@ -12,6 +12,10 @@ module Metanorma
         end
       end
 
+      def self.parse_list(strings)
+        (strings || []).map { |s| parse(s) }
+      end
+
       def self.public(category)
         new(audience: ChannelAudience::PUBLIC, category: category)
       end
@@ -45,7 +49,7 @@ module Metanorma
       end
 
       def matches?(filter_channels)
-        filter_channels.any? { |c| channel_match?(c) }
+        filter_channels.any? { |c| eql?(Channel.parse(c)) }
       end
 
       def eql?(other)
@@ -54,13 +58,6 @@ module Metanorma
 
       def hash
         [audience, category].hash
-      end
-
-      private
-
-      def channel_match?(other)
-        other = self.class.parse(other) if other.is_a?(String)
-        eql?(other)
       end
     end
   end
