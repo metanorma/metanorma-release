@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require "yaml"
+require 'yaml'
 
 module Metanorma
   module Release
     class DocumentReleasePolicy
       def self.from_defaults(visibility, channels)
         ch = build_channels(visibility, channels)
-        is_released = visibility != "private" || !ch.empty?
+        is_released = visibility != 'private' || !ch.empty?
         new(release: is_released, channels: ch, stage_allow_list: nil)
       end
 
@@ -31,22 +31,14 @@ module Metanorma
         @release
       end
 
-      def channels
-        @channels
-      end
-
-      def stage_allow_list
-        @stage_allow_list
-      end
-
-      private
+      attr_reader :channels, :stage_allow_list
 
       def self.build_channels(visibility, explicit_channels)
         return explicit_channels if explicit_channels && !explicit_channels.empty?
 
         case visibility
-        when "public"  then [Channel.public("default")]
-        when "members" then [Channel.members("default")]
+        when 'public'  then [Channel.public('default')]
+        when 'members' then [Channel.members('default')]
         else [].freeze
         end
       end
@@ -67,22 +59,24 @@ module Metanorma
       def match_priority
         return 100 if source
         return 50 + pattern.to_s.length if pattern
+
         0
       end
 
       def stages_set
         return nil if stages.nil? || stages.empty?
+
         Set.new(stages.map(&:downcase))
       end
     end
 
     class ChannelManifest
       def self.parse(yaml_hash)
-        defaults = yaml_hash["defaults"] || {}
-        default_visibility = defaults["visibility"] || "public"
-        default_channels = parse_channels(defaults["channels"])
-        entries = parse_entries(yaml_hash["documents"] || [])
-        config_source = yaml_hash["config"]
+        defaults = yaml_hash['defaults'] || {}
+        default_visibility = defaults['visibility'] || 'public'
+        default_channels = parse_channels(defaults['channels'])
+        entries = parse_entries(yaml_hash['documents'] || [])
+        config_source = yaml_hash['config']
 
         new(entries: entries, default_visibility: default_visibility,
             default_channels: default_channels, explicit: true, config_source: config_source)
@@ -90,22 +84,24 @@ module Metanorma
 
       def self.from_yaml(yaml_string)
         yaml = YAML.safe_load(yaml_string, permitted_classes: [Symbol])
-        raise ArgumentError, "Manifest YAML is empty" unless yaml.is_a?(Hash)
+        raise ArgumentError, 'Manifest YAML is empty' unless yaml.is_a?(Hash)
+
         parse(yaml)
       end
 
       def self.from_file(path)
         raise ArgumentError, "Manifest file not found: #{path}" unless File.exist?(path)
+
         from_yaml(File.read(path))
       end
 
       def self.all_public
-        new(entries: [], default_visibility: "public",
-            default_channels: [Channel.public("default")], explicit: false, config_source: nil)
+        new(entries: [], default_visibility: 'public',
+            default_channels: [Channel.public('default')], explicit: false, config_source: nil)
       end
 
       def self.all_private
-        new(entries: [], default_visibility: "private",
+        new(entries: [], default_visibility: 'private',
             default_channels: [], explicit: false, config_source: nil)
       end
 
@@ -139,9 +135,7 @@ module Metanorma
         @explicit
       end
 
-      def config_source
-        @config_source
-      end
+      attr_reader :config_source
 
       private
 
@@ -161,15 +155,17 @@ module Metanorma
         return false unless source
         return true if entry.source && entry.source == source
         return true if entry.pattern && File.fnmatch?(entry.pattern, source)
+
         false
       end
 
       def extract_source(document)
-        document["source_path"]
+        document['source_path']
       end
 
       def self.parse_channels(channel_list)
         return [] unless channel_list
+
         channel_list.map { |c| Channel.parse(c.to_s) }
       end
 
@@ -177,19 +173,19 @@ module Metanorma
         documents.map do |doc|
           validate_entry!(doc)
           ManifestEntry.new(
-            source: doc["source"],
-            pattern: doc["pattern"],
-            visibility: doc["visibility"],
-            channels: parse_channels(doc["channels"]),
-            stages: doc["stages"]
+            source: doc['source'],
+            pattern: doc['pattern'],
+            visibility: doc['visibility'],
+            channels: parse_channels(doc['channels']),
+            stages: doc['stages']
           )
         end
       end
 
       def self.validate_entry!(doc)
-        if doc["source"] && doc["source"].include?("..")
-          raise ArgumentError, "Path traversal detected in manifest source: #{doc['source']}"
-        end
+        return unless doc['source']&.include?('..')
+
+        raise ArgumentError, "Path traversal detected in manifest source: #{doc['source']}"
       end
     end
   end

@@ -74,7 +74,7 @@ module Metanorma
 
       private
 
-      def fallback_tag(id, version)
+      def fallback_tag(id, _version)
         tag = "#{id}/draft"
         ReleaseTag.create(tag, pre_release: true)
       end
@@ -106,7 +106,7 @@ module Metanorma
         match = id.to_s.match(DRAFT_SUFFIX)
         return @fallback.compute_tag(id, version) unless match
 
-        base = id.to_s.sub(DRAFT_SUFFIX, "")
+        base = id.to_s.sub(DRAFT_SUFFIX, '')
         num = match[1]
         ReleaseTag.create("#{base}/#{num}", pre_release: true)
       end

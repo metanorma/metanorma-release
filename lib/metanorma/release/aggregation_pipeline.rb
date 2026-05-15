@@ -34,14 +34,12 @@ module Metanorma
         failed_repos = []
 
         repos.each do |repo|
-          begin
-            repo_docs, report = process_repo(repo, output_dir, config)
-            documents.concat(repo_docs)
-            reports << report
-          rescue StandardError => e
-            failed_repos << RepoError.new(tag: repo.to_s, message: e.message)
-            raise if config.fail_on_error
-          end
+          repo_docs, report = process_repo(repo, output_dir, config)
+          documents.concat(repo_docs)
+          reports << report
+        rescue StandardError => e
+          failed_repos << RepoError.new(tag: repo.to_s, message: e.message)
+          raise if config.fail_on_error
         end
 
         @deps.delta_state.save
@@ -57,13 +55,13 @@ module Metanorma
 
       private
 
-      def process_repo(repo, output_dir, config)
+      def process_repo(repo, _output_dir, config)
         repo_key = repo.to_s
 
         manifest_channels = @deps.manifest_reader.read(repo)
         if manifest_channels && !@deps.channel_filter.overlaps?(manifest_channels)
           return [], RepoReport.new(releases: 0, included: 0, skipped: 0,
-                                    reason: "channel manifest", errors: [])
+                                    reason: 'channel manifest', errors: [])
         end
 
         etag = @deps.delta_state.etag(repo_key)
@@ -71,7 +69,7 @@ module Metanorma
 
         if fetch_result.unchanged?
           return [], RepoReport.new(releases: 0, included: 0, skipped: 0,
-                                    reason: "etag unchanged", errors: [])
+                                    reason: 'etag unchanged', errors: [])
         end
 
         current_tags = []
@@ -142,6 +140,7 @@ module Metanorma
 
       def extract_content_hash(body)
         return nil if body.nil?
+
         match = body.match(/^content-hash:([a-f0-9]+)/)
         match ? match[1] : nil
       end
@@ -149,7 +148,7 @@ module Metanorma
       def find_zip_asset(release)
         return nil unless release.assets
 
-        release.assets.find { |a| a.name.end_with?(".zip") }
+        release.assets.find { |a| a.name.end_with?('.zip') }
       end
     end
   end

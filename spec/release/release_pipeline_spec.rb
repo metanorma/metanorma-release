@@ -9,7 +9,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
 
       def published = @published ||= []
 
-      def publish(tag, artifact, metadata, channels:, force_replace: false)
+      def publish(tag, _artifact, _metadata, channels:, force_replace: false)
         published << { tag: tag, channels: channels }
         Metanorma::Release::PublishResult.new(tag: tag, url: "mock://#{tag}", created?: true)
       end
@@ -31,7 +31,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       def detect(_metadata, _tag, force: false)
         Metanorma::Release::ChangeResult.new(
           changed?: force || always_changed,
-          current_hash: Metanorma::Release::ContentHash.from_hex("abc"),
+          current_hash: Metanorma::Release::ContentHash.from_hex('abc'),
           previous_hash: nil
         )
       end
@@ -56,22 +56,22 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
     end
   end
 
-  def build_doc(id_str, edition: "1", stage: "published")
+  def build_doc(id_str, edition: '1', stage: 'published')
     stage_obj = Metanorma::Release::DocumentStage.from_status(stage)
     version = Metanorma::Release::DocumentVersion.from(edition, stage_obj)
     Metanorma::Release::DocumentMetadata.new(
       id: Metanorma::Release::DocumentId.from_raw(id_str),
       title: "Test #{id_str}", version: version,
-      doctype: "standard", document_type: "standard",
-      flavor: "cc", revdate: "2024-01-01",
+      doctype: 'standard', document_type: 'standard',
+      flavor: 'cc', revdate: '2024-01-01',
       source_path: "sources/#{id_str}.adoc",
-      output_dir: "/tmp/docs", formats: %w[html pdf], file_base_name: id_str
+      output_dir: '/tmp/docs', formats: %w[html pdf], file_base_name: id_str
     )
   end
 
-  describe "happy path" do
-    it "releases changed documents and skips unchanged" do
-      docs = [build_doc("cc-18011"), build_doc("cc-19060")]
+  describe 'happy path' do
+    it 'releases changed documents and skips unchanged' do
+      docs = [build_doc('cc-18011'), build_doc('cc-19060')]
       publisher = mock_publisher_class.new([])
       extractor = mock_extractor_class.new(docs)
       detector = mock_change_detector_class.new(false)
@@ -85,9 +85,9 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       )
 
       config = described_class::Config.new(
-        output_dir: "/tmp/docs", force: true,
+        output_dir: '/tmp/docs', force: true,
         force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        default_visibility: 'public'
       )
 
       result = described_class.new(deps).run(config)
@@ -97,9 +97,9 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
     end
   end
 
-  describe "change detection" do
-    it "skips unchanged documents" do
-      docs = [build_doc("cc-18011"), build_doc("cc-19060")]
+  describe 'change detection' do
+    it 'skips unchanged documents' do
+      docs = [build_doc('cc-18011'), build_doc('cc-19060')]
       publisher = mock_publisher_class.new([])
       extractor = mock_extractor_class.new(docs)
       detector = mock_change_detector_class.new(false)
@@ -113,9 +113,9 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       )
 
       config = described_class::Config.new(
-        output_dir: "/tmp/docs", force: false,
+        output_dir: '/tmp/docs', force: false,
         force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        default_visibility: 'public'
       )
 
       result = described_class.new(deps).run(config)
@@ -124,14 +124,14 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
     end
   end
 
-  describe "channel resolution" do
-    it "uses channel_override when set" do
-      docs = [build_doc("cc-18011")]
+  describe 'channel resolution' do
+    it 'uses channel_override when set' do
+      docs = [build_doc('cc-18011')]
       publisher = mock_publisher_class.new([])
       extractor = mock_extractor_class.new(docs)
       detector = mock_change_detector_class.new(false)
       packager = mock_packager_class.new([])
-      override = [Metanorma::Release::Channel.members("drafts")]
+      override = [Metanorma::Release::Channel.members('drafts')]
 
       deps = described_class::Dependencies.new(
         extractor: extractor, filters: [],
@@ -141,23 +141,23 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       )
 
       config = described_class::Config.new(
-        output_dir: "/tmp/docs", force: true,
+        output_dir: '/tmp/docs', force: true,
         force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        default_visibility: 'public'
       )
 
-      result = described_class.new(deps).run(config)
+      described_class.new(deps).run(config)
       expect(publisher.published.first[:channels]).to eq(override)
     end
   end
 
-  describe "error handling" do
-    it "collects individual failures" do
-      docs = [build_doc("cc-18011")]
+  describe 'error handling' do
+    it 'collects individual failures' do
+      docs = [build_doc('cc-18011')]
       failing_publisher = Class.new do
         include Metanorma::Release::Publisher
         def publish(*)
-          raise "Publishing failed"
+          raise 'Publishing failed'
         end
       end.new
 
@@ -173,9 +173,9 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       )
 
       config = described_class::Config.new(
-        output_dir: "/tmp/docs", force: true,
+        output_dir: '/tmp/docs', force: true,
         force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        default_visibility: 'public'
       )
 
       result = described_class.new(deps).run(config)
@@ -184,8 +184,8 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
     end
   end
 
-  describe "no documents found" do
-    it "returns empty result" do
+  describe 'no documents found' do
+    it 'returns empty result' do
       extractor = mock_extractor_class.new([])
       detector = mock_change_detector_class.new(false)
       packager = mock_packager_class.new([])
@@ -199,9 +199,9 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       )
 
       config = described_class::Config.new(
-        output_dir: "/tmp/docs", force: false,
+        output_dir: '/tmp/docs', force: false,
         force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        default_visibility: 'public'
       )
 
       result = described_class.new(deps).run(config)
@@ -210,7 +210,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
     end
   end
 
-  describe "channel config validation" do
+  describe 'channel config validation' do
     let(:restrictive_config) do
       Metanorma::Release::ChannelConfig.from_yaml(<<~YAML)
         channels:
@@ -220,8 +220,8 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       YAML
     end
 
-    it "filters out channels not in the config registry" do
-      docs = [build_doc("cc-18011")]
+    it 'filters out channels not in the config registry' do
+      docs = [build_doc('cc-18011')]
       publisher = mock_publisher_class.new([])
       extractor = mock_extractor_class.new(docs)
       detector = mock_change_detector_class.new(false)
@@ -236,23 +236,23 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       )
 
       config = described_class::Config.new(
-        output_dir: "/tmp/docs", force: true,
+        output_dir: '/tmp/docs', force: true,
         force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        default_visibility: 'public'
       )
 
-      result = described_class.new(deps).run(config)
+      described_class.new(deps).run(config)
       published_channels = publisher.published.first[:channels]
       expect(published_channels).to be_empty
     end
 
-    it "keeps channels that are in the config registry" do
-      docs = [build_doc("cc-18011")]
+    it 'keeps channels that are in the config registry' do
+      docs = [build_doc('cc-18011')]
       publisher = mock_publisher_class.new([])
       extractor = mock_extractor_class.new(docs)
       detector = mock_change_detector_class.new(false)
       packager = mock_packager_class.new([])
-      override = [Metanorma::Release::Channel.members("drafts")]
+      override = [Metanorma::Release::Channel.members('drafts')]
 
       deps = described_class::Dependencies.new(
         extractor: extractor, filters: [],
@@ -263,15 +263,15 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       )
 
       config = described_class::Config.new(
-        output_dir: "/tmp/docs", force: true,
+        output_dir: '/tmp/docs', force: true,
         force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        default_visibility: 'public'
       )
 
-      result = described_class.new(deps).run(config)
+      described_class.new(deps).run(config)
       published_channels = publisher.published.first[:channels]
       expect(published_channels.length).to eq(1)
-      expect(published_channels[0].to_s).to eq("members/drafts")
+      expect(published_channels[0].to_s).to eq('members/drafts')
     end
   end
 end

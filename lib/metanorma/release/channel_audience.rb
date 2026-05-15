@@ -3,9 +3,9 @@
 module Metanorma
   module Release
     module ChannelAudience
-      PUBLIC = "public"
-      MEMBERS = "members"
-      INTERNAL = "internal"
+      PUBLIC = 'public'
+      MEMBERS = 'members'
+      INTERNAL = 'internal'
 
       ALL = [PUBLIC, MEMBERS, INTERNAL].freeze
 

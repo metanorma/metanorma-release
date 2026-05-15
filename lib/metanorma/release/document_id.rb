@@ -4,14 +4,14 @@ module Metanorma
   module Release
     class DocumentId
       def self.from_raw(raw_identifier)
-        normalized = raw_identifier.to_s.downcase.gsub(/[^a-z0-9]+/, "-").gsub(/^-|-$/, "")
-        raise ArgumentError, "Document ID cannot be empty" if normalized.empty?
+        normalized = raw_identifier.to_s.downcase.gsub(/[^a-z0-9]+/, '-').gsub(/^-|-$/, '')
+        raise ArgumentError, 'Document ID cannot be empty' if normalized.empty?
 
         new(normalized)
       end
 
       def self.from_normalized(value)
-        raise ArgumentError, "Document ID cannot be empty" if value.nil? || value.strip.empty?
+        raise ArgumentError, 'Document ID cannot be empty' if value.nil? || value.strip.empty?
 
         new(value.to_s.strip)
       end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "yaml"
+require 'yaml'
 
 module Metanorma
   module Release
@@ -18,7 +18,7 @@ module Metanorma
             content = @client.contents(repo, path: path)
             return nil unless content
 
-            ChannelConfig.from_yaml(content["content"].unpack("m0").first)
+            ChannelConfig.from_yaml(content['content'].unpack1('m0'))
           rescue StandardError
             nil
           end
@@ -26,11 +26,11 @@ module Metanorma
           private
 
           def parse_source(source)
-            if source.include?("#")
-              parts = source.split("#", 2)
+            if source.include?('#')
+              parts = source.split('#', 2)
               [parts[0], parts[1]]
             else
-              [source, "channels.yml"]
+              [source, 'channels.yml']
             end
           end
         end

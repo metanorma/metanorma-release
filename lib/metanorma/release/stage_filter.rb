@@ -10,7 +10,8 @@ module Metanorma
 
       def matches?(release_metadata)
         return true if @all
-        @stages.include?(release_metadata["stage"].to_s.downcase)
+
+        @stages.include?(release_metadata['stage'].to_s.downcase)
       end
     end
   end

@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require "tmpdir"
-require "fileutils"
-require "json"
-require "zip"
-require_relative "shared_contexts"
+require 'tmpdir'
+require 'fileutils'
+require 'json'
+require 'zip'
+require_relative 'shared_contexts'
 
-RSpec.describe "Release → Publish → Aggregate round-trip", type: :integration do
-  include_context "with compiled documents"
+RSpec.describe 'Release → Publish → Aggregate round-trip', type: :integration do
+  include_context 'with compiled documents'
 
-  it "round-trips metadata through publish and aggregate" do
+  it 'round-trips metadata through publish and aggregate' do
     # Phase 1: Extract + package with local publisher
     package_dir = Dir.mktmpdir
     begin
@@ -26,7 +26,7 @@ RSpec.describe "Release → Publish → Aggregate round-trip", type: :integratio
       )
       config = Metanorma::Release::ReleasePipeline::Config.new(
         output_dir: compiled_dir, manifest_path: nil,
-        force: false, force_replace_patterns: nil, concurrency: 1, default_visibility: "public"
+        force: false, force_replace_patterns: nil, concurrency: 1, default_visibility: 'public'
       )
 
       release_result = Metanorma::Release::ReleasePipeline.new(deps).run(config)
@@ -35,7 +35,7 @@ RSpec.describe "Release → Publish → Aggregate round-trip", type: :integratio
       # Verify released artifacts have valid metadata
       release_result.released_artifacts.each do |artifact|
         expect(artifact.id).to match(/cc-\d+/)
-        expect(artifact.url).to start_with("file://")
+        expect(artifact.url).to start_with('file://')
       end
 
       # Phase 2: Aggregate from the local packages
@@ -44,13 +44,16 @@ RSpec.describe "Release → Publish → Aggregate round-trip", type: :integratio
 
       output_dir = Dir.mktmpdir
       begin
-        discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(repos: [Metanorma::Release::RepoRef.new(owner: "local", repo: repo_name)])
+        discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(repos: [Metanorma::Release::RepoRef.new(
+          owner: 'local', repo: repo_name
+        )])
         fetcher = Metanorma::Release::Platform::Local::Fetcher.new(base_path: base_path)
         manifest_reader = Metanorma::Release::PlatformFactory::NullManifestReader.new
         channel_filter = Metanorma::Release::ChannelFilter.new([])
         stage_filter = Metanorma::Release::StageFilter.new([])
         routing = Metanorma::Release::ByDocument.new
-        asset_processor = Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing, canonicalize: true)
+        asset_processor = Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing,
+                                                                 canonicalize: true)
         delta_state = Metanorma::Release::NullDeltaState.new
 
         agg_deps = Metanorma::Release::AggregationPipeline::Dependencies.new(

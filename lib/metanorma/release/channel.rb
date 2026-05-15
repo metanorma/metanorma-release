@@ -4,9 +4,9 @@ module Metanorma
   module Release
     class Channel
       def self.parse(channel_string)
-        parts = channel_string.to_s.strip.split("/", 2)
+        parts = channel_string.to_s.strip.split('/', 2)
         if ChannelAudience.values.include?(parts[0])
-          new(audience: parts[0], category: parts[1] || "default")
+          new(audience: parts[0], category: parts[1] || 'default')
         else
           new(audience: ChannelAudience::PUBLIC, category: parts[0])
         end

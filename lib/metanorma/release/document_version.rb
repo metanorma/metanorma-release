@@ -7,7 +7,7 @@ module Metanorma
 
       def self.from(edition, stage)
         ed = edition.to_s.strip
-        ed = "0" if ed.empty?
+        ed = '0' if ed.empty?
         new(edition: ed, stage: stage)
       end
 

@@ -4,7 +4,7 @@ module Metanorma
   module Release
     module Platform
       module Null
-        autoload :Publisher, "metanorma/release/platform/null/publisher"
+        autoload :Publisher, 'metanorma/release/platform/null/publisher'
       end
     end
   end

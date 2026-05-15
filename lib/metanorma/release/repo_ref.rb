@@ -6,8 +6,9 @@ module Metanorma
       attr_reader :owner, :repo
 
       def self.from_string(str)
-        parts = str.split("/", 2)
+        parts = str.split('/', 2)
         raise ArgumentError, "Invalid repo reference: #{str}" unless parts.length == 2
+
         new(owner: parts[0], repo: parts[1])
       end
 

@@ -3,8 +3,8 @@
 module Metanorma
   module Release
     class ConfigLocator
-      CONFIG_FILES = [".metanorma.yml", ".metanorma.yaml"].freeze
-      CONFIG_DIRS = [".metanorma"].freeze
+      CONFIG_FILES = ['.metanorma.yml', '.metanorma.yaml'].freeze
+      CONFIG_DIRS = ['.metanorma'].freeze
 
       def self.find(start_dir = Dir.pwd)
         new.find(start_dir)
@@ -22,7 +22,7 @@ module Metanorma
             path = File.join(dir, name)
             next unless File.directory?(path)
 
-            channels = File.join(path, "channels.yml")
+            channels = File.join(path, 'channels.yml')
             return ChannelConfig.from_file(channels) if File.exist?(channels)
           end
 

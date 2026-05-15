@@ -89,13 +89,13 @@ module Metanorma
                           released_artifacts: released_artifacts)
       end
 
-      def resolve_policy(doc, config)
+      def resolve_policy(doc, _config)
         return @deps.manifest.resolve(doc) if @deps.manifest
 
-        DocumentReleasePolicy.from_defaults("public", [Channel.public("default")])
+        DocumentReleasePolicy.from_defaults('public', [Channel.public('default')])
       end
 
-      def resolve_channels(doc, policy)
+      def resolve_channels(_doc, policy)
         channels = if @deps.channel_override && !@deps.channel_override.empty?
                      @deps.channel_override
                    else

@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require "yaml"
+require 'yaml'
 
 module Metanorma
   module Release
     class ChannelRegistry
       def self.from_yaml(yaml_string)
         data = YAML.safe_load(yaml_string, permitted_classes: [Symbol])
-        raise ArgumentError, "Invalid channel registry YAML" unless data.is_a?(Hash)
+        raise ArgumentError, 'Invalid channel registry YAML' unless data.is_a?(Hash)
 
-        channels = parse_channel_list(data["channels"])
+        channels = parse_channel_list(data['channels'])
         new(channels: channels)
       end
 
@@ -40,22 +40,18 @@ module Metanorma
         valid?(channel)
       end
 
-      def channels
-        @channels
-      end
+      attr_reader :channels
 
       def empty?
         @channels.empty?
       end
-
-      private
 
       def self.parse_channel_list(list)
         return [] unless list
 
         list.filter_map do |entry|
           case entry
-          when Hash   then Channel.parse(entry["name"].to_s)
+          when Hash   then Channel.parse(entry['name'].to_s)
           when String then Channel.parse(entry)
           end
         end

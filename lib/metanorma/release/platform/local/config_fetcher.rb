@@ -8,7 +8,7 @@ module Metanorma
           include Metanorma::Release::ConfigFetcher
 
           def fetch(source)
-            path = source.sub(%r{\Alocal:}, "")
+            path = source.sub(/\Alocal:/, '')
             return nil unless File.exist?(path)
 
             ChannelConfig.from_file(path)
