@@ -8,7 +8,10 @@ require "fileutils"
 module Metanorma
   module Release
     class RelatonEnricher
-      EnrichResult = Struct.new(:item_count, :output_dir, :identifiers, keyword_init: true)
+      EnrichResult = Struct.new(
+        :item_count, :output_dir, :documents,
+        keyword_init: true
+      )
 
       @flavor_registry = {}
 
@@ -45,14 +48,14 @@ module Metanorma
 
         flavor = resolve_flavor(document_index)
         klass = resolve_class(flavor)
-        items, identifiers = parse_rxl_files(document_index, output_dir, klass)
-        return nil if items.empty?
+        documents = enrich_documents(document_index, output_dir, klass)
+        return nil if documents.empty?
 
         dest = File.join(output_dir, bib_dir)
-        write_index(items, dest)
+        write_index(documents, dest)
 
-        EnrichResult.new(item_count: items.length, output_dir: dest,
-                         identifiers: identifiers)
+        EnrichResult.new(item_count: documents.length, output_dir: dest,
+                         documents: documents)
       rescue LoadError
         warn "  (relaton gem not available — bibliography skipped)"
         nil
@@ -74,39 +77,27 @@ module Metanorma
         Relaton::Bib::Item
       end
 
-      def parse_rxl_files(document_index, output_dir, klass)
-        items = []
-        identifiers = {}
-
-        document_index.documents.each do |doc|
+      def enrich_documents(document_index, output_dir, klass)
+        document_index.documents.map do |doc|
           rxl = doc.files.find { |f| f.extension == "rxl" }
-          next unless rxl
+          path = rxl && File.join(output_dir, rxl.path)
 
-          path = File.join(output_dir, rxl.path)
-          next unless File.exist?(path)
+          bib = if path && File.exist?(path)
+                  klass.from_xml(File.read(path))
+                end
 
-          item = klass.from_xml(File.read(path))
-          items << item.to_h
-
-          pub_id = extract_primary_identifier(item)
-          identifiers[doc.id] = pub_id if pub_id
+          enriched = doc.to_h
+          enriched["bibliographic"] = bib.to_h if bib
+          enriched
         rescue StandardError => e
           warn "  Skip #{File.basename(path)}: #{e.message}"
+          doc.to_h
         end
-
-        [items, identifiers]
       end
 
-      def extract_primary_identifier(item)
-        ids = item.docidentifier
-        return nil if ids.nil? || ids.empty?
-        primary = ids.find { |di| di.primary == true }
-        (primary || ids.first).content
-      end
-
-      def write_index(items, dest)
+      def write_index(documents, dest)
         FileUtils.mkdir_p(dest)
-        index = { "root" => { "title" => @registry_name, "items" => items } }
+        index = { "root" => { "title" => @registry_name, "items" => documents } }
         File.write(File.join(dest, "index.json"), JSON.pretty_generate(index))
         File.write(File.join(dest, "index.yaml"), YAML.dump(index))
       end

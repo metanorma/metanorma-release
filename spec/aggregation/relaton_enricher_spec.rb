@@ -40,7 +40,7 @@ RSpec.describe Metanorma::Release::RelatonEnricher do
   end
 
   describe "#enrich" do
-    it "produces index.json and index.yaml from RXL files" do
+    it "produces index.json and index.yaml with enriched documents" do
       Dir.mktmpdir do |dir|
         index = build_index_with_rxl([sample_rxl_path], dir)
         enricher = described_class.new(registry_name: "Test Registry")
@@ -57,8 +57,35 @@ RSpec.describe Metanorma::Release::RelatonEnricher do
 
         data = JSON.parse(File.read(json_path))
         expect(data["root"]["title"]).to eq("Test Registry")
-        expect(data["root"]["items"].length).to eq(1)
-        expect(data["root"]["items"].first["docidentifier"].first["content"]).to eq("CC 18011:2018")
+        items = data["root"]["items"]
+        expect(items.length).to eq(1)
+
+        item = items.first
+        # Aggregate fields present
+        expect(item["id"]).to eq("cc-18011-2018")
+        expect(item["channels"]).to eq(["public/standards"])
+        expect(item["formats"]).to eq(["rxl"])
+
+        # Bibliographic data merged in
+        bib = item["bibliographic"]
+        expect(bib).not_to be_nil
+        expect(bib["docidentifier"].first["content"]).to eq("CC 18011:2018")
+      end
+    end
+
+    it "returns enriched documents in EnrichResult" do
+      Dir.mktmpdir do |dir|
+        index = build_index_with_rxl([sample_rxl_path], dir)
+        enricher = described_class.new
+
+        result = enricher.enrich(index, dir, bib_dir: "relaton")
+
+        expect(result.documents).to be_an(Array)
+        expect(result.documents.length).to eq(1)
+
+        doc = result.documents.first
+        expect(doc["id"]).to eq("cc-18011-2018")
+        expect(doc["bibliographic"]).to include("docidentifier")
       end
     end
 
@@ -82,7 +109,7 @@ RSpec.describe Metanorma::Release::RelatonEnricher do
       end
     end
 
-    it "returns nil when no RXL files found" do
+    it "includes documents without RXL files (no bibliographic key)" do
       Dir.mktmpdir do |dir|
         doc = Metanorma::Release::AggregatedDocument.from_h(
           "id" => "cc-18011", "title" => "No RXL", "edition" => "1",
@@ -98,8 +125,11 @@ RSpec.describe Metanorma::Release::RelatonEnricher do
         index = Metanorma::Release::DocumentIndex.from_documents([doc], parameters: params)
 
         enricher = described_class.new
-        result = enricher.enrich(index, dir)
-        expect(result).to be_nil
+        result = enricher.enrich(index, dir, bib_dir: "relaton")
+
+        expect(result).not_to be_nil
+        expect(result.item_count).to eq(1)
+        expect(result.documents.first).not_to have_key("bibliographic")
       end
     end
 
