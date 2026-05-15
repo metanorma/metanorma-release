@@ -7,6 +7,9 @@ module Metanorma
     # Domain value objects
     autoload :ChannelAudience, "metanorma/release/channel_audience"
     autoload :Channel,         "metanorma/release/channel"
+    autoload :ChannelRegistry, "metanorma/release/channel_registry"
+    autoload :ChannelConfig,   "metanorma/release/channel_config"
+    autoload :ConfigLocator,   "metanorma/release/config_locator"
     autoload :ContentHash,     "metanorma/release/content_hash"
     autoload :DocumentId,      "metanorma/release/document_id"
     autoload :DocumentStage,   "metanorma/release/document_stage"
@@ -57,7 +60,8 @@ module Metanorma
     autoload :NullCacheStore,  "metanorma/release/cache_store"
 
     # Aggregation filters
-    autoload :ChannelFilter, "metanorma/release/channel_filter"
+    autoload :ChannelFilter,   "metanorma/release/channel_filter"
+    autoload :ConfigFetcher,   "metanorma/release/config_fetcher"
     autoload :StageFilter,   "metanorma/release/stage_filter"
     autoload :DeltaState,    "metanorma/release/delta_state"
     autoload :NullDeltaState, "metanorma/release/delta_state"

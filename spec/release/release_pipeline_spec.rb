@@ -209,4 +209,69 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       expect(result.skipped.length).to eq(0)
     end
   end
+
+  describe "channel config validation" do
+    let(:restrictive_config) do
+      Metanorma::Release::ChannelConfig.from_yaml(<<~YAML)
+        channels:
+          - members/drafts
+        defaults:
+          visibility: public
+      YAML
+    end
+
+    it "filters out channels not in the config registry" do
+      docs = [build_doc("cc-18011")]
+      publisher = mock_publisher_class.new([])
+      extractor = mock_extractor_class.new(docs)
+      detector = mock_change_detector_class.new(false)
+      packager = mock_packager_class.new([])
+
+      deps = described_class::Dependencies.new(
+        extractor: extractor, filters: [],
+        change_detector: detector, packager: packager,
+        publisher: publisher, naming_registry: naming_registry,
+        manifest: nil, channel_override: nil,
+        channel_config: restrictive_config
+      )
+
+      config = described_class::Config.new(
+        output_dir: "/tmp/docs", force: true,
+        force_replace_patterns: nil, concurrency: 1,
+        default_visibility: "public"
+      )
+
+      result = described_class.new(deps).run(config)
+      published_channels = publisher.published.first[:channels]
+      expect(published_channels).to be_empty
+    end
+
+    it "keeps channels that are in the config registry" do
+      docs = [build_doc("cc-18011")]
+      publisher = mock_publisher_class.new([])
+      extractor = mock_extractor_class.new(docs)
+      detector = mock_change_detector_class.new(false)
+      packager = mock_packager_class.new([])
+      override = [Metanorma::Release::Channel.members("drafts")]
+
+      deps = described_class::Dependencies.new(
+        extractor: extractor, filters: [],
+        change_detector: detector, packager: packager,
+        publisher: publisher, naming_registry: naming_registry,
+        manifest: nil, channel_override: override,
+        channel_config: restrictive_config
+      )
+
+      config = described_class::Config.new(
+        output_dir: "/tmp/docs", force: true,
+        force_replace_patterns: nil, concurrency: 1,
+        default_visibility: "public"
+      )
+
+      result = described_class.new(deps).run(config)
+      published_channels = publisher.published.first[:channels]
+      expect(published_channels.length).to eq(1)
+      expect(published_channels[0].to_s).to eq("members/drafts")
+    end
+  end
 end

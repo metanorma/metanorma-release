@@ -98,7 +98,6 @@ module Metanorma
       end
 
       def extract_primary_identifier(item)
-        return nil unless item.respond_to?(:docidentifier)
         ids = item.docidentifier
         return nil if ids.nil? || ids.empty?
         primary = ids.find { |di| di.primary == true }

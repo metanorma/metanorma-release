@@ -91,4 +91,21 @@ RSpec.describe Metanorma::Release::ChannelManifest do
       expect(public_standards.length).to eq(1)
     end
   end
+
+  describe "#config_source" do
+    it "returns nil when no config key in manifest" do
+      m = described_class.from_file(File.join(manifests_dir, "minimal.yml"))
+      expect(m.config_source).to be_nil
+    end
+
+    it "returns the config value from manifest" do
+      yaml = <<~YAML
+        config: local:/path/to/config.yml
+        defaults:
+          visibility: public
+      YAML
+      m = described_class.from_yaml(yaml)
+      expect(m.config_source).to eq("local:/path/to/config.yml")
+    end
+  end
 end

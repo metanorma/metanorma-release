@@ -4,10 +4,10 @@ require "yaml"
 
 module Metanorma
   module Release
-    class OrgConfig
+    class ChannelConfig
       def self.from_yaml(yaml_string)
         data = YAML.safe_load(yaml_string, permitted_classes: [Symbol])
-        raise ArgumentError, "Invalid org config YAML" unless data.is_a?(Hash)
+        raise ArgumentError, "Invalid channel config YAML" unless data.is_a?(Hash)
 
         registry = ChannelRegistry.from_yaml(yaml_string)
         defaults = data["defaults"] || {}
@@ -21,10 +21,12 @@ module Metanorma
       def self.from_file(path)
         if File.directory?(path)
           channels_yml = File.join(path, "channels.yml")
-          return from_file(channels_yml) if File.exist?(channels_yml)
+          raise ArgumentError, "Channel config file not found: #{path}" unless File.exist?(channels_yml)
+
+          return from_file(channels_yml)
         end
 
-        raise ArgumentError, "Org config file not found: #{path}" unless File.exist?(path)
+        raise ArgumentError, "Channel config file not found: #{path}" unless File.exist?(path)
 
         from_yaml(File.read(path))
       end

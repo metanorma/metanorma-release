@@ -82,9 +82,10 @@ module Metanorma
         default_visibility = defaults["visibility"] || "public"
         default_channels = parse_channels(defaults["channels"])
         entries = parse_entries(yaml_hash["documents"] || [])
+        config_source = yaml_hash["config"]
 
         new(entries: entries, default_visibility: default_visibility,
-            default_channels: default_channels, explicit: true)
+            default_channels: default_channels, explicit: true, config_source: config_source)
       end
 
       def self.from_yaml(yaml_string)
@@ -100,19 +101,20 @@ module Metanorma
 
       def self.all_public
         new(entries: [], default_visibility: "public",
-            default_channels: [Channel.public("default")], explicit: false)
+            default_channels: [Channel.public("default")], explicit: false, config_source: nil)
       end
 
       def self.all_private
         new(entries: [], default_visibility: "private",
-            default_channels: [], explicit: false)
+            default_channels: [], explicit: false, config_source: nil)
       end
 
-      def initialize(entries:, default_visibility:, default_channels:, explicit:)
+      def initialize(entries:, default_visibility:, default_channels:, explicit:, config_source: nil)
         @entries = entries
         @default_visibility = default_visibility
         @default_channels = default_channels.freeze
         @explicit = explicit
+        @config_source = config_source
         freeze
       end
 
@@ -135,6 +137,10 @@ module Metanorma
 
       def explicit?
         @explicit
+      end
+
+      def config_source
+        @config_source
       end
 
       private

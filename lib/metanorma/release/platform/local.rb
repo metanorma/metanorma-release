@@ -7,6 +7,7 @@ module Metanorma
         autoload :Publisher, "metanorma/release/platform/local/publisher"
         autoload :DirectoryDiscoverer, "metanorma/release/platform/local/directory_discoverer"
         autoload :Fetcher, "metanorma/release/platform/local/fetcher"
+        autoload :ConfigFetcher, "metanorma/release/platform/local/config_fetcher"
       end
     end
   end

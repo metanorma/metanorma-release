@@ -2,8 +2,8 @@
 
 module Metanorma
   module Release
-    module OrgConfigFetcher
-      def fetch(org_identifier)
+    module ConfigFetcher
+      def fetch(source)
         raise NotImplementedError, "#{self.class} must implement #fetch"
       end
     end
