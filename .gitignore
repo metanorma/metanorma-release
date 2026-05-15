@@ -3,9 +3,11 @@
 /_yardoc/
 /coverage/
 /doc/
+/dist/
 /pkg/
 /spec/reports/
 /tmp/
 *.gem
-*.lock
 Gemfile.lock
+.rspec_status
+.rubocop*.yml

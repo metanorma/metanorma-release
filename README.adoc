@@ -383,7 +383,7 @@ domain/  ->  release/  ->  platform/
 
 === Patterns
 
-Value Objects:: Immutable, frozen, value-based equality via `eql?`/`hash`.
+Value Objects:: Immutable, frozen, value-based equality via `eql?`/`hash`. All fields included in equality comparison.
 
 Strategy Pattern:: Pluggable algorithms resolved via registry. Adding a new document type or platform requires zero changes to existing code.
 
@@ -392,6 +392,8 @@ Pipeline with DI:: Pipelines receive all dependencies through constructors. No g
 Null Object:: Disabled features inject null implementations (`NullDeltaState`, `NullPublisher`, `NullCacheStore`) instead of adding conditional checks.
 
 Result Types:: Pipelines return frozen Structs. Errors are collected, not raised. The caller decides whether to abort.
+
+Shared Data Types:: `ReleaseData` and `AssetData` in `aggregation_interfaces.rb` are the canonical Structs for release/asset data used across all platform adapters (GitHub, Local). Platform-specific aliases are not needed.
 
 === Extending
 
