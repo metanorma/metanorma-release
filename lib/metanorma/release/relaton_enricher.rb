@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "relaton"
+require "relaton/bib"
 require "json"
 require "yaml"
 require "fileutils"
@@ -62,8 +62,11 @@ module Metanorma
 
       def resolve_class(flavor)
         loader = self.class.flavor_registry[flavor.to_s]
-        return loader.call if loader
-        Relaton::Bib::Item
+        if loader
+          loader.call
+        else
+          Relaton::Bib::Item
+        end
       rescue LoadError
         warn "  (relaton-#{flavor} gem not available — using base Relaton::Bib::Item)"
         Relaton::Bib::Item
