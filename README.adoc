@@ -11,17 +11,12 @@ toc::[]
 `metanorma-release` manages the full release lifecycle of Metanorma documents:
 
 **Release** (producer side)::
-Discover compiled documents → extract metadata from RXL → detect changes → package as zip → publish to a platform (GitHub Releases, GitLab, local filesystem).
+Discover compiled documents -> extract metadata from RXL -> detect changes -> package as zip -> publish to a platform (GitHub Releases, local filesystem).
 
 **Aggregate** (consumer side)::
-Discover repositories → fetch published releases → filter by channel and stage → extract zip assets → generate `index.json` with a file tree for any site generator.
+Discover repositories -> fetch published releases -> filter by channel and stage -> extract zip assets -> generate `index.json` with a file tree for any site generator.
 
 The output is platform-agnostic: a directory containing `index.json` and a tree of document files. Any site generator (Jekyll, Hugo, Vite) consumes that output independently.
-
-[IMPORTANT]
-====
-The gem has **zero runtime dependencies**. Platform-specific libraries (`octokit`, `rubyzip`) are optional and loaded only when needed.
-====
 
 == Installation
 
@@ -94,7 +89,8 @@ deps = Metanorma::Release::ReleasePipeline::Dependencies.new(
   publisher: Metanorma::Release::PlatformFactory.build_publisher("null", {}),
   naming_registry: Metanorma::Release::NamingRegistry.default_registry,
   manifest: nil,
-  channel_override: nil
+  channel_override: nil,
+  channel_config: nil
 )
 
 config = Metanorma::Release::ReleasePipeline::Config.new(
@@ -129,6 +125,7 @@ mn-release package [options]
 |`--output-dir DIR` |Directory containing compiled documents (default: `_site`)
 |`--dest DIR` |Destination for zip packages (default: `dist`)
 |`--manifest FILE` |Release manifest file (default: `metanorma.release.yml`)
+|`--config SOURCE` |Channel config file or platform ref
 |===
 
 === `mn-release publish`
@@ -143,7 +140,7 @@ mn-release publish [options]
 [cols="1m,3",options="header"]
 |===
 |Option |Description
-|`--platform NAME` |Target platform: `github`, `gitlab`, `local` (default: `github`)
+|`--platform NAME` |Target platform: `github`, `local` (default: `github`)
 |`--output-dir DIR` |Compiled docs directory (default: `_site`)
 |`--manifest FILE` |Release manifest file (default: `metanorma.release.yml`)
 |`--force` |Force release even if unchanged
@@ -151,6 +148,7 @@ mn-release publish [options]
 |`--channels CHANS` |Override channels (comma-separated)
 |`--concurrency N` |Parallel workers (default: 4)
 |`--token TOKEN` |Platform auth token
+|`--config SOURCE` |Channel config file or platform ref
 |===
 
 === `mn-release aggregate`
@@ -196,6 +194,74 @@ channel.category  # => "standards"
 
 Audiences: `public`, `members`, `internal`. When omitted, audience defaults to `public`.
 
+=== Channel configuration
+
+A channel config defines the set of allowed channels for a project or organization, along with default visibility. This lets you enforce a channel taxonomy across all documents.
+
+.Config resolution order
+[arabic]
+. `--config` CLI flag (highest priority)
+. `config:` key in the release manifest
+. Directory walk: `.metanorma.yml`, `.metanorma.yaml`, or `.metanorma/channels.yml`
+. No config -- all channels allowed
+
+==== Config file format
+
+[source,yaml]
+----
+# .metanorma.yml
+channels:
+  - public/standards
+  - public/reports
+  - members/early-access
+  - internal/working-drafts
+defaults:
+  visibility: public
+  channels:
+    - public/standards
+----
+
+The `channels` list defines the taxonomy -- only these channels are valid. The `defaults` section sets fallback visibility and channels when a document doesn't match any manifest entry.
+
+==== Specifying config in the manifest
+
+Add a `config` key to `metanorma.release.yml`:
+
+[source,yaml]
+----
+config: local:/path/to/config.yml
+defaults:
+  visibility: public
+documents:
+  - source: sources/cc-18011.adoc
+    channels:
+      - public/standards
+----
+
+The config source can be:
+
+* `local:/path/to/config.yml` -- local file path
+* `myorg/myrepo` -- GitHub repo (reads `channels.yml` from root)
+* `myorg/myrepo#path/to/config.yml` -- GitHub repo with explicit path
+
+==== Ruby API
+
+[source,ruby]
+----
+# Parse from YAML
+config = Metanorma::Release::ChannelConfig.from_yaml(File.read(".metanorma.yml"))
+
+# Permissive config (all channels allowed)
+config = Metanorma::Release::ChannelConfig.empty
+
+# Validate a channel
+config.registry.valid?(Channel.parse("public/standards"))  # => true
+config.registry.valid?(Channel.parse("public/secret"))     # => false
+
+# Locate config by walking up from a directory
+config = Metanorma::Release::ConfigLocator.find("/path/to/project")
+----
+
 === Naming strategies
 
 Tag and file naming varies by document type. Strategies are resolved via a registry:
@@ -203,7 +269,7 @@ Tag and file naming varies by document type. Strategies are resolved via a regis
 [cols="1m,1,2",options="header"]
 |===
 |Document type |Strategy |Tag format
-|standard (default) |`EditionNaming` |`cc-18011/1.0`
+|standard (default) |`EditionNaming` |`cc-18011/ed1`
 |IETF draft |`InternetDraftNaming` |`id-ietf-foo/1`
 |IETF RFC |`RfcNaming` |`rfc-1234/ed1`
 |IEEE |`DraftSuffixNaming` |`ieee-8021/d1`
@@ -236,28 +302,67 @@ A `metanorma.release.yml` file controls which documents are published and to whi
 
 [source,yaml]
 ----
+config: myorg/.metanorma
+defaults:
+  visibility: public
+  channels:
+    - public/standards
 documents:
   - source: sources/cc-18011.adoc
     channels:
       - public/standards
   - source: sources/cc-19060.adoc
+    visibility: members
     channels:
       - members/early-access
+  - pattern: "sources/draft-*.adoc"
+    channels:
+      - internal/working-drafts
+    stages:
+      - working-draft
+      - committee-draft
 ----
 
-Documents not listed in the manifest are treated as **private** (not released).
+Documents not listed in the manifest use the `defaults` section. If no manifest exists, all documents are released as `public/standards`.
+
+Key fields:
+
+[cols="1m,3",options="header"]
+|===
+|Field |Description
+|`source` |Exact path match (highest priority)
+|`pattern` |Glob pattern match
+|`visibility` |`public`, `members`, or `private`
+|`channels` |List of target channels
+|`stages` |Allow-list of document stages
+|`config` |Channel config source (see <<channel-configuration>>)
+|===
 
 === Value objects
 
 All domain types are immutable, frozen, and use value-based equality:
 
-* `DocumentId` -- normalized document identifier (`CC 18011` → `cc-18011`)
+* `DocumentId` -- normalized document identifier (`CC 18011` -> `cc-18011`)
 * `DocumentVersion` -- edition + stage + pre-release flag
 * `DocumentStage` -- published, draft, working-draft, committee-draft, etc.
 * `Channel` -- audience/category pair
 * `ReleaseTag` -- tag string with pre-release flag
 * `ContentHash` -- SHA-256 content fingerprint
 * `RepoRef` -- owner/repo reference
+
+=== Bibliography enrichment
+
+`RelatonEnricher` generates `index.json` and `index.yaml` from RXL (Relaton XML) files found in aggregated documents. It auto-detects the Relaton flavor from document metadata:
+
+[source,ruby]
+----
+enricher = Metanorma::Release::RelatonEnricher.new(flavor: "calconnect")
+result = enricher.enrich(document_index, output_dir)
+# writes: output_dir/relaton/index.json
+#         output_dir/relaton/index.yaml
+----
+
+Flavor detection tries these gems in order: `relaton-calconnect`, `relaton-iso`, `relaton-iec`, `relaton-ogc`, `relaton-ietf`, and others. If a flavor gem is not installed, it falls back to `Relaton::Bib::Item` from the `relaton-bib` runtime dependency.
 
 == Architecture
 
@@ -266,9 +371,9 @@ All domain types are immutable, frozen, and use value-based equality:
 Unidirectional, no cycles:
 
 ----
-domain/  →  release/  →  platform/
-         →  aggregation/ →  platform/
-                          →  cli/
+domain/  ->  release/  ->  platform/
+         ->  aggregation/ ->  platform/
+                          ->  cli/
 ----
 
 * `domain/` has zero knowledge of pipelines, platforms, or CLI
@@ -290,11 +395,24 @@ Result Types:: Pipelines return frozen Structs. Errors are collected, not raised
 
 === Extending
 
+|===
 |To add... |Do this
-|A new platform |Create a directory under `platform/` with `Publisher`, `Discoverer`, `Fetcher`, `ManifestReader` classes; register in `PlatformFactory`
-|A new naming strategy |Create a class that includes `NamingStrategy`; register via `NamingRegistry#register`
-|A new file routing mode |Create a class with `#compute_path(file_name, metadata)`; register in `FileRoutingFactory`
-|A new filter |Create a class that includes `Filter`; pass to the pipeline's `filters` array
+
+|A new platform
+|Create a directory under `platform/` with `Publisher`, `Discoverer`, `Fetcher`, `ManifestReader` classes; register in `PlatformFactory`
+
+|A new naming strategy
+|Create a class that includes `NamingStrategy`; register via `NamingRegistry#register`
+
+|A new file routing mode
+|Create a class with `#compute_path(file_name, metadata)`; register in `FileRoutingFactory`
+
+|A new filter
+|Create a class that includes `Filter`; pass to the pipeline's `filters` array
+
+|A new channel config source
+|Create a class that includes `ConfigFetcher` with a `#fetch(source)` method
+|===
 
 == Development
 
@@ -303,8 +421,6 @@ Result Types:: Pipelines return frozen Structs. Errors are collected, not raised
 bundle install
 bundle exec rspec
 ----
-
-The test suite has 325 examples covering domain objects, pipelines, platform adapters, and integration scenarios.
 
 == License
 

@@ -14,6 +14,7 @@ module Metanorma
         autoload :TopicDiscoverer, "metanorma/release/platform/github/topic_discoverer"
         autoload :ReleaseFetcher, "metanorma/release/platform/github/release_fetcher"
         autoload :ManifestReader, "metanorma/release/platform/github/manifest_reader"
+        autoload :ConfigFetcher,  "metanorma/release/platform/github/config_fetcher"
 
         def self.cache_store(cache_dir:)
           FileCacheStore.new(cache_dir)

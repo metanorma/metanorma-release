@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "metanorma/release/platform/github"
+require_relative "../../../lib/metanorma/release/platform/github"
 
 RSpec.describe Metanorma::Release::Platform::GitHub::TopicDiscoverer do
   let(:mock_client) { double("Octokit::Client") }

@@ -6,7 +6,7 @@ module Metanorma
       Dependencies = Struct.new(
         :extractor, :filters, :change_detector,
         :packager, :publisher, :naming_registry,
-        :manifest, :channel_override,
+        :manifest, :channel_override, :channel_config,
         keyword_init: true
       )
 
@@ -96,9 +96,19 @@ module Metanorma
       end
 
       def resolve_channels(doc, policy)
-        return @deps.channel_override if @deps.channel_override && !@deps.channel_override.empty?
+        channels = if @deps.channel_override && !@deps.channel_override.empty?
+                     @deps.channel_override
+                   else
+                     policy.channels
+                   end
 
-        policy.channels
+        validate_channels(channels)
+      end
+
+      def validate_channels(channels)
+        return channels unless @deps.channel_config
+
+        channels.select { |ch| @deps.channel_config.registry.valid?(ch) }
       end
     end
   end

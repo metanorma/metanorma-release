@@ -8,7 +8,7 @@ require "fileutils"
 module Metanorma
   module Release
     class RelatonEnricher
-      EnrichResult = Struct.new(:item_count, :output_dir, keyword_init: true)
+      EnrichResult = Struct.new(:item_count, :output_dir, :identifiers, keyword_init: true)
 
       @flavor_registry = {}
 
@@ -45,13 +45,17 @@ module Metanorma
 
         flavor = resolve_flavor(document_index)
         klass = resolve_class(flavor)
-        items = parse_rxl_files(document_index, output_dir, klass)
+        items, identifiers = parse_rxl_files(document_index, output_dir, klass)
         return nil if items.empty?
 
         dest = File.join(output_dir, bib_dir)
         write_index(items, dest)
 
-        EnrichResult.new(item_count: items.length, output_dir: dest)
+        EnrichResult.new(item_count: items.length, output_dir: dest,
+                         identifiers: identifiers)
+      rescue LoadError
+        warn "  (relaton gem not available — bibliography skipped)"
+        nil
       end
 
       private
@@ -62,29 +66,42 @@ module Metanorma
 
       def resolve_class(flavor)
         loader = self.class.flavor_registry[flavor.to_s]
-        if loader
-          loader.call
-        else
-          Relaton::Bib::Item
-        end
+        return loader.call if loader
+
+        Relaton::Bib::Item
       rescue LoadError
         warn "  (relaton-#{flavor} gem not available — using base Relaton::Bib::Item)"
         Relaton::Bib::Item
       end
 
       def parse_rxl_files(document_index, output_dir, klass)
-        document_index.documents.filter_map do |doc|
+        items = []
+        identifiers = {}
+
+        document_index.documents.each do |doc|
           rxl = doc.files.find { |f| f.extension == "rxl" }
           next unless rxl
 
           path = File.join(output_dir, rxl.path)
           next unless File.exist?(path)
 
-          klass.from_xml(File.read(path)).to_h
+          item = klass.from_xml(File.read(path))
+          items << item.to_h
+
+          pub_id = extract_primary_identifier(item)
+          identifiers[doc.id] = pub_id if pub_id
         rescue StandardError => e
           warn "  Skip #{File.basename(path)}: #{e.message}"
-          nil
         end
+
+        [items, identifiers]
+      end
+
+      def extract_primary_identifier(item)
+        ids = item.docidentifier
+        return nil if ids.nil? || ids.empty?
+        primary = ids.find { |di| di.primary == true }
+        (primary || ids.first).content
       end
 
       def write_index(items, dest)

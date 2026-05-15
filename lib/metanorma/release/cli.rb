@@ -23,16 +23,18 @@ module Metanorma
       end
 
       def run_package(argv)
-        options = { output_dir: "_site", dest: "dist", manifest: "metanorma.release.yml" }
+        options = { output_dir: "_site", dest: "dist", manifest: "metanorma.release.yml", config: nil }
         parser = OptionParser.new do |opts|
           opts.banner = "Usage: mn-release package [options]"
           opts.on("--output-dir DIR", "Compiled docs directory") { |v| options[:output_dir] = v }
           opts.on("--dest DIR", "Destination for packages") { |v| options[:dest] = v }
           opts.on("--manifest FILE", "Release manifest file") { |v| options[:manifest] = v }
+          opts.on("--config SOURCE", "Channel config (file path or platform ref)") { |v| options[:config] = v }
         end
         parser.parse!(argv)
 
         manifest = load_manifest(options[:manifest])
+        channel_config = resolve_channel_config(options[:config], manifest)
         extractor = RxlExtractor.new
         change_detector = ContentHashChangeDetector.new(previous_releases: {})
         packager = ZipPackager.new
@@ -42,7 +44,7 @@ module Metanorma
         deps = ReleasePipeline::Dependencies.new(
           extractor: extractor, filters: [], change_detector: change_detector,
           packager: packager, publisher: publisher, naming_registry: naming,
-          manifest: manifest, channel_override: nil
+          manifest: manifest, channel_override: nil, channel_config: channel_config
         )
         config = ReleasePipeline::Config.new(
           output_dir: options[:output_dir], manifest_path: options[:manifest],
@@ -58,7 +60,8 @@ module Metanorma
 
       def run_publish(argv)
         options = { output_dir: "_site", platform: "github", manifest: "metanorma.release.yml",
-                    force: false, force_replace: [], channels: nil, concurrency: 4, token: nil }
+                    force: false, force_replace: [], channels: nil, concurrency: 4, token: nil,
+                    config: nil }
         parser = OptionParser.new do |opts|
           opts.banner = "Usage: mn-release publish [options]"
           opts.on("--platform NAME", "github|gitlab|local") { |v| options[:platform] = v }
@@ -69,10 +72,12 @@ module Metanorma
           opts.on("--channels CHANS", "Override channels (comma-separated)") { |v| options[:channels] = v.split(",") }
           opts.on("--concurrency N", Integer) { |v| options[:concurrency] = v }
           opts.on("--token TOKEN", "Platform auth token") { |v| options[:token] = v }
+          opts.on("--config SOURCE", "Channel config (file path or platform ref)") { |v| options[:config] = v }
         end
         parser.parse!(argv)
 
         manifest = load_manifest(options[:manifest])
+        channel_config = resolve_channel_config(options[:config], manifest)
         extractor = RxlExtractor.new
         change_detector = ContentHashChangeDetector.new(previous_releases: {})
         packager = ZipPackager.new
@@ -83,7 +88,7 @@ module Metanorma
         deps = ReleasePipeline::Dependencies.new(
           extractor: extractor, filters: [], change_detector: change_detector,
           packager: packager, publisher: publisher, naming_registry: naming,
-          manifest: manifest, channel_override: channel_override
+          manifest: manifest, channel_override: channel_override, channel_config: channel_config
         )
         config = ReleasePipeline::Config.new(
           output_dir: options[:output_dir], manifest_path: options[:manifest],
@@ -165,6 +170,35 @@ module Metanorma
 
         def parse_channels(strings)
           (strings || []).map { |s| Channel.parse(s) }
+        end
+
+        def resolve_channel_config(cli_source, manifest)
+          # 1. CLI --config flag (highest priority)
+          return fetch_config(cli_source) if cli_source
+
+          # 2. config: key in manifest
+          if manifest&.config_source
+            return fetch_config(manifest.config_source)
+          end
+
+          # 3. Directory walk
+          found = ConfigLocator.find
+          return found if found
+
+          # 4. No config — all channels allowed
+          ChannelConfig.empty
+        end
+
+        def fetch_config(source)
+          if source.start_with?("local:")
+            Platform::Local::ConfigFetcher.new.fetch(source)
+          elsif source.include?("/")
+            Platform::Local::ConfigFetcher.new.fetch("local:#{source}")
+          else
+            require "octokit"
+            client = PlatformFactory.build_github_client(nil)
+            Platform::GitHub::ConfigFetcher.new(client: client).fetch(source)
+          end
         end
 
         def print_package_result(result, dest)
