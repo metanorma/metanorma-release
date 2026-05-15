@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "metanorma/release/platform/github"
+require_relative "../../../lib/metanorma/release/platform/github"
 require "ostruct"
 
 RSpec.describe Metanorma::Release::Platform::GitHub::Publisher do

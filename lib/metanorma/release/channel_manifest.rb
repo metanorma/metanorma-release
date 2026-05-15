@@ -152,13 +152,14 @@ module Metanorma
       end
 
       def entry_matches?(entry, source)
+        return false unless source
         return true if entry.source && entry.source == source
         return true if entry.pattern && File.fnmatch?(entry.pattern, source)
         false
       end
 
       def extract_source(document)
-        document["source_path"] || document.to_s
+        document["source_path"]
       end
 
       def self.parse_channels(channel_list)
