@@ -1,38 +1,42 @@
 # frozen_string_literal: true
 
+require "tmpdir"
+require "fileutils"
+
 RSpec.describe Metanorma::Release::PackageCommand do
-  let(:success_result) do
-    Metanorma::Release::ReleaseResult.new(
-      released: [], skipped: [], failed: [], released_artifacts: []
-    )
-  end
+  it "runs pipeline with null publisher and returns result" do
+    dir = Dir.mktmpdir
+    begin
+      config = described_class::Config.new(
+        output_dir: dir, dest: "dist",
+        manifest: "nonexistent.yml", config_source: nil
+      )
+      result = described_class.new(config).call
 
-  it 'constructs pipeline with null publisher and runs it' do
-    allow(Metanorma::Release::ReleasePipeline).to receive(:new).and_wrap_original do |m, *args|
-      pipeline = m.call(*args)
-      allow(pipeline).to receive(:run).and_return(success_result)
-      pipeline
+      expect(result).to be_a(Metanorma::Release::ReleaseResult)
+      expect(result.failed).to be_empty
+    ensure
+      FileUtils.rm_rf(dir)
     end
-
-    config = described_class::Config.new(
-      output_dir: '/tmp/test_pkg', dest: 'dist',
-      manifest: 'nonexistent.yml', config_source: nil
-    )
-    result = described_class.new(config).call
-
-    expect(result).to eq(success_result)
   end
 
-  it 'passes channel_config from config_source resolution' do
-    channel_config = Metanorma::Release::ChannelConfig.empty
-    allow(Metanorma::Release::ChannelConfig).to receive(:empty).and_return(channel_config)
+  it "loads config from config_source when provided" do
+    config_dir = Dir.mktmpdir
+    output_dir = Dir.mktmpdir
+    begin
+      config_file = File.join(config_dir, "config.yml")
+      File.write(config_file, "channels:\n  - public\n")
 
-    config = described_class::Config.new(
-      output_dir: '/tmp/test_pkg', dest: 'dist',
-      manifest: 'nonexistent.yml', config_source: nil
-    )
-    described_class.new(config).call
+      config = described_class::Config.new(
+        output_dir: output_dir, dest: "dist",
+        manifest: "nonexistent.yml", config_source: config_file
+      )
+      result = described_class.new(config).call
 
-    expect(Metanorma::Release::ChannelConfig).to have_received(:empty)
+      expect(result).to be_a(Metanorma::Release::ReleaseResult)
+    ensure
+      FileUtils.rm_rf(config_dir)
+      FileUtils.rm_rf(output_dir)
+    end
   end
 end

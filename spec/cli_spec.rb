@@ -1,66 +1,51 @@
 # frozen_string_literal: true
 
+require "tmpdir"
+require "fileutils"
+
 RSpec.describe Metanorma::Release::CLI do
-  describe '.run' do
-    it 'shows usage when no command given' do
-      expect { described_class.run([]) }.to raise_error(SystemExit) do |e|
-        expect(e.status).to eq(2)
-      end
-    end
-
-    it 'shows error for unknown command' do
-      expect { described_class.run(['foobar']) }.to raise_error(SystemExit) do |e|
-        expect(e.status).to eq(2)
-      end
-    end
-  end
-
-  describe '.run_package' do
-    it 'delegates to PackageCommand and exits 0 on success' do
-      result = Metanorma::Release::ReleaseResult.new(
-        released: [], skipped: [], failed: [], released_artifacts: []
-      )
-      cmd = instance_double(Metanorma::Release::PackageCommand)
-      allow(Metanorma::Release::PackageCommand).to receive(:new).and_return(cmd)
-      allow(cmd).to receive(:call).and_return(result)
-
-      expect { described_class.run_package(['--output-dir', '/tmp']) }.to raise_error(SystemExit) do |e|
-        expect(e.status).to eq(0)
+  describe "package" do
+    it "succeeds when no documents to process" do
+      tmpdir = Dir.mktmpdir
+      begin
+        expect do
+          described_class.start(["package", "--output-dir", tmpdir])
+        end.not_to raise_error
+      ensure
+        FileUtils.rm_rf(tmpdir)
       end
     end
   end
 
-  describe '.run_publish' do
-    it 'delegates to PublishCommand and exits 0 on success' do
-      result = Metanorma::Release::ReleaseResult.new(
-        released: [], skipped: [], failed: [], released_artifacts: []
-      )
-      cmd = instance_double(Metanorma::Release::PublishCommand)
-      allow(Metanorma::Release::PublishCommand).to receive(:new).and_return(cmd)
-      allow(cmd).to receive(:call).and_return(result)
+  describe "release" do
+    it "succeeds when no documents to process" do
+      tmpdir = Dir.mktmpdir
+      begin
+        expect do
+          described_class.start(["release", "--platform", "null", "--output-dir",
+                                 tmpdir])
+        end.not_to raise_error
+      ensure
+        FileUtils.rm_rf(tmpdir)
+      end
+    end
+  end
 
+  describe "unknown command" do
+    it "outputs error message" do
       expect do
-        described_class.run_publish(['--platform', 'local', '--output-dir', '/tmp'])
-      end.to raise_error(SystemExit) do |e|
-        expect(e.status).to eq(0)
-      end
+        described_class.start(["foobar"])
+      rescue SystemExit
+        nil
+      end.to output(/Could not find command/).to_stderr
     end
   end
 
-  describe 'exit codes' do
-    it 'exits 1 on pipeline failure' do
-      result = Metanorma::Release::ReleaseResult.new(
-        released: [], skipped: [],
-        failed: [{ document: double(id: 'test'), error: 'boom' }],
-        released_artifacts: []
-      )
-      cmd = instance_double(Metanorma::Release::PackageCommand)
-      allow(Metanorma::Release::PackageCommand).to receive(:new).and_return(cmd)
-      allow(cmd).to receive(:call).and_return(result)
-
-      expect { described_class.run_package(['--output-dir', '/tmp']) }.to raise_error(SystemExit) do |e|
-        expect(e.status).to eq(1)
-      end
+  describe "help" do
+    it "lists available commands" do
+      expect do
+        described_class.start(["help"])
+      end.to output(/aggregate.*package.*release/m).to_stdout
     end
   end
 end

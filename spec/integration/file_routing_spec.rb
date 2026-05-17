@@ -1,26 +1,25 @@
 # frozen_string_literal: true
 
-require 'tmpdir'
-require 'fileutils'
-require 'zip'
-require_relative 'shared_contexts'
+require "tmpdir"
+require "fileutils"
+require "zip"
+require_relative "shared_contexts"
 
-RSpec.describe 'File routing modes', type: :integration do
-  include_context 'with compiled documents'
+RSpec.describe "File routing modes", type: :integration do
+  include_context "with compiled documents"
 
   def run_with_routing(routing, output_dir)
     discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(repos: [])
     fetcher = Metanorma::Release::Platform::Local::Fetcher.new(base_path: output_dir)
     manifest_reader = Metanorma::Release::PlatformFactory::NullManifestReader.new
-    channel_filter = Metanorma::Release::ChannelFilter.new([])
-    stage_filter = Metanorma::Release::StageFilter.new([])
+    metadata_filter = Metanorma::Release::MetadataFilter.new
     asset_processor = Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing,
                                                              canonicalize: true)
     delta_state = Metanorma::Release::NullDeltaState.new
 
     deps = Metanorma::Release::AggregationPipeline::Dependencies.new(
       discoverer: discoverer, fetcher: fetcher, manifest_reader: manifest_reader,
-      channel_filter: channel_filter, stage_filter: stage_filter,
+      metadata_filter: metadata_filter,
       asset_processor: asset_processor, delta_state: delta_state
     )
     config = Metanorma::Release::AggregationPipeline::Config.new(
@@ -37,13 +36,15 @@ RSpec.describe 'File routing modes', type: :integration do
         routing = Metanorma::Release::FileRoutingFactory.from_name(mode)
 
         # Create a mock zip to process
-        zip_data = create_test_zip('cc-18011', %w[html pdf xml])
+        zip_data = create_test_zip("cc-18011", %w[html pdf xml])
         metadata = {
-          'id' => 'cc-18011', 'title' => 'Test', 'edition' => '1',
-          'stage' => 'published', 'channels' => ['public/standards']
+          "id" => "cc-18011", "title" => "Test", "edition" => "1",
+          "stage" => "published", "channels" => ["public/standards"]
         }
 
-        result = asset_processor_instance(routing, output_dir).process(zip_data, metadata)
+        result = asset_processor_instance(routing, output_dir).process(
+          zip_data, metadata
+        )
         expect(result.files.length).to be > 0
 
         result.files.each do |file|
@@ -51,12 +52,12 @@ RSpec.describe 'File routing modes', type: :integration do
           expect(File.exist?(File.join(output_dir, path))).to be true
 
           case mode
-          when 'by-document'
-            expect(path).to start_with('cc-18011/')
-          when 'flat'
-            expect(path).not_to include('/')
-          when 'by-format'
-            ext = File.extname(file.name).delete_prefix('.')
+          when "by-document"
+            expect(path).to start_with("cc-18011/")
+          when "flat"
+            expect(path).not_to include("/")
+          when "by-format"
+            ext = File.extname(file.name).delete_prefix(".")
             expect(path).to start_with("#{ext}/")
           end
         end
@@ -67,12 +68,13 @@ RSpec.describe 'File routing modes', type: :integration do
   end
 
   def asset_processor_instance(routing, output_dir)
-    Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing, canonicalize: true)
+    Metanorma::Release::AssetProcessor.new(output_dir: output_dir,
+                                           routing: routing, canonicalize: true)
   end
 
   def create_test_zip(base_name, extensions)
     Dir.mktmpdir do |tmp|
-      zip_path = File.join(tmp, 'test.zip')
+      zip_path = File.join(tmp, "test.zip")
       Zip::OutputStream.open(zip_path) do |zos|
         extensions.each do |ext|
           zos.put_next_entry("#{base_name}.#{ext}")

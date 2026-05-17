@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
 RSpec.describe Metanorma::Release::Platform::Null::Publisher do
-  let(:tag) { Metanorma::Release::ReleaseTag.create('cc-18011/ed1', pre_release: false) }
-  let(:artifact) { Metanorma::Release::Artifact.new(zip_path: '/tmp/test.zip', asset_name: 'test.zip', size: 100) }
-  let(:metadata) { Metanorma::Release::ReleaseMetadata.new({ 'id' => 'cc-18011', 'title' => 'Test' }) }
-  let(:channels) { [Metanorma::Release::Channel.public('standards')] }
+  let(:tag) { "cc-18011/ed1" }
+  let(:artifact) { Metanorma::Release::Artifact.new(zip_path: "/tmp/test.zip", asset_name: "test.zip", size: 100) }
+  let(:metadata) { Metanorma::Release::Publication.from_json('{"id":"cc-18011","title":"Test"}') }
+  let(:channels) { [Metanorma::Release::Channel.new("public")] }
 
-  it 'returns valid PublishResult' do
+  it "returns valid PublishResult" do
     publisher = described_class.new
     result = publisher.publish(tag, artifact, metadata, channels: channels)
 
     expect(result).to be_created
-    expect(result.tag).to eq('cc-18011/ed1')
-    expect(result.url).to eq('null://')
+    expect(result.tag).to eq("cc-18011/ed1")
+    expect(result.url).to eq("null://")
   end
 
-  it 'does not write files to disk' do
+  it "does not write files to disk" do
     tmpdir = Dir.mktmpdir
     begin
       before_entries = Dir.children(tmpdir)
@@ -28,10 +28,11 @@ RSpec.describe Metanorma::Release::Platform::Null::Publisher do
     end
   end
 
-  it 'does not raise errors' do
+  it "does not raise errors" do
     publisher = described_class.new
     expect do
-      publisher.publish(tag, artifact, metadata, channels: channels, force_replace: true)
+      publisher.publish(tag, artifact, metadata, channels: channels,
+                                                 force_replace: true)
     end.not_to raise_error
   end
 end
