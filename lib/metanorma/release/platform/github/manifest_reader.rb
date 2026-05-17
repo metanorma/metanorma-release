@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'yaml'
+require "yaml"
 
 module Metanorma
   module Release
@@ -14,14 +14,14 @@ module Metanorma
           end
 
           def read(repo)
-            content = @client.contents(repo.to_s, path: 'metanorma.release.yml')
+            content = @client.contents(repo.to_s, path: "metanorma.release.yml")
             return nil unless content
 
-            yaml = content['content'].unpack1('m0')
+            yaml = content["content"].unpack1("m0")
             parsed = YAML.safe_load(yaml, permitted_classes: [Symbol])
             return nil unless parsed.is_a?(Hash)
 
-            (parsed['channels'] || []).map(&:to_s)
+            (parsed["channels"] || []).map(&:to_s)
           rescue StandardError
             nil
           end

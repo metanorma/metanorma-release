@@ -20,18 +20,20 @@ module Metanorma
           def fetch(repo, etag: nil)
             releases = @client.releases(repo.to_s)
             parsed = releases.map { |r| parse_release(r) }
-            FetchResult.new(releases: parsed, etag: "etag-#{repo}", unchanged?: false)
+            FetchResult.new(releases: parsed, etag: "etag-#{repo}",
+                            unchanged?: false)
           end
 
           private
 
           def parse_release(r)
             assets = (r[:assets] || []).map do |a|
+              data = download_asset(a[:url]) if a[:name].end_with?(".zip")
               GitHubAsset.new(
                 name: a[:name],
                 browser_download_url: a[:browser_download_url],
                 size: a[:size],
-                data: nil
+                data: data,
               )
             end
             GitHubRelease.new(
@@ -42,8 +44,15 @@ module Metanorma
               html_url: r[:html_url],
               published_at: r[:published_at],
               created_at: r[:created_at],
-              assets: assets
+              assets: assets,
             )
+          end
+
+          def download_asset(url)
+            @client.get(url, accept: "application/octet-stream")
+          rescue StandardError => e
+            warn "Warning: Failed to download asset #{url}: #{e.message}"
+            nil
           end
         end
       end
