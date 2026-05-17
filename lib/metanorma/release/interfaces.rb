@@ -2,16 +2,6 @@
 
 module Metanorma
   module Release
-    module Extractor
-      def discover(output_dir)
-        raise NotImplementedError, "#{self.class} must implement #discover"
-      end
-
-      def extract(rxl_path)
-        raise NotImplementedError, "#{self.class} must implement #extract"
-      end
-    end
-
     module Filter
       def apply(documents)
         raise NotImplementedError, "#{self.class} must implement #apply"
@@ -36,12 +26,22 @@ module Metanorma
       end
     end
 
-    ChangeResult = Struct.new(:changed?, :current_hash, :previous_hash, keyword_init: true)
-    Artifact = Struct.new(:zip_path, :asset_name, :size, keyword_init: true)
-    PublishResult = Struct.new(:tag, :url, :created?, keyword_init: true)
+    module RepoDiscoverer
+      def discover
+        raise NotImplementedError, "#{self.class} must implement #discover"
+      end
+    end
 
-    ReleasedArtifact = Struct.new(:id, :tag, :url, :channels, keyword_init: true)
+    module ReleaseFetcher
+      def fetch(repo, etag: nil)
+        raise NotImplementedError, "#{self.class} must implement #fetch"
+      end
+    end
 
-    ReleaseResult = Struct.new(:released, :skipped, :failed, :released_artifacts, keyword_init: true)
+    module ManifestReader
+      def read(repo)
+        raise NotImplementedError, "#{self.class} must implement #read"
+      end
+    end
   end
 end
