@@ -9,7 +9,9 @@
 /spec/reports/
 /tmp/
 _site/
+.cache/
 *.gem
 *.lock
 Gemfile.lock
 .rspec_status
+.byebug_history
