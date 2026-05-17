@@ -2,13 +2,48 @@
 
 module Metanorma
   module Release
+    PublishResult = Struct.new(:tag, :url, :created?, keyword_init: true)
+    ReleasedArtifact = Struct.new(:id, :tag, :url, :channels,
+                                  keyword_init: true)
+    ReleaseResult = Struct.new(:released, :skipped, :failed,
+                               :released_artifacts, keyword_init: true)
+
     class ReleasePipeline
       Dependencies = Struct.new(
         :extractor, :filters, :change_detector,
-        :packager, :publisher, :naming_registry,
-        :manifest, :channel_override, :channel_config,
+        :packager, :publisher, :slug_registry,
+        :manifest, :channel_override, :config,
         keyword_init: true
-      )
+      ) do
+        def initialize(**kwargs)
+          super
+          validate_types!
+        end
+
+        private
+
+        def validate_types!
+          unless extractor.respond_to?(:discover)
+            raise ArgumentError,
+                  "extractor must respond to #discover, got #{extractor.class}"
+          end
+
+          validate_interface!(change_detector, ChangeDetector,
+                              "change_detector")
+          validate_interface!(packager, Packager, "packager")
+          validate_interface!(publisher, Publisher, "publisher")
+        end
+
+        def validate_interface!(obj, mod, name)
+          return if obj.is_a?(mod) || begin
+            obj.class.ancestors.include?(mod)
+          rescue StandardError
+            false
+          end
+
+          raise ArgumentError, "#{name} must include #{mod}, got #{obj.class}"
+        end
+      end
 
       Config = Struct.new(
         :output_dir, :manifest_path, :force, :force_replace_patterns,
@@ -21,29 +56,31 @@ module Metanorma
       end
 
       def run(config)
-        documents = @deps.extractor.discover(config.output_dir)
-        filtered = apply_filters(documents)
+        publications = @deps.extractor.discover(config.output_dir)
+        filtered = apply_filters(publications)
         results = phase_one(filtered, config)
         phase_two(results, config)
       end
 
       private
 
-      def apply_filters(documents)
-        return documents unless @deps.filters && !@deps.filters.empty?
+      def apply_filters(publications)
+        return publications unless @deps.filters && !@deps.filters.empty?
 
-        @deps.filters.reduce(documents) { |docs, filter| filter.apply(docs) }
+        @deps.filters.reduce(publications) { |docs, filter| filter.apply(docs) }
       end
 
-      def phase_one(documents, config)
-        documents.map do |doc|
-          strategy = @deps.naming_registry.resolve(doc.document_type)
-          tag = strategy.compute_tag(doc.id.to_s, doc.version)
-          canonical_base = strategy.compute_canonical_base(doc.id.to_s, doc.version)
-          change = @deps.change_detector.detect(doc, tag, force: config.force)
+      def phase_one(publications, config)
+        publications.map do |pub|
+          publisher = Publication.publisher_from_identifier(pub.identifier)
+          strategy = @deps.slug_registry.resolve(publisher)
+          tag_info = strategy.compute_tag(pub)
+          canonical_base = strategy.compute_asset_name(pub).sub(/\.zip$/, "")
+          change = @deps.change_detector.detect(pub, tag_info[:tag],
+                                                force: config.force)
 
-          { document: doc, tag: tag, canonical_base: canonical_base,
-            changed: change.changed?, change_result: change }
+          { publication: pub, tag: tag_info[:tag], pre_release: tag_info[:pre_release],
+            canonical_base: canonical_base, changed: change.changed?, change_result: change }
         end
       end
 
@@ -54,34 +91,38 @@ module Metanorma
         released_artifacts = []
 
         candidates.each do |candidate|
-          doc = candidate[:document]
+          pub = candidate[:publication]
           tag = candidate[:tag]
 
           unless candidate[:changed]
-            skipped << doc
+            skipped << pub
             next
           end
 
           begin
-            policy = resolve_policy(doc, config)
-            unless policy.release?
-              skipped << doc
+            channels = resolve_channels(pub)
+            if channels.empty?
+              skipped << pub
               next
             end
 
-            artifact = @deps.packager.package(doc, canonical_base: candidate[:canonical_base])
-            channels = resolve_channels(doc, policy)
-            metadata_json = ReleaseMetadata.from_document(doc, channels: channels)
-            force = config.force_replace_patterns&.any? { |p| File.fnmatch?(p, doc.id.to_s) } || false
+            artifact = @deps.packager.package(pub,
+                                              canonical_base: candidate[:canonical_base])
+            channel_objects = channels.map { |c| Channel.new(c) }
+            pub_for_release = pub.with_channels(channels)
+            force = config.force_replace_patterns&.any? do |p|
+              File.fnmatch?(p, pub.slug)
+            end || false
 
-            result = @deps.publisher.publish(tag, artifact, metadata_json, channels: channels, force_replace: force)
-            released << doc
+            result = @deps.publisher.publish(tag, artifact, pub_for_release,
+                                             channels: channel_objects, force_replace: force)
+            released << pub
             released_artifacts << ReleasedArtifact.new(
-              id: doc.id.to_s, tag: tag.to_s,
-              url: result.url, channels: channels.map(&:to_s)
+              id: pub.slug, tag: tag.to_s,
+              url: result.url, channels: channels
             )
           rescue StandardError => e
-            failed << { document: doc, error: e.message }
+            failed << { document: pub, error: e.message }
           end
         end
 
@@ -89,26 +130,18 @@ module Metanorma
                           released_artifacts: released_artifacts)
       end
 
-      def resolve_policy(doc, _config)
-        return @deps.manifest.resolve(doc) if @deps.manifest
+      def resolve_channels(pub)
+        override = @deps.channel_override
+        return override if override && !override.empty?
 
-        DocumentReleasePolicy.from_defaults('public', [Channel.public('default')])
-      end
-
-      def resolve_channels(_doc, policy)
-        channels = if @deps.channel_override && !@deps.channel_override.empty?
-                     @deps.channel_override
-                   else
-                     policy.channels
-                   end
-
-        validate_channels(channels)
-      end
-
-      def validate_channels(channels)
-        return channels unless @deps.channel_config
-
-        channels.select { |ch| @deps.channel_config.registry.valid?(ch) }
+        if @deps.config
+          @deps.config.resolve_channels(pub)
+        elsif @deps.manifest
+          policy = @deps.manifest.resolve(pub)
+          policy&.channels&.map(&:to_s) || ["public"]
+        else
+          ["public"]
+        end
       end
     end
   end
