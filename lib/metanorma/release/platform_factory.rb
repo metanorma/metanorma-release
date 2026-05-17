@@ -64,7 +64,8 @@ module Metanorma
 
       def self.build_github_client(token)
         require "octokit"
-        token ? Octokit::Client.new(access_token: token) : Octokit::Client.new
+        access_token = token || ENV.fetch("GITHUB_TOKEN", nil)
+        access_token ? Octokit::Client.new(access_token: access_token) : Octokit::Client.new
       end
 
       def self.register_publisher(name, factory)

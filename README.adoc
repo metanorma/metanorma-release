@@ -133,6 +133,8 @@ metanorma-release release [options]
 === `metanorma-release aggregate`
 
 Aggregate published releases from multiple repositories into a unified file tree.
+Reads config from `metanorma.aggregate.yml` if present (auto-detected).
+Idempotent: uses cached delta state (`.cache/aggregate/`) to skip unchanged repos.
 
 [source,sh]
 ----
@@ -142,20 +144,39 @@ metanorma-release aggregate [options]
 [cols="1m,3",options="header"]
 |===
 |Option |Description
+|`--config FILE` |Config file (default: `metanorma.aggregate.yml`)
 |`--source SOURCE` |Discovery source: `github`, `local:PATH` (default: `github`)
-|`--organizations ORGS` |Organization list
+|`--organizations ORGS` |Organization list (overrides config)
 |`--topic TOPIC` |Repository topic filter (default: `metanorma-release`)
 |`--repos REPOS` |Explicit repo list
 |`--channels CHANS` |Filter channels
 |`--stages STAGES` |Filter stages
 |`--output-dir DIR` |Output directory (default: `_site/cc`)
 |`--file-routing MODE` |File layout: `by-document`, `flat`, `by-format` (default: `by-document`)
-|`--cache-dir DIR` |Cache directory for delta state
 |`--[no-]include-drafts` |Include draft releases
 |`--concurrency N` |Parallel repos (default: 4)
 |`--min-documents N` |Fail if fewer documents found (default: 0)
-|`--token TOKEN` |Platform auth token
+|`--token TOKEN` |Platform auth token (falls back to `GITHUB_TOKEN` env)
 |===
+
+==== Aggregate config file
+
+Create `metanorma.aggregate.yml` in your project root:
+
+[source,yaml]
+----
+source: github
+output_dir: _site/cc
+file_routing: flat
+cache_dir: .cache/aggregate
+
+github:
+  organizations:
+    - MyOrg
+  topic: metanorma-release
+----
+
+CLI flags override config file values. Cache is always enabled (defaults to `.cache/aggregate/`).
 
 == Concepts
 

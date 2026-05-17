@@ -88,9 +88,10 @@ module Metanorma
       option :min_documents, type: :numeric, default: 0,
                              desc: "Minimum required documents"
       option :token, type: :string, desc: "Platform auth token"
+      option :config, type: :string, desc: "Config file (default: metanorma.aggregate.yml)"
 
       def aggregate
-        config = AggregateCommand::Config.new(
+        config = AggregateCommand.build_config(
           source: options[:source],
           organizations: options[:organizations],
           topic: options[:topic],
@@ -105,13 +106,14 @@ module Metanorma
           min_documents: options[:min_documents],
           token: options[:token],
           create_zip: nil,
+          config: options[:config],
         )
         result = AggregateCommand.new(config).call
         print_aggregate_result(result)
 
-        if options[:min_documents].positive? && result.publications.length < options[:min_documents]
+        if config.min_documents.positive? && result.publications.length < config.min_documents
           raise PipelineError,
-                "Found #{result.publications.length} documents, minimum is #{options[:min_documents]}"
+                "Found #{result.publications.length} documents, minimum is #{config.min_documents}"
         end
 
         unless result.failed_repos.empty?
