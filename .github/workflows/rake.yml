@@ -4,6 +4,7 @@ name: rake
 
 permissions:
   contents: write
+  packages: write
 
 on:
   push:
