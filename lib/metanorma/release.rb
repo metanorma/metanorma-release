@@ -2,114 +2,88 @@
 
 module Metanorma
   module Release
-    require_relative 'release/version'
+    require_relative "release/version"
 
-    # Domain value objects
-    autoload :ChannelAudience, 'metanorma/release/channel_audience'
-    autoload :Channel,         'metanorma/release/channel'
-    autoload :ChannelRegistry, 'metanorma/release/channel_registry'
-    autoload :ChannelConfig,   'metanorma/release/channel_config'
-    autoload :ConfigLocator,   'metanorma/release/config_locator'
-    autoload :ContentHash,     'metanorma/release/content_hash'
-    autoload :DocumentId,      'metanorma/release/document_id'
-    autoload :DocumentStage,   'metanorma/release/document_stage'
-    autoload :DocumentType,    'metanorma/release/document_type'
-    autoload :DocumentVersion, 'metanorma/release/document_version'
-    autoload :ReleaseTag,      'metanorma/release/release_tag'
-    autoload :RepoRef,         'metanorma/release/repo_ref'
+    # Domain models
+    autoload :Publication,       "metanorma/release/publication"
+    autoload :PublicationFile,   "metanorma/release/publication"
+    autoload :PublicationSource, "metanorma/release/publication"
+    autoload :Index,             "metanorma/release/index"
+    autoload :Site,              "metanorma/release/site"
+    autoload :Channel,           "metanorma/release/channel"
+    autoload :Config,            "metanorma/release/config"
+    autoload :ContentHash,       "metanorma/release/content_hash"
 
-    # Domain strategies
-    autoload :NamingStrategy,      'metanorma/release/naming_strategy'
-    autoload :EditionNaming,       'metanorma/release/naming_strategy'
-    autoload :VersionNaming,       'metanorma/release/naming_strategy'
-    autoload :InternetDraftNaming, 'metanorma/release/naming_strategy'
-    autoload :RfcNaming,           'metanorma/release/naming_strategy'
-    autoload :DraftSuffixNaming,   'metanorma/release/naming_strategy'
-    autoload :NamingRegistry,      'metanorma/release/naming_strategy'
-
-    # Manifest & policy
-    autoload :ChannelManifest,       'metanorma/release/channel_manifest'
-    autoload :DocumentReleasePolicy, 'metanorma/release/channel_manifest'
-    autoload :ManifestEntry,         'metanorma/release/channel_manifest'
-
-    # Metadata
-    autoload :DocumentMetadata, 'metanorma/release/document_metadata'
-    autoload :ReleaseMetadata,  'metanorma/release/release_metadata'
-    autoload :RxlExtractor,     'metanorma/release/rxl_extractor'
+    # Strategies
+    autoload :SlugStrategy,      "metanorma/release/slug_strategy"
+    autoload :EditionSlug,       "metanorma/release/slug_strategy"
+    autoload :VersionSlug,       "metanorma/release/slug_strategy"
+    autoload :InternetDraftSlug, "metanorma/release/slug_strategy"
+    autoload :RfcSlug,           "metanorma/release/slug_strategy"
+    autoload :DraftSuffixSlug,   "metanorma/release/slug_strategy"
+    autoload :SlugRegistry,      "metanorma/release/slug_strategy"
 
     # Interfaces
-    autoload :Extractor,        'metanorma/release/interfaces'
-    autoload :Filter,           'metanorma/release/interfaces'
-    autoload :ChangeDetector,   'metanorma/release/interfaces'
-    autoload :Packager,         'metanorma/release/interfaces'
-    autoload :Publisher,        'metanorma/release/interfaces'
+    autoload :Filter,          "metanorma/release/interfaces"
+    autoload :ChangeDetector,  "metanorma/release/interfaces"
+    autoload :Packager,        "metanorma/release/interfaces"
+    autoload :Publisher,       "metanorma/release/interfaces"
+    autoload :RepoDiscoverer,  "metanorma/release/interfaces"
+    autoload :ReleaseFetcher,  "metanorma/release/interfaces"
+    autoload :ManifestReader,  "metanorma/release/interfaces"
 
     # Pipeline components
-    autoload :ChangeResult,              'metanorma/release/interfaces'
-    autoload :Artifact,                  'metanorma/release/interfaces'
-    autoload :PublishResult,             'metanorma/release/interfaces'
-    autoload :ReleasedArtifact,          'metanorma/release/interfaces'
-    autoload :ReleaseResult,             'metanorma/release/interfaces'
-    autoload :ContentHashChangeDetector, 'metanorma/release/change_detector'
-    autoload :ZipPackager,               'metanorma/release/zip_packager'
-    autoload :ReleasePipeline,           'metanorma/release/release_pipeline'
+    autoload :RepoRef,                   "metanorma/release/repo_ref"
+    autoload :ChangeResult,              "metanorma/release/change_detector"
+    autoload :Artifact,                  "metanorma/release/zip_packager"
+    autoload :PublishResult,             "metanorma/release/release_pipeline"
+    autoload :ReleasedArtifact,          "metanorma/release/release_pipeline"
+    autoload :ReleaseResult,             "metanorma/release/release_pipeline"
+    autoload :FetchResult,
+             "metanorma/release/aggregation_pipeline"
+    autoload :RepoReport,
+             "metanorma/release/aggregation_pipeline"
+    autoload :RepoError,
+             "metanorma/release/aggregation_pipeline"
+    autoload :ContentHashChangeDetector, "metanorma/release/change_detector"
+    autoload :ZipPackager,               "metanorma/release/zip_packager"
+    autoload :ReleasePipeline,           "metanorma/release/release_pipeline"
+    autoload :AggregationPipeline,
+             "metanorma/release/aggregation_pipeline"
+
+    # Filters
+    autoload :MetadataFilter, "metanorma/release/channel_filter"
 
     # Cache
-    autoload :CacheStore,      'metanorma/release/cache_store'
-    autoload :FileCacheStore,  'metanorma/release/cache_store'
-    autoload :NullCacheStore,  'metanorma/release/cache_store'
-
-    # Aggregation filters
-    autoload :ChannelFilter,   'metanorma/release/channel_filter'
-    autoload :ConfigFetcher,   'metanorma/release/config_fetcher'
-    autoload :StageFilter,   'metanorma/release/stage_filter'
-    autoload :DeltaState,    'metanorma/release/delta_state'
-    autoload :NullDeltaState, 'metanorma/release/delta_state'
-
-    # Document index
-    autoload :DocumentFile,       'metanorma/release/document_index'
-    autoload :DocumentSource,     'metanorma/release/document_index'
-    autoload :IndexParameters,    'metanorma/release/document_index'
-    autoload :IndexSummary,       'metanorma/release/document_index'
-    autoload :AggregatedDocument, 'metanorma/release/document_index'
-    autoload :DocumentIndex,      'metanorma/release/document_index'
+    autoload :CacheStore,     "metanorma/release/cache_store"
+    autoload :FileCacheStore, "metanorma/release/cache_store"
+    autoload :NullCacheStore, "metanorma/release/cache_store"
 
     # Asset processing
-    autoload :FileRouting,       'metanorma/release/file_routing'
-    autoload :ByDocument,        'metanorma/release/file_routing'
-    autoload :Flat,              'metanorma/release/file_routing'
-    autoload :ByFormat,          'metanorma/release/file_routing'
-    autoload :FileRoutingFactory, 'metanorma/release/file_routing'
-    autoload :AssetProcessor,    'metanorma/release/asset_processor'
+    autoload :FileRouting,        "metanorma/release/file_routing"
+    autoload :ByDocument,         "metanorma/release/file_routing"
+    autoload :Flat,               "metanorma/release/file_routing"
+    autoload :ByFormat,           "metanorma/release/file_routing"
+    autoload :FileRoutingFactory, "metanorma/release/file_routing"
+    autoload :AssetProcessor,     "metanorma/release/asset_processor"
 
-    # Aggregation
-    autoload :RepoDiscoverer,    'metanorma/release/aggregation_interfaces'
-    autoload :ReleaseFetcher,    'metanorma/release/aggregation_interfaces'
-    autoload :ManifestReader,    'metanorma/release/aggregation_interfaces'
-    autoload :FetchResult,       'metanorma/release/aggregation_interfaces'
-    autoload :RepoReport,        'metanorma/release/aggregation_interfaces'
-    autoload :RepoError,         'metanorma/release/aggregation_interfaces'
-    autoload :AggregationPipeline, 'metanorma/release/aggregation_pipeline'
+    # Delta state
+    autoload :DeltaStateManager, "metanorma/release/delta_state"
+    autoload :DeltaState,        "metanorma/release/delta_state"
+    autoload :NullDeltaState,    "metanorma/release/delta_state"
 
     # Platform namespace
-    autoload :Platform, 'metanorma/release/platform'
+    autoload :Platform, "metanorma/release/platform"
 
     # Platform factory
-    autoload :PlatformFactory, 'metanorma/release/platform_factory'
+    autoload :PlatformFactory, "metanorma/release/platform_factory"
 
-    # Relaton enrichment
-    autoload :RelatonEnricher, 'metanorma/release/relaton_enricher'
-
-    # CLI & Rake
-    autoload :CLI, 'metanorma/release/cli'
-    autoload :RakeTasks, 'metanorma/release/rake_tasks'
+    # CLI
+    autoload :CLI, "metanorma/release/cli"
 
     # Commands
-    autoload :PackageCommand, 'metanorma/release/commands/package'
-    autoload :PublishCommand, 'metanorma/release/commands/publish'
-    autoload :AggregateCommand, 'metanorma/release/commands/aggregate'
-
-    # Config resolution
-    autoload :ConfigResolver, 'metanorma/release/config_resolver'
+    autoload :PackageCommand, "metanorma/release/commands/package"
+    autoload :ReleaseCommand, "metanorma/release/commands/release_command"
+    autoload :AggregateCommand, "metanorma/release/commands/aggregate"
   end
 end
