@@ -1,47 +1,59 @@
 # frozen_string_literal: true
 
-RSpec.describe Metanorma::Release::ChannelFilter do
-  describe '#matches?' do
-    it 'matches everything with empty filter' do
-      filter = described_class.new([])
-      expect(filter.matches?({ 'channels' => ['public/standards'] })).to be true
+RSpec.describe Metanorma::Release::MetadataFilter do
+  describe "#matches?" do
+    it "matches everything with empty filters" do
+      filter = described_class.new
+      expect(filter.matches?({ "channels" => ["public"] })).to be true
     end
 
-    it 'matches exact channel' do
-      filter = described_class.new(['public/standards'])
-      expect(filter.matches?({ 'channels' => ['public/standards'] })).to be true
+    it "matches exact channel" do
+      filter = described_class.new(channels: ["public"])
+      expect(filter.matches?({ "channels" => ["public"] })).to be true
     end
 
-    it 'matches when any channel overlaps' do
-      filter = described_class.new(['public/standards'])
-      expect(filter.matches?({ 'channels' => ['public/standards', 'public/reports'] })).to be true
+    it "does not match different channels" do
+      filter = described_class.new(channels: ["members"])
+      expect(filter.matches?({ "channels" => ["public"] })).to be false
     end
 
-    it 'does not match different channels' do
-      filter = described_class.new(['members/drafts'])
-      expect(filter.matches?({ 'channels' => ['public/standards'] })).to be false
+    it "matches exact stage" do
+      filter = described_class.new(stages: ["60"])
+      expect(filter.matches?({ "channels" => ["public"],
+                               "stage" => "60" })).to be true
     end
 
-    it 'matches any of multiple filter channels' do
-      filter = described_class.new(['members/drafts', 'public/standards'])
-      expect(filter.matches?({ 'channels' => ['public/standards'] })).to be true
+    it "does not match different stage" do
+      filter = described_class.new(stages: ["60"])
+      expect(filter.matches?({ "channels" => ["public"],
+                               "stage" => "30" })).to be false
+    end
+
+    it "requires both channel and stage to match when both filters set" do
+      filter = described_class.new(channels: ["public"], stages: ["60"])
+      expect(filter.matches?({ "channels" => ["public"],
+                               "stage" => "60" })).to be true
+      expect(filter.matches?({ "channels" => ["public"],
+                               "stage" => "30" })).to be false
+      expect(filter.matches?({ "channels" => ["members"],
+                               "stage" => "60" })).to be false
     end
   end
 
-  describe '#overlaps?' do
-    it 'returns true for empty filter' do
-      filter = described_class.new([])
-      expect(filter.overlaps?(['public/standards'])).to be true
+  describe "#overlaps?" do
+    it "returns true for empty filter" do
+      filter = described_class.new
+      expect(filter.overlaps?(["public"])).to be true
     end
 
-    it 'returns true for matching manifest' do
-      filter = described_class.new(['public/standards'])
-      expect(filter.overlaps?(['public/standards', 'public/reports'])).to be true
+    it "returns true for matching manifest" do
+      filter = described_class.new(channels: ["public"])
+      expect(filter.overlaps?(["public", "members"])).to be true
     end
 
-    it 'returns false for non-matching manifest' do
-      filter = described_class.new(['members/drafts'])
-      expect(filter.overlaps?(['public/standards'])).to be false
+    it "returns false for non-matching manifest" do
+      filter = described_class.new(channels: ["members"])
+      expect(filter.overlaps?(["public"])).to be false
     end
   end
 end
