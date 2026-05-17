@@ -2,24 +2,40 @@
 
 module Metanorma
   module Release
-    class ChannelFilter
-      def initialize(channels)
-        @channels = channels.map { |c| Channel.parse(c) }
-        @all = @channels.empty?
+    class MetadataFilter
+      def initialize(channels: [], stages: [])
+        @channels = channels.map { |c| Channel.new(c) }
+        @stages = Set.new(stages.map(&:downcase))
+        @all_channels = @channels.empty?
+        @all_stages = @stages.empty?
       end
 
       def matches?(release_metadata)
-        return true if @all
-
-        release_channels = (release_metadata['channels'] || []).map { |c| Channel.parse(c) }
-        release_channels.any? { |rc| @channels.any? { |fc| fc.eql?(rc) } }
+        channel_match?(release_metadata) && stage_match?(release_metadata)
       end
 
       def overlaps?(manifest_channels)
-        return true if @all
+        return true if @all_channels
 
-        parsed = manifest_channels.map { |c| Channel.parse(c) }
+        parsed = manifest_channels.map { |c| Channel.new(c) }
         parsed.any? { |mc| @channels.any? { |fc| fc.eql?(mc) } }
+      end
+
+      private
+
+      def channel_match?(release_metadata)
+        return true if @all_channels
+
+        release_channels = (release_metadata["channels"] || []).map do |c|
+          Channel.new(c)
+        end
+        release_channels.any? { |rc| @channels.any? { |fc| fc.eql?(rc) } }
+      end
+
+      def stage_match?(release_metadata)
+        return true if @all_stages
+
+        @stages.include?(release_metadata["stage"].to_s.downcase)
       end
     end
   end

@@ -2,6 +2,9 @@
 
 module Metanorma
   module Release
+    ChangeResult = Struct.new(:changed?, :current_hash, :previous_hash,
+                              keyword_init: true)
+
     class ContentHashChangeDetector
       include ChangeDetector
 
@@ -9,11 +12,12 @@ module Metanorma
         @previous_releases = previous_releases
       end
 
-      def detect(metadata, tag, force: false)
-        current = ContentHash.of_directory(metadata.output_dir, base: metadata.file_base_name)
+      def detect(publication, tag, force: false)
+        current = publication.content_hash
         previous = @previous_releases[tag.to_s]
         changed = force || previous.nil? || !current.eql?(previous)
-        ChangeResult.new(changed?: changed, current_hash: current, previous_hash: previous)
+        ChangeResult.new(changed?: changed, current_hash: current,
+                         previous_hash: previous)
       end
     end
   end

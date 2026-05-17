@@ -28,21 +28,24 @@ module Metanorma
       include FileRouting
 
       def compute_path(file_name, _metadata)
-        ext = File.extname(file_name).delete_prefix('.')
+        ext = File.extname(file_name).delete_prefix(".")
         "#{ext}/#{file_name}"
       end
     end
 
     module FileRoutingFactory
       ROUTING_MAP = {
-        'by-document' => ByDocument,
-        'flat' => Flat,
-        'by-format' => ByFormat
+        "by-document" => ByDocument,
+        "flat" => Flat,
+        "by-format" => ByFormat,
       }.freeze
 
       def self.from_name(name)
         klass = ROUTING_MAP[name]
-        raise ArgumentError, "Unknown routing mode: #{name}. Available: #{ROUTING_MAP.keys.join(', ')}" unless klass
+        unless klass
+          raise ArgumentError,
+                "Unknown routing mode: #{name}. Available: #{ROUTING_MAP.keys.join(', ')}"
+        end
 
         klass.new
       end
