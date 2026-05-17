@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "yaml"
+
 module Metanorma
   module Release
     class AggregateCommand
@@ -9,6 +11,9 @@ module Metanorma
         :include_drafts, :concurrency, :min_documents, :token, :create_zip,
         keyword_init: true
       )
+
+      DEFAULT_CONFIG_FILE = "metanorma.aggregate.yml"
+      DEFAULT_CACHE_DIR = ".cache/aggregate"
 
       def initialize(config)
         @config = config
@@ -26,6 +31,54 @@ module Metanorma
 
         stamp_primary_identifiers(index)
         result
+      end
+
+      def self.build_config(cli_options)
+        file_data = load_config_file(cli_options[:config])
+        merged = merge_config(file_data, cli_options)
+        Config.new(
+          source: merged[:source],
+          organizations: merged[:organizations],
+          topic: merged[:topic],
+          repos: merged[:repos],
+          channels: merged[:channels],
+          stages: merged[:stages],
+          output_dir: merged[:output_dir],
+          file_routing: merged[:file_routing],
+          cache_dir: merged[:cache_dir] || DEFAULT_CACHE_DIR,
+          include_drafts: merged[:include_drafts],
+          concurrency: merged[:concurrency],
+          min_documents: merged[:min_documents],
+          token: merged[:token],
+          create_zip: merged[:create_zip],
+        )
+      end
+
+      def self.load_config_file(path)
+        path ||= DEFAULT_CONFIG_FILE
+        return {} unless File.exist?(path)
+
+        YAML.safe_load_file(path, permitted_classes: [Symbol]) || {}
+      end
+
+      def self.merge_config(file_data, cli_options)
+        gh = file_data["github"] || {}
+        {
+          source: cli_options[:source] || file_data["source"],
+          organizations: cli_options[:organizations].any? ? cli_options[:organizations] : Array(gh["organizations"]),
+          topic: cli_options[:topic] || gh["topic"],
+          repos: cli_options[:repos] || file_data["repos"],
+          channels: cli_options[:channels].any? ? cli_options[:channels] : Array(file_data["channels"]),
+          stages: cli_options[:stages].any? ? cli_options[:stages] : Array(file_data["stages"]),
+          output_dir: cli_options[:output_dir] || file_data["output_dir"],
+          file_routing: cli_options[:file_routing] || file_data["file_routing"],
+          cache_dir: cli_options[:cache_dir] || file_data["cache_dir"],
+          include_drafts: cli_options[:include_drafts] || file_data["include_drafts"],
+          concurrency: cli_options[:concurrency] || file_data["concurrency"],
+          min_documents: cli_options[:min_documents] || file_data["min_documents"],
+          token: cli_options[:token],
+          create_zip: cli_options[:create_zip],
+        }
       end
 
       private
