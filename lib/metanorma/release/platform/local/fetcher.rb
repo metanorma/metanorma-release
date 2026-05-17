@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'json'
+require "json"
 
 module Metanorma
   module Release
@@ -21,9 +21,13 @@ module Metanorma
 
           def fetch(repo, etag: nil)
             dir = File.join(@base_path, repo.repo)
-            return FetchResult.new(releases: [], etag: nil, unchanged?: false) unless Dir.exist?(dir)
+            unless Dir.exist?(dir)
+              return FetchResult.new(releases: [], etag: nil,
+                                     unchanged?: false)
+            end
 
-            releases = Dir.glob(File.join(dir, '*.meta.json')).filter_map do |meta_path|
+            releases = Dir.glob(File.join(dir,
+                                          "*.meta.json")).filter_map do |meta_path|
               build_release(dir, meta_path)
             end
 
@@ -34,7 +38,7 @@ module Metanorma
 
           def build_release(dir, meta_path)
             data = JSON.parse(File.read(meta_path))
-            base = File.basename(meta_path, '.meta.json')
+            base = File.basename(meta_path, ".meta.json")
             zip_path = File.join(dir, "#{base}.zip")
 
             unless File.exist?(zip_path)
@@ -42,32 +46,33 @@ module Metanorma
               return nil
             end
 
-            metadata = ReleaseMetadata.new(data)
+            metadata = Publication.from_metadata_hash(data)
             asset = LocalAsset.new(
               name: "#{base}.zip",
               browser_download_url: "file://#{File.expand_path(zip_path)}",
               size: File.size(zip_path),
-              data: File.binread(zip_path)
+              data: File.binread(zip_path),
             )
 
             LocalRelease.new(
-              tag_name: "#{data['id']}/#{data.fetch('edition', '1')}",
+              tag_name: "#{metadata.slug}/#{metadata.edition || '1'}",
               body: metadata.to_release_body,
-              prerelease: prerelease?(data),
+              prerelease: prerelease?(metadata),
               draft: false,
               html_url: "file://#{File.expand_path(dir)}",
               published_at: File.mtime(zip_path).iso8601,
               created_at: File.mtime(zip_path).iso8601,
-              assets: [asset]
+              assets: [asset],
             )
           rescue JSON::ParserError
             warn "Warning: Invalid metadata JSON in #{meta_path}, skipping"
             nil
           end
 
-          def prerelease?(data)
-            stage = data['stage'].to_s
-            %w[working-draft committee-draft draft-standard final-draft].include?(stage)
+          def prerelease?(metadata)
+            stage = metadata.stage.to_s
+            %w[working-draft committee-draft draft-standard
+               final-draft].include?(stage)
           end
         end
       end

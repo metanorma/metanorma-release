@@ -6,7 +6,7 @@ module Metanorma
       Config = Struct.new(
         :source, :organizations, :topic, :repos, :repo_pattern, :local_path,
         :channels, :stages, :output_dir, :file_routing, :cache_dir,
-        :include_drafts, :concurrency, :min_documents, :token, :zip,
+        :include_drafts, :concurrency, :min_documents, :token, :create_zip,
         keyword_init: true
       )
 
@@ -16,8 +16,15 @@ module Metanorma
 
       def call
         result = run_aggregation
-        enrich(result) if result.documents.any?
-        zip_output if @config.zip
+        return result unless result.publications.any?
+
+        index = build_index(result)
+        site = Site.new(index: index, output_dir: @config.output_dir)
+        site.write!
+        site.enrich!
+        site.package! if @config.create_zip
+
+        stamp_primary_identifiers(index)
         result
       end
 
@@ -29,18 +36,18 @@ module Metanorma
           organizations: @config.organizations,
           topic: @config.topic,
           repos: @config.repos,
-          token: @config.token
+          token: @config.token,
         )
 
-        channel_filter = ChannelFilter.new(
-          channels: Channel.parse_list(@config.channels)
+        metadata_filter = MetadataFilter.new(
+          channels: Channel.parse_list(@config.channels),
+          stages: @config.stages || [],
         )
-        stage_filter = StageFilter.new(@config.stages || [])
         routing = FileRoutingFactory.from_name(@config.file_routing)
         asset_processor = AssetProcessor.new(
           output_dir: @config.output_dir,
           routing: routing,
-          canonicalize: true
+          canonicalize: true,
         )
         delta_state = build_delta_state
 
@@ -48,10 +55,9 @@ module Metanorma
           discoverer: adapters[:discoverer],
           fetcher: adapters[:fetcher],
           manifest_reader: adapters[:manifest_reader],
-          channel_filter: channel_filter,
-          stage_filter: stage_filter,
+          metadata_filter: metadata_filter,
           asset_processor: asset_processor,
-          delta_state: delta_state
+          delta_state: delta_state,
         )
 
         config = AggregationPipeline::Config.new(
@@ -60,10 +66,22 @@ module Metanorma
           topic: @config.topic,
           concurrency: @config.concurrency,
           include_drafts: @config.include_drafts,
-          fail_on_error: false
+          fail_on_error: false,
         )
 
         AggregationPipeline.new(deps).run(config, @config.output_dir)
+      end
+
+      def build_index(result)
+        Index.from_documents(
+          result.publications,
+          parameters: {
+            organizations: @config.organizations,
+            channels: @config.channels || [],
+            topic: @config.topic,
+            repo_count: result.repo_count,
+          },
+        )
       end
 
       def build_delta_state
@@ -71,55 +89,22 @@ module Metanorma
 
         DeltaState.new(
           cache_store: FileCacheStore.new(@config.cache_dir),
-          output_dir: @config.output_dir
+          output_dir: @config.output_dir,
         )
       end
 
-      def enrich(result)
-        index = DocumentIndex.from_documents(
-          result.documents,
-          parameters: IndexParameters.new(
-            organizations: @config.organizations,
-            channels: @config.channels || [],
-            topic: @config.topic,
-            repo_count: result.repo_count
-          )
-        )
-        enricher = RelatonEnricher.new
-        enrich_result = enricher.enrich(index, @config.output_dir)
-        return unless enrich_result
+      def stamp_primary_identifiers(index)
+        index.publications.each do |pub|
+          next unless pub.to_h["bibliographic"]
 
-        stamp_primary_identifiers(enrich_result.documents)
+          ids = pub.to_h.dig("bibliographic", "docidentifier")
+          next unless ids&.any?
+
+          primary = ids.find { |di| di["primary"] == true } || ids.first
+          pub.to_h.merge("primary_identifier" => primary["content"])
+        end
       rescue LoadError
-        warn '  (relaton gem not available — bibliography skipped)'
-      end
-
-      def stamp_primary_identifiers(documents)
-        documents.map do |doc|
-          next doc unless doc['bibliographic']
-
-          ids = doc['bibliographic']['docidentifier']
-          next doc unless ids&.any?
-
-          primary = ids.find { |di| di['primary'] == true } || ids.first
-          doc.merge('primary_identifier' => primary['content'])
-        end
-      end
-
-      def zip_output
-        require 'zip'
-
-        dir = @config.output_dir
-        zip_path = "#{dir}.zip"
-
-        Zip::File.open(zip_path, Zip::File::CREATE) do |zipfile|
-          Dir.glob("#{dir}/**/*").each do |file|
-            next if File.directory?(file)
-
-            entry_name = file.sub("#{File.dirname(dir)}/", '')
-            zipfile.add(entry_name, file)
-          end
-        end
+        warn "  (relaton gem not available — bibliography skipped)"
       end
     end
   end
