@@ -53,7 +53,7 @@ prerelease: false)
       end
       alias upload_asset upload_asset?
 
-      def search_repositories(_query)
+      def search_repositories(_query, **)
         { items: @search_results }
       end
 

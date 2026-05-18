@@ -16,8 +16,20 @@ module Metanorma
           def discover
             @organizations.flat_map do |org|
               query = "topic:#{@topic} org:#{org}"
-              results = @client.search_repositories(query)
-              results[:items].map do |repo|
+              all = []
+              page = 1
+              loop do
+                results = @client.search_repositories(query, per_page: 100,
+                                                      page: page)
+                items = results[:items]
+                break if items.nil? || items.empty?
+
+                all.concat(items)
+                break if items.length < 100
+
+                page += 1
+              end
+              all.map do |repo|
                 RepoRef.new(owner: org, repo: repo[:name])
               end
             end
