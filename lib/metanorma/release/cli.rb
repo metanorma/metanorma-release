@@ -79,7 +79,7 @@ module Metanorma
                       desc: "Filter stages"
       option :output_dir, type: :string, default: "_site/cc",
                           desc: "Output directory"
-      option :file_routing, type: :string, default: "by-document",
+      option :file_routing, type: :string,
                             desc: "File routing (by-document|flat|by-format)"
       option :cache_dir, type: :string, desc: "Cache directory"
       option :data_dir, type: :string, desc: "Write flattened documents.json for site generators"

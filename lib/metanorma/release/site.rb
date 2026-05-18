@@ -85,18 +85,26 @@ module Metanorma
       def flatten_for_site(doc)
         bib = doc["bibliographic"] || {}
         doc_id = resolve_doc_id(bib, doc)
+        stage = (doc["stage"] || "published").to_s.downcase
+        doctype = extract_doctype(bib) || doc.fetch("doctype", "")
+        formats = doc["formats"] || []
         {
           "slug" => doc["id"],
           "id" => doc_id,
           "title" => doc["title"].to_s,
           "abstract" => extract_abstract(bib),
-          "stage" => (doc["stage"] || "published").to_s.downcase,
-          "doctype" => extract_doctype(bib) || doc.fetch("doctype", ""),
+          "stage" => stage,
+          "doctype" => doctype,
           "edition" => doc["edition"],
           "date" => extract_date(doc),
           "channels" => doc["channels"] || [],
-          "formats" => doc["formats"] || [],
+          "formats" => formats,
           "files" => doc["files"] || [],
+          "has_html" => formats.include?("html"),
+          "has_pdf" => formats.include?("pdf"),
+          "has_xml" => formats.include?("xml"),
+          "stage_css" => stage.gsub(/\s+/, "-"),
+          "doctype_class" => "type-#{doctype.downcase}",
         }
       end
 

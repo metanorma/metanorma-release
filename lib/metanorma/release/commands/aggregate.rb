@@ -77,7 +77,7 @@ module Metanorma
           channels: cli_options[:channels].any? ? cli_options[:channels] : Array(file_data["channels"]),
           stages: cli_options[:stages].any? ? cli_options[:stages] : Array(file_data["stages"]),
           output_dir: cli_options[:output_dir] || file_data["output_dir"],
-          file_routing: cli_options[:file_routing] || file_data["file_routing"],
+          file_routing: cli_options[:file_routing] || file_data["file_routing"] || "by-document",
           cache_dir: cli_options[:cache_dir] || file_data["cache_dir"],
           data_dir: cli_options[:data_dir] || file_data["data_dir"],
           include_drafts: cli_options[:include_drafts] || file_data["include_drafts"],
