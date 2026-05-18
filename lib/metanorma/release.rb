@@ -11,6 +11,7 @@ module Metanorma
     autoload :Index,             "metanorma/release/index"
     autoload :Site,              "metanorma/release/site"
     autoload :Channel,           "metanorma/release/channel"
+    autoload :OrgConfig,         "metanorma/release/org_config"
     autoload :Config,            "metanorma/release/config"
     autoload :ContentHash,       "metanorma/release/content_hash"
 

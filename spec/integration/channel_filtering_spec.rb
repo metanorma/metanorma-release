@@ -40,8 +40,9 @@ RSpec.describe "Channel filtering", type: :integration do
         output_dir: output_dir,
         released_dir: released_dir,
       )
+      filter = Metanorma::Release::Channel.new("public")
       result.publications.each do |doc|
-        expect(doc.channels).to include("public")
+        expect(doc.channels.any? { |c| filter.eql?(Metanorma::Release::Channel.new(c)) || c.start_with?("#{filter.name}/") }).to be true
       end
     ensure
       FileUtils.rm_rf(output_dir)

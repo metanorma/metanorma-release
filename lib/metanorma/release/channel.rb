@@ -23,7 +23,10 @@ module Metanorma
       end
 
       def matches?(filter_channels)
-        filter_channels.any? { |c| eql?(Channel.new(c)) }
+        filter_channels.any? do |c|
+          fc = Channel.new(c)
+          eql?(fc) || @name.start_with?("#{fc.name}/")
+        end
       end
 
       def self.parse(channel_string)

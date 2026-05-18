@@ -18,7 +18,7 @@ module Metanorma
         return true if @all_channels
 
         parsed = manifest_channels.map { |c| Channel.new(c) }
-        parsed.any? { |mc| @channels.any? { |fc| fc.eql?(mc) } }
+        parsed.any? { |mc| mc.matches?(@channels) }
       end
 
       private
@@ -29,7 +29,7 @@ module Metanorma
         release_channels = (release_metadata["channels"] || []).map do |c|
           Channel.new(c)
         end
-        release_channels.any? { |rc| @channels.any? { |fc| fc.eql?(rc) } }
+        release_channels.any? { |rc| rc.matches?(@channels) }
       end
 
       def stage_match?(release_metadata)

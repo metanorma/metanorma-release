@@ -92,6 +92,38 @@ RSpec.describe Metanorma::Release::Config do
       default_config = described_class.defaults
       expect(default_config.resolve_channels(build_pub)).to eq(["public"])
     end
+
+    it "falls back to org routing rules when no repo rules match" do
+      org_config = Metanorma::Release::OrgConfig.from_yaml(<<~YAML)
+        channels:
+          - public/standards
+          - internal/working
+        defaults:
+          routing:
+            rules:
+              - stage: ["60"]
+                channels: [public/standards]
+              - stage: ["20", "30", "40"]
+                channels: [internal/working]
+            default:
+              - public/standards
+      YAML
+      config = described_class.from_yaml("channels:\n  - public\n", org_config: org_config)
+      expect(config.resolve_channels(build_pub(stage: "60"))).to eq(["public/standards"])
+    end
+
+    it "falls back to org default when no rules match at any level" do
+      org_config = Metanorma::Release::OrgConfig.from_yaml(<<~YAML)
+        channels:
+          - public/standards
+        defaults:
+          routing:
+            default:
+              - public/standards
+      YAML
+      config = described_class.from_yaml("channels:\n  - public\n", org_config: org_config)
+      expect(config.resolve_channels(build_pub(stage: "50"))).to eq(["public/standards"])
+    end
   end
 
   describe ".from_file" do
@@ -109,6 +141,11 @@ RSpec.describe Metanorma::Release::Config do
       expect(config.channels).to eq(["public"])
     ensure
       FileUtils.rm_rf(dir)
+    end
+
+    it "exposes org reference" do
+      config = described_class.from_yaml("org: CalConnect/.metanorma\nchannels:\n  - public\n")
+      expect(config.org).to eq("CalConnect/.metanorma")
     end
   end
 end

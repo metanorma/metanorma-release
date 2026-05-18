@@ -5,26 +5,31 @@ require "yaml"
 module Metanorma
   module Release
     class Config
-      def self.from_yaml(yaml_string)
+      def self.from_yaml(yaml_string, org_config: nil)
         data = YAML.safe_load(yaml_string, permitted_classes: [Symbol])
-        new(data || {})
+        new(data || {}, org_config: org_config)
       end
 
-      def self.from_file(path)
+      def self.from_file(path, org_config: nil)
         unless File.exist?(path)
           raise ArgumentError,
                 "Config file not found: #{path}"
         end
 
-        from_yaml(File.read(path))
+        from_yaml(File.read(path), org_config: org_config)
       end
 
-      def self.defaults
-        new({})
+      def self.defaults(org_config: nil)
+        new({}, org_config: org_config)
       end
 
-      def initialize(data)
+      def initialize(data, org_config: nil)
         @data = data
+        @org_config = org_config
+      end
+
+      def org
+        @data["org"]
       end
 
       def channels
@@ -77,6 +82,15 @@ module Metanorma
         rule_channels = resolve_routing_rules(publication)
         return rule_channels if rule_channels
 
+        org_rule_channels = resolve_org_routing_rules(publication)
+        return org_rule_channels if org_rule_channels
+
+        local_default = routing_default
+        return local_default unless local_default == ["public"] && @org_config
+
+        org_default = @org_config&.routing_default
+        return org_default unless org_default.nil? || org_default.empty?
+
         default_channels
       end
 
@@ -92,6 +106,18 @@ module Metanorma
 
       def resolve_routing_rules(publication)
         routing_rules.each do |rule|
+          match = true
+          match &&= Array(rule["stage"]).map(&:to_s).include?(publication.stage.to_s) if rule["stage"]
+          match &&= Array(rule["doctype"]).map(&:to_s).include?(publication.doctype.to_s) if rule["doctype"]
+          return rule["channels"] if match && rule["channels"]
+        end
+        nil
+      end
+
+      def resolve_org_routing_rules(publication)
+        return nil unless @org_config
+
+        @org_config.routing_rules.each do |rule|
           match = true
           match &&= Array(rule["stage"]).map(&:to_s).include?(publication.stage.to_s) if rule["stage"]
           match &&= Array(rule["doctype"]).map(&:to_s).include?(publication.doctype.to_s) if rule["doctype"]

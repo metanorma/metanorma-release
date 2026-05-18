@@ -9,7 +9,7 @@ module Metanorma
         :source, :organizations, :topic, :repos, :repo_pattern, :local_path,
         :channels, :stages, :output_dir, :file_routing, :cache_dir,
         :data_dir, :include_drafts, :concurrency, :min_documents, :token,
-        :create_zip,
+        :create_zip, :org,
         keyword_init: true
       )
 
@@ -18,9 +18,11 @@ module Metanorma
 
       def initialize(config)
         @config = config
+        @org_config = nil
       end
 
       def call
+        load_org_config
         result = run_aggregation
         return result unless result.publications.any?
 
@@ -54,6 +56,7 @@ module Metanorma
           min_documents: merged[:min_documents],
           token: merged[:token],
           create_zip: merged[:create_zip],
+          org: merged[:org],
         )
       end
 
@@ -82,6 +85,7 @@ module Metanorma
           min_documents: cli_options[:min_documents] || file_data["min_documents"],
           token: cli_options[:token],
           create_zip: cli_options[:create_zip],
+          org: file_data["org"],
         }
       end
 
@@ -162,6 +166,27 @@ module Metanorma
         end
       rescue LoadError
         warn "  (relaton gem not available — bibliography skipped)"
+      end
+
+      def load_org_config
+        return unless @config.org
+
+        ref = OrgConfig.parse_ref(@config.org)
+        local_path = OrgConfig.remote_path(ref)
+        @org_config = File.exist?(local_path) ? OrgConfig.from_file(local_path) : fetch_org_config_from_github(ref)
+      end
+
+      def fetch_org_config_from_github(ref)
+        require "octokit"
+        token = @config.token || ENV.fetch("GITHUB_TOKEN", nil)
+        client = token ? Octokit::Client.new(access_token: token) : Octokit::Client.new
+        remote = OrgConfig.remote_path(ref)
+        contents = client.contents("#{ref.owner}/#{ref.repo}", path: remote)
+        decoded = Base64.decode64(contents[:content])
+        OrgConfig.from_yaml(decoded)
+      rescue StandardError => e
+        warn "  (org config not loaded from #{ref.owner}/#{ref.repo}: #{e.message})"
+        OrgConfig.defaults
       end
     end
   end
