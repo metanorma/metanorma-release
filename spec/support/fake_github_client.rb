@@ -16,7 +16,7 @@ module Metanorma
         @releases
       end
 
-      def paginate(_method, _repo, **)
+      def paginate(_url, **)
         @releases
       end
 

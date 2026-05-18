@@ -27,7 +27,7 @@ module Metanorma
           private
 
           def paginate_releases(repo_slug)
-            @client.paginate(:releases, repo_slug, per_page: 100)
+            @client.paginate("repos/#{repo_slug}/releases", per_page: 100)
           rescue StandardError => e
             warn "Warning: Failed to fetch releases for #{repo_slug}: #{e.message}"
             []
