@@ -2,6 +2,6 @@
 
 module Metanorma
   module Release
-    VERSION = "0.2.14"
+    VERSION = "0.2.15"
   end
 end
