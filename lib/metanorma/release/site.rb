@@ -132,10 +132,25 @@ module Metanorma
       end
 
       def extract_date(doc)
+        bib_date = extract_bib_date(doc["bibliographic"])
+        return bib_date if bib_date
+
         release_date = doc.dig("source", "releaseDate")
         return nil unless release_date
 
         release_date.to_s.split(/[T ]/).first
+      end
+
+      def extract_bib_date(bib)
+        return nil unless bib
+
+        dates = bib["date"]
+        return nil if dates.nil? || dates.empty?
+
+        published = dates.find { |d| d["type"] == "published" }
+        entry = published || dates.first
+        at = entry["at"]
+        at ? at.to_s.split(/[T ]/).first : nil
       end
     end
   end
