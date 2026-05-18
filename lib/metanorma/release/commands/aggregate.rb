@@ -8,7 +8,8 @@ module Metanorma
       Config = Struct.new(
         :source, :organizations, :topic, :repos, :repo_pattern, :local_path,
         :channels, :stages, :output_dir, :file_routing, :cache_dir,
-        :include_drafts, :concurrency, :min_documents, :token, :create_zip,
+        :data_dir, :include_drafts, :concurrency, :min_documents, :token,
+        :create_zip,
         keyword_init: true
       )
 
@@ -24,7 +25,8 @@ module Metanorma
         return result unless result.publications.any?
 
         index = build_index(result)
-        site = Site.new(index: index, output_dir: @config.output_dir)
+        site = Site.new(index: index, output_dir: @config.output_dir,
+                        data_dir: @config.data_dir)
         site.write!
         site.enrich!
         site.package! if @config.create_zip
@@ -46,6 +48,7 @@ module Metanorma
           output_dir: merged[:output_dir],
           file_routing: merged[:file_routing],
           cache_dir: merged[:cache_dir] || DEFAULT_CACHE_DIR,
+          data_dir: merged[:data_dir],
           include_drafts: merged[:include_drafts],
           concurrency: merged[:concurrency],
           min_documents: merged[:min_documents],
@@ -73,6 +76,7 @@ module Metanorma
           output_dir: cli_options[:output_dir] || file_data["output_dir"],
           file_routing: cli_options[:file_routing] || file_data["file_routing"],
           cache_dir: cli_options[:cache_dir] || file_data["cache_dir"],
+          data_dir: cli_options[:data_dir] || file_data["data_dir"],
           include_drafts: cli_options[:include_drafts] || file_data["include_drafts"],
           concurrency: cli_options[:concurrency] || file_data["concurrency"],
           min_documents: cli_options[:min_documents] || file_data["min_documents"],

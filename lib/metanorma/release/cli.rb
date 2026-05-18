@@ -82,6 +82,7 @@ module Metanorma
       option :file_routing, type: :string, default: "by-document",
                             desc: "File routing (by-document|flat|by-format)"
       option :cache_dir, type: :string, desc: "Cache directory"
+      option :data_dir, type: :string, desc: "Write flattened documents.json for site generators"
       option :include_drafts, type: :boolean, default: false,
                               desc: "Include draft releases"
       option :concurrency, type: :numeric, default: 4
@@ -101,6 +102,7 @@ module Metanorma
           output_dir: options[:output_dir],
           file_routing: options[:file_routing],
           cache_dir: options[:cache_dir],
+          data_dir: options[:data_dir],
           include_drafts: options[:include_drafts],
           concurrency: options[:concurrency],
           min_documents: options[:min_documents],
