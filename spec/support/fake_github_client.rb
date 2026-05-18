@@ -16,6 +16,10 @@ module Metanorma
         @releases
       end
 
+      def paginate(_method, _repo, **)
+        @releases
+      end
+
       def create_release(_repo, tag_name, name: nil, body: nil,
 prerelease: false)
         result = {

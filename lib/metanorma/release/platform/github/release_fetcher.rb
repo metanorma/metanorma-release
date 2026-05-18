@@ -18,13 +18,20 @@ module Metanorma
           end
 
           def fetch(repo, etag: nil)
-            releases = @client.releases(repo.to_s)
+            releases = paginate_releases(repo.to_s)
             parsed = releases.map { |r| parse_release(r) }
             FetchResult.new(releases: parsed, etag: "etag-#{repo}",
                             unchanged?: false)
           end
 
           private
+
+          def paginate_releases(repo_slug)
+            @client.paginate(:releases, repo_slug, per_page: 100)
+          rescue StandardError => e
+            warn "Warning: Failed to fetch releases for #{repo_slug}: #{e.message}"
+            []
+          end
 
           def parse_release(r)
             assets = (r[:assets] || []).map do |a|
