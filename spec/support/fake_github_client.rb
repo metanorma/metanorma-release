@@ -16,8 +16,10 @@ module Metanorma
         @releases
       end
 
-      def paginate(_url, **)
-        @releases
+      def get(url, **)
+        return @releases if url.include?("/releases")
+
+        []
       end
 
       def create_release(_repo, tag_name, name: nil, body: nil,
