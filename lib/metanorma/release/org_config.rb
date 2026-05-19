@@ -66,6 +66,20 @@ module Metanorma
         end
       end
 
+      def display_categories
+        @data.fetch("display_categories", [])
+      end
+
+      def display_category_for(doctype)
+        return nil if doctype.nil? || doctype.empty?
+
+        display_categories.each do |cat|
+          doctypes = cat["doctypes"] || []
+          return { "name" => cat["name"], "slug" => cat["slug"] } if doctypes.include?(doctype)
+        end
+        nil
+      end
+
       private
 
       def dig_defaults_routing(key)

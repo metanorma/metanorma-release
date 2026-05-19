@@ -9,10 +9,11 @@ module Metanorma
     class Site
       attr_reader :index, :output_dir
 
-      def initialize(index:, output_dir:, data_dir: nil)
+      def initialize(index:, output_dir:, data_dir: nil, org_config: nil)
         @index = index
         @output_dir = output_dir
         @data_dir = data_dir
+        @org_config = org_config
       end
 
       def write!
@@ -84,28 +85,38 @@ module Metanorma
 
       def flatten_for_site(doc)
         bib = doc["bibliographic"] || {}
-        doc_id = resolve_doc_id(bib, doc)
-        stage = (doc["stage"] || "published").to_s.downcase
         doctype = extract_doctype(bib) || doc.fetch("doctype", "")
         formats = doc["formats"] || []
-        {
+        base = {
           "slug" => doc["id"],
-          "id" => doc_id,
+          "id" => resolve_doc_id(bib, doc),
           "title" => doc["title"].to_s,
           "abstract" => extract_abstract(bib),
-          "stage" => stage,
+          "stage" => (doc["stage"] || "published").to_s.downcase,
           "doctype" => doctype,
           "edition" => doc["edition"],
           "date" => extract_date(doc),
           "channels" => doc["channels"] || [],
           "formats" => formats,
           "files" => doc["files"] || [],
-          "has_html" => formats.include?("html"),
-          "has_pdf" => formats.include?("pdf"),
-          "has_xml" => formats.include?("xml"),
-          "stage_css" => stage.gsub(/\s+/, "-"),
-          "doctype_class" => "type-#{doctype.downcase}",
         }
+        add_format_flags(base, formats)
+        add_display_category(base, doctype)
+        base
+      end
+
+      def add_format_flags(hash, formats)
+        hash["has_html"] = formats.include?("html")
+        hash["has_pdf"] = formats.include?("pdf")
+        hash["has_xml"] = formats.include?("xml")
+      end
+
+      def add_display_category(hash, doctype)
+        cat = resolve_display_category(doctype)
+        hash["stage_css"] = hash["stage"].gsub(/\s+/, "-")
+        hash["doctype_class"] = "type-#{doctype.downcase}"
+        hash["display_category"] = cat&.fetch("name", nil)
+        hash["display_category_slug"] = cat&.fetch("slug", nil)
       end
 
       def resolve_doc_id(bib, doc)
@@ -151,6 +162,12 @@ module Metanorma
         entry = published || dates.first
         at = entry["at"]
         at ? at.to_s.split(/[T ]/).first : nil
+      end
+
+      def resolve_display_category(doctype)
+        return nil unless @org_config
+
+        @org_config.display_category_for(doctype)
       end
     end
   end

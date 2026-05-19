@@ -9,7 +9,12 @@ RSpec.describe Metanorma::Release::Site do
     Metanorma::Release::Publication.new(
       identifier: "CC 18011", slug: "cc-18011", title: "Test Doc",
       edition: "1", stage: "60", doctype: "standard", revdate: "2024-01-01",
-      files: [], channels: ["public"], source: nil
+      files: [
+        Metanorma::Release::PublicationFile.new(
+          name: "cc-18011.html", format: "html", path: "cc-18011.html"
+        ),
+      ],
+      channels: ["public"], source: nil
     )
   end
 
@@ -72,6 +77,53 @@ RSpec.describe Metanorma::Release::Site do
         result = site.package!(zip_path: custom_path)
         expect(result).to eq(custom_path)
         expect(File.exist?(custom_path)).to be true
+      end
+    end
+  end
+
+  describe "display categories" do
+    let(:org_config) do
+      Metanorma::Release::OrgConfig.from_yaml(<<~YAML)
+        display_categories:
+          - name: Standards, Specifications & Reports
+            slug: standards
+            doctypes:
+              - standard
+              - specification
+              - report
+          - name: Guides & Advisories
+            slug: guides-advisories
+            doctypes:
+              - guide
+      YAML
+    end
+
+    it "includes display_category in flattened output when org_config provided" do
+      Dir.mktmpdir do |dir|
+        site = described_class.new(index: index, output_dir: dir,
+                                   data_dir: File.join(dir, "data"),
+                                   org_config: org_config)
+        site.write!
+        site.enrich!
+        data = JSON.parse(File.read(File.join(dir, "data", "documents.json")))
+        doc = data["items"].first
+        expect(doc["display_category"]).to eq("Standards, Specifications & Reports")
+        expect(doc["display_category_slug"]).to eq("standards")
+        expect(doc["has_html"]).to eq(true)
+        expect(doc["has_pdf"]).to eq(false)
+      end
+    end
+
+    it "omits display_category when no org_config" do
+      Dir.mktmpdir do |dir|
+        site = described_class.new(index: index, output_dir: dir,
+                                   data_dir: File.join(dir, "data"))
+        site.write!
+        site.enrich!
+        data = JSON.parse(File.read(File.join(dir, "data", "documents.json")))
+        doc = data["items"].first
+        expect(doc["display_category"]).to be_nil
+        expect(doc["display_category_slug"]).to be_nil
       end
     end
   end

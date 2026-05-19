@@ -29,7 +29,7 @@ module Metanorma
 
         index = build_index(result)
         site = Site.new(index: index, output_dir: @config.output_dir,
-                        data_dir: @config.data_dir)
+                        data_dir: @config.data_dir, org_config: @org_config)
         site.write!
         site.enrich!
         site.package! if @config.create_zip
