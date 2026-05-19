@@ -92,7 +92,7 @@ RSpec.describe Metanorma::Release::Site do
               - specification
               - report
           - name: Guides & Advisories
-            slug: guides-advisories
+            slug: guides
             doctypes:
               - guide
       YAML
@@ -109,8 +109,8 @@ RSpec.describe Metanorma::Release::Site do
         doc = data["items"].first
         expect(doc["display_category"]).to eq("Standards, Specifications & Reports")
         expect(doc["display_category_slug"]).to eq("standards")
-        expect(doc["has_html"]).to eq(true)
-        expect(doc["has_pdf"]).to eq(false)
+        expect(doc["has_html"]).to be(true)
+        expect(doc["has_pdf"]).to be(false)
       end
     end
 

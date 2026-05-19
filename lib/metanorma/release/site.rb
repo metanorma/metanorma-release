@@ -102,6 +102,7 @@ module Metanorma
         }
         add_format_flags(base, formats)
         add_display_category(base, doctype)
+        add_contributors(base, bib)
         base
       end
 
@@ -168,6 +169,63 @@ module Metanorma
         return nil unless @org_config
 
         @org_config.display_category_for(doctype)
+      end
+
+      def add_contributors(hash, bib)
+        contribs = bib["contributor"] || []
+        persons, committees = partition_contributors(contribs)
+        hash["authors"] = persons
+        hash["committee"] = committees.first
+      end
+
+      def partition_contributors(contribs)
+        persons = contribs.filter_map { |c| parse_person(c) }
+        committees = contribs.filter_map { |c| parse_committee(c) }
+        [persons, committees]
+      end
+
+      def parse_person(contrib)
+        return nil unless contrib["person"]
+
+        name = extract_person_name(contrib["person"])
+        return nil unless name
+
+        role = (contrib["role"] || []).first&.fetch("type", nil)
+        { "name" => name, "role" => role }
+      end
+
+      def parse_committee(contrib)
+        return nil unless contrib["organization"]
+
+        extract_org_subdivision(contrib["organization"])
+      end
+
+      def extract_person_name(person)
+        n = person["name"] || {}
+        complete = n["completename"]
+        return complete["content"] if complete.is_a?(Hash) && complete["content"]
+        return complete if complete.is_a?(String)
+
+        surname = n["surname"]
+        given = n["given"]
+        given_str = given.is_a?(Hash) ? given["content"].to_s : given.to_s
+        parts = [given_str, surname].compact
+        parts.empty? ? nil : parts.join(" ")
+      end
+
+      def extract_org_subdivision(org)
+        subs = org["subdivision"]
+        return nil unless subs&.any?
+
+        sd = subs.first
+        sd_name = sd["name"]
+        if sd_name.is_a?(Array)
+          sd_name.first&.dig("content")
+        elsif sd_name.is_a?(Hash)
+          sd_name["content"]
+        else
+          sd_name.to_s
+        end
       end
     end
   end
