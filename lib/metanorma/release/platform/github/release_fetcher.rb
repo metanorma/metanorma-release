@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "digest"
+
 module Metanorma
   module Release
     module Platform
@@ -13,8 +15,9 @@ module Metanorma
         class ReleaseFetcher
           include Metanorma::Release::ReleaseFetcher
 
-          def initialize(client:)
+          def initialize(client:, download_cache_dir: nil)
             @client = client
+            @download_cache_dir = download_cache_dir
           end
 
           def fetch(repo, etag: nil)
@@ -67,10 +70,27 @@ module Metanorma
           end
 
           def download_asset(url)
-            @client.get(url, accept: "application/octet-stream")
+            cache_path = cache_file_path(url)
+            if cache_path && File.exist?(cache_path)
+              return File.binread(cache_path)
+            end
+
+            data = @client.get(url, accept: "application/octet-stream")
+            if cache_path && data
+              FileUtils.mkdir_p(File.dirname(cache_path))
+              File.binwrite(cache_path, data)
+            end
+            data
           rescue StandardError => e
             warn "Warning: Failed to download asset #{url}: #{e.message}"
             nil
+          end
+
+          def cache_file_path(url)
+            return nil unless @download_cache_dir
+
+            hash = Digest::SHA256.hexdigest(url)
+            File.join(@download_cache_dir, hash)
           end
         end
       end

@@ -99,6 +99,7 @@ module Metanorma
           topic: @config.topic,
           repos: @config.repos,
           token: @config.token,
+          cache_dir: @config.cache_dir,
         )
 
         metadata_filter = MetadataFilter.new(

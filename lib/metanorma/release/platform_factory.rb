@@ -31,9 +31,12 @@ module Metanorma
                          )
                        end
 
+          download_cache = opts[:cache_dir] ? File.join(opts[:cache_dir], "downloads") : nil
+
           {
             discoverer: discoverer,
-            fetcher: Platform::GitHub::ReleaseFetcher.new(client: client),
+            fetcher: Platform::GitHub::ReleaseFetcher.new(client: client,
+                                                          download_cache_dir: download_cache),
             manifest_reader: Platform::GitHub::ManifestReader.new(client: client),
           }
         },
