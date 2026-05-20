@@ -304,8 +304,8 @@ module Metanorma
           date = bib.date&.find { |d| d.type == "published" } || bib.date&.first
           return nil unless date
 
-          on = date.on
-          on.respond_to?(:content) ? on.content.to_s : on.to_s
+          val = date.at
+          val ? val.to_s : nil
         rescue StandardError
           nil
         end

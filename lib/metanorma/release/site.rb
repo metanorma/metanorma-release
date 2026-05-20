@@ -99,6 +99,7 @@ module Metanorma
           "channels" => doc["channels"] || [],
           "formats" => formats,
           "files" => doc["files"] || [],
+          "bibliographic" => bib,
         }
         add_format_flags(base, formats)
         add_display_category(base, doctype)
@@ -110,6 +111,7 @@ module Metanorma
         hash["has_html"] = formats.include?("html")
         hash["has_pdf"] = formats.include?("pdf")
         hash["has_xml"] = formats.include?("xml")
+        hash["has_rxl"] = formats.include?("rxl")
       end
 
       def add_display_category(hash, doctype)

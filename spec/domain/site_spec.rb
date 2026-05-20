@@ -98,7 +98,7 @@ RSpec.describe Metanorma::Release::Site do
       YAML
     end
 
-    it "includes display_category in flattened output when org_config provided" do
+    it "includes display_category and full bibliographic data in flattened output" do
       Dir.mktmpdir do |dir|
         site = described_class.new(index: index, output_dir: dir,
                                    data_dir: File.join(dir, "data"),
@@ -111,6 +111,7 @@ RSpec.describe Metanorma::Release::Site do
         expect(doc["display_category_slug"]).to eq("standards")
         expect(doc["has_html"]).to be(true)
         expect(doc["has_pdf"]).to be(false)
+        expect(doc["bibliographic"]).to be_a(Hash)
       end
     end
 
