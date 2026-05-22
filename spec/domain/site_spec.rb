@@ -82,27 +82,26 @@ RSpec.describe Metanorma::Release::Site do
   end
 
   describe "display categories" do
-    let(:org_config) do
-      Metanorma::Release::OrgConfig.from_yaml(<<~YAML)
-        display_categories:
-          - name: Standards, Specifications & Reports
-            slug: standards
-            doctypes:
-              - standard
-              - specification
-              - report
-          - name: Guides & Advisories
-            slug: guides
-            doctypes:
-              - guide
-      YAML
+    let(:display_categories) do
+      [
+        {
+          "name" => "Standards, Specifications & Reports",
+          "slug" => "standards",
+          "doctypes" => %w[standard specification report],
+        },
+        {
+          "name" => "Guides & Advisories",
+          "slug" => "guides",
+          "doctypes" => %w[guide],
+        },
+      ]
     end
 
-    it "includes display_category and full bibliographic data in flattened output" do
+    it "includes display_category in flattened output" do
       Dir.mktmpdir do |dir|
         site = described_class.new(index: index, output_dir: dir,
                                    data_dir: File.join(dir, "data"),
-                                   org_config: org_config)
+                                   display_categories: display_categories)
         site.write!
         site.enrich!
         data = JSON.parse(File.read(File.join(dir, "data", "documents.json")))
@@ -115,7 +114,7 @@ RSpec.describe Metanorma::Release::Site do
       end
     end
 
-    it "omits display_category when no org_config" do
+    it "omits display_category when no display_categories provided" do
       Dir.mktmpdir do |dir|
         site = described_class.new(index: index, output_dir: dir,
                                    data_dir: File.join(dir, "data"))

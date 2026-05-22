@@ -75,8 +75,6 @@ module Metanorma
       option :repos, type: :array, desc: "Explicit repo list"
       option :channels, type: :array, default: [],
                         desc: "Filter channels"
-      option :stages, type: :array, default: [],
-                      desc: "Filter stages"
       option :output_dir, type: :string, default: "_site/cc",
                           desc: "Output directory"
       option :file_routing, type: :string,
@@ -98,7 +96,6 @@ module Metanorma
           topic: options[:topic],
           repos: options[:repos],
           channels: options[:channels],
-          stages: options[:stages],
           output_dir: options[:output_dir],
           file_routing: options[:file_routing],
           cache_dir: options[:cache_dir],

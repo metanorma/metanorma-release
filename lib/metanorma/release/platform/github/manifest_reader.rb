@@ -21,7 +21,9 @@ module Metanorma
             parsed = YAML.safe_load(yaml, permitted_classes: [Symbol])
             return nil unless parsed.is_a?(Hash)
 
-            (parsed["channels"] || []).map(&:to_s)
+            channels = Array(parsed["channels"])
+            Array(parsed["documents"]).each { |doc| channels.concat(Array(doc["channels"])) }
+            channels.map(&:to_s).uniq
           rescue StandardError
             nil
           end

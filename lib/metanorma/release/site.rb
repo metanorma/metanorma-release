@@ -9,11 +9,11 @@ module Metanorma
     class Site
       attr_reader :index, :output_dir
 
-      def initialize(index:, output_dir:, data_dir: nil, org_config: nil)
+      def initialize(index:, output_dir:, data_dir: nil, display_categories: [])
         @index = index
         @output_dir = output_dir
         @data_dir = data_dir
-        @org_config = org_config
+        @display_categories = display_categories || []
       end
 
       def write!
@@ -168,9 +168,13 @@ module Metanorma
       end
 
       def resolve_display_category(doctype)
-        return nil unless @org_config
+        return nil if doctype.nil? || doctype.empty?
 
-        @org_config.display_category_for(doctype)
+        @display_categories.each do |cat|
+          doctypes = cat["doctypes"] || []
+          return { "name" => cat["name"], "slug" => cat["slug"] } if doctypes.include?(doctype)
+        end
+        nil
       end
 
       def add_contributors(hash, bib)

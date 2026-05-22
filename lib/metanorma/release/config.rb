@@ -5,27 +5,26 @@ require "yaml"
 module Metanorma
   module Release
     class Config
-      def self.from_yaml(yaml_string, org_config: nil)
+      def self.from_yaml(yaml_string)
         data = YAML.safe_load(yaml_string, permitted_classes: [Symbol])
-        new(data || {}, org_config: org_config)
+        new(data || {})
       end
 
-      def self.from_file(path, org_config: nil)
+      def self.from_file(path)
         unless File.exist?(path)
           raise ArgumentError,
                 "Config file not found: #{path}"
         end
 
-        from_yaml(File.read(path), org_config: org_config)
+        from_yaml(File.read(path))
       end
 
-      def self.defaults(org_config: nil)
-        new({}, org_config: org_config)
+      def self.defaults
+        new({})
       end
 
-      def initialize(data, org_config: nil)
+      def initialize(data)
         @data = data
-        @org_config = org_config
       end
 
       def org
@@ -34,18 +33,6 @@ module Metanorma
 
       def channels
         @data.fetch("channels", [])
-      end
-
-      def routing
-        @data.fetch("routing", {})
-      end
-
-      def routing_default
-        routing.fetch("default", ["public"])
-      end
-
-      def routing_rules
-        routing.fetch("rules", [])
       end
 
       def slug_config
@@ -64,66 +51,60 @@ module Metanorma
         @data.fetch("documents", [])
       end
 
-      def defaults
-        @data.fetch("defaults", {})
-      end
-
-      def default_channels
-        list = defaults.fetch("channels", nil)
-        return ["public"] unless list
-
-        list
+      def document_entries
+        @document_entries ||= documents.map { |d| DocumentEntry.new(d) }
       end
 
       def resolve_channels(publication)
-        manifest_channels = resolve_manifest_channels(publication)
-        return manifest_channels if manifest_channels
+        ChannelResolver.resolve(publication, self)
+      end
+    end
 
-        rule_channels = resolve_routing_rules(publication)
-        return rule_channels if rule_channels
-
-        org_rule_channels = resolve_org_routing_rules(publication)
-        return org_rule_channels if org_rule_channels
-
-        local_default = routing_default
-        return local_default unless local_default == ["public"] && @org_config
-
-        org_default = @org_config&.routing_default
-        return org_default unless org_default.nil? || org_default.empty?
-
-        default_channels
+    # Single routing entry — matches by any combination of pattern, source,
+    # stage, and doctype. An entry with no criteria matches everything (catch-all).
+    DocumentEntry = Struct.new(:pattern, :source, :stages, :doctypes, :channels, keyword_init: true) do
+      def initialize(data)
+        super(
+          pattern: data["pattern"],
+          source: data["source"],
+          stages: Array(data["stage"]).map(&:to_s),
+          doctypes: Array(data["doctype"]).map(&:to_s),
+          channels: Array(data["channels"]).map(&:to_s),
+        )
       end
 
-      private
+      def matches?(publication)
+        return false if channels.empty?
 
-      def resolve_manifest_channels(publication)
-        documents.each do |entry|
-          next unless entry["source"] && publication.source_path&.end_with?(entry["source"])
-          return entry["channels"] if entry["channels"]
+        if pattern && !File.fnmatch?(pattern, publication.slug)
+          return false
         end
-        nil
+
+        if source && !(publication.source_path&.end_with?(source) || false)
+          return false
+        end
+
+        if !stages.empty? && !stages.include?(publication.stage.to_s)
+          return false
+        end
+
+        if !doctypes.empty? && !doctypes.include?(publication.doctype.to_s)
+          return false
+        end
+
+        true
       end
+    end
 
-      def resolve_routing_rules(publication)
-        routing_rules.each do |rule|
-          match = true
-          match &&= Array(rule["stage"]).map(&:to_s).include?(publication.stage.to_s) if rule["stage"]
-          match &&= Array(rule["doctype"]).map(&:to_s).include?(publication.doctype.to_s) if rule["doctype"]
-          return rule["channels"] if match && rule["channels"]
+    # Iterates document entries: first match wins. Falls back to ["public"].
+    class ChannelResolver
+      FALLBACK = ["public"].freeze
+
+      def self.resolve(publication, config)
+        config.document_entries.each do |entry|
+          return entry.channels if entry.matches?(publication)
         end
-        nil
-      end
-
-      def resolve_org_routing_rules(publication)
-        return nil unless @org_config
-
-        @org_config.routing_rules.each do |rule|
-          match = true
-          match &&= Array(rule["stage"]).map(&:to_s).include?(publication.stage.to_s) if rule["stage"]
-          match &&= Array(rule["doctype"]).map(&:to_s).include?(publication.doctype.to_s) if rule["doctype"]
-          return rule["channels"] if match && rule["channels"]
-        end
-        nil
+        FALLBACK
       end
     end
   end
