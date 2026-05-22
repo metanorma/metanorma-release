@@ -10,4 +10,4 @@ aggregator config.
 - Update CHANGELOG if present
 
 ## Status
-- [ ] Bump version
+- [x] Bumped to 0.2.21

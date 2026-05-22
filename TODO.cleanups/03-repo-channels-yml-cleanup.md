@@ -15,6 +15,6 @@ Script-based cleanup via GitHub API:
 Found via: `find /Users/mulgogi/src/calconnect -maxdepth 3 -name "channels.yml"`
 
 ## Status
-- [ ] Script written
-- [ ] Tested on one repo
-- [ ] Run on all repos
+- [x] Script written — `03-cleanup-repos.sh`
+- [x] Dry run verified — 54 repos found
+- [x] Run on all repos — 53 branches pushed, 53 PRs created, all 53 rebase-merged

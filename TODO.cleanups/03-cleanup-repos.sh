@@ -4,7 +4,7 @@
 #
 # This removes dead config files — the gem never reads per-repo channels.yml.
 
-set -euo pipefail
+set -uo pipefail
 
 DRY_RUN=false
 [[ "${1:-}" == "--dry-run" ]] && DRY_RUN=true
@@ -28,11 +28,11 @@ for channels_file in $(find /Users/mulgogi/src/calconnect -maxdepth 3 -name "cha
   # Skip the org config repo
   if [[ "$repo_name" == "dot-metanorma" ]]; then
     echo "SKIP: $repo_name (org config repo — handle separately)"
-    ((skipped++))
+    skipped=$((skipped + 1))
     continue
   fi
 
-  ((count++))
+  count=$((count + 1))
 
   if $DRY_RUN; then
     echo "DRY: $repo_name — would remove $channels_file"
@@ -72,8 +72,7 @@ for channels_file in $(find /Users/mulgogi/src/calconnect -maxdepth 3 -name "cha
     --body "$COMMIT_MSG" \
     --base main \
     --head "$BRANCH" \
-    --label "maintenance" \
-    2>/dev/null || true
+    2>/dev/null || echo "WARN: $repo_name — PR creation failed (may already exist)"
 
   git checkout main -q 2>/dev/null
 
