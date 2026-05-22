@@ -17,26 +17,9 @@ RSpec.describe Metanorma::Release::MetadataFilter do
       expect(filter.matches?({ "channels" => ["public"] })).to be false
     end
 
-    it "matches exact stage" do
-      filter = described_class.new(stages: ["60"])
-      expect(filter.matches?({ "channels" => ["public"],
-                               "stage" => "60" })).to be true
-    end
-
-    it "does not match different stage" do
-      filter = described_class.new(stages: ["60"])
-      expect(filter.matches?({ "channels" => ["public"],
-                               "stage" => "30" })).to be false
-    end
-
-    it "requires both channel and stage to match when both filters set" do
-      filter = described_class.new(channels: ["public"], stages: ["60"])
-      expect(filter.matches?({ "channels" => ["public"],
-                               "stage" => "60" })).to be true
-      expect(filter.matches?({ "channels" => ["public"],
-                               "stage" => "30" })).to be false
-      expect(filter.matches?({ "channels" => ["members"],
-                               "stage" => "60" })).to be false
+    it "matches by channel prefix" do
+      filter = described_class.new(channels: ["public"])
+      expect(filter.matches?({ "channels" => ["public/standards"] })).to be true
     end
   end
 

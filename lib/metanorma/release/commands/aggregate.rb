@@ -8,9 +8,9 @@ module Metanorma
     class AggregateCommand
       Config = Struct.new(
         :source, :organizations, :topic, :repos, :repo_pattern, :local_path,
-        :channels, :stages, :output_dir, :file_routing, :cache_dir,
+        :channels, :output_dir, :file_routing, :cache_dir,
         :data_dir, :include_drafts, :concurrency, :min_documents, :token,
-        :create_zip, :org,
+        :create_zip, :display_categories,
         keyword_init: true
       )
 
@@ -19,17 +19,16 @@ module Metanorma
 
       def initialize(config)
         @config = config
-        @org_config = nil
       end
 
       def call
-        load_org_config
         result = run_aggregation
         return result unless result.publications.any?
 
         index = build_index(result)
         site = Site.new(index: index, output_dir: @config.output_dir,
-                        data_dir: @config.data_dir, org_config: @org_config)
+                        data_dir: @config.data_dir,
+                        display_categories: @config.display_categories)
         site.write!
         site.enrich!
         site.package! if @config.create_zip
@@ -47,7 +46,6 @@ module Metanorma
           topic: merged[:topic],
           repos: merged[:repos],
           channels: merged[:channels],
-          stages: merged[:stages],
           output_dir: merged[:output_dir],
           file_routing: merged[:file_routing],
           cache_dir: merged[:cache_dir] || DEFAULT_CACHE_DIR,
@@ -57,7 +55,7 @@ module Metanorma
           min_documents: merged[:min_documents],
           token: merged[:token],
           create_zip: merged[:create_zip],
-          org: merged[:org],
+          display_categories: merged[:display_categories],
         )
       end
 
@@ -76,7 +74,6 @@ module Metanorma
           topic: cli_options[:topic] || gh["topic"],
           repos: cli_options[:repos] || file_data["repos"],
           channels: cli_options[:channels].any? ? cli_options[:channels] : Array(file_data["channels"]),
-          stages: cli_options[:stages].any? ? cli_options[:stages] : Array(file_data["stages"]),
           output_dir: cli_options[:output_dir] || file_data["output_dir"],
           file_routing: cli_options[:file_routing] || file_data["file_routing"] || "by-document",
           cache_dir: cli_options[:cache_dir] || file_data["cache_dir"],
@@ -86,7 +83,7 @@ module Metanorma
           min_documents: cli_options[:min_documents] || file_data["min_documents"],
           token: cli_options[:token],
           create_zip: cli_options[:create_zip],
-          org: file_data["org"],
+          display_categories: file_data["display_categories"] || [],
         }
       end
 
@@ -104,7 +101,6 @@ module Metanorma
 
         metadata_filter = MetadataFilter.new(
           channels: Channel.parse_list(@config.channels),
-          stages: @config.stages || [],
         )
         routing = FileRoutingFactory.from_name(@config.file_routing)
         asset_processor = AssetProcessor.new(
@@ -168,27 +164,6 @@ module Metanorma
         end
       rescue LoadError
         warn "  (relaton gem not available — bibliography skipped)"
-      end
-
-      def load_org_config
-        return unless @config.org
-
-        ref = OrgConfig.parse_ref(@config.org)
-        local_path = OrgConfig.remote_path(ref)
-        @org_config = File.exist?(local_path) ? OrgConfig.from_file(local_path) : fetch_org_config_from_github(ref)
-      end
-
-      def fetch_org_config_from_github(ref)
-        require "octokit"
-        token = @config.token || ENV.fetch("GITHUB_TOKEN", nil)
-        client = token ? Octokit::Client.new(access_token: token) : Octokit::Client.new
-        remote = OrgConfig.remote_path(ref)
-        contents = client.contents("#{ref.owner}/#{ref.repo}", path: remote)
-        decoded = Base64.decode64(contents[:content])
-        OrgConfig.from_yaml(decoded)
-      rescue StandardError => e
-        warn "  (org config not loaded from #{ref.owner}/#{ref.repo}: #{e.message})"
-        OrgConfig.defaults
       end
     end
   end

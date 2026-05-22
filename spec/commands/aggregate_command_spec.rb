@@ -10,10 +10,10 @@ RSpec.describe Metanorma::Release::AggregateCommand do
     begin
       config = described_class::Config.new(
         source: "local:#{source_dir}", organizations: [], topic: "test",
-        repos: nil, channels: [], stages: [], output_dir: output_dir,
+        repos: nil, channels: [], output_dir: output_dir,
         file_routing: "by-document", cache_dir: nil,
         include_drafts: false, concurrency: 4, min_documents: 0,
-        token: nil, create_zip: nil
+        token: nil, create_zip: nil, display_categories: []
       )
       result = described_class.new(config).call
 
@@ -31,10 +31,10 @@ RSpec.describe Metanorma::Release::AggregateCommand do
     begin
       config = described_class::Config.new(
         source: "local:#{source_dir}", organizations: [], topic: "test",
-        repos: nil, channels: [], stages: [], output_dir: output_dir,
+        repos: nil, channels: [], output_dir: output_dir,
         file_routing: "by-document", cache_dir: nil,
         include_drafts: false, concurrency: 4, min_documents: 0,
-        token: nil, create_zip: nil
+        token: nil, create_zip: nil, display_categories: []
       )
 
       expect { described_class.new(config).call }.not_to raise_error
