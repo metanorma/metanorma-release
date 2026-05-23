@@ -84,7 +84,7 @@ module Metanorma
 
       private
 
-      def process_repo(repo, _output_dir, config)
+      def process_repo(repo, output_dir, config)
         repo_key = repo.to_s
 
         manifest_channels = @deps.manifest_reader.read(repo)
@@ -120,9 +120,11 @@ module Metanorma
 
           if @deps.delta_state.processed?(repo_key, tag, content_hash)
             files = @deps.delta_state.release_files(repo_key, tag)
-            publications << build_publication(metadata, files, content_hash,
-                                              release, repo)
-            next
+            if files.all? { |f| File.exist?(File.join(output_dir, f)) }
+              publications << build_publication(metadata, files, content_hash,
+                                                release, repo)
+              next
+            end
           end
 
           zip_asset = find_zip_asset(release)
