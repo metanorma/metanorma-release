@@ -112,6 +112,16 @@ module Metanorma
         hash["has_pdf"] = formats.include?("pdf")
         hash["has_xml"] = formats.include?("xml")
         hash["has_rxl"] = formats.include?("rxl")
+
+        files = hash["files"]
+        html_file = files.find { |f| f["format"] == "html" }
+        hash["html_path"] = html_file["path"] if html_file
+        pdf_file = files.find { |f| f["format"] == "pdf" }
+        hash["pdf_path"] = pdf_file["path"] if pdf_file
+        xml_file = files.find { |f| f["format"] == "xml" }
+        hash["xml_path"] = xml_file["path"] if xml_file
+        rxl_file = files.find { |f| f["format"] == "rxl" }
+        hash["rxl_path"] = rxl_file["path"] if rxl_file
       end
 
       def add_display_category(hash, doctype)
