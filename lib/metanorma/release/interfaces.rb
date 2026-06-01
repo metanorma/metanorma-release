@@ -2,6 +2,18 @@
 
 module Metanorma
   module Release
+    module Extractor
+      def discover(output_dir)
+        raise NotImplementedError, "#{self} must implement .discover"
+      end
+    end
+
+    Release = Struct.new(:tag_name, :body, :prerelease, :draft,
+                         :html_url, :published_at, :created_at,
+                         :assets, keyword_init: true)
+    Asset = Struct.new(:name, :browser_download_url, :size, :data,
+                       keyword_init: true)
+
     module Filter
       def apply(documents)
         raise NotImplementedError, "#{self.class} must implement #apply"

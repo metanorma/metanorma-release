@@ -73,5 +73,26 @@ RSpec.describe Metanorma::Release::ContentHashChangeDetector do
         FileUtils.rm_rf(dir)
       end
     end
+
+    it "resolves content hash from from_directory when file paths are relative" do
+      dir = Dir.mktmpdir
+      begin
+        File.write(File.join(dir, "cc-18011.html"), "hello")
+        pub = Metanorma::Release::Publication.new(
+          identifier: "CC 18011", slug: "cc-18011", title: "Test",
+          edition: "1", stage: "60", doctype: "standard", revdate: "2024-01-01",
+          files: [Metanorma::Release::PublicationFile.new(format: "html",
+                                                          name: "cc-18011.html",
+                                                          path: "cc-18011.html")],
+          channels: ["public"], source: nil
+        )
+        hash = pub.content_hash(from_directory: dir)
+        expected = Metanorma::Release::ContentHash.of_directory(dir,
+                                                                base: "cc-18011")
+        expect(hash).to eql(expected)
+      ensure
+        FileUtils.rm_rf(dir)
+      end
+    end
   end
 end

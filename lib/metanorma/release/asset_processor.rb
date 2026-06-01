@@ -12,8 +12,6 @@ module Metanorma
     class AssetProcessor
       ProcessResult = Struct.new(:files, :channels, keyword_init: true)
 
-      CANONICALIZE_PATTERN = /-ed\d+(\.\d+)?-/
-
       def initialize(output_dir:, routing:, canonicalize: true)
         @output_dir = output_dir
         @routing = routing

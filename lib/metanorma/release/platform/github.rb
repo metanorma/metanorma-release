@@ -18,10 +18,6 @@ module Metanorma
                  "metanorma/release/platform/github/release_fetcher"
         autoload :ManifestReader,
                  "metanorma/release/platform/github/manifest_reader"
-
-        def self.cache_store(cache_dir:)
-          FileCacheStore.new(cache_dir)
-        end
       end
     end
   end

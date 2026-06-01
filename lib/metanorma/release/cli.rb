@@ -11,6 +11,17 @@ module Metanorma
 
       class PipelineError < Thor::Error; end
 
+      desc "version", "Print version"
+      def version
+        puts "metanorma-release #{VERSION}"
+      end
+      map %w[--version -v] => :version
+
+      class_option :verbose, type: :boolean, default: false,
+                             desc: "Verbose output"
+      class_option :quiet, type: :boolean, default: false,
+                           desc: "Suppress warnings"
+
       desc "package", "Package compiled documents"
       option :output_dir, type: :string, default: "_site",
                           desc: "Compiled docs directory"
@@ -21,6 +32,7 @@ module Metanorma
       option :config, type: :string, desc: "Config file"
 
       def package
+        configure_logging
         config = PackageCommand::Config.new(
           output_dir: options[:output_dir],
           dest: options[:dest],
@@ -49,6 +61,7 @@ module Metanorma
       option :config, type: :string, desc: "Config file"
 
       def release
+        configure_logging
         config = ReleaseCommand::Config.new(
           output_dir: options[:output_dir],
           platform: options[:platform],
@@ -80,16 +93,19 @@ module Metanorma
       option :file_routing, type: :string,
                             desc: "File routing (by-document|flat|by-format)"
       option :cache_dir, type: :string, desc: "Cache directory"
-      option :data_dir, type: :string, desc: "Write flattened documents.json for site generators"
+      option :data_dir, type: :string,
+                        desc: "Write flattened documents.json for site generators"
       option :include_drafts, type: :boolean, default: false,
                               desc: "Include draft releases"
       option :concurrency, type: :numeric, default: 4
       option :min_documents, type: :numeric, default: 0,
                              desc: "Minimum required documents"
       option :token, type: :string, desc: "Platform auth token"
-      option :config, type: :string, desc: "Config file (default: metanorma.aggregate.yml)"
+      option :config, type: :string,
+                      desc: "Config file (default: metanorma.aggregate.yml)"
 
       def aggregate
+        configure_logging
         config = AggregateCommand.build_config(
           source: options[:source],
           organizations: options[:organizations],
@@ -122,6 +138,14 @@ module Metanorma
       end
 
       private
+
+      def configure_logging
+        if options[:verbose]
+          Metanorma::Release.logger.level = Logger::DEBUG
+        elsif options[:quiet]
+          Metanorma::Release.logger.level = Logger::ERROR
+        end
+      end
 
       def print_package_result(result, dest)
         released = result.released

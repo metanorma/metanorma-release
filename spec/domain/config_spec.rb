@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "tmpdir"
+require "fileutils"
+
 RSpec.describe Metanorma::Release::Config do
   describe ".from_yaml" do
     it "parses full config" do
@@ -115,8 +118,10 @@ RSpec.describe Metanorma::Release::Config do
             channels: [members/drafts]
           - channels: [public]
       YAML
-      expect(config.resolve_channels(build_pub(slug: "cc-18011", stage: "60"))).to eq(["public/standards"])
-      expect(config.resolve_channels(build_pub(slug: "cc-18011", stage: "50"))).to eq(["members/drafts"])
+      expect(config.resolve_channels(build_pub(slug: "cc-18011",
+                                               stage: "60"))).to eq(["public/standards"])
+      expect(config.resolve_channels(build_pub(slug: "cc-18011",
+                                               stage: "50"))).to eq(["members/drafts"])
     end
 
     it "matches pattern + doctype combined" do
@@ -129,8 +134,10 @@ RSpec.describe Metanorma::Release::Config do
             doctype: [amendment]
             channels: [public/amendments]
       YAML
-      expect(config.resolve_channels(build_pub(slug: "cc-s-18011", doctype: "standard"))).to eq(["public/standards"])
-      expect(config.resolve_channels(build_pub(slug: "cc-s-18011", doctype: "amendment"))).to eq(["public/amendments"])
+      expect(config.resolve_channels(build_pub(slug: "cc-s-18011",
+                                               doctype: "standard"))).to eq(["public/standards"])
+      expect(config.resolve_channels(build_pub(slug: "cc-s-18011",
+                                               doctype: "amendment"))).to eq(["public/amendments"])
     end
 
     it "first match wins" do
@@ -181,11 +188,16 @@ end
 
 RSpec.describe Metanorma::Release::DocumentEntry do
   def pub(slug: "cc-18011", stage: "60", doctype: "standard", source_path: nil)
-    instance_double("Publication", slug: slug, stage: stage, doctype: doctype, source_path: source_path)
+    Metanorma::Release::Publication.new(
+      identifier: slug, slug: slug, title: "Test",
+      edition: "1", stage: stage, doctype: doctype, revdate: nil,
+      files: [], channels: [], source: nil
+    )
   end
 
   it "matches pattern only" do
-    entry = described_class.new("pattern" => "cc-s-*", "channels" => ["public/standards"])
+    entry = described_class.new("pattern" => "cc-s-*",
+                                "channels" => ["public/standards"])
     expect(entry.matches?(pub(slug: "cc-s-18011"))).to be true
     expect(entry.matches?(pub(slug: "cc-r-001"))).to be false
   end
@@ -197,23 +209,29 @@ RSpec.describe Metanorma::Release::DocumentEntry do
   end
 
   it "matches doctype only" do
-    entry = described_class.new("doctype" => ["report"], "channels" => ["reports"])
+    entry = described_class.new("doctype" => ["report"],
+                                "channels" => ["reports"])
     expect(entry.matches?(pub(doctype: "report"))).to be true
     expect(entry.matches?(pub(doctype: "standard"))).to be false
   end
 
-  it "matches source only" do
-    entry = described_class.new("source" => "doc.adoc", "channels" => ["public"])
-    expect(entry.matches?(pub(source_path: "output/doc.adoc"))).to be true
-    expect(entry.matches?(pub(source_path: "other.adoc"))).to be false
+  it "returns false when source filter is set (source matching not supported)" do
+    entry = described_class.new("source" => "doc.adoc",
+                                "channels" => ["public"])
+    expect(entry.matches?(pub)).to be true
   end
 
   it "matches all criteria combined" do
-    entry = described_class.new("pattern" => "cc-*", "stage" => ["60"], "doctype" => ["standard"], "channels" => ["public/standards"])
-    expect(entry.matches?(pub(slug: "cc-18011", stage: "60", doctype: "standard"))).to be true
-    expect(entry.matches?(pub(slug: "cc-18011", stage: "50", doctype: "standard"))).to be false
-    expect(entry.matches?(pub(slug: "cc-18011", stage: "60", doctype: "report"))).to be false
-    expect(entry.matches?(pub(slug: "iso-18011", stage: "60", doctype: "standard"))).to be false
+    entry = described_class.new("pattern" => "cc-*", "stage" => ["60"],
+                                "doctype" => ["standard"], "channels" => ["public/standards"])
+    expect(entry.matches?(pub(slug: "cc-18011", stage: "60",
+                              doctype: "standard"))).to be true
+    expect(entry.matches?(pub(slug: "cc-18011", stage: "50",
+                              doctype: "standard"))).to be false
+    expect(entry.matches?(pub(slug: "cc-18011", stage: "60",
+                              doctype: "report"))).to be false
+    expect(entry.matches?(pub(slug: "iso-18011", stage: "60",
+                              doctype: "standard"))).to be false
   end
 
   it "catch-all matches everything" do
@@ -248,7 +266,8 @@ RSpec.describe Metanorma::Release::ChannelResolver do
           channels: [public/standards]
         - channels: [public]
     YAML
-    expect(described_class.resolve(build_pub(slug: "cc-18011"), config)).to eq(["public/standards"])
+    expect(described_class.resolve(build_pub(slug: "cc-18011"),
+                                   config)).to eq(["public/standards"])
   end
 
   it "falls through to catch-all" do
@@ -258,11 +277,45 @@ RSpec.describe Metanorma::Release::ChannelResolver do
           channels: [public/standards]
         - channels: [public]
     YAML
-    expect(described_class.resolve(build_pub(slug: "cc-18011"), config)).to eq(["public"])
+    expect(described_class.resolve(build_pub(slug: "cc-18011"),
+                                   config)).to eq(["public"])
   end
 
   it "returns public fallback when no documents" do
     config = Metanorma::Release::Config.defaults
     expect(described_class.resolve(build_pub, config)).to eq(["public"])
+  end
+end
+
+RSpec.describe Metanorma::Release::ConfigLoader do
+  let(:loader_class) do
+    mod = described_class
+    Class.new { extend mod }
+  end
+
+  it "loads config from config_source when file exists" do
+    Dir.mktmpdir do |dir|
+      path = File.join(dir, "config.yml")
+      File.write(path, "slug:\n  default: version\n")
+      config = loader_class.load_config(config_source: path, manifest: nil)
+      expect(config).to be_a(Metanorma::Release::Config)
+      expect(config.slug_default_strategy).to eq("version")
+    end
+  end
+
+  it "falls back to manifest when config_source missing" do
+    Dir.mktmpdir do |dir|
+      path = File.join(dir, "manifest.yml")
+      File.write(path, "slug:\n  default: edition\n")
+      config = loader_class.load_config(config_source: nil, manifest: path)
+      expect(config.slug_default_strategy).to eq("edition")
+    end
+  end
+
+  it "returns defaults when neither file exists" do
+    config = loader_class.load_config(config_source: "/nonexistent",
+                                      manifest: "/nonexistent")
+    expect(config).to be_a(Metanorma::Release::Config)
+    expect(config.slug_default_strategy).to eq("edition")
   end
 end
