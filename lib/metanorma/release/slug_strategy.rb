@@ -11,6 +11,21 @@ module Metanorma
         raise NotImplementedError,
               "#{self.class} must implement #compute_asset_name"
       end
+
+      def self.slug_from_identifier(identifier)
+        identifier.to_s.strip
+          .gsub(/\s+/, "-")
+          .gsub(/:+/, "-")
+          .downcase
+          .gsub(/--+/, "-")
+          .gsub(/[-.]+$/, "")
+      end
+
+      def self.publisher_from_identifier(identifier)
+        return nil if identifier.nil? || identifier.strip.empty?
+
+        identifier.strip.split(/[\s-]/).first&.downcase
+      end
     end
 
     class EditionSlug
@@ -18,17 +33,11 @@ module Metanorma
 
       def compute_tag(publication)
         tag = "#{publication.slug}/ed#{publication.edition}"
-        { tag: tag, pre_release: draft?(publication) }
+        { tag: tag, pre_release: publication.draft? }
       end
 
       def compute_asset_name(publication)
         "#{publication.slug}-ed#{publication.edition}.zip"
-      end
-
-      private
-
-      def draft?(publication)
-        %w[20 30 40 50].include?(publication.stage.to_s)
       end
     end
 
@@ -37,17 +46,11 @@ module Metanorma
 
       def compute_tag(publication)
         tag = "#{publication.slug}/v#{publication.edition}"
-        { tag: tag, pre_release: draft?(publication) }
+        { tag: tag, pre_release: publication.draft? }
       end
 
       def compute_asset_name(publication)
         "#{publication.slug}-v#{publication.edition}.zip"
-      end
-
-      private
-
-      def draft?(publication)
-        %w[20 30 40 50].include?(publication.stage.to_s)
       end
     end
 
@@ -129,6 +132,18 @@ module Metanorma
         @strategies.fetch(publisher.to_s, @default)
       end
 
+      def with_default(strategy)
+        registry = new
+        @strategies.each { |pub, s| registry.register(pub, s) }
+        registry.set_default(strategy)
+        registry
+      end
+
+      def set_default(strategy)
+        @default = strategy
+        self
+      end
+
       def self.from_config(config)
         registry = new
         config.slug_strategies.each do |publisher, strategy_name|
@@ -136,7 +151,7 @@ module Metanorma
           registry.register(publisher, strategy) if strategy
         end
         default = build_strategy(config.slug_default_strategy) || EditionSlug.new
-        registry.instance_variable_set(:@default, default)
+        registry.set_default(default)
         registry
       end
 

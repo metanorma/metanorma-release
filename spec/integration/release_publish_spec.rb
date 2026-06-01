@@ -13,7 +13,7 @@ RSpec.describe "Release → Publish → Aggregate round-trip", type: :integratio
     # Phase 1: Extract + package with local publisher
     package_dir = Dir.mktmpdir
     begin
-      extractor = Metanorma::Release::Publication
+      extractor = Metanorma::Release::RxlExtractor
       change_detector = Metanorma::Release::ContentHashChangeDetector.new(previous_releases: {})
       packager = Metanorma::Release::ZipPackager.new(output_dir: compiled_dir)
       publisher = Metanorma::Release::Platform::Local::Publisher.new(output_dir: package_dir)
@@ -25,8 +25,8 @@ RSpec.describe "Release → Publish → Aggregate round-trip", type: :integratio
         manifest: nil, channel_override: nil
       )
       config = Metanorma::Release::ReleasePipeline::Config.new(
-        output_dir: compiled_dir, manifest_path: nil,
-        force: false, force_replace_patterns: nil, concurrency: 1, default_visibility: "public"
+        output_dir: compiled_dir,
+        force: false, force_replace_patterns: nil, concurrency: 1
       )
 
       release_result = Metanorma::Release::ReleasePipeline.new(deps).run(config)
@@ -44,11 +44,11 @@ RSpec.describe "Release → Publish → Aggregate round-trip", type: :integratio
 
       output_dir = Dir.mktmpdir
       begin
-        discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(repos: [Metanorma::Release::RepoRef.new(
+        discoverer = Metanorma::Release::Platform::StaticDiscoverer.new(repos: [Metanorma::Release::RepoRef.new(
           owner: "local", repo: repo_name,
         )])
         fetcher = Metanorma::Release::Platform::Local::Fetcher.new(base_path: base_path)
-        manifest_reader = Metanorma::Release::PlatformFactory::NullManifestReader.new
+        manifest_reader = Metanorma::Release::Platform::Null::ManifestReader.new
         metadata_filter = Metanorma::Release::MetadataFilter.new
         routing = Metanorma::Release::ByDocument.new
         asset_processor = Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing,

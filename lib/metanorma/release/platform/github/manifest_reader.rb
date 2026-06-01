@@ -22,7 +22,9 @@ module Metanorma
             return nil unless parsed.is_a?(Hash)
 
             channels = Array(parsed["channels"])
-            Array(parsed["documents"]).each { |doc| channels.concat(Array(doc["channels"])) }
+            Array(parsed["documents"]).each do |doc|
+              channels.concat(Array(doc["channels"]))
+            end
             channels.map(&:to_s).uniq
           rescue StandardError
             nil

@@ -8,12 +8,13 @@ module Metanorma
     class ContentHashChangeDetector
       include ChangeDetector
 
-      def initialize(previous_releases:)
+      def initialize(previous_releases:, output_dir: ".")
         @previous_releases = previous_releases
+        @output_dir = output_dir
       end
 
       def detect(publication, tag, force: false)
-        current = publication.content_hash
+        current = publication.content_hash(from_directory: @output_dir)
         previous = @previous_releases[tag.to_s]
         changed = force || previous.nil? || !current.eql?(previous)
         ChangeResult.new(changed?: changed, current_hash: current,

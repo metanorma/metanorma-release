@@ -60,13 +60,26 @@ module Metanorma
       end
     end
 
-    # Single routing entry — matches by any combination of pattern, source,
+    # Shared config resolution logic for CLI commands.
+    module ConfigLoader
+      def load_config(config_source:, manifest:)
+        if config_source && File.exist?(config_source)
+          Config.from_file(config_source)
+        elsif manifest && File.exist?(manifest)
+          Config.from_file(manifest)
+        else
+          Config.defaults
+        end
+      end
+    end
+
+    # Single routing entry — matches by any combination of pattern,
     # stage, and doctype. An entry with no criteria matches everything (catch-all).
-    DocumentEntry = Struct.new(:pattern, :source, :stages, :doctypes, :channels, keyword_init: true) do
+    DocumentEntry = Struct.new(:pattern, :stages, :doctypes,
+                               :channels, keyword_init: true) do
       def initialize(data)
         super(
           pattern: data["pattern"],
-          source: data["source"],
           stages: Array(data["stage"]).map(&:to_s),
           doctypes: Array(data["doctype"]).map(&:to_s),
           channels: Array(data["channels"]).map(&:to_s),
@@ -77,10 +90,6 @@ module Metanorma
         return false if channels.empty?
 
         if pattern && !File.fnmatch?(pattern, publication.slug)
-          return false
-        end
-
-        if source && !(publication.source_path&.end_with?(source) || false)
           return false
         end
 

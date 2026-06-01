@@ -6,6 +6,7 @@ module Metanorma
       autoload :GitHub, "metanorma/release/platform/github"
       autoload :Local, "metanorma/release/platform/local"
       autoload :Null, "metanorma/release/platform/null"
+      autoload :StaticDiscoverer, "metanorma/release/platform/static_discoverer"
     end
   end
 end

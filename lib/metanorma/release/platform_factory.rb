@@ -24,14 +24,17 @@ module Metanorma
 
           discoverer = if opts[:repos]
                          repos = opts[:repos].map { |r| RepoRef.from_string(r) }
-                         StaticDiscoverer.new(repos: repos)
+                         Platform::StaticDiscoverer.new(repos: repos)
                        else
                          Platform::GitHub::TopicDiscoverer.new(
                            client: client, organizations: opts[:organizations], topic: opts[:topic],
                          )
                        end
 
-          download_cache = opts[:cache_dir] ? File.join(opts[:cache_dir], "downloads") : nil
+          download_cache = if opts[:cache_dir]
+                             File.join(opts[:cache_dir],
+                                       "downloads")
+                           end
 
           {
             discoverer: discoverer,
@@ -58,7 +61,7 @@ module Metanorma
         if source.start_with?("local:")
           adapters = AGGREGATION_REGISTRY["local"].call(options,
                                                         options[:token])
-          adapters[:manifest_reader] = NullManifestReader.new
+          adapters[:manifest_reader] = Platform::Null::ManifestReader.new
           return adapters
         end
 
@@ -77,24 +80,6 @@ module Metanorma
 
       def self.register_aggregation(name, factory)
         AGGREGATION_REGISTRY[name] = factory
-      end
-
-      class StaticDiscoverer
-        include RepoDiscoverer
-
-        def initialize(repos:)
-          @repos = repos
-        end
-
-        def discover
-          @repos
-        end
-      end
-
-      class NullManifestReader
-        include Metanorma::Release::ManifestReader
-
-        def read(_repo) = nil
       end
     end
   end

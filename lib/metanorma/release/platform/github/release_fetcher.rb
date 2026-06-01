@@ -6,12 +6,6 @@ module Metanorma
   module Release
     module Platform
       module GitHub
-        GitHubRelease = Struct.new(:tag_name, :body, :prerelease, :draft,
-                                   :html_url, :published_at, :created_at,
-                                   :assets, keyword_init: true)
-        GitHubAsset = Struct.new(:name, :browser_download_url, :size, :data,
-                                 keyword_init: true)
-
         class ReleaseFetcher
           include Metanorma::Release::ReleaseFetcher
 
@@ -43,21 +37,21 @@ module Metanorma
             end
             all
           rescue StandardError => e
-            warn "Warning: Failed to fetch releases for #{repo_slug}: #{e.message}"
+            Metanorma::Release.logger.warn "Failed to fetch releases for #{repo_slug}: #{e.message}"
             []
           end
 
           def parse_release(r)
             assets = (r[:assets] || []).map do |a|
               data = download_asset(a[:url]) if a[:name].end_with?(".zip")
-              GitHubAsset.new(
+              Asset.new(
                 name: a[:name],
                 browser_download_url: a[:browser_download_url],
                 size: a[:size],
                 data: data,
               )
             end
-            GitHubRelease.new(
+            Release.new(
               tag_name: r[:tag_name],
               body: r[:body],
               prerelease: r[:prerelease],
@@ -82,7 +76,7 @@ module Metanorma
             end
             data
           rescue StandardError => e
-            warn "Warning: Failed to download asset #{url}: #{e.message}"
+            Metanorma::Release.logger.warn "Failed to download asset #{url}: #{e.message}"
             nil
           end
 

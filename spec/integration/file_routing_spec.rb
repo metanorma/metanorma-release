@@ -9,9 +9,9 @@ RSpec.describe "File routing modes", type: :integration do
   include_context "with compiled documents"
 
   def run_with_routing(routing, output_dir)
-    discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(repos: [])
+    discoverer = Metanorma::Release::Platform::StaticDiscoverer.new(repos: [])
     fetcher = Metanorma::Release::Platform::Local::Fetcher.new(base_path: output_dir)
-    manifest_reader = Metanorma::Release::PlatformFactory::NullManifestReader.new
+    manifest_reader = Metanorma::Release::Platform::Null::ManifestReader.new
     metadata_filter = Metanorma::Release::MetadataFilter.new
     asset_processor = Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing,
                                                              canonicalize: true)
