@@ -109,7 +109,7 @@ metanorma-release aggregate
 [source,ruby]
 ----
 # Discover publications from compiled RXL files
-publications = Metanorma::Release::Publication.discover("_site")
+publications = Metanorma::Release::RxlExtractor.discover("_site")
 
 pub = publications.first
 pub.identifier  # => "CC 18011:2018"
@@ -243,7 +243,7 @@ You can also route by stage or doctype instead of pattern:
 [source,yaml]
 ----
 documents:
-  - stages: ["20", "30"]
+  - stage: ["20", "30"]
     channels: [internal]
   - doctypes: [standard, specification]
     channels: [public/standards]
@@ -341,6 +341,18 @@ github:
 |===
 
 CLI flags override config file values.
+
+=== Global options
+
+All commands accept these options:
+
+[cols="1m,3",options="header"]
+|===
+|Option |Description
+|`--verbose` |Enable debug-level logging
+|`--quiet` |Suppress warnings (only errors shown)
+|`--help` |Show command help
+|===
 
 == Concepts
 
