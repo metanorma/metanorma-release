@@ -22,13 +22,13 @@ RSpec.describe "Local round-trip: package → aggregate → index",
     slug_registry = Metanorma::Release::SlugRegistry.default
 
     deps = Metanorma::Release::ReleasePipeline::Dependencies.new(
-      extractor: Metanorma::Release::Publication, filters: [], change_detector: change_detector,
+      extractor: Metanorma::Release::RxlExtractor, filters: [], change_detector: change_detector,
       packager: packager, publisher: publisher, slug_registry: slug_registry,
       manifest: nil, channel_override: nil
     )
     config = Metanorma::Release::ReleasePipeline::Config.new(
-      output_dir: compiled_dir, manifest_path: nil,
-      force: false, force_replace_patterns: nil, concurrency: 1, default_visibility: "public"
+      output_dir: compiled_dir,
+      force: false, force_replace_patterns: nil, concurrency: 1
     )
 
     release_result = Metanorma::Release::ReleasePipeline.new(deps).run(config)
@@ -41,11 +41,11 @@ RSpec.describe "Local round-trip: package → aggregate → index",
     # Phase 2: Aggregate from local packages
     base_path = File.dirname(package_dir)
     repo_name = File.basename(package_dir)
-    discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(repos: [Metanorma::Release::RepoRef.new(
+    discoverer = Metanorma::Release::Platform::StaticDiscoverer.new(repos: [Metanorma::Release::RepoRef.new(
       owner: "local", repo: repo_name,
     )])
     fetcher = Metanorma::Release::Platform::Local::Fetcher.new(base_path: base_path)
-    manifest_reader = Metanorma::Release::PlatformFactory::NullManifestReader.new
+    manifest_reader = Metanorma::Release::Platform::Null::ManifestReader.new
     metadata_filter = Metanorma::Release::MetadataFilter.new
     routing = Metanorma::Release::ByDocument.new
     asset_processor = Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing,

@@ -6,12 +6,6 @@ module Metanorma
   module Release
     module Platform
       module Local
-        LocalRelease = Struct.new(:tag_name, :body, :prerelease, :draft,
-                                  :html_url, :published_at, :created_at,
-                                  :assets, keyword_init: true)
-        LocalAsset = Struct.new(:name, :browser_download_url, :size, :data,
-                                keyword_init: true)
-
         class Fetcher
           include Metanorma::Release::ReleaseFetcher
 
@@ -42,22 +36,22 @@ module Metanorma
             zip_path = File.join(dir, "#{base}.zip")
 
             unless File.exist?(zip_path)
-              warn "Warning: Missing zip for #{meta_path}, skipping"
+              Metanorma::Release.logger.warn "Missing zip for #{meta_path}, skipping"
               return nil
             end
 
             metadata = Publication.from_metadata_hash(data)
-            asset = LocalAsset.new(
+            asset = Asset.new(
               name: "#{base}.zip",
               browser_download_url: "file://#{File.expand_path(zip_path)}",
               size: File.size(zip_path),
               data: File.binread(zip_path),
             )
 
-            LocalRelease.new(
+            Release.new(
               tag_name: "#{metadata.slug}/#{metadata.edition || '1'}",
               body: metadata.to_release_body,
-              prerelease: prerelease?(metadata),
+              prerelease: metadata.draft?,
               draft: false,
               html_url: "file://#{File.expand_path(dir)}",
               published_at: File.mtime(zip_path).iso8601,
@@ -65,14 +59,8 @@ module Metanorma
               assets: [asset],
             )
           rescue JSON::ParserError
-            warn "Warning: Invalid metadata JSON in #{meta_path}, skipping"
+            Metanorma::Release.logger.warn "Invalid metadata JSON in #{meta_path}, skipping"
             nil
-          end
-
-          def prerelease?(metadata)
-            stage = metadata.stage.to_s
-            %w[working-draft committee-draft draft-standard
-               final-draft].include?(stage)
           end
         end
       end

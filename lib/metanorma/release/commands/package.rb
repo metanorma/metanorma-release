@@ -3,6 +3,8 @@
 module Metanorma
   module Release
     class PackageCommand
+      extend ConfigLoader
+
       Config = Struct.new(
         :output_dir, :dest, :manifest, :config_source,
         keyword_init: true
@@ -13,11 +15,15 @@ module Metanorma
       end
 
       def call
-        config = load_config
+        config = self.class.load_config(
+          config_source: @config.config_source,
+          manifest: @config.manifest,
+        )
         deps = ReleasePipeline::Dependencies.new(
-          extractor: Publication,
+          extractor: RxlExtractor,
           filters: [],
-          change_detector: ContentHashChangeDetector.new(previous_releases: {}),
+          change_detector: ContentHashChangeDetector.new(previous_releases: {},
+                                                         output_dir: @config.output_dir),
           packager: ZipPackager.new(output_dir: @config.output_dir),
           publisher: PlatformFactory.build_publisher("null", {}),
           slug_registry: SlugRegistry.from_config(config),
@@ -28,26 +34,12 @@ module Metanorma
 
         pipeline_config = ReleasePipeline::Config.new(
           output_dir: @config.output_dir,
-          manifest_path: @config.manifest,
           force: false,
           force_replace_patterns: nil,
           concurrency: 4,
-          default_visibility: "public",
         )
 
         ReleasePipeline.new(deps).run(pipeline_config)
-      end
-
-      private
-
-      def load_config
-        if @config.config_source && File.exist?(@config.config_source)
-          Metanorma::Release::Config.from_file(@config.config_source)
-        elsif @config.manifest && File.exist?(@config.manifest)
-          Metanorma::Release::Config.from_file(@config.manifest)
-        else
-          Metanorma::Release::Config.defaults
-        end
       end
     end
   end

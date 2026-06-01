@@ -4,18 +4,32 @@ module Metanorma
   module Release
     require_relative "release/version"
 
-    # Domain models
-    autoload :Publication,       "metanorma/release/publication"
-    autoload :PublicationFile,   "metanorma/release/publication"
-    autoload :PublicationSource, "metanorma/release/publication"
-    autoload :Index,             "metanorma/release/index"
-    autoload :Site,              "metanorma/release/site"
-    autoload :Channel,           "metanorma/release/channel"
-    autoload :Config,            "metanorma/release/config"
-    autoload :DocumentEntry,     "metanorma/release/config"
-    autoload :ChannelResolver,   "metanorma/release/config"
-    autoload :ContentHash,       "metanorma/release/content_hash"
+    require "logger"
 
+    class << self
+      attr_writer :logger
+
+      def logger
+        @logger ||= Logger.new($stderr, level: Logger::WARN)
+      end
+    end
+
+    # Domain models
+    autoload :Publication,           "metanorma/release/publication"
+    autoload :PublicationFile,       "metanorma/release/publication"
+    autoload :PublicationSource,     "metanorma/release/publication"
+    autoload :PublicationSerializer, "metanorma/release/publication_serializer"
+    autoload :RxlExtractor,          "metanorma/release/rxl_extractor"
+    autoload :Index,                 "metanorma/release/index"
+    autoload :Site,                  "metanorma/release/site"
+    autoload :Channel,               "metanorma/release/channel"
+    autoload :Config,                "metanorma/release/config"
+    autoload :ConfigLoader,          "metanorma/release/config"
+    autoload :DocumentEntry,         "metanorma/release/config"
+    autoload :ChannelResolver,       "metanorma/release/config"
+    autoload :ContentHash,           "metanorma/release/content_hash"
+    autoload :DependencyValidation,  "metanorma/release/dependency_validation"
+    autoload :DocumentFlattener,     "metanorma/release/document_flattener"
     # Strategies
     autoload :SlugStrategy,      "metanorma/release/slug_strategy"
     autoload :EditionSlug,       "metanorma/release/slug_strategy"
@@ -25,14 +39,17 @@ module Metanorma
     autoload :DraftSuffixSlug,   "metanorma/release/slug_strategy"
     autoload :SlugRegistry,      "metanorma/release/slug_strategy"
 
-    # Interfaces
-    autoload :Filter,          "metanorma/release/interfaces"
-    autoload :ChangeDetector,  "metanorma/release/interfaces"
-    autoload :Packager,        "metanorma/release/interfaces"
-    autoload :Publisher,       "metanorma/release/interfaces"
-    autoload :RepoDiscoverer,  "metanorma/release/interfaces"
-    autoload :ReleaseFetcher,  "metanorma/release/interfaces"
-    autoload :ManifestReader,  "metanorma/release/interfaces"
+    # Interfaces & shared types
+    autoload :Extractor,         "metanorma/release/interfaces"
+    autoload :Release,          "metanorma/release/interfaces"
+    autoload :Asset,            "metanorma/release/interfaces"
+    autoload :Filter,           "metanorma/release/interfaces"
+    autoload :ChangeDetector,   "metanorma/release/interfaces"
+    autoload :Packager,         "metanorma/release/interfaces"
+    autoload :Publisher,        "metanorma/release/interfaces"
+    autoload :RepoDiscoverer,   "metanorma/release/interfaces"
+    autoload :ReleaseFetcher,   "metanorma/release/interfaces"
+    autoload :ManifestReader,   "metanorma/release/interfaces"
 
     # Pipeline components
     autoload :RepoRef,                   "metanorma/release/repo_ref"

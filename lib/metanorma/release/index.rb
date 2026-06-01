@@ -51,7 +51,7 @@ module Metanorma
       end
 
       def to_json(*_args)
-        JSON.generate(to_h)
+        JSON.pretty_generate(to_h)
       end
 
       def write(path)

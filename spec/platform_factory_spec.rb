@@ -38,26 +38,26 @@ RSpec.describe Metanorma::Release::PlatformFactory do
         )
         expect(adapters[:discoverer]).to be_a(Metanorma::Release::Platform::Local::DirectoryDiscoverer)
         expect(adapters[:fetcher]).to be_a(Metanorma::Release::Platform::Local::Fetcher)
-        expect(adapters[:manifest_reader]).to be_a(described_class::NullManifestReader)
+        expect(adapters[:manifest_reader]).to be_a(Metanorma::Release::Platform::Null::ManifestReader)
       ensure
         FileUtils.rm_rf(tmpdir)
       end
     end
   end
+end
 
-  describe described_class::StaticDiscoverer do
-    it "returns configured repos" do
-      repos = [Metanorma::Release::RepoRef.new(owner: "local", repo: "test")]
-      discoverer = described_class.new(repos: repos)
-      expect(discoverer.discover).to eq(repos)
-    end
+RSpec.describe Metanorma::Release::Platform::StaticDiscoverer do
+  it "returns configured repos" do
+    repos = [Metanorma::Release::RepoRef.new(owner: "local", repo: "test")]
+    discoverer = described_class.new(repos: repos)
+    expect(discoverer.discover).to eq(repos)
   end
+end
 
-  describe described_class::NullManifestReader do
-    it "returns nil" do
-      reader = described_class.new
-      repo = Metanorma::Release::RepoRef.new(owner: "test", repo: "repo")
-      expect(reader.read(repo)).to be_nil
-    end
+RSpec.describe Metanorma::Release::Platform::Null::ManifestReader do
+  it "returns nil" do
+    reader = described_class.new
+    repo = Metanorma::Release::RepoRef.new(owner: "test", repo: "repo")
+    expect(reader.read(repo)).to be_nil
   end
 end

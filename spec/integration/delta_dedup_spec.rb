@@ -12,12 +12,12 @@ RSpec.describe "Delta dedup across runs", type: :integration do
   after { FileUtils.rm_rf(cache_dir) }
 
   def run_aggregation(output_dir, cache_dir, released_dir)
-    discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(
+    discoverer = Metanorma::Release::Platform::StaticDiscoverer.new(
       repos: [Metanorma::Release::RepoRef.new(owner: "local",
                                               repo: File.basename(released_dir))],
     )
     fetcher = Metanorma::Release::Platform::Local::Fetcher.new(base_path: File.dirname(released_dir))
-    manifest_reader = Metanorma::Release::PlatformFactory::NullManifestReader.new
+    manifest_reader = Metanorma::Release::Platform::Null::ManifestReader.new
     metadata_filter = Metanorma::Release::MetadataFilter.new
     routing = Metanorma::Release::ByDocument.new
     asset_processor = Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing,

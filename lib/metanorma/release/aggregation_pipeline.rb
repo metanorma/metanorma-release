@@ -7,12 +7,14 @@ module Metanorma
                              keyword_init: true)
     RepoError   = Struct.new(:tag, :message, keyword_init: true)
 
-    class AggregationPipeline # rubocop:disable Metrics/ClassLength
+    class AggregationPipeline
       Dependencies = Struct.new(
         :discoverer, :fetcher, :manifest_reader,
         :metadata_filter, :asset_processor, :delta_state,
         keyword_init: true
       ) do
+        include DependencyValidation
+
         def initialize(**kwargs)
           super
           validate_types!
@@ -26,16 +28,6 @@ module Metanorma
           validate_interface!(manifest_reader, ManifestReader,
                               "manifest_reader")
           validate_interface!(delta_state, DeltaStateManager, "delta_state")
-        end
-
-        def validate_interface!(obj, mod, name)
-          return if obj.is_a?(mod) || begin
-            obj.class.ancestors.include?(mod)
-          rescue StandardError
-            false
-          end
-
-          raise ArgumentError, "#{name} must include #{mod}, got #{obj.class}"
         end
       end
 
@@ -58,17 +50,13 @@ module Metanorma
       def run(config, output_dir)
         @deps.delta_state.load
         repos = @deps.discoverer.discover
-        publications = []
-        reports = []
-        failed_repos = []
 
-        repos.each do |repo|
-          repo_docs, report = process_repo(repo, output_dir, config)
-          publications.concat(repo_docs)
-          reports << report
-        rescue StandardError => e
-          failed_repos << RepoError.new(tag: repo.to_s, message: e.message)
-          raise if config.fail_on_error
+        if config.concurrency > 1
+          publications, reports, failed_repos = run_concurrent(repos,
+                                                               output_dir, config)
+        else
+          publications, reports, failed_repos = run_sequential(repos,
+                                                               output_dir, config)
         end
 
         @deps.delta_state.save
@@ -83,6 +71,52 @@ module Metanorma
       end
 
       private
+
+      def run_sequential(repos, output_dir, config)
+        publications = []
+        reports = []
+        failed_repos = []
+
+        repos.each do |repo|
+          repo_docs, report = process_repo(repo, output_dir, config)
+          publications.concat(repo_docs)
+          reports << report
+        rescue StandardError => e
+          failed_repos << RepoError.new(tag: repo.to_s, message: e.message)
+          raise if config.fail_on_error
+        end
+
+        [publications, reports, failed_repos]
+      end
+
+      def run_concurrent(repos, output_dir, config)
+        publications = []
+        reports = []
+        failed_repos = []
+        mutex = Mutex.new
+        threads = repos.each_slice([
+          (repos.length.to_f / config.concurrency).ceil, 1
+        ].max).map do |batch|
+          Thread.new(batch) do |slice|
+            slice.each do |repo|
+              repo_docs, report = process_repo(repo, output_dir, config)
+              mutex.synchronize do
+                publications.concat(repo_docs)
+                reports << report
+              end
+            rescue StandardError => e
+              mutex.synchronize do
+                failed_repos << RepoError.new(tag: repo.to_s,
+                                              message: e.message)
+              end
+              raise if config.fail_on_error
+            end
+          end
+        end
+        threads.each { |t| t.join(300) }
+
+        [publications, reports, failed_repos]
+      end
 
       def process_repo(repo, output_dir, config)
         repo_key = repo.to_s
@@ -116,25 +150,23 @@ module Metanorma
           tag = release.tag_name
           current_tags << tag
 
-          content_hash = extract_content_hash(release.body)
-
-          if @deps.delta_state.processed?(repo_key, tag, content_hash)
-            files = @deps.delta_state.release_files(repo_key, tag)
-            if files.all? { |f| File.exist?(File.join(output_dir, f)) }
-              publications << build_publication(metadata, files, content_hash,
-                                                release, repo)
-              next
-            end
+          cached_files = @deps.delta_state.release_files(repo_key, tag)
+          if cached_files.any? && cached_files.all? do |f|
+            File.exist?(File.join(output_dir, f))
+          end
+            publications << build_publication(metadata, cached_files, release,
+                                              repo)
+            next
           end
 
           zip_asset = find_zip_asset(release)
           next unless zip_asset
 
           result = @deps.asset_processor.process(zip_asset.data, metadata_h)
-          @deps.delta_state.mark_processed(repo_key, tag, content_hash,
+          @deps.delta_state.mark_processed(repo_key, tag, nil,
                                            result.files.map(&:path))
           publications << build_publication(metadata, result.files.map(&:path),
-                                            content_hash, release, repo)
+                                            release, repo)
         rescue StandardError => e
           errors << RepoError.new(tag: release.tag_name, message: e.message)
         end
@@ -150,15 +182,8 @@ module Metanorma
         )]
       end
 
-      def build_publication(metadata, files, _content_hash, release, repo)
+      def build_publication(metadata, files, release, repo)
         metadata.with_files_and_source(files, release, repo)
-      end
-
-      def extract_content_hash(body)
-        return nil if body.nil?
-
-        match = body.match(/^content-hash:([a-f0-9]+)/)
-        match ? match[1] : nil
       end
 
       def find_zip_asset(release)

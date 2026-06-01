@@ -48,4 +48,36 @@ RSpec.describe Metanorma::Release::CLI do
       end.to output(/aggregate.*package.*release/m).to_stdout
     end
   end
+
+  describe "version" do
+    it "prints version" do
+      expect do
+        described_class.start(["version"])
+      end.to output(/metanorma-release/).to_stdout
+    end
+
+    it "responds to --version flag" do
+      expect do
+        described_class.start(["--version"])
+      end.to output(/metanorma-release/).to_stdout
+    end
+  end
+
+  describe "--verbose flag" do
+    it "sets logger to DEBUG level" do
+      expect do
+        described_class.start(["package", "--verbose"])
+      end.to output(/Packaged/).to_stdout
+      expect(Metanorma::Release.logger.level).to eq(Logger::DEBUG)
+    end
+  end
+
+  describe "--quiet flag" do
+    it "sets logger to ERROR level" do
+      expect do
+        described_class.start(["package", "--quiet"])
+      end.to output(/Packaged/).to_stdout
+      expect(Metanorma::Release.logger.level).to eq(Logger::ERROR)
+    end
+  end
 end

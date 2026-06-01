@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "base64"
 require "yaml"
 
 module Metanorma
@@ -33,7 +32,6 @@ module Metanorma
         site.enrich!
         site.package! if @config.create_zip
 
-        stamp_primary_identifiers(index)
         result
       end
 
@@ -150,20 +148,6 @@ module Metanorma
           cache_store: FileCacheStore.new(@config.cache_dir),
           output_dir: @config.output_dir,
         )
-      end
-
-      def stamp_primary_identifiers(index)
-        index.publications.each do |pub|
-          next unless pub.to_h["bibliographic"]
-
-          ids = pub.to_h.dig("bibliographic", "docidentifier")
-          next unless ids&.any?
-
-          primary = ids.find { |di| di["primary"] == true } || ids.first
-          pub.to_h.merge("primary_identifier" => primary["content"])
-        end
-      rescue LoadError
-        warn "  (relaton gem not available — bibliography skipped)"
       end
     end
   end

@@ -5,7 +5,7 @@ RSpec.describe Metanorma::Release::EditionSlug do
 
   def build_pub(identifier: "CC 18011", edition: "1", stage: "60")
     Metanorma::Release::Publication.new(
-      identifier: identifier, slug: Metanorma::Release::Publication.slug_from_identifier(identifier),
+      identifier: identifier, slug: Metanorma::Release::SlugStrategy.slug_from_identifier(identifier),
       title: "Test", edition: edition, stage: stage,
       doctype: "standard", revdate: nil,
       files: [], channels: [], source: nil
@@ -33,7 +33,7 @@ RSpec.describe Metanorma::Release::VersionSlug do
 
   def build_pub(identifier: "IHO S-101", edition: "5")
     Metanorma::Release::Publication.new(
-      identifier: identifier, slug: Metanorma::Release::Publication.slug_from_identifier(identifier),
+      identifier: identifier, slug: Metanorma::Release::SlugStrategy.slug_from_identifier(identifier),
       title: "Test", edition: edition, stage: "60",
       doctype: "standard", revdate: nil,
       files: [], channels: [], source: nil
@@ -56,7 +56,7 @@ RSpec.describe Metanorma::Release::InternetDraftSlug do
   def build_pub(identifier: "draft-ietf-netconf-123")
     Metanorma::Release::Publication.new(
       identifier: identifier,
-      slug: Metanorma::Release::Publication.slug_from_identifier(identifier),
+      slug: Metanorma::Release::SlugStrategy.slug_from_identifier(identifier),
       title: "Test", edition: "1", stage: "40",
       doctype: "standard", revdate: nil,
       files: [], channels: [], source: nil

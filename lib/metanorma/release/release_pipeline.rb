@@ -15,6 +15,8 @@ module Metanorma
         :manifest, :channel_override, :config,
         keyword_init: true
       ) do
+        include DependencyValidation
+
         def initialize(**kwargs)
           super
           validate_types!
@@ -23,9 +25,9 @@ module Metanorma
         private
 
         def validate_types!
-          unless extractor.respond_to?(:discover)
+          unless extractor.is_a?(Class) && extractor.singleton_class.ancestors.include?(Extractor)
             raise ArgumentError,
-                  "extractor must respond to #discover, got #{extractor.class}"
+                  "extractor must extend Extractor, got #{extractor}"
           end
 
           validate_interface!(change_detector, ChangeDetector,
@@ -33,21 +35,11 @@ module Metanorma
           validate_interface!(packager, Packager, "packager")
           validate_interface!(publisher, Publisher, "publisher")
         end
-
-        def validate_interface!(obj, mod, name)
-          return if obj.is_a?(mod) || begin
-            obj.class.ancestors.include?(mod)
-          rescue StandardError
-            false
-          end
-
-          raise ArgumentError, "#{name} must include #{mod}, got #{obj.class}"
-        end
       end
 
       Config = Struct.new(
-        :output_dir, :manifest_path, :force, :force_replace_patterns,
-        :concurrency, :default_visibility,
+        :output_dir, :force, :force_replace_patterns,
+        :concurrency,
         keyword_init: true
       )
 
@@ -72,7 +64,7 @@ module Metanorma
 
       def phase_one(publications, config)
         publications.map do |pub|
-          publisher = Publication.publisher_from_identifier(pub.identifier)
+          publisher = SlugStrategy.publisher_from_identifier(pub.identifier)
           strategy = @deps.slug_registry.resolve(publisher)
           tag_info = strategy.compute_tag(pub)
           canonical_base = strategy.compute_asset_name(pub).sub(/\.zip$/, "")

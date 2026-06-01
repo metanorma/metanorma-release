@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Metanorma::Release::Publication do
+RSpec.describe Metanorma::Release::SlugStrategy do
   describe ".slug_from_identifier" do
     it "normalizes CC 18011:2018 to cc-18011-2018" do
       expect(described_class.slug_from_identifier("CC 18011:2018")).to eq("cc-18011-2018")
@@ -40,7 +40,9 @@ RSpec.describe Metanorma::Release::Publication do
       expect(described_class.publisher_from_identifier("draft-ietf-some-01")).to eq("draft")
     end
   end
+end
 
+RSpec.describe Metanorma::Release::Publication do
   describe "construction" do
     let(:pub) do
       described_class.new(
@@ -65,6 +67,29 @@ RSpec.describe Metanorma::Release::Publication do
 
     it "is frozen" do
       expect(pub).to be_frozen
+    end
+
+    it "detects draft stages" do
+      %w[20 30 40 50 working-draft committee-draft draft-standard
+         final-draft].each do |stage|
+        draft_pub = described_class.new(
+          identifier: "CC 18011", slug: "cc-18011", title: "Draft",
+          edition: "1", stage: stage, doctype: "standard", revdate: nil,
+          files: [], channels: [], source: nil
+        )
+        expect(draft_pub.draft?).to be(true),
+                                    "expected draft? true for stage '#{stage}'"
+      end
+
+      %w[60 published].each do |stage|
+        final_pub = described_class.new(
+          identifier: "CC 18011", slug: "cc-18011", title: "Final",
+          edition: "1", stage: stage, doctype: "standard", revdate: nil,
+          files: [], channels: [], source: nil
+        )
+        expect(final_pub.draft?).to be(false),
+                                    "expected draft? false for stage '#{stage}'"
+      end
     end
 
     it "exposes formats from files" do

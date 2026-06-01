@@ -8,12 +8,12 @@ RSpec.describe "Channel filtering", type: :integration do
   include_context "with released documents"
 
   def run_aggregation(channels:, output_dir:, released_dir:)
-    discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(
+    discoverer = Metanorma::Release::Platform::StaticDiscoverer.new(
       repos: [Metanorma::Release::RepoRef.new(owner: "local",
                                               repo: File.basename(released_dir))],
     )
     fetcher = Metanorma::Release::Platform::Local::Fetcher.new(base_path: File.dirname(released_dir))
-    manifest_reader = Metanorma::Release::PlatformFactory::NullManifestReader.new
+    manifest_reader = Metanorma::Release::Platform::Null::ManifestReader.new
     metadata_filter = Metanorma::Release::MetadataFilter.new(channels: channels)
     routing = Metanorma::Release::ByDocument.new
     asset_processor = Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing,
@@ -42,7 +42,9 @@ RSpec.describe "Channel filtering", type: :integration do
       )
       filter = Metanorma::Release::Channel.new("public")
       result.publications.each do |doc|
-        expect(doc.channels.any? { |c| filter.eql?(Metanorma::Release::Channel.new(c)) || c.start_with?("#{filter.name}/") }).to be true
+        expect(doc.channels.any? do |c|
+          filter.eql?(Metanorma::Release::Channel.new(c)) || c.start_with?("#{filter.name}/")
+        end).to be true
       end
     ensure
       FileUtils.rm_rf(output_dir)

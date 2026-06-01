@@ -20,7 +20,7 @@ module Metanorma
               page = 1
               loop do
                 results = @client.search_repositories(query, per_page: 100,
-                                                      page: page)
+                                                             page: page)
                 items = results[:items]
                 break if items.nil? || items.empty?
 

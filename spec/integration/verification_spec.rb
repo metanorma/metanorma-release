@@ -8,12 +8,12 @@ RSpec.describe "Verification", type: :integration do
   include_context "with released documents"
 
   def run_aggregation(output_dir:, released_dir:)
-    discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(
+    discoverer = Metanorma::Release::Platform::StaticDiscoverer.new(
       repos: [Metanorma::Release::RepoRef.new(owner: "local",
                                               repo: File.basename(released_dir))],
     )
     fetcher = Metanorma::Release::Platform::Local::Fetcher.new(base_path: File.dirname(released_dir))
-    manifest_reader = Metanorma::Release::PlatformFactory::NullManifestReader.new
+    manifest_reader = Metanorma::Release::Platform::Null::ManifestReader.new
     metadata_filter = Metanorma::Release::MetadataFilter.new
     routing = Metanorma::Release::ByDocument.new
     asset_processor = Metanorma::Release::AssetProcessor.new(output_dir: output_dir, routing: routing,
@@ -47,11 +47,11 @@ RSpec.describe "Verification", type: :integration do
     empty_dir = Dir.mktmpdir
     output_dir = Dir.mktmpdir
     begin
-      discoverer = Metanorma::Release::PlatformFactory::StaticDiscoverer.new(repos: [])
+      discoverer = Metanorma::Release::Platform::StaticDiscoverer.new(repos: [])
       deps = Metanorma::Release::AggregationPipeline::Dependencies.new(
         discoverer: discoverer,
         fetcher: Metanorma::Release::Platform::Local::Fetcher.new(base_path: empty_dir),
-        manifest_reader: Metanorma::Release::PlatformFactory::NullManifestReader.new,
+        manifest_reader: Metanorma::Release::Platform::Null::ManifestReader.new,
         metadata_filter: Metanorma::Release::MetadataFilter.new,
         asset_processor: Metanorma::Release::AssetProcessor.new(output_dir: output_dir,
                                                                 routing: Metanorma::Release::ByDocument.new, canonicalize: true),

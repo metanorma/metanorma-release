@@ -3,10 +3,6 @@
 module Metanorma
   module Release
     module TestFactories
-      def build_doc_id(raw = "CC 18011")
-        DocumentId.from_raw(raw)
-      end
-
       def build_channel(str = "public/standards")
         Channel.parse(str)
       end

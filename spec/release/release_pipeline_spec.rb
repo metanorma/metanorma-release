@@ -71,7 +71,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       packager = RecordingPackager.new
 
       deps = described_class::Dependencies.new(
-        extractor: Metanorma::Release::Publication,
+        extractor: Metanorma::Release::RxlExtractor,
         filters: [], change_detector: detector, packager: packager,
         publisher: publisher, slug_registry: slug_registry,
         manifest: nil, channel_override: nil
@@ -79,8 +79,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
 
       config = described_class::Config.new(
         output_dir: compiled_dir, force: true,
-        force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        force_replace_patterns: nil, concurrency: 1
       )
 
       result = described_class.new(deps).run(config)
@@ -97,7 +96,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       packager = RecordingPackager.new
 
       deps = described_class::Dependencies.new(
-        extractor: Metanorma::Release::Publication,
+        extractor: Metanorma::Release::RxlExtractor,
         filters: [], change_detector: detector, packager: packager,
         publisher: publisher, slug_registry: slug_registry,
         manifest: nil, channel_override: nil
@@ -105,8 +104,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
 
       config = described_class::Config.new(
         output_dir: compiled_dir, force: false,
-        force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        force_replace_patterns: nil, concurrency: 1
       )
 
       result = described_class.new(deps).run(config)
@@ -123,7 +121,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       override = ["members"]
 
       deps = described_class::Dependencies.new(
-        extractor: Metanorma::Release::Publication,
+        extractor: Metanorma::Release::RxlExtractor,
         filters: [], change_detector: detector, packager: packager,
         publisher: publisher, slug_registry: slug_registry,
         manifest: nil, channel_override: override
@@ -131,8 +129,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
 
       config = described_class::Config.new(
         output_dir: compiled_dir, force: true,
-        force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        force_replace_patterns: nil, concurrency: 1
       )
 
       described_class.new(deps).run(config)
@@ -147,7 +144,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       packager = RecordingPackager.new
 
       deps = described_class::Dependencies.new(
-        extractor: Metanorma::Release::Publication,
+        extractor: Metanorma::Release::RxlExtractor,
         filters: [], change_detector: detector, packager: packager,
         publisher: publisher, slug_registry: slug_registry,
         manifest: nil, channel_override: nil
@@ -155,8 +152,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
 
       config = described_class::Config.new(
         output_dir: compiled_dir, force: true,
-        force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        force_replace_patterns: nil, concurrency: 1
       )
 
       result = described_class.new(deps).run(config)
@@ -174,7 +170,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
         packager = RecordingPackager.new
 
         deps = described_class::Dependencies.new(
-          extractor: Metanorma::Release::Publication,
+          extractor: Metanorma::Release::RxlExtractor,
           filters: [], change_detector: detector, packager: packager,
           publisher: publisher, slug_registry: slug_registry,
           manifest: nil, channel_override: nil
@@ -182,8 +178,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
 
         config = described_class::Config.new(
           output_dir: empty_dir, force: false,
-          force_replace_patterns: nil, concurrency: 1,
-          default_visibility: "public"
+          force_replace_patterns: nil, concurrency: 1
         )
 
         result = described_class.new(deps).run(config)
@@ -216,7 +211,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
       packager = RecordingPackager.new
 
       deps = described_class::Dependencies.new(
-        extractor: Metanorma::Release::Publication,
+        extractor: Metanorma::Release::RxlExtractor,
         filters: [], change_detector: detector, packager: packager,
         publisher: publisher, slug_registry: slug_registry,
         manifest: nil, channel_override: nil,
@@ -225,8 +220,7 @@ RSpec.describe Metanorma::Release::ReleasePipeline do
 
       pipeline_config = described_class::Config.new(
         output_dir: compiled_dir, force: true,
-        force_replace_patterns: nil, concurrency: 1,
-        default_visibility: "public"
+        force_replace_patterns: nil, concurrency: 1
       )
 
       described_class.new(deps).run(pipeline_config)

@@ -11,7 +11,7 @@ RSpec.describe Metanorma::Release::Site do
       edition: "1", stage: "60", doctype: "standard", revdate: "2024-01-01",
       files: [
         Metanorma::Release::PublicationFile.new(
-          name: "cc-18011.html", format: "html", path: "cc-18011.html"
+          name: "cc-18011.html", format: "html", path: "cc-18011.html",
         ),
       ],
       channels: ["public"], source: nil
