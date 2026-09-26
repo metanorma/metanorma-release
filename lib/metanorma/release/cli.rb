@@ -53,12 +53,12 @@ module Metanorma
                         desc: "Liquid template (default: built-in registry index)"
       option :out, type: :string, default: "_site/index.html",
                    desc: "Output HTML path"
-      option :assets, type: :string,
-                      desc: "Assets directory copied next to the output"
-      option :docs_dir, type: :string,
-                        desc: "Directory of compiled .mnd.html documents for logo extraction"
+      option :flavor, type: :string,
+                      desc: "Flavor theme for branding (e.g. iso, iho)"
       option :manifest, type: :string, default: "metanorma.yml",
                         desc: "Metanorma manifest (site identity)"
+      option :css, type: :string,
+                   desc: "Stylesheet inlined into the built-in template"
 
       def render_index
         configure_logging
@@ -67,9 +67,9 @@ module Metanorma
             data: options[:data],
             template: options[:template],
             out: options[:out],
-            assets: options[:assets],
-            docs_dir: options[:docs_dir],
             manifest: options[:manifest],
+            flavor: options[:flavor],
+            css: options[:css],
           ),
         ).call
         puts "Rendered #{out}"

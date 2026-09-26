@@ -8,7 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<style>{{ base_css }}</style>
+<style>{{ theme_css }}</style>
 <script>
   (function () {
     // Same key + mode cycle as the documents (metanorma-document reader),
@@ -56,13 +57,21 @@
     <div class="doc-card-main">
       <div class="doc-card-head">
         <span class="doc-id">{{ doc.id }}</span>
-        {% if doc.stage %}<span class="badge">{{ doc.stage | replace: '_', ' ' }}</span>{% endif %}
+        <span class="head-chips">
+          {% if doc.doctype %}<span class="chip chip-doctype">{{ doc.doctype }}</span>{% endif %}
+          {% if doc.stage %}
+            {% assign draft_stage = false %}
+            {% if doc.stage contains "draft" or doc.stage contains "wd" or doc.stage contains "cd" or doc.stage contains "awi" or doc.stage contains "np" or doc.stage contains "fdis" or doc.stage contains "fdam" or doc.stage contains "fdts" or doc.stage contains "fdguide" or doc.stage contains "fdtr" or doc.stage contains "fd" %}{% assign draft_stage = true %}{% endif %}
+            <span class="chip {% if draft_stage %}chip-draft{% else %}chip-published{% endif %}">
+              <span class="chip-dot"></span>{{ doc.stage | replace: '_', ' ' }}
+            </span>
+          {% endif %}
+        </span>
       </div>
       <h2 class="doc-title">{{ doc.title }}</h2>
       <p class="doc-meta">
         {% if doc.edition %}<span class="meta-item">Edition <strong>{{ doc.edition }}</strong></span>{% endif %}
         {% if doc.date %}<span class="meta-item">{{ doc.date }}</span>{% endif %}
-        {% if doc.doctype %}<span class="meta-item">{{ doc.doctype }}</span>{% endif %}
       </p>
     </div>
     <div class="doc-actions">
