@@ -3,8 +3,8 @@
 module Metanorma
   module Release
     PublishResult = Struct.new(:tag, :url, :created?, keyword_init: true)
-    ReleasedArtifact = Struct.new(:id, :tag, :url, :channels,
-                                  keyword_init: true)
+    ReleasedArtifact = Struct.new(:id, :tag, :url, :channels, :zip_path,
+                                  :asset_name, keyword_init: true)
     ReleaseResult = Struct.new(:released, :skipped, :failed,
                                :released_artifacts, keyword_init: true)
 
@@ -111,7 +111,8 @@ module Metanorma
             released << pub
             released_artifacts << ReleasedArtifact.new(
               id: pub.slug, tag: tag.to_s,
-              url: result.url, channels: channels
+              url: result.url, channels: channels,
+              zip_path: artifact.zip_path, asset_name: artifact.asset_name
             )
           rescue StandardError => e
             failed << { document: pub, error: e.message }

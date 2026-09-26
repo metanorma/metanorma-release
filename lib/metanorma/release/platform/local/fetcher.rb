@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "json"
+require "time"
 
 module Metanorma
   module Release
@@ -21,8 +22,8 @@ module Metanorma
             end
 
             releases = Dir.glob(File.join(dir,
-                                          "*.meta.json")).filter_map do |meta_path|
-              build_release(dir, meta_path)
+                                          "**", "*.meta.json")).filter_map do |meta_path|
+              build_release(File.dirname(meta_path), meta_path)
             end
 
             FetchResult.new(releases: releases, etag: nil, unchanged?: false)

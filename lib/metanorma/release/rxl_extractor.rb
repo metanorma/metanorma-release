@@ -81,13 +81,19 @@ module Metanorma
           nil
         end
 
+        # Canonical compiled outputs only: build artifacts (error dumps,
+        # presentation XML, Asciidoc logs, alternate renders) are not
+        # publication assets.
+        CANONICAL_FILES = %w[.html .mnd.html .pdf .doc .xml .rxl].freeze
+
         def discover_files(output_dir, base_name)
-          Dir.glob(File.join(output_dir, "#{base_name}.*")).filter_map do |path|
-            next if File.directory?(path)
+          CANONICAL_FILES.filter_map do |suffix|
+            path = File.join(output_dir, "#{base_name}#{suffix}")
+            next unless File.file?(path)
 
             name = File.basename(path)
-            ext = File.extname(name).delete_prefix(".")
-            PublicationFile.new(format: ext, name: name, path: name)
+            format = suffix == ".mnd.html" ? "mnd" : suffix.delete_prefix(".")
+            PublicationFile.new(format: format, name: name, path: name)
           end
         end
 
