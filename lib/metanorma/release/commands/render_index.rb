@@ -90,7 +90,13 @@ module Metanorma
           if @config.flavor
             # Loading the flavor gem runs its programmatic theme
             # registration (register_themes_dir), so Theme.load resolves
-            # to the flavor's own copy.
+            # to the flavor's own copy. The registration may live in the
+            # document entry rather than the gem entry.
+            begin
+              require "metanorma/#{@config.flavor}/document"
+            rescue LoadError
+              # no separate document entry; the gem entry carries it
+            end
             require "metanorma/#{@config.flavor}"
             Metanorma::Html::Theme.load(@config.flavor.to_sym)
           else
