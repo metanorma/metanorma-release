@@ -2,6 +2,8 @@
 
 require "thor"
 
+require_relative "commands/render_index"
+
 module Metanorma
   module Release
     class CLI < Thor
@@ -42,6 +44,35 @@ module Metanorma
         result = PackageCommand.new(config).call
         print_package_result(result, config.dest)
         raise PipelineError, format_failures(result) unless result.failed.empty?
+      end
+
+      desc "render-index", "Render the document registry index"
+      option :data, type: :string, default: "_data/documents.json",
+                    desc: "Aggregated documents.json"
+      option :template, type: :string,
+                        desc: "Liquid template (default: built-in registry index)"
+      option :out, type: :string, default: "_site/index.html",
+                   desc: "Output HTML path"
+      option :flavor, type: :string,
+                      desc: "Flavor theme for branding (e.g. iso, iho)"
+      option :manifest, type: :string, default: "metanorma.yml",
+                        desc: "Metanorma manifest (site identity)"
+      option :css, type: :string,
+                   desc: "Stylesheet inlined into the built-in template"
+
+      def render_index
+        configure_logging
+        out = RenderIndexCommand.new(
+          RenderIndexCommand::Config.new(
+            data: options[:data],
+            template: options[:template],
+            out: options[:out],
+            manifest: options[:manifest],
+            flavor: options[:flavor],
+            css: options[:css],
+          ),
+        ).call
+        puts "Rendered #{out}"
       end
 
       desc "release", "Package and release documents"

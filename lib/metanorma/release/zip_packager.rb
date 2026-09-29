@@ -34,11 +34,14 @@ module Metanorma
         end
 
         zip_path = File.join(dir, "#{canonical_base}.zip")
+        FileUtils.mkdir_p(File.dirname(zip_path))
         FileUtils.rm_f(zip_path)
-        Zip::File.open(zip_path, Zip::File::CREATE) do |zipfile|
+        Zip::File.open(zip_path, create: true) do |zipfile|
           files.each do |file|
-            ext = File.extname(file)
-            entry_name = "#{canonical_base}#{ext}"
+            # Preserve the full suffix (document.mnd.html keeps .mnd.html)
+            # so parallel renders do not collide on the base extension.
+            suffix = File.basename(file).sub(File.basename(file, ".*"), "")
+            entry_name = "#{canonical_base}#{suffix}"
             zipfile.add(entry_name, file)
           end
         end

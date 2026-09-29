@@ -68,6 +68,7 @@ module Metanorma
         gh = file_data["github"] || {}
         {
           source: cli_options[:source] || file_data["source"],
+          local_path: cli_options[:local_path] || file_data["local_path"],
           organizations: cli_options[:organizations].any? ? cli_options[:organizations] : Array(gh["organizations"]),
           topic: cli_options[:topic] || gh["topic"],
           repos: cli_options[:repos] || file_data["repos"],

@@ -14,6 +14,14 @@ module Metanorma
           def discover
             return [] unless Dir.exist?(@base_path)
 
+            # Publications may sit flat in the base directory
+            # (<slug>.meta.json + <slug>.zip) or nested one level per
+            # repository. Flat mode wins: a single recursive fetch from
+            # the base covers everything.
+            if Dir.glob(File.join(@base_path, "*.meta.json")).any?
+              return [RepoRef.new(owner: "local", repo: ".")]
+            end
+
             Dir.children(@base_path).filter_map do |entry|
               full = File.join(@base_path, entry)
               RepoRef.new(owner: "local", repo: entry) if File.directory?(full)

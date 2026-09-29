@@ -15,6 +15,7 @@ module Metanorma
       def self.slug_from_identifier(identifier)
         identifier.to_s.strip
           .gsub(/\s+/, "-")
+          .gsub(%r{[/]+}, "-")
           .gsub(/:+/, "-")
           .downcase
           .gsub(/--+/, "-")
