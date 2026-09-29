@@ -40,7 +40,7 @@ module Metanorma
           files.each do |file|
             # Preserve the full suffix (document.mnd.html keeps .mnd.html)
             # so parallel renders do not collide on the base extension.
-            suffix = file.sub(File.basename(file, ".*"), "")
+            suffix = File.basename(file).sub(File.basename(file, ".*"), "")
             entry_name = "#{canonical_base}#{suffix}"
             zipfile.add(entry_name, file)
           end
