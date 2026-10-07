@@ -88,8 +88,8 @@ module Metanorma
       option :repos, type: :array, desc: "Explicit repo list"
       option :channels, type: :array, default: [],
                         desc: "Filter channels"
-      option :output_dir, type: :string, default: "_site/cc",
-                          desc: "Output directory"
+      option :output_dir, type: :string,
+                          desc: "Output directory (default: config file, or _site/cc)"
       option :file_routing, type: :string,
                             desc: "File routing (by-document|flat|by-format)"
       option :cache_dir, type: :string, desc: "Cache directory"

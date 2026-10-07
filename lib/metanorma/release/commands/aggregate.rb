@@ -72,7 +72,7 @@ module Metanorma
           topic: cli_options[:topic] || gh["topic"],
           repos: cli_options[:repos] || file_data["repos"],
           channels: cli_options[:channels].any? ? cli_options[:channels] : Array(file_data["channels"]),
-          output_dir: cli_options[:output_dir] || file_data["output_dir"],
+          output_dir: cli_options[:output_dir] || file_data["output_dir"] || "_site/cc",
           file_routing: cli_options[:file_routing] || file_data["file_routing"] || "by-document",
           cache_dir: cli_options[:cache_dir] || file_data["cache_dir"],
           data_dir: cli_options[:data_dir] || file_data["data_dir"],

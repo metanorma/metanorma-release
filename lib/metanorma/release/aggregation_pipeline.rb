@@ -2,10 +2,21 @@
 
 module Metanorma
   module Release
-    FetchResult = Struct.new(:releases, :etag, :unchanged?, keyword_init: true)
+    # failed?: the release listing itself failed (rate limit, network) —
+    # distinct from an empty result. A failed listing must never be
+    # treated as "all releases deleted".
+    FetchResult = Struct.new(:releases, :etag, :unchanged?, :failed?,
+                             keyword_init: true) do
+      def initialize(releases:, etag:, **flags)
+        super(releases: releases, etag: etag,
+              unchanged?: flags.fetch(:unchanged?, false),
+              failed?: flags.fetch(:failed?, false))
+      end
+    end
     RepoReport  = Struct.new(:releases, :included, :skipped, :reason, :errors,
                              keyword_init: true)
     RepoError   = Struct.new(:tag, :message, keyword_init: true)
+    Collision   = Struct.new(:path, :claimed_by, keyword_init: true)
 
     class AggregationPipeline
       Dependencies = Struct.new(
@@ -39,9 +50,14 @@ module Metanorma
 
       Result = Struct.new(
         :publications, :repo_count, :channels_found,
-        :report, :failed_repos,
+        :report, :failed_repos, :collisions,
         keyword_init: true
-      )
+      ) do
+        def initialize(publications:, repo_count:, channels_found:, report:,
+                       failed_repos:, collisions: [])
+          super
+        end
+      end
 
       def initialize(deps)
         @deps = deps
@@ -67,7 +83,23 @@ module Metanorma
           channels_found: publications.flat_map(&:channels).uniq.sort,
           report: reports,
           failed_repos: failed_repos,
+          collisions: detect_collisions(publications),
         )
+      end
+
+      # Two releases extracting to the same path (same slug from
+      # different repos, or same-year editions under flat routing)
+      # silently overwrite each other. Surface them so callers can
+      # disambiguate in source repos or fail loudly.
+      def detect_collisions(publications)
+        claims = Hash.new { |h, k| h[k] = [] }
+        publications.each do |pub|
+          owner = pub.source ? "#{pub.source.repo_key}@#{pub.source.tag}" : pub.slug
+          pub.files.each { |file| claims[file.path] << owner }
+        end
+        claims.select { |_path, owners| owners.uniq.length > 1 }.map do |path, owners|
+          Collision.new(path: path, claimed_by: owners.uniq)
+        end
       end
 
       private
@@ -129,6 +161,17 @@ module Metanorma
 
         etag = @deps.delta_state.etag(repo_key)
         fetch_result = @deps.fetcher.fetch(repo, etag: etag)
+
+        if fetch_result.failed?
+          # The listing failed (rate limit, network) — this is NOT "the
+          # releases are gone". Keep the existing extracted files and
+          # delta state untouched so a later run can reconcile.
+          return [], RepoReport.new(
+            releases: 0, included: 0, skipped: 0,
+            reason: "fetch failed — existing state kept",
+            errors: [RepoError.new(tag: nil, message: "release listing failed")]
+          )
+        end
 
         if fetch_result.unchanged?
           return [], RepoReport.new(releases: 0, included: 0, skipped: 0,
