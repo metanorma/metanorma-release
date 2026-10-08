@@ -44,3 +44,45 @@ RSpec.describe Metanorma::Release::AggregateCommand do
     end
   end
 end
+
+RSpec.describe Metanorma::Release::AggregateCommand do
+  describe ".build_config" do
+    it "honours the config file's output_dir when the CLI omits it" do
+      Dir.mktmpdir do |tmp|
+        config_file = File.join(tmp, "metanorma.aggregate.yml")
+        File.write(config_file, <<~YAML)
+          source: github
+          output_dir: _site/docs
+          file_routing: flat
+        YAML
+
+        config = described_class.build_config(
+          source: nil, organizations: [], topic: nil, repos: nil,
+          channels: [], output_dir: nil, file_routing: nil,
+          cache_dir: nil, data_dir: nil, include_drafts: nil,
+          concurrency: nil, min_documents: nil, token: nil,
+          create_zip: nil, config: config_file
+        )
+
+        expect(config.output_dir).to eq("_site/docs")
+      end
+    end
+
+    it "falls back to the historical default when nothing sets output_dir" do
+      Dir.mktmpdir do |tmp|
+        config_file = File.join(tmp, "metanorma.aggregate.yml")
+        File.write(config_file, "source: github\\n")
+
+        config = described_class.build_config(
+          source: nil, organizations: [], topic: nil, repos: nil,
+          channels: [], output_dir: nil, file_routing: nil,
+          cache_dir: nil, data_dir: nil, include_drafts: nil,
+          concurrency: nil, min_documents: nil, token: nil,
+          create_zip: nil, config: config_file
+        )
+
+        expect(config.output_dir).to eq("_site/cc")
+      end
+    end
+  end
+end

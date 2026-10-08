@@ -15,14 +15,16 @@ module Metanorma
           end
 
           def fetch(repo, etag: nil)
-            releases = paginate_releases(repo.to_s)
+            releases, failed = paginate_releases(repo.to_s)
             parsed = releases.map { |r| parse_release(r) }
             FetchResult.new(releases: parsed, etag: "etag-#{repo}",
-                            unchanged?: false)
+                            unchanged?: false, failed?: failed)
           end
 
           private
 
+          # Returns [releases, failed] — failed is true when the listing
+          # errored, which callers must not treat as an empty release set.
           def paginate_releases(repo_slug)
             all = []
             page = 1
@@ -35,10 +37,10 @@ module Metanorma
 
               page += 1
             end
-            all
+            [all, false]
           rescue StandardError => e
             Metanorma::Release.logger.warn "Failed to fetch releases for #{repo_slug}: #{e.message}"
-            []
+            [[], true]
           end
 
           def parse_release(r)
