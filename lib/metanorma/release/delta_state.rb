@@ -29,6 +29,10 @@ module Metanorma
         raise NotImplementedError, "#{self.class} must implement #release_files"
       end
 
+      def release_fingerprint(repo_key, tag)
+        raise NotImplementedError, "#{self.class} must implement #release_fingerprint"
+      end
+
       def mark_processed(repo_key, tag, content_hash, files)
         raise NotImplementedError,
               "#{self.class} must implement #mark_processed"
@@ -85,11 +89,20 @@ module Metanorma
         releases[tag]["files"] || []
       end
 
-      def mark_processed(repo_key, tag, content_hash, files)
+      def release_fingerprint(repo_key, tag)
+        releases = repo_state(repo_key)["releases"]
+        return nil unless releases.key?(tag)
+
+        releases[tag]["fingerprint"]
+      end
+
+      def mark_processed(repo_key, tag, content_hash, files,
+                         fingerprint: nil)
         repo = ensure_repo(repo_key)
         repo["releases"][tag] = {
           "content_hash" => content_hash.to_s,
           "files" => files,
+          "fingerprint" => fingerprint,
         }
       end
 
@@ -138,6 +151,7 @@ module Metanorma
       def set_etag(_repo_key, _etag) = nil
       def processed?(*_args) = false
       def release_files(*_args) = []
+      def release_fingerprint(*_args) = nil
       def mark_processed(*_args); end
       def cleanup_stale(*_args) = 0
     end

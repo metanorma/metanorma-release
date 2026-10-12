@@ -228,3 +228,81 @@ RSpec.describe Metanorma::Release::AggregationPipeline do
     end
   end
 end
+
+  describe "recreated releases (force-replace)" do
+    let(:metadata_json) do
+      {
+        "version" => 1, "id" => "cc-18011", "identifier" => "CC 18011:2018",
+        "title" => "Test Doc", "edition" => "1", "stage" => "60",
+        "doctype" => "standard", "formats" => %w[html],
+        "channels" => ["public"], "publisher" => "cc",
+        "sourcePath" => "sources/cc-18011.adoc"
+      }
+    end
+
+    def make_zip(content)
+      require "stringio"
+      require "zip"
+      Zip::OutputStream.write_buffer(StringIO.new) do |s|
+        s.put_next_entry("cc-18011.html")
+        s.write(content)
+      end.string
+    end
+
+    def build_recreated_release(published_at:, zip_content:)
+      meta = metadata_json
+      body = "content-hash:replaced\n<!-- mn-release-metadata\n#{JSON.generate(meta)}\n-->"
+      TestRelease.new(
+        tag_name: "cc-18011/ed1", body: body, prerelease: false, draft: false,
+        html_url: "https://example.com/release", published_at: published_at,
+        assets: [TestAsset.new(name: "cc-18011-ed1.zip", data: make_zip(zip_content))]
+      )
+    end
+
+    def run_pipeline(releases:, delta_state:, output_dir:)
+      deps = Metanorma::Release::AggregationPipeline::Dependencies.new(
+        discoverer: TestDiscoverer.new(
+          [Metanorma::Release::RepoRef.new(owner: "CC", repo: "test-repo")]
+        ),
+        fetcher: TestFetcher.new("CC/test-repo" => releases),
+        manifest_reader: TestManifestReader.new,
+        metadata_filter: Metanorma::Release::MetadataFilter.new,
+        asset_processor: Metanorma::Release::AssetProcessor.new(
+          output_dir: output_dir,
+          routing: Metanorma::Release::Flat.new
+        ),
+        delta_state: delta_state,
+      )
+      config = Metanorma::Release::AggregationPipeline::Config.new(
+        organizations: ["CC"], channels: [], topic: "test",
+        concurrency: 1, include_drafts: true, fail_on_error: false
+      )
+      Metanorma::Release::AggregationPipeline.new(deps).run(config, output_dir)
+    end
+
+    it "re-extracts when a published release is deleted and recreated under the same tag" do
+      Dir.mktmpdir do |tmp|
+        output_dir = File.join(tmp, "docs")
+        cache_dir = File.join(tmp, "cache")
+        FileUtils.mkdir_p([output_dir, cache_dir])
+
+        delta = Metanorma::Release::DeltaState.new(
+          cache_store: Metanorma::Release::FileCacheStore.new(cache_dir),
+          output_dir: output_dir
+        )
+
+        run_pipeline(
+          releases: [build_recreated_release(published_at: "2026-05-14T00:00:00Z", zip_content: "OLD-CONTENT")],
+          delta_state: delta, output_dir: output_dir
+        )
+        expect(File.read(File.join(output_dir, "cc-18011.html"))).to eq("OLD-CONTENT")
+
+        # force-replace: same tag, new publish timestamp, new content
+        run_pipeline(
+          releases: [build_recreated_release(published_at: "2026-10-10T00:00:00Z", zip_content: "NEW-CONTENT")],
+          delta_state: delta, output_dir: output_dir
+        )
+        expect(File.read(File.join(output_dir, "cc-18011.html"))).to eq("NEW-CONTENT")
+      end
+    end
+  end

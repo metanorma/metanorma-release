@@ -193,21 +193,25 @@ module Metanorma
           tag = release.tag_name
           current_tags << tag
 
+          zip_asset = find_zip_asset(release)
+          fingerprint = release_fingerprint(release, zip_asset)
           cached_files = @deps.delta_state.release_files(repo_key, tag)
-          if cached_files.any? && cached_files.all? do |f|
-            File.exist?(File.join(output_dir, f))
-          end
+          cached_fingerprint = @deps.delta_state.release_fingerprint(repo_key, tag)
+          if fingerprint &&
+             cached_files.any? &&
+             cached_fingerprint == fingerprint &&
+             cached_files.all? { |f| File.exist?(File.join(output_dir, f)) }
             publications << build_publication(metadata, cached_files, release,
                                               repo)
             next
           end
 
-          zip_asset = find_zip_asset(release)
           next unless zip_asset
 
           result = @deps.asset_processor.process(zip_asset.data, metadata_h)
           @deps.delta_state.mark_processed(repo_key, tag, nil,
-                                           result.files.map(&:path))
+                                           result.files.map(&:path),
+                                           fingerprint: fingerprint)
           publications << build_publication(metadata, result.files.map(&:path),
                                             release, repo)
         rescue StandardError => e
@@ -233,6 +237,17 @@ module Metanorma
         return nil unless release.assets
 
         release.assets.find { |a| a.name.end_with?(".zip") }
+      end
+
+      # Identity of a release's CONTENT from listing data alone (no
+      # downloads): a force-recreated release gets a new timestamp and
+      # asset, so a fingerprint mismatch means the cached extraction is
+      # stale even though the tag (and the on-disk files) still exist.
+      def release_fingerprint(release, zip_asset)
+        return nil if zip_asset.nil?
+
+        size = zip_asset.respond_to?(:size) ? zip_asset.size : nil
+        [release.published_at, zip_asset.name, size].join("|")
       end
     end
   end
