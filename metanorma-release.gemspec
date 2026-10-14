@@ -37,7 +37,7 @@ Gem::Specification.new do |spec|
     "#{spec.homepage}/blob/main/CHANGELOG.md"
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  spec.add_dependency "relaton-bib", "~> 2.1"
+  spec.add_dependency "relaton-bib", "~> 2.2.0.pre.alpha.1"
   spec.add_dependency "thor", "~> 1.0"
 
   spec.add_development_dependency "rake", "~> 13.2"
