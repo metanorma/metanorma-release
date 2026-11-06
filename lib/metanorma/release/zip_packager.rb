@@ -35,7 +35,7 @@ module Metanorma
 
         zip_path = File.join(dir, "#{canonical_base}.zip")
         FileUtils.rm_f(zip_path)
-        Zip::File.open(zip_path, Zip::File::CREATE) do |zipfile|
+        Zip::File.open(zip_path, create: true) do |zipfile|
           files.each do |file|
             ext = File.extname(file)
             entry_name = "#{canonical_base}#{ext}"

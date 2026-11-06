@@ -7,7 +7,7 @@ RSpec.describe Metanorma::Release::AssetProcessor do
   def create_zip(files)
     Dir.mktmpdir do |dir|
       zip_path = File.join(dir, "test.zip")
-      Zip::File.open(zip_path, Zip::File::CREATE) do |zip|
+      Zip::File.open(zip_path, create: true) do |zip|
         files.each do |name, content|
           zip.get_output_stream(name) { |s| s.write(content) }
         end
