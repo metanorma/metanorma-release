@@ -8,7 +8,7 @@ group :development do
   gem "nokogiri", "~> 1.18"
   gem "octokit", "~> 9.0"
   gem "rubocop", "~> 1.75"
-  gem "rubyzip", "~> 2.3"
+  gem "rubyzip", "~> 3.7"
 end
 
 gem "rubocop-performance", "~> 1.26", group: :development

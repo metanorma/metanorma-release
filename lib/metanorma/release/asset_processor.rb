@@ -35,7 +35,9 @@ module Metanorma
               dest_path = File.join(@output_dir, relative_path)
 
               FileUtils.mkdir_p(File.dirname(dest_path))
-              entry.extract(dest_path) { true }
+              entry.extract(File.basename(dest_path),
+                            destination_directory:
+                              File.dirname(dest_path)) { true }
 
               ext = File.extname(file_name).delete_prefix(".")
               files << PublicationFile.new(format: ext, name: file_name,

@@ -33,7 +33,7 @@ module Metanorma
         require "zip"
 
         path = zip_path || "#{output_dir}.zip"
-        Zip::File.open(path, Zip::File::CREATE) do |zipfile|
+        Zip::File.open(path, create: true) do |zipfile|
           Dir.glob("#{output_dir}/**/*").each do |file|
             next if File.directory?(file)
 
