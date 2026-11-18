@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
-require_relative "lib/metanorma/release"
-
 Gem::Specification.new do |spec|
+  # The gemspec is evaluated in restricted contexts (bundler git-spec
+  # loading) where activating runtime dependencies such as logger is not
+  # possible; read the version without requiring the library.
+  spec.version = File.read(File.join(__dir__, "lib/metanorma/release/version.rb"))
+    .match(/VERSION\s*=\s*"([^"]+)"/)[1]
   spec.name          = "metanorma-release"
-  spec.version       = Metanorma::Release::VERSION
   spec.authors       = ["Ribose Inc."]
   spec.email         = ["open.source@ribose.com"]
 
