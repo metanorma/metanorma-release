@@ -52,4 +52,69 @@ RSpec.describe Metanorma::Release::ZipPackager do
     expect(File.exist?(second.zip_path)).to be true
     expect(second.size).to be > first_size
   end
+
+  it "resolves files against the publication base_dir in a nested site layout" do
+    doc_dir = File.join(output_dir, "1.2.1", "PS")
+    FileUtils.mkdir_p(doc_dir)
+    %w[document.html document.xml].each do |name|
+      File.write(File.join(doc_dir, name), "<doc/>")
+    end
+    pub = Metanorma::Release::Publication.new(
+      identifier: "S-411", slug: "s-411", title: "S-411",
+      edition: "1.2.1", stage: "60", doctype: "standard", revdate: nil,
+      files: [
+        Metanorma::Release::PublicationFile.new(format: "html", name: "document.html", path: "document.html"),
+        Metanorma::Release::PublicationFile.new(format: "xml", name: "document.xml", path: "document.xml"),
+      ],
+      channels: ["public"], source: nil, base_dir: doc_dir
+    )
+
+    artifact = described_class.new(output_dir: output_dir)
+                          .package(pub, canonical_base: "s-411-ed1.2.1")
+
+    require "zip"
+    entries = Zip::File.open(artifact.zip_path).map(&:name)
+    expect(entries).to include("s-411-ed1.2.1.html", "s-411-ed1.2.1.xml")
+    expect(artifact.size).to be > 22 # not an empty archive
+  end
+
+  it "fails loudly when no files resolve instead of writing an empty zip" do
+    pub = Metanorma::Release::Publication.new(
+      identifier: "S-999", slug: "s-999", title: "Missing",
+      edition: "1", stage: "60", doctype: "standard", revdate: nil,
+      files: [Metanorma::Release::PublicationFile.new(format: "html", name: "missing.html", path: "missing.html")],
+      channels: ["public"], source: nil, base_dir: output_dir
+    )
+
+    expect {
+      described_class.new(output_dir: output_dir)
+                     .package(pub, canonical_base: "s-999-ed1")
+    }.to raise_error(Metanorma::Release::ZipPackager::EmptyPackageError, /s-999/)
+
+    expect(Dir.glob(File.join(output_dir, "*.zip"))).to be_empty
+  end
+
+  it "skips duplicate entry names instead of aborting the archive" do
+    doc_dir = File.join(output_dir, "doc")
+    FileUtils.mkdir_p(doc_dir)
+    File.write(File.join(doc_dir, "document.html"), "<doc/>")
+    File.write(File.join(doc_dir, "document.err.html"), "error report")
+
+    pub = Metanorma::Release::Publication.new(
+      identifier: "S-1", slug: "s-1", title: "S-1",
+      edition: "1", stage: "60", doctype: "standard", revdate: nil,
+      files: [
+        Metanorma::Release::PublicationFile.new(format: "html", name: "document.html", path: "document.html"),
+        Metanorma::Release::PublicationFile.new(format: "html", name: "document.err.html", path: "document.err.html"),
+      ],
+      channels: ["public"], source: nil, base_dir: doc_dir
+    )
+
+    artifact = described_class.new(output_dir: output_dir)
+                          .package(pub, canonical_base: "s-1-ed1")
+
+    require "zip"
+    entries = Zip::File.open(artifact.zip_path).map(&:name)
+    expect(entries).to eq(["s-1-ed1.html"])
+  end
 end
