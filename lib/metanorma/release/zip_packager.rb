@@ -14,6 +14,10 @@ module Metanorma
     class ZipPackager
       include Packager
 
+      # Raised when no source files resolve for a publication — packaging
+      # must never emit an empty archive silently.
+      class EmptyPackageError < StandardError; end
+
       def initialize(output_dir: nil)
         @output_dir = output_dir
       end
@@ -22,23 +26,27 @@ module Metanorma
         dir = @output_dir || derive_dir(publication)
         slug = publication.slug
 
-        files = Dir.glob(File.join(dir, "**", "#{slug}.*")).reject do |f|
-          File.directory?(f)
-        end
+        files = resolve_files(publication, dir)
         if files.empty?
-          identifier = File.basename(publication.identifier.to_s)
-          files = Dir.glob(File.join(dir, "**",
-                                     "#{identifier}.*")).reject do |f|
-            File.directory?(f)
-          end
+          raise EmptyPackageError,
+                "no files resolved for #{slug} in #{dir} (files: " \
+                "#{publication.files.map(&:path).join(', ')}"
         end
 
         zip_path = File.join(dir, "#{canonical_base}.zip")
         FileUtils.rm_f(zip_path)
         Zip::File.open(zip_path, create: true) do |zipfile|
+          seen = []
           files.each do |file|
             ext = File.extname(file)
             entry_name = "#{canonical_base}#{ext}"
+            if seen.include?(entry_name)
+              Metanorma::Release.logger.warn(
+                "skipping duplicate zip entry #{entry_name} (#{file})",
+              )
+              next
+            end
+            seen << entry_name
             zipfile.add(entry_name, file)
           end
         end
@@ -51,6 +59,25 @@ module Metanorma
       end
 
       private
+
+      # Publications extracted from a site layout carry their source
+      # directory (base_dir) and a file list; slug globbing is the
+      # fallback for publications whose files were not discoverable that
+      # way (e.g. GitHub release assets).
+      def resolve_files(publication, dir)
+        base = publication.base_dir.to_s
+        if publication.files.any? && base != "." && File.directory?(base)
+          publication.files.filter_map do |f|
+            path = File.join(base, f.path)
+            path unless File.directory?(path)
+          end.select { |p| File.file?(p) }
+        else
+          files = Dir.glob(File.join(dir, "**", "#{publication.slug}.*"))
+          files = Dir.glob(File.join(dir, "**",
+                                     "#{File.basename(publication.identifier.to_s)}.*")) if files.empty?
+          files.reject { |f| File.directory?(f) }
+        end
+      end
 
       def derive_dir(publication)
         publication.base_dir

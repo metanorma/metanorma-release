@@ -69,7 +69,8 @@ module Metanorma
                   :revdate, :files, :channels, :source
 
       def initialize(identifier:, slug:, title:, edition:, stage:, doctype:,
-                     revdate:, files:, channels:, source: nil, metadata_formats: nil)
+                     revdate:, files:, channels:, source: nil,
+                     metadata_formats: nil, base_dir: nil)
         @identifier = identifier
         @slug = slug
         @title = title
@@ -81,6 +82,8 @@ module Metanorma
         @channels = channels.freeze
         @source = source
         @metadata_formats = metadata_formats
+        @base_dir = base_dir ||
+                    (files.any? ? File.dirname(files.first.path) : ".")
         freeze
       end
 
@@ -89,7 +92,7 @@ module Metanorma
       end
 
       def base_dir
-        files.any? ? File.dirname(files.first.path) : "."
+        @base_dir
       end
 
       def content_hash(from_directory: nil)
@@ -136,7 +139,7 @@ module Metanorma
           edition: edition, stage: stage, doctype: doctype,
           revdate: revdate, files: files,
           channels: new_channels, source: source,
-          metadata_formats: @metadata_formats
+          metadata_formats: @metadata_formats, base_dir: @base_dir
         )
       end
 

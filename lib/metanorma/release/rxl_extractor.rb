@@ -46,7 +46,8 @@ module Metanorma
             doctype: extract_doctype(bib),
             revdate: extract_revdate(bib),
             files: discover_files(output_dir, base_name),
-            channels: [], source: nil
+            channels: [], source: nil,
+            base_dir: output_dir
           )
         end
 
@@ -81,9 +82,14 @@ module Metanorma
           nil
         end
 
+        # Compile-side diagnostics (document.err.html, document.xml.abort,
+        # *.log.txt) are not publishable artifacts.
+        NON_PUBLISHABLE = /\.(?:err\.html|abort|log(?:\.\w+)?)\z/.freeze
+
         def discover_files(output_dir, base_name)
           Dir.glob(File.join(output_dir, "#{base_name}.*")).filter_map do |path|
             next if File.directory?(path)
+            next if NON_PUBLISHABLE.match?(path)
 
             name = File.basename(path)
             ext = File.extname(name).delete_prefix(".")
